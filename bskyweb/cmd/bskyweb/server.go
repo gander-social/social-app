@@ -19,11 +19,11 @@ import (
 	"syscall"
 	"time"
 
-	appbsky "github.com/bluesky-social/indigo/api/bsky"
-	"github.com/bluesky-social/indigo/atproto/syntax"
-	"github.com/bluesky-social/indigo/util/cliutil"
-	"github.com/bluesky-social/indigo/xrpc"
-	"github.com/bluesky-social/social-app/bskyweb"
+	appbsky "github.com/gander-social/indigo/api/bsky"
+	"github.com/gander-social/indigo/atproto/syntax"
+	"github.com/gander-social/indigo/util/cliutil"
+	"github.com/gander-social/indigo/xrpc"
+	"github.com/gander-social/social-app/bskyweb"
 
 	"github.com/flosch/pongo2/v6"
 	"github.com/klauspost/compress/gzhttp"
@@ -412,7 +412,7 @@ func (srv *Server) Download(c echo.Context) error {
 	}
 
 	if strings.Contains(ua, "iPhone") || strings.Contains(ua, "iPad") || strings.Contains(ua, "iPod") {
-		return c.Redirect(http.StatusFound, "https://apps.apple.com/tr/app/bluesky-social/id6444370199")
+		return c.Redirect(http.StatusFound, "https://apps.apple.com/tr/app/gander-social/id6444370199")
 	}
 
 	return c.Redirect(http.StatusFound, "/")

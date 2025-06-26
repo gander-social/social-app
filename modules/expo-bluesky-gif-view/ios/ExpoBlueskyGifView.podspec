@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary        = 'A simple GIF player for Bluesky'
   s.description    = 'A simple GIF player for Bluesky'
   s.author         = ''
-  s.homepage       = 'https://github.com/bluesky-social/social-app'
+  s.homepage       = 'https://github.com/gander-social/social-app'
   s.platforms      = { :ios => '13.4', :tvos => '13.4' }
   s.source         = { git: '' }
   s.static_framework = true

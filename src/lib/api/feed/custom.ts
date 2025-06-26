@@ -110,7 +110,7 @@ async function loggedOutFetch({
 
   /**
    * Copied from our root `Agent` class
-   * @see https://github.com/bluesky-social/atproto/blob/60df3fc652b00cdff71dd9235d98a7a4bb828f05/packages/api/src/agent.ts#L120
+   * @see https://github.com/gander-social/atproto/blob/60df3fc652b00cdff71dd9235d98a7a4bb828f05/packages/api/src/agent.ts#L120
    */
   const labelersHeader = {
     'atproto-accept-labelers': BskyAgent.appLabelers

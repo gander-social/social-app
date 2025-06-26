@@ -13,10 +13,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/bluesky-social/indigo/atproto/identity"
-	"github.com/bluesky-social/indigo/util/cliutil"
-	"github.com/bluesky-social/indigo/xrpc"
-	"github.com/bluesky-social/social-app/bskyweb"
+	"github.com/gander-social/indigo/atproto/identity"
+	"github.com/gander-social/indigo/util/cliutil"
+	"github.com/gander-social/indigo/xrpc"
+	"github.com/gander-social/social-app/bskyweb"
 
 	"github.com/klauspost/compress/gzhttp"
 	"github.com/klauspost/compress/gzip"

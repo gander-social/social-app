@@ -72,7 +72,7 @@
     "@atproto/api": "^0.15.21",
     "@bitdrift/react-native": "^0.6.8",
     "@braintree/sanitize-url": "^6.0.2",
-    "@discord/bottom-sheet": "bluesky-social/react-native-bottom-sheet",
+    "@discord/bottom-sheet": "gander-social/react-native-bottom-sheet",
     "@emoji-mart/react": "^1.1.1",
     "@expo/html-elements": "^0.12.5",
     "@expo/webpack-config": "^19.0.1",
@@ -193,7 +193,7 @@
     "react-native-keyboard-controller": "^1.17.5",
     "react-native-mmkv": "^2.12.2",
     "react-native-pager-view": "6.8.0",
-    "react-native-progress": "bluesky-social/react-native-progress",
+    "react-native-progress": "gander-social/react-native-progress",
     "react-native-qrcode-styled": "^0.3.3",
     "react-native-reanimated": "~3.17.5",
     "react-native-root-siblings": "^5.0.1",
@@ -358,8 +358,8 @@
       "wrap-ansi-cjs:wrap-ansi"
     ],
     "allowedUrls": [
-      "https://codeload.github.com/bluesky-social/react-native-bottom-sheet/tar.gz/28a87d1bb55e10fc355fa1455545a30734995908",
-      "https://codeload.github.com/bluesky-social/react-native-progress/tar.gz/5a372f4f2ce5feb26f4f47b6a4d187ab9b923ab4",
+      "https://codeload.github.com/gander-social/react-native-bottom-sheet/tar.gz/28a87d1bb55e10fc355fa1455545a30734995908",
+      "https://codeload.github.com/gander-social/react-native-progress/tar.gz/5a372f4f2ce5feb26f4f47b6a4d187ab9b923ab4",
       "https://codeload.github.com/mattermost/react-native-paste-input/tar.gz/f260447edc645a817ab1ba7b46d8341d84dba8e9"
     ],
     "emptyHostname": false,

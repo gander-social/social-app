@@ -245,7 +245,7 @@ export function sanitizeAppLanguageSetting(appLanguage: string): AppLanguage {
 /**
  * Handles legacy migration for Java devices.
  *
- * {@link https://github.com/bluesky-social/social-app/pull/4461}
+ * {@link https://github.com/gander-social/social-app/pull/4461}
  * {@link https://xml.coverpages.org/iso639a.html}
  */
 export function fixLegacyLanguageCode(code: string | null): string | null {

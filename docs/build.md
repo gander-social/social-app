@@ -102,7 +102,7 @@ However, if you're a part of the Bluesky team and want to enable bitdrift, fill 
 This is NOT required for app development but if you also want to develop the Bluesky *backend* locally too, you'll need this.
 
 - Start the dev servers
-  - `git clone git@github.com:bluesky-social/atproto.git`
+  - `git clone git@github.com:gander-social/atproto.git`
   - `cd atproto`
   - `brew install pnpm`
   - optional: `brew install jq`
