@@ -1,5 +1,5 @@
 // Regex from the go implementation
-// https://github.com/gander-social/indigo/blob/main/atproto/syntax/handle.go#L10
+// https://github.com/gander-social/gander-indigo-sovereign/blob/main/atproto/syntax/handle.go#L10
 import {forceLTR} from '#/lib/strings/bidi'
 
 const VALIDATE_REGEX =

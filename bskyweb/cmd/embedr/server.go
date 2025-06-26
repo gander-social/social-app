@@ -13,9 +13,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gander-social/indigo/atproto/identity"
-	"github.com/gander-social/indigo/util/cliutil"
-	"github.com/gander-social/indigo/xrpc"
+	"github.com/gander-social/gander-indigo-sovereign/atproto/identity"
+	"github.com/gander-social/gander-indigo-sovereign/util/cliutil"
+	"github.com/gander-social/gander-indigo-sovereign/xrpc"
 	"github.com/gander-social/social-app/bskyweb"
 
 	"github.com/klauspost/compress/gzhttp"

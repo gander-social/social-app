@@ -5,7 +5,7 @@ import (
 	"slices"
 	"strings"
 
-	appbsky "github.com/gander-social/indigo/api/bsky"
+	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
 )
 
 // Function to expand shortened links in rich text back to full urls, replacing shortened urls in social card meta tags and the noscript output.

@@ -19,10 +19,10 @@ import (
 	"syscall"
 	"time"
 
-	appbsky "github.com/gander-social/indigo/api/bsky"
-	"github.com/gander-social/indigo/atproto/syntax"
-	"github.com/gander-social/indigo/util/cliutil"
-	"github.com/gander-social/indigo/xrpc"
+	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
+	"github.com/gander-social/gander-indigo-sovereign/util/cliutil"
+	"github.com/gander-social/gander-indigo-sovereign/xrpc"
 	"github.com/gander-social/social-app/bskyweb"
 
 	"github.com/flosch/pongo2/v6"

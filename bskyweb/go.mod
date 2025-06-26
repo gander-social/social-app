@@ -5,7 +5,7 @@ go 1.23
 toolchain go1.23.4
 
 require (
-	github.com/gander-social/indigo v0.0.0-20250605010711-db9bb60025dc
+	github.com/gander-social/gander-indigo-sovereign v0.0.0-20250605010711-db9bb60025dc
 	github.com/flosch/pongo2/v6 v6.0.0
 	github.com/ipfs/go-log v1.0.5
 	github.com/joho/godotenv v1.5.1

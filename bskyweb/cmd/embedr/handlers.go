@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	appbsky "github.com/gander-social/indigo/api/bsky"
-	"github.com/gander-social/indigo/atproto/syntax"
+	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 
 	"github.com/labstack/echo/v4"
 )

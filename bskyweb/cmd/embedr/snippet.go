@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"html/template"
 
-	appbsky "github.com/gander-social/indigo/api/bsky"
-	"github.com/gander-social/indigo/atproto/syntax"
+	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 )
 
 func (srv *Server) postEmbedHTML(postView *appbsky.FeedDefs_PostView) (string, error) {
