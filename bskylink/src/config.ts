@@ -60,7 +60,7 @@ export const envToCfg = (env: Environment): Config => {
     port: env.port ?? 3000,
     version: env.version,
     hostnames: env.hostnames,
-    appHostname: env.appHostname || 'bsky.app',
+    appHostname: env.appHostname || 'gndr.app',
   }
   if (!env.dbPostgresUrl) {
     throw new Error('Must configure postgres url (LINK_DB_POSTGRES_URL)')

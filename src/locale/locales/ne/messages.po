@@ -771,8 +771,8 @@ msgid "Adult Content"
 msgstr "वयस्क सामग्री"
 
 #: src/screens/Moderation/index.tsx:374
-msgid "Adult content can only be enabled via the Web at <0>bsky.app</0>."
-msgstr "वयस्क सामग्री मात्र वेब मार्फत <0>bsky.app</0> मा सक्षम गर्न सकिन्छ।"
+msgid "Adult content can only be enabled via the Web at <0>gndr.app</0>."
+msgstr "वयस्क सामग्री मात्र वेब मार्फत <0>gndr.app</0> मा सक्षम गर्न सकिन्छ।"
 
 #: src/components/moderation/LabelPreference.tsx:242
 msgid "Adult content is disabled."

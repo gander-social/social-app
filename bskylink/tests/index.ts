@@ -12,7 +12,7 @@ describe('link service', async () => {
     const cfg = envToCfg({
       ...env,
       hostnames: ['test.bsky.link'],
-      appHostname: 'test.bsky.app',
+      appHostname: 'test.gndr.app',
       dbPostgresSchema: 'link_test',
       dbPostgresUrl: process.env.DB_POSTGRES_URL,
     })

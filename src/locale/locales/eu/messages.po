@@ -771,8 +771,8 @@ msgid "Adult Content"
 msgstr "Eduki heldua"
 
 #: src/screens/Moderation/index.tsx:374
-msgid "Adult content can only be enabled via the Web at <0>bsky.app</0>."
-msgstr "Eduki heldua <0>bsky.app</0> Web bidez bakarrik gaitu daiteke."
+msgid "Adult content can only be enabled via the Web at <0>gndr.app</0>."
+msgstr "Eduki heldua <0>gndr.app</0> Web bidez bakarrik gaitu daiteke."
 
 #: src/components/moderation/LabelPreference.tsx:242
 msgid "Adult content is disabled."

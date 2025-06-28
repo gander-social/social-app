@@ -24,7 +24,7 @@ func run(args []string) {
 
 	app := cli.App{
 		Name:  "embedr",
-		Usage: "web server for embed.bsky.app post embeds",
+		Usage: "web server for embed.gndr.app post embeds",
 	}
 
 	app.Commands = []*cli.Command{
@@ -36,7 +36,7 @@ func run(args []string) {
 				&cli.StringFlag{
 					Name:    "appview-host",
 					Usage:   "method, hostname, and port of PDS instance",
-					Value:   "https://public.api.bsky.app",
+					Value:   "https://public.api.gndr.app",
 					EnvVars: []string{"ATP_APPVIEW_HOST"},
 				},
 				&cli.StringFlag{

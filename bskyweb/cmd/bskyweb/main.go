@@ -24,7 +24,7 @@ func run(args []string) {
 
 	app := cli.App{
 		Name:  "bskyweb",
-		Usage: "web server for bsky.app web app (SPA)",
+		Usage: "web server for gndr.app web app (SPA)",
 	}
 
 	app.Commands = []*cli.Command{
@@ -84,7 +84,7 @@ func run(args []string) {
 					Name:     "cors-allowed-origins",
 					Usage:    "list of allowed origins for CORS requests",
 					Required: false,
-					Value:    cli.NewStringSlice("https://bsky.app", "https://main.bsky.dev", "https://app.staging.bsky.dev"),
+					Value:    cli.NewStringSlice("https://gndr.app", "https://main.bsky.dev", "https://app.staging.bsky.dev"),
 					EnvVars:  []string{"CORS_ALLOWED_ORIGINS"},
 				},
 				&cli.StringFlag{
@@ -96,7 +96,7 @@ func run(args []string) {
 				},
 				&cli.BoolFlag{
 					Name:     "bsky-canonical-instance",
-					Usage:    "Enable if this is the canonical deployment (bsky.app)",
+					Usage:    "Enable if this is the canonical deployment (gndr.app)",
 					Value:    false,
 					Required: false,
 					EnvVars:  []string{"BSKY_CANONICAL_INSTANCE"},

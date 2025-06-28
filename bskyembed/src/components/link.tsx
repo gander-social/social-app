@@ -21,7 +21,7 @@ export function Link({
 
   return (
     <a
-      href={`${href.startsWith('http') ? href : `https://bsky.app${href}`}${
+      href={`${href.startsWith('http') ? href : `https://gndr.app${href}`}${
         disableTracking ? '' : `?${newSearchParam.toString()}`
       }`}
       target="_blank"

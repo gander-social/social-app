@@ -4,7 +4,7 @@ Welcome friends! This is the codebase for the Bluesky Social app.
 
 Get the app itself:
 
-- **Web: [bsky.app](https://bsky.app)**
+- **Web: [gndr.app](https://gndr.app)**
 - **iOS: [App Store](https://apps.apple.com/us/app/gander-social/id6444370199)**
 - **Android: [Play Store](https://play.google.com/store/apps/details?id=xyz.blueskyweb.app)**
 
@@ -59,7 +59,7 @@ Please be sure to:
 
 ## Security disclosures
 
-If you discover any security issues, please send an email to security@bsky.app. The email is automatically CCed to the entire team and we'll respond promptly.
+If you discover any security issues, please send an email to security@gndr.app. The email is automatically CCed to the entire team and we'll respond promptly.
 
 ## Are you a developer interested in building on atproto?
 

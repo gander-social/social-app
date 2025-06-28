@@ -100,7 +100,7 @@ export function StepFinished() {
 
       await Promise.all([
         bulkWriteFollows(agent, [
-          BSKY_APP_ACCOUNT_DID,
+          GNDR_APP_ACCOUNT_DID,
           ...(listItems?.map(i => i.subject.did) ?? []),
         ]),
         (async () => {

@@ -771,8 +771,8 @@ msgid "Adult Content"
 msgstr "成人內容"
 
 #: src/screens/Moderation/index.tsx:374
-msgid "Adult content can only be enabled via the Web at <0>bsky.app</0>."
-msgstr "淨係可以喺網頁版 (<0>bsky.app</0>) 啓用成人內容顯示。"
+msgid "Adult content can only be enabled via the Web at <0>gndr.app</0>."
+msgstr "淨係可以喺網頁版 (<0>gndr.app</0>) 啓用成人內容顯示。"
 
 #: src/components/moderation/LabelPreference.tsx:242
 msgid "Adult content is disabled."

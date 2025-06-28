@@ -14,7 +14,7 @@ const root = document.getElementById('app')
 if (!root) throw new Error('No root element')
 
 const agent = new AtpAgent({
-  service: 'https://public.api.bsky.app',
+  service: 'https://public.api.gndr.app',
 })
 
 const uri = `at://${window.location.pathname.slice('/embed/'.length)}`
@@ -90,9 +90,9 @@ function PwiOptOut({thread}: {thread: AppBskyFeedDefs.ThreadViewPost}) {
 
 function ErrorMessage() {
   return (
-    <Container href="https://bsky.app/">
+    <Container href="https://gndr.app/">
       <Link
-        href="https://bsky.app/"
+        href="https://gndr.app/"
         className="transition-transform hover:scale-110 absolute top-4 right-4">
         <img src={logo} className="h-6" />
       </Link>

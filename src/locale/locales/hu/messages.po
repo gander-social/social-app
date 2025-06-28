@@ -771,8 +771,8 @@ msgid "Adult Content"
 msgstr "Felnőtt tartalom"
 
 #: src/screens/Moderation/index.tsx:374
-msgid "Adult content can only be enabled via the Web at <0>bsky.app</0>."
-msgstr "A felnőtt tartalmakat csak böngészőből, a <0>bsky.app</0> honlapon engedélyezheted."
+msgid "Adult content can only be enabled via the Web at <0>gndr.app</0>."
+msgstr "A felnőtt tartalmakat csak böngészőből, a <0>gndr.app</0> honlapon engedélyezheted."
 
 #: src/components/moderation/LabelPreference.tsx:242
 msgid "Adult content is disabled."

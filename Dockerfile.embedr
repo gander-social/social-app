@@ -76,5 +76,5 @@ COPY --from=build-env /embedr /usr/bin/embedr
 CMD ["/usr/bin/embedr"]
 
 LABEL org.opencontainers.image.source=https://github.com/gander-social/social-app
-LABEL org.opencontainers.image.description="embed.bsky.app Web App"
+LABEL org.opencontainers.image.description="embed.gndr.app Web App"
 LABEL org.opencontainers.image.licenses=MIT
