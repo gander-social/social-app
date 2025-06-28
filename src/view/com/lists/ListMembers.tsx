@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react'
 import {Dimensions, type StyleProp, View, type ViewStyle} from 'react-native'
-import {type AppBskyGraphDefs} from '@atproto/api'
+import {type AppGndrGraphDefs} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -157,7 +157,7 @@ export function ListMembers({
         return <ProfileCardFeedLoadingPlaceholder />
       }
 
-      const profile = (item as AppBskyGraphDefs.ListItemView).subject
+      const profile = (item as AppGndrGraphDefs.ListItemView).subject
       if (!moderationOpts) return null
 
       return (

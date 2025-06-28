@@ -1,6 +1,6 @@
 import {memo, useEffect, useMemo, useState} from 'react'
 import {View} from 'react-native'
-import {AppBskyActorDefs, AppBskyFeedPost, AtUri} from '@atproto/api'
+import {AppGndrActorDefs, AppGndrFeedPost, AtUri} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -24,10 +24,10 @@ export type ColorModeValues = 'system' | 'light' | 'dark'
 
 type EmbedDialogProps = {
   control: Dialog.DialogControlProps
-  postAuthor: AppBskyActorDefs.ProfileViewBasic
+  postAuthor: AppGndrActorDefs.ProfileViewBasic
   postCid: string
   postUri: string
-  record: AppBskyFeedPost.Record
+  record: AppGndrFeedPost.Record
   timestamp: string
 }
 

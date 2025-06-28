@@ -1,5 +1,5 @@
 import {View} from 'react-native'
-import {type AppBskyActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -177,7 +177,7 @@ function VerifierCard({
   subject,
   outerDialogControl,
 }: {
-  verification: AppBskyActorDefs.VerificationView
+  verification: AppGndrActorDefs.VerificationView
   subject: gndr.profile.AnyProfileView
   outerDialogControl: Dialog.DialogControlProps
 }) {

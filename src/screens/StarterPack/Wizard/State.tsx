@@ -116,8 +116,8 @@ export function Provider({
   listItems,
   children,
 }: {
-  starterPack?: AppBskyGraphDefs.StarterPackView
-  listItems?: AppBskyGraphDefs.ListItemView[]
+  starterPack?: AppGndrGraphDefs.StarterPackView
+  listItems?: AppGndrGraphDefs.ListItemView[]
   children: React.ReactNode
 }) {
   const {currentAccount} = useSession()
@@ -125,7 +125,7 @@ export function Provider({
   const createInitialState = (): State => {
     if (
       starterPack &&
-      gndr.validate(starterPack.record, AppBskyGraphStarterpack.validateRecord)
+      gndr.validate(starterPack.record, AppGndrGraphStarterpack.validateRecord)
     ) {
       return {
         canNext: true,

@@ -1,8 +1,8 @@
 import {
   $Typed,
-  AppBskyActorDefs,
-  AppBskyGraphGetStarterPack,
-  BskyAgent,
+  AppGndrActorDefs,
+  AppGndrGraphGetStarterPack,
+  GndrAgent,
   ComAtprotoRepoApplyWrites,
   Facet,
 } from '@atproto/api'
@@ -28,7 +28,7 @@ export const createStarterPackList = async ({
   description?: string
   descriptionFacets?: Facet[]
   profiles: gndr.profile.AnyProfileView[]
-  agent: BskyAgent
+  agent: GndrAgent
 }): Promise<{uri: string; cid: string}> => {
   if (profiles.length === 0) throw new Error('No profiles given')
 
@@ -71,8 +71,8 @@ export function useGenerateStarterPackMutation({
 
   return useMutation<{uri: string; cid: string}, Error, void>({
     mutationFn: async () => {
-      let profile: AppBskyActorDefs.ProfileViewDetailed | undefined
-      let profiles: AppBskyActorDefs.ProfileView[] | undefined
+      let profile: AppGndrActorDefs.ProfileViewDetailed | undefined
+      let profiles: AppGndrActorDefs.ProfileView[] | undefined
 
       await Promise.all([
         (async () => {
@@ -159,9 +159,9 @@ function createListItem({
 }
 
 async function whenAppViewReady(
-  agent: BskyAgent,
+  agent: GndrAgent,
   uri: string,
-  fn: (res?: AppBskyGraphGetStarterPack.Response) => boolean,
+  fn: (res?: AppGndrGraphGetStarterPack.Response) => boolean,
 ) {
   await until(
     5, // 5 tries

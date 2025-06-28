@@ -7,7 +7,7 @@ import Animated, {
   runOnUI,
   useAnimatedRef,
 } from 'react-native-reanimated'
-import {type AppBskyGraphDefs} from '@atproto/api'
+import {type AppGndrGraphDefs} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'
@@ -42,7 +42,7 @@ export function ProfileSubpageHeader({
   title: string | undefined
   avatar: string | undefined
   isOwner: boolean | undefined
-  purpose: AppBskyGraphDefs.ListPurpose | undefined
+  purpose: AppGndrGraphDefs.ListPurpose | undefined
   creator:
     | {
         did: string

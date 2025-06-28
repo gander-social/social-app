@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppBskyUnspeccedDefs} from '@atproto/api'
+import {AppGndrUnspeccedDefs} from '@atproto/api'
 import {hasMutedWord} from '@atproto/api/dist/moderation/mutewords'
 import {useQuery} from '@tanstack/react-query'
 
@@ -7,7 +7,7 @@ import {STALE} from '#/state/queries'
 import {usePreferencesQuery} from '#/state/queries/preferences'
 import {useAgent} from '#/state/session'
 
-export type TrendingTopic = AppBskyUnspeccedDefs.TrendingTopic
+export type TrendingTopic = AppGndrUnspeccedDefs.TrendingTopic
 
 type Response = {
   topics: TrendingTopic[]

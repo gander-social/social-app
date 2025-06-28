@@ -7,13 +7,13 @@ import {
   ViewStyle,
 } from 'react-native'
 import {
-  AppBskyEmbedExternal,
-  AppBskyEmbedImages,
-  AppBskyEmbedRecord,
-  AppBskyEmbedRecordWithMedia,
-  AppBskyEmbedVideo,
-  AppBskyFeedDefs,
-  AppBskyFeedPost,
+  AppGndrEmbedExternal,
+  AppGndrEmbedImages,
+  AppGndrEmbedRecord,
+  AppGndrEmbedRecordWithMedia,
+  AppGndrEmbedVideo,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
   moderatePost,
   ModerationDecision,
   RichText as RichTextAPI,
@@ -52,7 +52,7 @@ export function MaybeQuoteEmbed({
   allowNestedQuotes,
   viewContext,
 }: {
-  embed: AppBskyEmbedRecord.View
+  embed: AppGndrEmbedRecord.View
   onOpen?: () => void
   style?: StyleProp<ViewStyle>
   allowNestedQuotes?: boolean
@@ -62,9 +62,9 @@ export function MaybeQuoteEmbed({
   const pal = usePalette('default')
   const {currentAccount} = useSession()
   if (
-    AppBskyEmbedRecord.isViewRecord(embed.record) &&
-    AppBskyFeedPost.isRecord(embed.record.value) &&
-    AppBskyFeedPost.validateRecord(embed.record.value).success
+    AppGndrEmbedRecord.isViewRecord(embed.record) &&
+    AppGndrFeedPost.isRecord(embed.record.value) &&
+    AppGndrFeedPost.validateRecord(embed.record.value).success
   ) {
     return (
       <QuoteEmbedModerated
@@ -75,7 +75,7 @@ export function MaybeQuoteEmbed({
         viewContext={viewContext}
       />
     )
-  } else if (AppBskyEmbedRecord.isViewBlocked(embed.record)) {
+  } else if (AppGndrEmbedRecord.isViewBlocked(embed.record)) {
     return (
       <View
         style={[styles.errorContainer, a.border, t.atoms.border_contrast_low]}>
@@ -85,7 +85,7 @@ export function MaybeQuoteEmbed({
         </Text>
       </View>
     )
-  } else if (AppBskyEmbedRecord.isViewNotFound(embed.record)) {
+  } else if (AppGndrEmbedRecord.isViewNotFound(embed.record)) {
     return (
       <View
         style={[styles.errorContainer, a.border, t.atoms.border_contrast_low]}>
@@ -95,7 +95,7 @@ export function MaybeQuoteEmbed({
         </Text>
       </View>
     )
-  } else if (AppBskyEmbedRecord.isViewDetached(embed.record)) {
+  } else if (AppGndrEmbedRecord.isViewDetached(embed.record)) {
     const isViewerOwner = currentAccount?.did
       ? embed.record.uri.includes(currentAccount.did)
       : false
@@ -123,7 +123,7 @@ function QuoteEmbedModerated({
   allowNestedQuotes,
   viewContext,
 }: {
-  viewRecord: AppBskyEmbedRecord.ViewRecord
+  viewRecord: AppGndrEmbedRecord.ViewRecord
   onOpen?: () => void
   style?: StyleProp<ViewStyle>
   allowNestedQuotes?: boolean
@@ -157,7 +157,7 @@ export function QuoteEmbed({
   style,
   allowNestedQuotes,
 }: {
-  quote: AppBskyFeedDefs.PostView
+  quote: AppGndrFeedDefs.PostView
   moderation?: ModerationDecision
   onOpen?: () => void
   style?: StyleProp<ViewStyle>
@@ -173,9 +173,9 @@ export function QuoteEmbed({
 
   const richText = React.useMemo(() => {
     if (
-      !gndr.dangerousIsType<AppBskyFeedPost.Record>(
+      !gndr.dangerousIsType<AppGndrFeedPost.Record>(
         quote.record,
-        AppBskyFeedPost.isRecord,
+        AppGndrFeedPost.isRecord,
       )
     )
       return undefined
@@ -192,16 +192,16 @@ export function QuoteEmbed({
       return e
     } else {
       if (
-        AppBskyEmbedImages.isView(e) ||
-        AppBskyEmbedExternal.isView(e) ||
-        AppBskyEmbedVideo.isView(e)
+        AppGndrEmbedImages.isView(e) ||
+        AppGndrEmbedExternal.isView(e) ||
+        AppGndrEmbedVideo.isView(e)
       ) {
         return e
       } else if (
-        AppBskyEmbedRecordWithMedia.isView(e) &&
-        (AppBskyEmbedImages.isView(e.media) ||
-          AppBskyEmbedExternal.isView(e.media) ||
-          AppBskyEmbedVideo.isView(e.media))
+        AppGndrEmbedRecordWithMedia.isView(e) &&
+        (AppGndrEmbedImages.isView(e.media) ||
+          AppGndrEmbedExternal.isView(e.media) ||
+          AppGndrEmbedVideo.isView(e.media))
       ) {
         return e.media
       }
@@ -309,8 +309,8 @@ export function LazyQuoteEmbed({uri}: {uri: string}) {
 }
 
 function viewRecordToPostView(
-  viewRecord: AppBskyEmbedRecord.ViewRecord,
-): AppBskyFeedDefs.PostView {
+  viewRecord: AppGndrEmbedRecord.ViewRecord,
+): AppGndrFeedDefs.PostView {
   const {value, embeds, ...rest} = viewRecord
   return {
     ...rest,

@@ -1,8 +1,8 @@
 import {useCallback, useMemo, useState} from 'react'
 import {type StyleProp, StyleSheet, View, type ViewStyle} from 'react-native'
 import {
-  type AppBskyFeedDefs,
-  AppBskyFeedPost,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
   AtUri,
   moderatePost,
   type ModerationDecision,
@@ -49,15 +49,15 @@ export function Post({
   hideTopBorder,
   style,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   showReplyLine?: boolean
   hideTopBorder?: boolean
   style?: StyleProp<ViewStyle>
 }) {
   const moderationOpts = useModerationOpts()
-  const record = useMemo<AppBskyFeedPost.Record | undefined>(
+  const record = useMemo<AppGndrFeedPost.Record | undefined>(
     () =>
-      gndr.validate(post.record, AppBskyFeedPost.validateRecord)
+      gndr.validate(post.record, AppGndrFeedPost.validateRecord)
         ? post.record
         : undefined,
     [post],
@@ -105,8 +105,8 @@ function PostInner({
   hideTopBorder,
   style,
 }: {
-  post: Shadow<AppBskyFeedDefs.PostView>
-  record: AppBskyFeedPost.Record
+  post: Shadow<AppGndrFeedDefs.PostView>
+  record: AppGndrFeedPost.Record
   richText: RichTextAPI
   moderation: ModerationDecision
   showReplyLine?: boolean

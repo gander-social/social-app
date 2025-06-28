@@ -1,11 +1,11 @@
 import React from 'react'
 import {
-  AppBskyEmbedRecord,
-  AppBskyEmbedRecordWithMedia,
-  type AppBskyFeedDefs,
-  AppBskyFeedPostgate,
+  AppGndrEmbedRecord,
+  AppGndrEmbedRecordWithMedia,
+  type AppGndrFeedDefs,
+  AppGndrFeedPostgate,
   AtUri,
-  type BskyAgent,
+  type GndrAgent,
 } from '@atproto/api'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
@@ -27,9 +27,9 @@ export async function getPostgateRecord({
   agent,
   postUri,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
-}): Promise<AppBskyFeedPostgate.Record | undefined> {
+}): Promise<AppGndrFeedPostgate.Record | undefined> {
   const urip = new AtUri(postUri)
 
   if (!urip.host.startsWith('did:')) {
@@ -63,7 +63,7 @@ export async function getPostgateRecord({
 
     if (
       data.value &&
-      gndr.validate(data.value, AppBskyFeedPostgate.validateRecord)
+      gndr.validate(data.value, AppGndrFeedPostgate.validateRecord)
     ) {
       return data.value
     } else {
@@ -88,9 +88,9 @@ export async function writePostgateRecord({
   postUri,
   postgate,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
-  postgate: AppBskyFeedPostgate.Record
+  postgate: AppGndrFeedPostgate.Record
 }) {
   const postUrip = new AtUri(postUri)
 
@@ -109,12 +109,12 @@ export async function upsertPostgate(
     agent,
     postUri,
   }: {
-    agent: BskyAgent
+    agent: GndrAgent
     postUri: string
   },
   callback: (
-    postgate: AppBskyFeedPostgate.Record | undefined,
-  ) => Promise<AppBskyFeedPostgate.Record | undefined>,
+    postgate: AppGndrFeedPostgate.Record | undefined,
+  ) => Promise<AppGndrFeedPostgate.Record | undefined>,
 ) {
   const prev = await getPostgateRecord({
     agent,
@@ -153,7 +153,7 @@ export function useWritePostgateMutation() {
       postgate,
     }: {
       postUri: string
-      postgate: AppBskyFeedPostgate.Record
+      postgate: AppGndrFeedPostgate.Record
     }) => {
       return writePostgateRecord({
         agent,
@@ -173,7 +173,7 @@ export function useToggleQuoteDetachmentMutation() {
   const agent = useAgent()
   const queryClient = useQueryClient()
   const getPosts = useGetPosts()
-  const prevEmbed = React.useRef<AppBskyFeedDefs.PostView['embed']>()
+  const prevEmbed = React.useRef<AppGndrFeedDefs.PostView['embed']>()
 
   return useMutation({
     mutationFn: async ({
@@ -181,7 +181,7 @@ export function useToggleQuoteDetachmentMutation() {
       quoteUri,
       action,
     }: {
-      post: AppBskyFeedDefs.PostView
+      post: AppGndrFeedDefs.PostView
       quoteUri: string
       action: 'detach' | 'reattach'
     }) => {
@@ -247,8 +247,8 @@ export function useToggleQuoteDetachmentMutation() {
       if (action === 'detach' && prevEmbed.current) {
         // detach failed, add the embed back
         if (
-          AppBskyEmbedRecord.isView(prevEmbed.current) ||
-          AppBskyEmbedRecordWithMedia.isView(prevEmbed.current)
+          AppGndrEmbedRecord.isView(prevEmbed.current) ||
+          AppGndrEmbedRecordWithMedia.isView(prevEmbed.current)
         ) {
           updatePostShadow(queryClient, post.uri, {
             embed: prevEmbed.current,

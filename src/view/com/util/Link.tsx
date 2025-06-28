@@ -20,7 +20,7 @@ import {
 import {useOpenLink} from '#/lib/hooks/useOpenLink'
 import {getTabState, TabState} from '#/lib/routes/helpers'
 import {
-  convertBskyAppUrlIfNeeded,
+  convertGndrAppUrlIfNeeded,
   isExternalUrl,
   linkRequiresWarning,
 } from '#/lib/strings/url-helpers'
@@ -397,7 +397,7 @@ function onPressInner(
   }
 
   if (shouldHandle) {
-    href = convertBskyAppUrlIfNeeded(href)
+    href = convertGndrAppUrlIfNeeded(href)
     if (
       newTab ||
       href.startsWith('http') ||

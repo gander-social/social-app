@@ -2,7 +2,7 @@ import {useQuery} from '@tanstack/react-query'
 
 import {
   aggregateUserInterests,
-  createBskyTopicsHeader,
+  createGndrTopicsHeader,
 } from '#/lib/api/feed/utils'
 import {getContentLanguages} from '#/state/preferences/languages'
 import {STALE} from '#/state/queries'
@@ -27,7 +27,7 @@ export function useSuggestedStarterPacksQuery({enabled}: {enabled?: boolean}) {
         undefined,
         {
           headers: {
-            ...createBskyTopicsHeader(aggregateUserInterests(preferences)),
+            ...createGndrTopicsHeader(aggregateUserInterests(preferences)),
             'Accept-Language': contentLangs,
           },
         },

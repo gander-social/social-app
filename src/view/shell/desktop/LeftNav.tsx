@@ -1,6 +1,6 @@
 import {useCallback, useMemo, useState} from 'react'
 import {StyleSheet, View} from 'react-native'
-import {type AppBskyActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@atproto/api'
 import {msg, plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {
@@ -224,7 +224,7 @@ function SwitchMenuItems({
   accounts:
     | {
         account: SessionAccount
-        profile?: AppBskyActorDefs.ProfileViewDetailed
+        profile?: AppGndrActorDefs.ProfileViewDetailed
       }[]
     | undefined
   signOutPromptControl: DialogControlProps
@@ -279,7 +279,7 @@ function SwitchMenuItem({
   profile,
 }: {
   account: SessionAccount
-  profile: AppBskyActorDefs.ProfileViewDetailed | undefined
+  profile: AppGndrActorDefs.ProfileViewDetailed | undefined
 }) {
   const {_} = useLingui()
   const {onPressSwitchAccount, pendingDid} = useAccountSwitcher()

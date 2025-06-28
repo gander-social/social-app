@@ -1,11 +1,11 @@
 import {
-  AppBskyFeedDefs,
-  AppBskyGraphDefs,
-  AppBskyGraphGetStarterPack,
-  AppBskyGraphStarterpack,
-  AppBskyRichtextFacet,
+  AppGndrFeedDefs,
+  AppGndrGraphDefs,
+  AppGndrGraphGetStarterPack,
+  AppGndrGraphStarterpack,
+  AppGndrRichtextFacet,
   AtUri,
-  BskyAgent,
+  GndrAgent,
   RichText,
 } from '@atproto/api'
 import {StarterPackView} from '@atproto/api/dist/client/types/app/gndr/graph/defs'
@@ -94,7 +94,7 @@ interface UseCreateStarterPackMutationParams {
   name: string
   description?: string
   profiles: gndr.profile.AnyProfileView[]
-  feeds?: AppBskyFeedDefs.GeneratorView[]
+  feeds?: AppGndrFeedDefs.GeneratorView[]
 }
 
 export function useCreateStarterPackMutation({
@@ -113,7 +113,7 @@ export function useCreateStarterPackMutation({
     UseCreateStarterPackMutationParams
   >({
     mutationFn: async ({name, description, feeds, profiles}) => {
-      let descriptionFacets: AppBskyRichtextFacet.Main[] | undefined
+      let descriptionFacets: AppGndrRichtextFacet.Main[] | undefined
       if (description) {
         const rt = new RichText({text: description})
         await rt.detectFacets(agent)
@@ -173,8 +173,8 @@ export function useEditStarterPackMutation({
     void,
     Error,
     UseCreateStarterPackMutationParams & {
-      currentStarterPack: AppBskyGraphDefs.StarterPackView
-      currentListItems: AppBskyGraphDefs.ListItemView[]
+      currentStarterPack: AppGndrGraphDefs.StarterPackView
+      currentListItems: AppGndrGraphDefs.ListItemView[]
     }
   >({
     mutationFn: async ({
@@ -185,14 +185,14 @@ export function useEditStarterPackMutation({
       currentStarterPack,
       currentListItems,
     }) => {
-      let descriptionFacets: AppBskyRichtextFacet.Main[] | undefined
+      let descriptionFacets: AppGndrRichtextFacet.Main[] | undefined
       if (description) {
         const rt = new RichText({text: description})
         await rt.detectFacets(agent)
         descriptionFacets = rt.facets
       }
 
-      if (!AppBskyGraphStarterpack.isRecord(currentStarterPack.record)) {
+      if (!AppGndrGraphStarterpack.isRecord(currentStarterPack.record)) {
         throw new Error('Invalid starter pack')
       }
 
@@ -341,9 +341,9 @@ export function useDeleteStarterPackMutation({
 }
 
 async function whenAppViewReady(
-  agent: BskyAgent,
+  agent: GndrAgent,
   uri: string,
-  fn: (res?: AppBskyGraphGetStarterPack.Response) => boolean,
+  fn: (res?: AppGndrGraphGetStarterPack.Response) => boolean,
 ) {
   await until(
     5, // 5 tries
@@ -356,21 +356,21 @@ async function whenAppViewReady(
 export async function precacheStarterPack(
   queryClient: QueryClient,
   starterPack:
-    | AppBskyGraphDefs.StarterPackViewBasic
-    | AppBskyGraphDefs.StarterPackView,
+    | AppGndrGraphDefs.StarterPackViewBasic
+    | AppGndrGraphDefs.StarterPackView,
 ) {
-  if (!AppBskyGraphStarterpack.isRecord(starterPack.record)) {
+  if (!AppGndrGraphStarterpack.isRecord(starterPack.record)) {
     return
   }
 
-  let starterPackView: AppBskyGraphDefs.StarterPackView | undefined
-  if (AppBskyGraphDefs.isStarterPackView(starterPack)) {
+  let starterPackView: AppGndrGraphDefs.StarterPackView | undefined
+  if (AppGndrGraphDefs.isStarterPackView(starterPack)) {
     starterPackView = starterPack
   } else if (
-    AppBskyGraphDefs.isStarterPackViewBasic(starterPack) &&
-    gndr.validate(starterPack.record, AppBskyGraphStarterpack.validateRecord)
+    AppGndrGraphDefs.isStarterPackViewBasic(starterPack) &&
+    gndr.validate(starterPack.record, AppGndrGraphStarterpack.validateRecord)
   ) {
-    const listView: AppBskyGraphDefs.ListViewBasic = {
+    const listView: AppGndrGraphDefs.ListViewBasic = {
       uri: starterPack.record.list,
       // This will be populated once the data from server is fetched
       cid: '',

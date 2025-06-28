@@ -1,4 +1,4 @@
-import {AppBskyActorDefs, AppBskyGraphGetMutes} from '@atproto/api'
+import {AppGndrActorDefs, AppGndrGraphGetMutes} from '@atproto/api'
 import {
   InfiniteData,
   QueryClient,
@@ -15,9 +15,9 @@ type RQPageParam = string | undefined
 export function useMyMutedAccountsQuery() {
   const agent = useAgent()
   return useInfiniteQuery<
-    AppBskyGraphGetMutes.OutputSchema,
+    AppGndrGraphGetMutes.OutputSchema,
     Error,
-    InfiniteData<AppBskyGraphGetMutes.OutputSchema>,
+    InfiniteData<AppGndrGraphGetMutes.OutputSchema>,
     QueryKey,
     RQPageParam
   >({
@@ -37,9 +37,9 @@ export function useMyMutedAccountsQuery() {
 export function* findAllProfilesInQueryData(
   queryClient: QueryClient,
   did: string,
-): Generator<AppBskyActorDefs.ProfileView, void> {
+): Generator<AppGndrActorDefs.ProfileView, void> {
   const queryDatas = queryClient.getQueriesData<
-    InfiniteData<AppBskyGraphGetMutes.OutputSchema>
+    InfiniteData<AppGndrGraphGetMutes.OutputSchema>
   >({
     queryKey: [RQKEY_ROOT],
   })

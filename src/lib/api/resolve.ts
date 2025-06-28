@@ -1,10 +1,10 @@
 import {
-  type AppBskyFeedDefs,
-  type AppBskyGraphDefs,
+  type AppGndrFeedDefs,
+  type AppGndrGraphDefs,
   type ComAtprotoRepoStrongRef,
 } from '@atproto/api'
 import {AtUri} from '@atproto/api'
-import {type BskyAgent} from '@atproto/api'
+import {type GndrAgent} from '@atproto/api'
 
 import {POST_IMG_MAX} from '#/lib/constants'
 import {getLinkMeta} from '#/lib/link-meta/link-meta'
@@ -15,18 +15,18 @@ import {
   parseStarterPackUri,
 } from '#/lib/strings/starter-pack'
 import {
-  isBskyCustomFeedUrl,
-  isBskyListUrl,
-  isBskyPostUrl,
-  isBskyStarterPackUrl,
-  isBskyStartUrl,
+  isGndrCustomFeedUrl,
+  isGndrListUrl,
+  isGndrPostUrl,
+  isGndrStarterPackUrl,
+  isGndrStartUrl,
   isShortLink,
 } from '#/lib/strings/url-helpers'
 import {type ComposerImage} from '#/state/gallery'
 import {createComposerImage} from '#/state/gallery'
 import {type Gif} from '#/state/queries/tenor'
 import {createGIFDescription} from '../gif-alt-text'
-import {convertBskyAppUrlIfNeeded, makeRecordUri} from '../strings/url-helpers'
+import {convertGndrAppUrlIfNeeded, makeRecordUri} from '../strings/url-helpers'
 
 type ResolvedExternalLink = {
   type: 'external'
@@ -40,28 +40,28 @@ type ResolvedPostRecord = {
   type: 'record'
   record: ComAtprotoRepoStrongRef.Main
   kind: 'post'
-  view: AppBskyFeedDefs.PostView
+  view: AppGndrFeedDefs.PostView
 }
 
 type ResolvedFeedRecord = {
   type: 'record'
   record: ComAtprotoRepoStrongRef.Main
   kind: 'feed'
-  view: AppBskyFeedDefs.GeneratorView
+  view: AppGndrFeedDefs.GeneratorView
 }
 
 type ResolvedListRecord = {
   type: 'record'
   record: ComAtprotoRepoStrongRef.Main
   kind: 'list'
-  view: AppBskyGraphDefs.ListView
+  view: AppGndrGraphDefs.ListView
 }
 
 type ResolvedStarterPackRecord = {
   type: 'record'
   record: ComAtprotoRepoStrongRef.Main
   kind: 'starter-pack'
-  view: AppBskyGraphDefs.StarterPackView
+  view: AppGndrGraphDefs.StarterPackView
 }
 
 export type ResolvedLink =
@@ -78,14 +78,14 @@ export class EmbeddingDisabledError extends Error {
 }
 
 export async function resolveLink(
-  agent: BskyAgent,
+  agent: GndrAgent,
   uri: string,
 ): Promise<ResolvedLink> {
   if (isShortLink(uri)) {
     uri = await resolveShortLink(uri)
   }
-  if (isBskyPostUrl(uri)) {
-    uri = convertBskyAppUrlIfNeeded(uri)
+  if (isGndrPostUrl(uri)) {
+    uri = convertGndrAppUrlIfNeeded(uri)
     const [_0, user, _1, rkey] = uri.split('/').filter(Boolean)
     const recordUri = makeRecordUri(user, 'app.gndr.feed.post', rkey)
     const post = await getPost({uri: recordUri})
@@ -102,8 +102,8 @@ export async function resolveLink(
       view: post,
     }
   }
-  if (isBskyCustomFeedUrl(uri)) {
-    uri = convertBskyAppUrlIfNeeded(uri)
+  if (isGndrCustomFeedUrl(uri)) {
+    uri = convertGndrAppUrlIfNeeded(uri)
     const [_0, handleOrDid, _1, rkey] = uri.split('/').filter(Boolean)
     const did = await fetchDid(handleOrDid)
     const feed = makeRecordUri(did, 'app.gndr.feed.generator', rkey)
@@ -118,8 +118,8 @@ export async function resolveLink(
       view: res.data.view,
     }
   }
-  if (isBskyListUrl(uri)) {
-    uri = convertBskyAppUrlIfNeeded(uri)
+  if (isGndrListUrl(uri)) {
+    uri = convertGndrAppUrlIfNeeded(uri)
     const [_0, handleOrDid, _1, rkey] = uri.split('/').filter(Boolean)
     const did = await fetchDid(handleOrDid)
     const list = makeRecordUri(did, 'app.gndr.graph.list', rkey)
@@ -134,7 +134,7 @@ export async function resolveLink(
       view: res.data.list,
     }
   }
-  if (isBskyStartUrl(uri) || isBskyStarterPackUrl(uri)) {
+  if (isGndrStartUrl(uri) || isGndrStarterPackUrl(uri)) {
     const parsed = parseStarterPackUri(uri)
     if (!parsed) {
       throw new Error(
@@ -186,7 +186,7 @@ export async function resolveLink(
 }
 
 export async function resolveGif(
-  agent: BskyAgent,
+  agent: GndrAgent,
   gif: Gif,
 ): Promise<ResolvedExternalLink> {
   const uri = `${gif.media_formats.gif.url}?hh=${gif.media_formats.gif.dims[1]}&ww=${gif.media_formats.gif.dims[0]}`
@@ -200,7 +200,7 @@ export async function resolveGif(
 }
 
 async function resolveExternal(
-  agent: BskyAgent,
+  agent: GndrAgent,
   uri: string,
 ): Promise<ResolvedExternalLink> {
   const result = await getLinkMeta(agent, uri)

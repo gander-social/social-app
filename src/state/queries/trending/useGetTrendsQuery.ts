@@ -1,11 +1,11 @@
 import React from 'react'
-import {type AppBskyUnspeccedGetTrends} from '@atproto/api'
+import {type AppGndrUnspeccedGetTrends} from '@atproto/api'
 import {hasMutedWord} from '@atproto/api/dist/moderation/mutewords'
 import {useQuery} from '@tanstack/react-query'
 
 import {
   aggregateUserInterests,
-  createBskyTopicsHeader,
+  createGndrTopicsHeader,
 } from '#/lib/api/feed/utils'
 import {getContentLanguages} from '#/state/preferences/languages'
 import {STALE} from '#/state/queries'
@@ -35,7 +35,7 @@ export function useGetTrendsQuery() {
         },
         {
           headers: {
-            ...createBskyTopicsHeader(aggregateUserInterests(preferences)),
+            ...createGndrTopicsHeader(aggregateUserInterests(preferences)),
             'Accept-Language': contentLangs,
           },
         },
@@ -43,7 +43,7 @@ export function useGetTrendsQuery() {
       return data
     },
     select: React.useCallback(
-      (data: AppBskyUnspeccedGetTrends.OutputSchema) => {
+      (data: AppGndrUnspeccedGetTrends.OutputSchema) => {
         return {
           trends: (data.trends ?? []).filter(t => {
             return !hasMutedWord({

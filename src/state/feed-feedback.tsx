@@ -7,7 +7,7 @@ import {
   useRef,
 } from 'react'
 import {AppState, type AppStateStatus} from 'react-native'
-import {type AppBskyFeedDefs} from '@atproto/api'
+import {type AppGndrFeedDefs} from '@atproto/api'
 import throttle from 'lodash.throttle'
 
 import {FEEDBACK_FEEDS, STAGING_FEEDS} from '#/lib/constants'
@@ -25,14 +25,14 @@ const logger = Logger.create(Logger.Context.FeedFeedback)
 export type StateContext = {
   enabled: boolean
   onItemSeen: (item: any) => void
-  sendInteraction: (interaction: AppBskyFeedDefs.Interaction) => void
+  sendInteraction: (interaction: AppGndrFeedDefs.Interaction) => void
   feedDescriptor: FeedDescriptor | undefined
 }
 
 const stateContext = createContext<StateContext>({
   enabled: false,
   onItemSeen: (_item: any) => {},
-  sendInteraction: (_interaction: AppBskyFeedDefs.Interaction) => {},
+  sendInteraction: (_interaction: AppGndrFeedDefs.Interaction) => {},
   feedDescriptor: undefined,
 })
 
@@ -47,7 +47,7 @@ export function useFeedFeedback(
   const history = useRef<
     // Use a WeakSet so that we don't need to clear it.
     // This assumes that referential identity of slice items maps 1:1 to feed (re)fetches.
-    WeakSet<FeedPostSliceItem | AppBskyFeedDefs.Interaction>
+    WeakSet<FeedPostSliceItem | AppGndrFeedDefs.Interaction>
   >(new WeakSet())
 
   const aggregatedStats = useRef<AggregatedStats | null>(null)
@@ -140,7 +140,7 @@ export function useFeedFeedback(
   )
 
   const sendInteraction = useCallback(
-    (interaction: AppBskyFeedDefs.Interaction) => {
+    (interaction: AppGndrFeedDefs.Interaction) => {
       if (!enabled) {
         return
       }
@@ -184,13 +184,13 @@ function isDiscoverFeed(feed?: FeedDescriptor) {
   return !!feed && FEEDBACK_FEEDS.includes(feed)
 }
 
-function toString(interaction: AppBskyFeedDefs.Interaction): string {
+function toString(interaction: AppGndrFeedDefs.Interaction): string {
   return `${interaction.item}|${interaction.event}|${
     interaction.feedContext || ''
   }|${interaction.reqId || ''}`
 }
 
-function toInteraction(str: string): AppBskyFeedDefs.Interaction {
+function toInteraction(str: string): AppGndrFeedDefs.Interaction {
   const [item, event, feedContext, reqId] = str.split('|')
   return {item, event, feedContext, reqId}
 }
@@ -211,7 +211,7 @@ function createAggregatedStats(): AggregatedStats {
 
 function sendOrAggregateInteractionsForStats(
   stats: AggregatedStats,
-  interactions: AppBskyFeedDefs.Interaction[],
+  interactions: AppGndrFeedDefs.Interaction[],
 ) {
   for (let interaction of interactions) {
     switch (interaction.event) {

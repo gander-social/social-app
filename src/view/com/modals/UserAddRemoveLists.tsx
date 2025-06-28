@@ -5,7 +5,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native'
-import {AppBskyGraphDefs as GraphDefs} from '@atproto/api'
+import {AppGndrGraphDefs as GraphDefs} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyActorProfile,
-  type AppBskyGraphDefs,
-  AppBskyGraphStarterpack,
+  type AppGndrActorProfile,
+  type AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
   type Un$Typed,
 } from '@atproto/api'
 import {type SavedFeed} from '@atproto/api/dist/client/types/app/gndr/actor/defs'
@@ -14,7 +14,7 @@ import {useQueryClient} from '@tanstack/react-query'
 
 import {uploadBlob} from '#/lib/api'
 import {
-  BSKY_APP_ACCOUNT_DID,
+  GNDR_APP_ACCOUNT_DID,
   DISCOVER_SAVED_FEED,
   TIMELINE_SAVED_FEED,
   VIDEO_SAVED_FEED,
@@ -69,8 +69,8 @@ export function StepFinished() {
   const finishOnboarding = React.useCallback(async () => {
     setSaving(true)
 
-    let starterPack: AppBskyGraphDefs.StarterPackView | undefined
-    let listItems: AppBskyGraphDefs.ListItemView[] | undefined
+    let starterPack: AppGndrGraphDefs.StarterPackView | undefined
+    let listItems: AppGndrGraphDefs.ListItemView[] | undefined
 
     if (activeStarterPack?.uri) {
       try {
@@ -147,7 +147,7 @@ export function StepFinished() {
               : undefined
 
           await agent.upsertProfile(async existing => {
-            let next: Un$Typed<AppBskyActorProfile.Record> = existing ?? {}
+            let next: Un$Typed<AppGndrActorProfile.Record> = existing ?? {}
 
             if (blobPromise) {
               const res = await blobPromise
@@ -213,9 +213,9 @@ export function StepFinished() {
       usedStarterPack: Boolean(starterPack),
       starterPackName:
         starterPack &&
-        gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
+        gndr.dangerousIsType<AppGndrGraphStarterpack.Record>(
           starterPack.record,
-          AppBskyGraphStarterpack.isRecord,
+          AppGndrGraphStarterpack.isRecord,
         )
           ? starterPack.record.name
           : undefined,

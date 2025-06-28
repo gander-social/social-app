@@ -1,7 +1,7 @@
 import {Keyboard, View} from 'react-native'
 import {
-  AppBskyActorDefs,
-  AppBskyFeedDefs,
+  AppGndrActorDefs,
+  AppGndrFeedDefs,
   moderateFeedGenerator,
   moderateProfile,
   ModerationOpts,
@@ -37,8 +37,8 @@ function WizardListCard({
 }: {
   type: 'user' | 'algo'
   btnType: 'checkbox' | 'remove'
-  profile?: AppBskyActorDefs.ProfileViewBasic
-  feed?: AppBskyFeedDefs.GeneratorView
+  profile?: AppGndrActorDefs.ProfileViewBasic
+  feed?: AppGndrFeedDefs.GeneratorView
   displayName: string
   subtitle: string
   onPress: () => void

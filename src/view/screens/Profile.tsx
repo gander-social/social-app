@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react'
 import {StyleSheet} from 'react-native'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import {
-  type AppBskyActorDefs,
+  type AppGndrActorDefs,
   moderateProfile,
   type ModerationOpts,
   RichText as RichTextAPI,
@@ -160,7 +160,7 @@ function ProfileScreenLoaded({
   moderationOpts,
   hideBackButton,
 }: {
-  profile: AppBskyActorDefs.ProfileViewDetailed
+  profile: AppGndrActorDefs.ProfileViewDetailed
   moderationOpts: ModerationOpts
   hideBackButton: boolean
   isPlaceholderProfile: boolean

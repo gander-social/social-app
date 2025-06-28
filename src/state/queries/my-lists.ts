@@ -1,4 +1,4 @@
-import {AppBskyGraphDefs} from '@atproto/api'
+import {AppGndrGraphDefs} from '@atproto/api'
 import {QueryClient, useQuery} from '@tanstack/react-query'
 
 import {accumulate} from '#/lib/async/accumulate'
@@ -17,11 +17,11 @@ export const RQKEY = (filter: MyListsFilter) => [RQKEY_ROOT, filter]
 export function useMyListsQuery(filter: MyListsFilter) {
   const {currentAccount} = useSession()
   const agent = useAgent()
-  return useQuery<AppBskyGraphDefs.ListView[]>({
+  return useQuery<AppGndrGraphDefs.ListView[]>({
     staleTime: STALE.MINUTES.ONE,
     queryKey: RQKEY(filter),
     async queryFn() {
-      let lists: AppBskyGraphDefs.ListView[] = []
+      let lists: AppGndrGraphDefs.ListView[] = []
       const promises = [
         accumulate(cursor =>
           agent.app.gndr.graph

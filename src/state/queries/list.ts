@@ -1,10 +1,10 @@
 import {
   type $Typed,
-  type AppBskyGraphDefs,
-  type AppBskyGraphGetList,
-  type AppBskyGraphList,
+  type AppGndrGraphDefs,
+  type AppGndrGraphGetList,
+  type AppGndrGraphList,
   AtUri,
-  type BskyAgent,
+  type GndrAgent,
   type ComAtprotoRepoApplyWrites,
   type Facet,
   type Un$Typed,
@@ -25,7 +25,7 @@ export const RQKEY = (uri: string) => [RQKEY_ROOT, uri]
 
 export function useListQuery(uri?: string) {
   const agent = useAgent()
-  return useQuery<AppBskyGraphDefs.ListView, Error>({
+  return useQuery<AppGndrGraphDefs.ListView, Error>({
     staleTime: STALE.MINUTES.ONE,
     queryKey: RQKEY(uri || ''),
     async queryFn() {
@@ -71,7 +71,7 @@ export function useListCreateMutation() {
         ) {
           throw new Error('Invalid list purpose: must be curatelist or modlist')
         }
-        const record: Un$Typed<AppBskyGraphList.Record> = {
+        const record: Un$Typed<AppGndrGraphList.Record> = {
           purpose,
           name,
           description,
@@ -94,7 +94,7 @@ export function useListCreateMutation() {
         await whenAppViewReady(
           agent,
           res.uri,
-          (v: AppBskyGraphGetList.Response) => {
+          (v: AppGndrGraphGetList.Response) => {
             return typeof v?.data?.list.uri === 'string'
           },
         )
@@ -164,7 +164,7 @@ export function useListMetadataMutation() {
       await whenAppViewReady(
         agent,
         res.uri,
-        (v: AppBskyGraphGetList.Response) => {
+        (v: AppGndrGraphGetList.Response) => {
           const list = v.data.list
           return (
             list.name === record.name && list.description === record.description
@@ -238,7 +238,7 @@ export function useListDeleteMutation() {
       }
 
       // wait for the appview to update
-      await whenAppViewReady(agent, uri, (v: AppBskyGraphGetList.Response) => {
+      await whenAppViewReady(agent, uri, (v: AppGndrGraphGetList.Response) => {
         return !v?.success
       })
     },
@@ -263,7 +263,7 @@ export function useListMuteMutation() {
         await agent.unmuteModList(uri)
       }
 
-      await whenAppViewReady(agent, uri, (v: AppBskyGraphGetList.Response) => {
+      await whenAppViewReady(agent, uri, (v: AppGndrGraphGetList.Response) => {
         return Boolean(v?.data.list.viewer?.muted) === mute
       })
     },
@@ -286,7 +286,7 @@ export function useListBlockMutation() {
         await agent.unblockModList(uri)
       }
 
-      await whenAppViewReady(agent, uri, (v: AppBskyGraphGetList.Response) => {
+      await whenAppViewReady(agent, uri, (v: AppGndrGraphGetList.Response) => {
         return block
           ? typeof v?.data.list.viewer?.blocked === 'string'
           : !v?.data.list.viewer?.blocked
@@ -301,9 +301,9 @@ export function useListBlockMutation() {
 }
 
 async function whenAppViewReady(
-  agent: BskyAgent,
+  agent: GndrAgent,
   uri: string,
-  fn: (res: AppBskyGraphGetList.Response) => boolean,
+  fn: (res: AppGndrGraphGetList.Response) => boolean,
 ) {
   await until(
     5, // 5 tries

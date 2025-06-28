@@ -4,7 +4,7 @@ import type ViewShot from 'react-native-view-shot'
 import {requestMediaLibraryPermissionsAsync} from 'expo-image-picker'
 import {createAssetAsync} from 'expo-media-library'
 import * as Sharing from 'expo-sharing'
-import {type AppBskyGraphDefs, AppBskyGraphStarterpack} from '@atproto/api'
+import {type AppGndrGraphDefs, AppGndrGraphStarterpack} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -25,7 +25,7 @@ export function QrCodeDialog({
   link,
   control,
 }: {
-  starterPack: AppBskyGraphDefs.StarterPackView
+  starterPack: AppGndrGraphDefs.StarterPackView
   link?: string
   control: DialogControlProps
 }) {
@@ -81,7 +81,7 @@ export function QrCodeDialog({
         if (
           !gndr.validate(
             starterPack.record,
-            AppBskyGraphStarterpack.validateRecord,
+            AppGndrGraphStarterpack.validateRecord,
           )
         ) {
           return

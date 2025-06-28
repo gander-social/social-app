@@ -33,7 +33,7 @@ export function unstableCacheProfileView(
  * Hook to access the unstable profile view cache. This cache can return ANY
  * profile view type, so if the object shape is important, you need to use the
  * identity validators shipped in the atproto SDK e.g.
- * `AppBskyActorDefs.isValidProfileViewBasic` to confirm before using.
+ * `AppGndrActorDefs.isValidProfileViewBasic` to confirm before using.
  *
  * To cache a profile, use {@link unstableCacheProfileView}.
  */

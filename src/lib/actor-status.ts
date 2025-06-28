@@ -1,8 +1,8 @@
 import {useMemo} from 'react'
 import {
   type $Typed,
-  type AppBskyActorDefs,
-  AppBskyEmbedExternal,
+  type AppGndrActorDefs,
+  AppGndrEmbedExternal,
 } from '@atproto/api'
 import {isAfter, parseISO} from 'date-fns'
 
@@ -29,16 +29,16 @@ export function useActorStatus(actor?: gndr.profile.AnyProfileView) {
       return {
         isActive: true,
         status: 'app.gndr.actor.status#live',
-        embed: shadowed.status.embed as $Typed<AppBskyEmbedExternal.View>, // temp_isStatusValid asserts this
+        embed: shadowed.status.embed as $Typed<AppGndrEmbedExternal.View>, // temp_isStatusValid asserts this
         expiresAt: shadowed.status.expiresAt!, // isStatusStillActive asserts this
         record: shadowed.status.record,
-      } satisfies AppBskyActorDefs.StatusView
+      } satisfies AppGndrActorDefs.StatusView
     } else {
       return {
         status: '',
         isActive: false,
         record: {},
-      } satisfies AppBskyActorDefs.StatusView
+      } satisfies AppGndrActorDefs.StatusView
     }
   }, [shadowed, config, tick])
 }
@@ -53,7 +53,7 @@ export function isStatusStillActive(timeStr: string | undefined) {
 
 export function validateStatus(
   did: string,
-  status: AppBskyActorDefs.StatusView,
+  status: AppGndrActorDefs.StatusView,
   config: {did: string; domains: string[]}[],
 ) {
   if (status.status !== 'app.gndr.actor.status#live') return false
@@ -62,7 +62,7 @@ export function validateStatus(
     return false
   }
   try {
-    if (AppBskyEmbedExternal.isView(status.embed)) {
+    if (AppGndrEmbedExternal.isView(status.embed)) {
       const url = new URL(status.embed.external.uri)
       return sources.domains.includes(url.hostname)
     } else {

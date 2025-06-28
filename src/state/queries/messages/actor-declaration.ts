@@ -1,4 +1,4 @@
-import {type AppBskyActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@atproto/api'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
 
 import {logger} from '#/logger'
@@ -34,7 +34,7 @@ export function useUpdateActorDeclaration({
       if (!currentAccount) return
       queryClient.setQueryData(
         PROFILE_RKEY(currentAccount?.did),
-        (old?: AppBskyActorDefs.ProfileViewDetailed) => {
+        (old?: AppGndrActorDefs.ProfileViewDetailed) => {
           if (!old) return old
           return {
             ...old,
@@ -44,7 +44,7 @@ export function useUpdateActorDeclaration({
                 allowIncoming,
               },
             },
-          } satisfies AppBskyActorDefs.ProfileViewDetailed
+          } satisfies AppGndrActorDefs.ProfileViewDetailed
         },
       )
     },

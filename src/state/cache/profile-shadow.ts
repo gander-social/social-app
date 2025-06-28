@@ -1,5 +1,5 @@
 import {useEffect, useMemo, useState} from 'react'
-import {type AppBskyActorDefs, type AppBskyNotificationDefs} from '@atproto/api'
+import {type AppGndrActorDefs, type AppGndrNotificationDefs} from '@atproto/api'
 import {type QueryClient} from '@tanstack/react-query'
 import EventEmitter from 'eventemitter3'
 
@@ -32,9 +32,9 @@ export interface ProfileShadow {
   followingUri: string | undefined
   muted: boolean | undefined
   blockingUri: string | undefined
-  verification: AppBskyActorDefs.VerificationState
-  status: AppBskyActorDefs.StatusView | undefined
-  activitySubscription: AppBskyNotificationDefs.ActivitySubscription | undefined
+  verification: AppGndrActorDefs.VerificationState
+  status: AppGndrActorDefs.StatusView | undefined
+  activitySubscription: AppGndrNotificationDefs.ActivitySubscription | undefined
 }
 
 const shadows: WeakMap<

@@ -1,4 +1,4 @@
-import {ChatBskyConvoDefs} from '@atproto/api'
+import {ChatGndrConvoDefs} from '@atproto/api'
 import {
   QueryClient,
   useMutation,
@@ -19,7 +19,7 @@ import {
 const RQKEY_ROOT = 'convo'
 export const RQKEY = (convoId: string) => [RQKEY_ROOT, convoId]
 
-export function useConvoQuery(convo: ChatBskyConvoDefs.ConvoView) {
+export function useConvoQuery(convo: ChatGndrConvoDefs.ConvoView) {
   const agent = useAgent()
 
   return useQuery({
@@ -38,7 +38,7 @@ export function useConvoQuery(convo: ChatBskyConvoDefs.ConvoView) {
 
 export function precacheConvoQuery(
   queryClient: QueryClient,
-  convo: ChatBskyConvoDefs.ConvoView,
+  convo: ChatGndrConvoDefs.ConvoView,
 ) {
   queryClient.setQueryData(RQKEY(convo.id), convo)
 }

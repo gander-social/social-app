@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  BSKY_LABELER_DID,
+  GNDR_LABELER_DID,
   type ModerationCause,
   type ModerationCauseSource,
 } from '@atproto/api'
@@ -137,7 +137,7 @@ export function useModerationCauseDescription(
         : undefined
       let sourceDisplayName = labeler?.creator.displayName
       if (!source) {
-        if (cause.label.src === BSKY_LABELER_DID) {
+        if (cause.label.src === GNDR_LABELER_DID) {
           source = 'moderation.gndr.app'
           sourceDisplayName = 'Bluesky Moderation Service'
         } else {

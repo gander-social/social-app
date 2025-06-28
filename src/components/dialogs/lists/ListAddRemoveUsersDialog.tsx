@@ -1,6 +1,6 @@
 import {useCallback, useMemo} from 'react'
 import {View} from 'react-native'
-import {type AppBskyGraphDefs, type ModerationOpts} from '@atproto/api'
+import {type AppGndrGraphDefs, type ModerationOpts} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -31,7 +31,7 @@ export function ListAddRemoveUsersDialog({
   onChange,
 }: {
   control: Dialog.DialogControlProps
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   onChange?: (
     type: 'add' | 'remove',
     profile: gndr.profile.AnyProfileView,
@@ -49,7 +49,7 @@ function DialogInner({
   list,
   onChange,
 }: {
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   onChange?: (
     type: 'add' | 'remove',
     profile: gndr.profile.AnyProfileView,
@@ -90,7 +90,7 @@ function UserResult({
   moderationOpts,
 }: {
   profile: gndr.profile.AnyProfileView
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   memberships: ListMembersip[] | undefined
   onChange?: (
     type: 'add' | 'remove',

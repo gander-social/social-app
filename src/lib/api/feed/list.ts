@@ -1,7 +1,7 @@
 import {
   type Agent,
-  type AppBskyFeedDefs,
-  type AppBskyFeedGetListFeed as GetListFeed,
+  type AppGndrFeedDefs,
+  type AppGndrFeedGetListFeed as GetListFeed,
 } from '@atproto/api'
 
 import {type FeedAPI, type FeedAPIResponse} from './types'
@@ -21,7 +21,7 @@ export class ListFeedAPI implements FeedAPI {
     this.params = feedParams
   }
 
-  async peekLatest(): Promise<AppBskyFeedDefs.FeedViewPost> {
+  async peekLatest(): Promise<AppGndrFeedDefs.FeedViewPost> {
     const res = await this.agent.app.gndr.feed.getListFeed({
       ...this.params,
       limit: 1,

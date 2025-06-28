@@ -1,7 +1,7 @@
 import {
-  AppBskyFeedDefs,
-  AppBskyFeedGetFeed as GetCustomFeed,
-  BskyAgent,
+  AppGndrFeedDefs,
+  AppGndrFeedGetFeed as GetCustomFeed,
+  GndrAgent,
   jsonStringToLex,
 } from '@atproto/api'
 
@@ -10,10 +10,10 @@ import {
   getContentLanguages,
 } from '#/state/preferences/languages'
 import {FeedAPI, FeedAPIResponse} from './types'
-import {createBskyTopicsHeader, isBlueskyOwnedFeed} from './utils'
+import {createGndrTopicsHeader, isBlueskyOwnedFeed} from './utils'
 
 export class CustomFeedAPI implements FeedAPI {
-  agent: BskyAgent
+  agent: GndrAgent
   params: GetCustomFeed.QueryParams
   userInterests?: string
 
@@ -22,7 +22,7 @@ export class CustomFeedAPI implements FeedAPI {
     feedParams,
     userInterests,
   }: {
-    agent: BskyAgent
+    agent: GndrAgent
     feedParams: GetCustomFeed.QueryParams
     userInterests?: string
   }) {
@@ -31,7 +31,7 @@ export class CustomFeedAPI implements FeedAPI {
     this.userInterests = userInterests
   }
 
-  async peekLatest(): Promise<AppBskyFeedDefs.FeedViewPost> {
+  async peekLatest(): Promise<AppGndrFeedDefs.FeedViewPost> {
     const contentLangs = getContentLanguages().join(',')
     const res = await this.agent.app.gndr.feed.getFeed(
       {
@@ -64,7 +64,7 @@ export class CustomFeedAPI implements FeedAPI {
           {
             headers: {
               ...(isBlueskyOwned
-                ? createBskyTopicsHeader(this.userInterests)
+                ? createGndrTopicsHeader(this.userInterests)
                 : {}),
               'Accept-Language': contentLangs,
             },
@@ -113,7 +113,7 @@ async function loggedOutFetch({
    * @see https://github.com/gander-social/atproto/blob/60df3fc652b00cdff71dd9235d98a7a4bb828f05/packages/api/src/agent.ts#L120
    */
   const labelersHeader = {
-    'atproto-accept-labelers': BskyAgent.appLabelers
+    'atproto-accept-labelers': GndrAgent.appLabelers
       .map(l => `${l};redact`)
       .join(', '),
   }

@@ -1,7 +1,7 @@
 import React from 'react'
 import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native'
 import {Image} from 'expo-image'
-import {AppBskyFeedDefs} from '@atproto/api'
+import {AppGndrFeedDefs} from '@atproto/api'
 import {Trans} from '@lingui/macro'
 
 import {isTenorGifUri} from '#/lib/strings/embed-player'
@@ -18,7 +18,7 @@ export function Embed({
   embed,
   style,
 }: {
-  embed: AppBskyFeedDefs.PostView['embed']
+  embed: AppGndrFeedDefs.PostView['embed']
   style?: StyleProp<ViewStyle>
 }) {
   const e = gndr.post.parseEmbed(embed)

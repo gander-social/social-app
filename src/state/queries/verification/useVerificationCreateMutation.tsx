@@ -1,4 +1,4 @@
-import {type AppBskyActorGetProfile} from '@atproto/api'
+import {type AppGndrActorGetProfile} from '@atproto/api'
 import {useMutation} from '@tanstack/react-query'
 
 import {until} from '#/lib/async/until'
@@ -31,7 +31,7 @@ export function useVerificationCreateMutation() {
       await until(
         5,
         1e3,
-        ({data: profile}: AppBskyActorGetProfile.Response) => {
+        ({data: profile}: AppGndrActorGetProfile.Response) => {
           if (
             profile.verification &&
             profile.verification.verifications.find(v => v.uri === uri)

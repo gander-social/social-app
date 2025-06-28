@@ -1,6 +1,6 @@
 import React, {useCallback} from 'react'
 import {Keyboard, Pressable, View} from 'react-native'
-import {ChatBskyConvoDefs, ModerationCause} from '@atproto/api'
+import {ChatGndrConvoDefs, ModerationCause} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'
@@ -45,7 +45,7 @@ let ConvoMenu = ({
   latestReportableMessage,
   style,
 }: {
-  convo: ChatBskyConvoDefs.ConvoView
+  convo: ChatGndrConvoDefs.ConvoView
   profile: Shadow<gndr.profile.AnyProfileView>
   control?: Menu.MenuControlProps
   currentScreen: 'list' | 'conversation'
@@ -55,7 +55,7 @@ let ConvoMenu = ({
     listBlocks: ModerationCause[]
     userBlock?: ModerationCause
   }
-  latestReportableMessage?: ChatBskyConvoDefs.MessageView
+  latestReportableMessage?: ChatGndrConvoDefs.MessageView
   style?: ViewStyleProp['style']
 }): React.ReactNode => {
   const {_} = useLingui()
@@ -144,7 +144,7 @@ function MenuContent({
   reportControl,
   blockedByListControl,
 }: {
-  convo: ChatBskyConvoDefs.ConvoView
+  convo: ChatGndrConvoDefs.ConvoView
   profile: Shadow<gndr.profile.AnyProfileView>
   showMarkAsRead?: boolean
   blockInfo: {

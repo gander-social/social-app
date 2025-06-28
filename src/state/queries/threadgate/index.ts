@@ -1,9 +1,9 @@
 import {
-  AppBskyFeedDefs,
-  AppBskyFeedGetPostThread,
-  AppBskyFeedThreadgate,
+  AppGndrFeedDefs,
+  AppGndrFeedGetPostThread,
+  AppGndrFeedThreadgate,
   AtUri,
-  BskyAgent,
+  GndrAgent,
 } from '@atproto/api'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
@@ -36,7 +36,7 @@ export function useThreadgateRecordQuery({
   initialData,
 }: {
   postUri?: string
-  initialData?: AppBskyFeedThreadgate.Record
+  initialData?: AppGndrFeedThreadgate.Record
 } = {}) {
   const agent = useAgent()
 
@@ -64,7 +64,7 @@ export function useThreadgateViewQuery({
   initialData,
 }: {
   postUri?: string
-  initialData?: AppBskyFeedDefs.ThreadgateView
+  initialData?: AppGndrFeedDefs.ThreadgateView
 } = {}) {
   const agent = useAgent()
 
@@ -86,7 +86,7 @@ export async function getThreadgateView({
   agent,
   postUri,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
 }) {
   const {data} = await agent.app.gndr.feed.getPostThread({
@@ -94,7 +94,7 @@ export async function getThreadgateView({
     depth: 0,
   })
 
-  if (AppBskyFeedDefs.isThreadViewPost(data.thread)) {
+  if (AppGndrFeedDefs.isThreadViewPost(data.thread)) {
     return data.thread.post.threadgate ?? null
   }
 
@@ -105,9 +105,9 @@ export async function getThreadgateRecord({
   agent,
   postUri,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
-}): Promise<AppBskyFeedThreadgate.Record | null> {
+}): Promise<AppGndrFeedThreadgate.Record | null> {
   const urip = new AtUri(postUri)
 
   if (!urip.host.startsWith('did:')) {
@@ -141,7 +141,7 @@ export async function getThreadgateRecord({
 
     if (
       data.value &&
-      gndr.validate(data.value, AppBskyFeedThreadgate.validateRecord)
+      gndr.validate(data.value, AppGndrFeedThreadgate.validateRecord)
     ) {
       return data.value
     } else {
@@ -166,9 +166,9 @@ export async function writeThreadgateRecord({
   postUri,
   threadgate,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
-  threadgate: AppBskyFeedThreadgate.Record
+  threadgate: AppGndrFeedThreadgate.Record
 }) {
   const postUrip = new AtUri(postUri)
   const record = createThreadgateRecord({
@@ -192,12 +192,12 @@ export async function upsertThreadgate(
     agent,
     postUri,
   }: {
-    agent: BskyAgent
+    agent: GndrAgent
     postUri: string
   },
   callback: (
-    threadgate: AppBskyFeedThreadgate.Record | null,
-  ) => Promise<AppBskyFeedThreadgate.Record | undefined>,
+    threadgate: AppGndrFeedThreadgate.Record | null,
+  ) => Promise<AppGndrFeedThreadgate.Record | undefined>,
 ) {
   const prev = await getThreadgateRecord({
     agent,
@@ -220,7 +220,7 @@ export async function updateThreadgateAllow({
   postUri,
   allow,
 }: {
-  agent: BskyAgent
+  agent: GndrAgent
   postUri: string
   allow: ThreadgateAllowUISetting[]
 }) {
@@ -269,9 +269,9 @@ export function useSetThreadgateAllowMutation() {
       await until(
         5, // 5 tries
         1e3, // 1s delay between tries
-        (res: AppBskyFeedGetPostThread.Response) => {
+        (res: AppGndrFeedGetPostThread.Response) => {
           const thread = res.data.thread
-          if (AppBskyFeedDefs.isThreadViewPost(thread)) {
+          if (AppGndrFeedDefs.isThreadViewPost(thread)) {
             const fetchedSettings = threadgateViewToAllowUISetting(
               thread.post.threadgate,
             )

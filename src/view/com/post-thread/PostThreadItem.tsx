@@ -6,9 +6,9 @@ import {
   View,
 } from 'react-native'
 import {
-  AppBskyFeedDefs,
-  AppBskyFeedPost,
-  type AppBskyFeedThreadgate,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
+  type AppGndrFeedThreadgate,
   AtUri,
   type ModerationDecision,
   RichText as RichTextAPI,
@@ -92,8 +92,8 @@ export function PostThreadItem({
   threadgateRecord,
   anchorPostSource,
 }: {
-  post: AppBskyFeedDefs.PostView
-  record: AppBskyFeedPost.Record
+  post: AppGndrFeedDefs.PostView
+  record: AppGndrFeedPost.Record
   moderation: ModerationDecision | undefined
   treeView: boolean
   depth: number
@@ -108,7 +108,7 @@ export function PostThreadItem({
   onPostReply: (postUri: string | undefined) => void
   onPostSuccess?: (data: OnPostSuccessData) => void
   hideTopBorder?: boolean
-  threadgateRecord?: AppBskyFeedThreadgate.Record
+  threadgateRecord?: AppGndrFeedThreadgate.Record
   anchorPostSource?: PostSource
 }) {
   const postShadowed = usePostShadow(post)
@@ -195,8 +195,8 @@ let PostThreadItemLoaded = ({
   threadgateRecord,
   anchorPostSource,
 }: {
-  post: Shadow<AppBskyFeedDefs.PostView>
-  record: AppBskyFeedPost.Record
+  post: Shadow<AppGndrFeedDefs.PostView>
+  record: AppGndrFeedPost.Record
   richText: RichTextAPI
   moderation: ModerationDecision
   treeView: boolean
@@ -212,7 +212,7 @@ let PostThreadItemLoaded = ({
   onPostReply: (postUri: string | undefined) => void
   onPostSuccess?: (data: OnPostSuccessData) => void
   hideTopBorder?: boolean
-  threadgateRecord?: AppBskyFeedThreadgate.Record
+  threadgateRecord?: AppGndrFeedThreadgate.Record
   anchorPostSource?: PostSource
 }): React.ReactNode => {
   const {currentAccount, hasSession} = useSession()
@@ -339,7 +339,7 @@ let PostThreadItemLoaded = ({
 
   const reason = anchorPostSource?.post.reason
   const viaRepost = useMemo(() => {
-    if (AppBskyFeedDefs.isReasonRepost(reason) && reason.uri && reason.cid) {
+    if (AppGndrFeedDefs.isReasonRepost(reason) && reason.uri && reason.cid) {
       return {
         uri: reason.uri,
         cid: reason.cid,
@@ -752,7 +752,7 @@ function PostOuterWrapper({
   hideTopBorder,
   children,
 }: React.PropsWithChildren<{
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   treeView: boolean
   depth: number
   showParentReplyLine: boolean
@@ -828,7 +828,7 @@ function ExpandedPostDetails({
   needsTranslation,
   translatorUrl,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   isThreadAuthor: boolean
   needsTranslation: boolean
   translatorUrl: string
@@ -846,9 +846,9 @@ function ExpandedPostDetails({
       openLink(translatorUrl, true)
 
       if (
-        gndr.dangerousIsType<AppBskyFeedPost.Record>(
+        gndr.dangerousIsType<AppGndrFeedPost.Record>(
           post.record,
-          AppBskyFeedPost.isRecord,
+          AppGndrFeedPost.isRecord,
         )
       ) {
         logger.metric(
@@ -897,15 +897,15 @@ function ExpandedPostDetails({
   )
 }
 
-function BackdatedPostIndicator({post}: {post: AppBskyFeedDefs.PostView}) {
+function BackdatedPostIndicator({post}: {post: AppGndrFeedDefs.PostView}) {
   const t = useTheme()
   const {_, i18n} = useLingui()
   const control = Prompt.usePromptControl()
 
   const indexedAt = new Date(post.indexedAt)
-  const createdAt = gndr.dangerousIsType<AppBskyFeedPost.Record>(
+  const createdAt = gndr.dangerousIsType<AppGndrFeedPost.Record>(
     post.record,
-    AppBskyFeedPost.isRecord,
+    AppGndrFeedPost.isRecord,
   )
     ? new Date(post.record.createdAt)
     : new Date(post.indexedAt)
@@ -990,8 +990,8 @@ function BackdatedPostIndicator({post}: {post: AppBskyFeedDefs.PostView}) {
 }
 
 function getThreadAuthor(
-  post: AppBskyFeedDefs.PostView,
-  record: AppBskyFeedPost.Record,
+  post: AppGndrFeedDefs.PostView,
+  record: AppGndrFeedPost.Record,
 ): string {
   if (!record.reply) {
     return post.author.did

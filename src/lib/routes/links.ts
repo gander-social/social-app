@@ -1,4 +1,4 @@
-import {AppBskyGraphDefs, AtUri} from '@atproto/api'
+import {AppGndrGraphDefs, AtUri} from '@atproto/api'
 
 import {isInvalidHandle} from '#/lib/strings/handles'
 
@@ -44,8 +44,8 @@ export function makeSearchLink(props: {query: string; from?: 'me' | string}) {
 
 export function makeStarterPackLink(
   starterPackOrName:
-    | AppBskyGraphDefs.StarterPackViewBasic
-    | AppBskyGraphDefs.StarterPackView
+    | AppGndrGraphDefs.StarterPackViewBasic
+    | AppGndrGraphDefs.StarterPackView
     | string,
   rkey?: string,
 ) {

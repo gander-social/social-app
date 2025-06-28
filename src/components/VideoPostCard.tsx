@@ -3,10 +3,10 @@ import {View} from 'react-native'
 import {Image} from 'expo-image'
 import {LinearGradient} from 'expo-linear-gradient'
 import {
-  AppBskyActorDefs,
-  AppBskyEmbedVideo,
-  AppBskyFeedDefs,
-  AppBskyFeedPost,
+  AppGndrActorDefs,
+  AppGndrEmbedVideo,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
   ModerationDecision,
 } from '@atproto/api'
 import {msg} from '@lingui/macro'
@@ -43,7 +43,7 @@ export function VideoPostCard({
   moderation,
   onInteract,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   sourceContext: VideoFeedSourceContext
   moderation: ModerationDecision
   /**
@@ -76,12 +76,12 @@ export function VideoPostCard({
    * Filtering should be done at a higher level, such as `PostFeed` or
    * `PostFeedVideoGridRow`, but we need to protect here as well.
    */
-  if (!AppBskyEmbedVideo.isView(embed)) return null
+  if (!AppGndrEmbedVideo.isView(embed)) return null
 
   const author = post.author
-  const text = gndr.dangerousIsType<AppBskyFeedPost.Record>(
+  const text = gndr.dangerousIsType<AppGndrFeedPost.Record>(
     post.record,
-    AppBskyFeedPost.isRecord,
+    AppGndrFeedPost.isRecord,
   )
     ? post.record?.text
     : ''
@@ -276,7 +276,7 @@ export function VideoPostCardPlaceholder() {
 export function VideoPostCardTextPlaceholder({
   author,
 }: {
-  author?: AppBskyActorDefs.ProfileViewBasic
+  author?: AppGndrActorDefs.ProfileViewBasic
 }) {
   const t = useTheme()
 
@@ -356,7 +356,7 @@ export function CompactVideoPostCard({
   moderation,
   onInteract,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   sourceContext: VideoFeedSourceContext
   moderation: ModerationDecision
   /**
@@ -387,7 +387,7 @@ export function CompactVideoPostCard({
    * Filtering should be done at a higher level, such as `PostFeed` or
    * `PostFeedVideoGridRow`, but we need to protect here as well.
    */
-  if (!AppBskyEmbedVideo.isView(embed)) return null
+  if (!AppGndrEmbedVideo.isView(embed)) return null
 
   const likeCount = post?.likeCount ?? 0
   const {thumbnail} = embed

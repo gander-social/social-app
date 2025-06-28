@@ -1,6 +1,6 @@
 import {
-  type AppBskyActorDefs,
-  type AppBskyActorGetProfile,
+  type AppGndrActorDefs,
+  type AppGndrActorGetProfile,
   AtUri,
 } from '@atproto/api'
 import {useMutation} from '@tanstack/react-query'
@@ -22,7 +22,7 @@ export function useVerificationsRemoveMutation() {
       verifications,
     }: {
       profile: gndr.profile.AnyProfileView
-      verifications: AppBskyActorDefs.VerificationView[]
+      verifications: AppGndrActorDefs.VerificationView[]
     }) {
       if (!currentAccount) {
         throw new Error('User not logged in')
@@ -42,7 +42,7 @@ export function useVerificationsRemoveMutation() {
       await until(
         5,
         1e3,
-        ({data: profile}: AppBskyActorGetProfile.Response) => {
+        ({data: profile}: AppGndrActorGetProfile.Response) => {
           if (
             !profile.verification?.verifications.some(v => uris.includes(v.uri))
           ) {

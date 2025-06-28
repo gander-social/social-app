@@ -1,5 +1,5 @@
-import {AtUri, BskyAgent} from '@atproto/api'
-import {TestBsky, TestNetwork} from '@atproto/dev-env'
+import {AtUri, GndrAgent} from '@atproto/api'
+import {TestGndr, TestNetwork} from '@atproto/dev-env'
 import fs from 'fs'
 import net from 'net'
 import path from 'path'
@@ -9,7 +9,7 @@ export interface TestUser {
   did: string
   handle: string
   password: string
-  agent: BskyAgent
+  agent: GndrAgent
 }
 
 export interface TestPDS {
@@ -81,7 +81,7 @@ export async function createServer(
 
   // DISABLED - looks like dev-env added this and now it conflicts
   // add the test mod authority
-  // const agent = new BskyAgent({service: pdsUrl})
+  // const agent = new GndrAgent({service: pdsUrl})
   // const res = await agent.api.com.atproto.server.createAccount({
   //   email: 'mod-authority@test.com',
   //   handle: 'mod-authority.test',
@@ -121,7 +121,7 @@ export async function createServer(
 }
 
 class Mocker {
-  agent: BskyAgent
+  agent: GndrAgent
   users: Record<string, TestUser> = {}
 
   constructor(
@@ -129,7 +129,7 @@ class Mocker {
     public service: string,
     public pic: Uint8Array,
   ) {
-    this.agent = new BskyAgent({service})
+    this.agent = new GndrAgent({service})
   }
 
   get pds() {
@@ -157,7 +157,7 @@ class Mocker {
   }
 
   async createUser(name: string) {
-    const agent = new BskyAgent({service: this.service})
+    const agent = new GndrAgent({service: this.service})
 
     const inviteRes = await agent.api.com.atproto.server.createInviteCode(
       {useCount: 1},
@@ -333,7 +333,7 @@ class Mocker {
   }
 
   async createInvite(forAccount: string) {
-    const agent = new BskyAgent({service: this.service})
+    const agent = new GndrAgent({service: this.service})
     await agent.api.com.atproto.server.createInviteCode(
       {useCount: 1, forAccount},
       {
@@ -443,7 +443,7 @@ async function getPort(start = 3000) {
 }
 
 const createLabel = async (
-  gndr: TestBsky,
+  gndr: TestGndr,
   opts: {uri: string; cid: string; val: string},
 ) => {
   await gndr.db.db

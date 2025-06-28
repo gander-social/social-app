@@ -1,4 +1,4 @@
-import {type AppBskyLabelerDefs} from '@atproto/api'
+import {type AppGndrLabelerDefs} from '@atproto/api'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 import {z} from 'zod'
 
@@ -56,7 +56,7 @@ export function useLabelersInfoQuery({dids}: {dids: string[]}) {
     queryKey: labelersInfoQueryKey(dids),
     queryFn: async () => {
       const res = await agent.app.gndr.labeler.getServices({dids})
-      return res.data.views as AppBskyLabelerDefs.LabelerView[]
+      return res.data.views as AppGndrLabelerDefs.LabelerView[]
     },
   })
 }
@@ -73,7 +73,7 @@ export function useLabelersDetailedInfoQuery({dids}: {dids: string[]}) {
         dids,
         detailed: true,
       })
-      return res.data.views as AppBskyLabelerDefs.LabelerViewDetailed[]
+      return res.data.views as AppGndrLabelerDefs.LabelerViewDetailed[]
     },
   })
 }

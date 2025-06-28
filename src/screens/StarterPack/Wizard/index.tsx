@@ -4,8 +4,8 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-controller'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {Image} from 'expo-image'
 import {
-  AppBskyActorDefs,
-  AppBskyGraphDefs,
+  AppGndrActorDefs,
+  AppGndrGraphDefs,
   AtUri,
   ModerationOpts,
 } from '@atproto/api'
@@ -139,9 +139,9 @@ function WizardInner({
   profile,
   moderationOpts,
 }: {
-  currentStarterPack?: AppBskyGraphDefs.StarterPackView
-  currentListItems?: AppBskyGraphDefs.ListItemView[]
-  profile: AppBskyActorDefs.ProfileViewDetailed
+  currentStarterPack?: AppGndrGraphDefs.StarterPackView
+  currentListItems?: AppGndrGraphDefs.ListItemView[]
+  profile: AppGndrActorDefs.ProfileViewDetailed
   moderationOpts: ModerationOpts
 }) {
   const navigation = useNavigation<NavigationProp>()
@@ -363,7 +363,7 @@ function Footer({
   onNext: () => void
   nextBtnText: string
   moderationOpts: ModerationOpts
-  profile: AppBskyActorDefs.ProfileViewDetailed
+  profile: AppGndrActorDefs.ProfileViewDetailed
 }) {
   const {_} = useLingui()
   const t = useTheme()

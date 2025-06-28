@@ -1,6 +1,6 @@
 import React from 'react'
 import {View} from 'react-native'
-import {AppBskyActorDefs, moderateProfile, ModerationOpts} from '@atproto/api'
+import {AppGndrActorDefs, moderateProfile, ModerationOpts} from '@atproto/api'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -23,7 +23,7 @@ const AVI_BORDER = 1
  * `count` includes blocked users and `followers` does not.
  */
 export function shouldShowKnownFollowers(
-  knownFollowers?: AppBskyActorDefs.KnownFollowers,
+  knownFollowers?: AppGndrActorDefs.KnownFollowers,
 ) {
   return knownFollowers && knownFollowers.followers.length > 0
 }
@@ -41,7 +41,7 @@ export function KnownFollowers({
   minimal?: boolean
   showIfEmpty?: boolean
 }) {
-  const cache = React.useRef<Map<string, AppBskyActorDefs.KnownFollowers>>(
+  const cache = React.useRef<Map<string, AppGndrActorDefs.KnownFollowers>>(
     new Map(),
   )
 
@@ -84,7 +84,7 @@ function KnownFollowersInner({
 }: {
   profile: gndr.profile.AnyProfileView
   moderationOpts: ModerationOpts
-  cachedKnownFollowers: AppBskyActorDefs.KnownFollowers
+  cachedKnownFollowers: AppGndrActorDefs.KnownFollowers
   onLinkPress?: LinkProps['onPress']
   minimal?: boolean
   showIfEmpty?: boolean

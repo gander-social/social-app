@@ -1,8 +1,8 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyGraphDefs,
-  AppBskyGraphStarterpack,
+  type AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
   moderateProfile,
 } from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
@@ -26,7 +26,7 @@ import * as gndr from '#/types/gndr'
 export function StarterPackCard({
   view,
 }: {
-  view: AppBskyGraphDefs.StarterPackView
+  view: AppGndrGraphDefs.StarterPackView
 }) {
   const t = useTheme()
   const {_} = useLingui()
@@ -36,9 +36,9 @@ export function StarterPackCard({
   const record = view.record
 
   if (
-    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppGndrGraphStarterpack.Record>(
       record,
-      AppBskyGraphStarterpack.isRecord,
+      AppGndrGraphStarterpack.isRecord,
     )
   ) {
     return null

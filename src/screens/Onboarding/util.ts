@@ -1,8 +1,8 @@
 import {
   $Typed,
-  AppBskyGraphFollow,
-  AppBskyGraphGetFollows,
-  BskyAgent,
+  AppGndrGraphFollow,
+  AppGndrGraphGetFollows,
+  GndrAgent,
   ComAtprotoRepoApplyWrites,
 } from '@atproto/api'
 import {TID} from '@atproto/common-web'
@@ -10,14 +10,14 @@ import chunk from 'lodash.chunk'
 
 import {until} from '#/lib/async/until'
 
-export async function bulkWriteFollows(agent: BskyAgent, dids: string[]) {
+export async function bulkWriteFollows(agent: GndrAgent, dids: string[]) {
   const session = agent.session
 
   if (!session) {
     throw new Error(`bulkWriteFollows failed: no session`)
   }
 
-  const followRecords: $Typed<AppBskyGraphFollow.Record>[] = dids.map(did => {
+  const followRecords: $Typed<AppGndrGraphFollow.Record>[] = dids.map(did => {
     return {
       $type: 'app.gndr.graph.follow',
       subject: did,
@@ -53,9 +53,9 @@ export async function bulkWriteFollows(agent: BskyAgent, dids: string[]) {
 }
 
 async function whenFollowsIndexed(
-  agent: BskyAgent,
+  agent: GndrAgent,
   actor: string,
-  fn: (res: AppBskyGraphGetFollows.Response) => boolean,
+  fn: (res: AppGndrGraphGetFollows.Response) => boolean,
 ) {
   await until(
     5, // 5 tries

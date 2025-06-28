@@ -1,7 +1,7 @@
 import {useMemo} from 'react'
 import {
-  type AppBskyActorDefs,
-  AppBskyFeedDefs,
+  type AppGndrActorDefs,
+  AppGndrFeedDefs,
   AtUri,
   moderatePost,
 } from '@atproto/api'
@@ -85,7 +85,7 @@ export type FeedPreviewItem =
   | {
       type: 'preview:header'
       key: string
-      feed: AppBskyFeedDefs.GeneratorView
+      feed: AppGndrFeedDefs.GeneratorView
     }
   | {
       type: 'preview:footer'
@@ -97,7 +97,7 @@ export type FeedPreviewItem =
       key: string
       slice: FeedPostSlice
       indexInSlice: number
-      feed: AppBskyFeedDefs.GeneratorView
+      feed: AppGndrFeedDefs.GeneratorView
       showReplyTo: boolean
       hideTopBorder: boolean
     }
@@ -108,7 +108,7 @@ export type FeedPreviewItem =
     }
 
 export function useFeedPreviews(
-  feedsMaybeWithDuplicates: AppBskyFeedDefs.GeneratorView[],
+  feedsMaybeWithDuplicates: AppGndrFeedDefs.GeneratorView[],
   isEnabled: boolean = true,
 ) {
   const feeds = useMemo(
@@ -325,13 +325,13 @@ export function useFeedPreviews(
 export function* findAllPostsInQueryData(
   queryClient: QueryClient,
   uri: string,
-): Generator<AppBskyFeedDefs.PostView, undefined> {
+): Generator<AppGndrFeedDefs.PostView, undefined> {
   const atUri = new AtUri(uri)
 
   const queryDatas = queryClient.getQueriesData<
     InfiniteData<{
-      feed: AppBskyFeedDefs.GeneratorView
-      posts: AppBskyFeedDefs.FeedViewPost[]
+      feed: AppGndrFeedDefs.GeneratorView
+      posts: AppGndrFeedDefs.FeedViewPost[]
     }>
   >({
     queryKey: [RQKEY_ROOT],
@@ -351,7 +351,7 @@ export function* findAllPostsInQueryData(
           yield embedViewRecordToPostView(quotedPost)
         }
 
-        if (AppBskyFeedDefs.isPostView(item.reply?.parent)) {
+        if (AppGndrFeedDefs.isPostView(item.reply?.parent)) {
           if (didOrHandleUriMatches(atUri, item.reply.parent)) {
             yield item.reply.parent
           }
@@ -365,7 +365,7 @@ export function* findAllPostsInQueryData(
           }
         }
 
-        if (AppBskyFeedDefs.isPostView(item.reply?.root)) {
+        if (AppGndrFeedDefs.isPostView(item.reply?.root)) {
           if (didOrHandleUriMatches(atUri, item.reply.root)) {
             yield item.reply.root
           }
@@ -383,11 +383,11 @@ export function* findAllPostsInQueryData(
 export function* findAllProfilesInQueryData(
   queryClient: QueryClient,
   did: string,
-): Generator<AppBskyActorDefs.ProfileViewBasic, undefined> {
+): Generator<AppGndrActorDefs.ProfileViewBasic, undefined> {
   const queryDatas = queryClient.getQueriesData<
     InfiniteData<{
-      feed: AppBskyFeedDefs.GeneratorView
-      posts: AppBskyFeedDefs.FeedViewPost[]
+      feed: AppGndrFeedDefs.GeneratorView
+      posts: AppGndrFeedDefs.FeedViewPost[]
     }>
   >({
     queryKey: [RQKEY_ROOT],
@@ -406,13 +406,13 @@ export function* findAllProfilesInQueryData(
           yield quotedPost.author
         }
         if (
-          AppBskyFeedDefs.isPostView(item.reply?.parent) &&
+          AppGndrFeedDefs.isPostView(item.reply?.parent) &&
           item.reply?.parent?.author.did === did
         ) {
           yield item.reply.parent.author
         }
         if (
-          AppBskyFeedDefs.isPostView(item.reply?.root) &&
+          AppGndrFeedDefs.isPostView(item.reply?.root) &&
           item.reply?.root?.author.did === did
         ) {
           yield item.reply.root.author

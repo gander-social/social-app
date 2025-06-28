@@ -1,7 +1,7 @@
 import {
   type $Typed,
-  type AppBskyActorStatus,
-  type AppBskyEmbedExternal,
+  type AppGndrActorStatus,
+  type AppGndrEmbedExternal,
   ComAtprotoRepoPutRecord,
 } from '@atproto/api'
 import {retry} from '@atproto/common-web'
@@ -59,7 +59,7 @@ export function useUpsertLiveStatusMutation(
     mutationFn: async () => {
       if (!currentAccount) throw new Error('Not logged in')
 
-      let embed: $Typed<AppBskyEmbedExternal.Main> | undefined
+      let embed: $Typed<AppGndrEmbedExternal.Main> | undefined
 
       if (linkMeta) {
         let thumb
@@ -102,7 +102,7 @@ export function useUpsertLiveStatusMutation(
         status: 'app.gndr.actor.status#live',
         durationMinutes: duration,
         embed,
-      } satisfies AppBskyActorStatus.Record
+      } satisfies AppGndrActorStatus.Record
 
       const upsert = async () => {
         const repo = currentAccount.did

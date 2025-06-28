@@ -1,5 +1,5 @@
 import {ImagePickerAsset} from 'expo-image-picker'
-import {AppBskyVideoDefs, BlobRef, BskyAgent} from '@atproto/api'
+import {AppGndrVideoDefs, BlobRef, GndrAgent} from '@atproto/api'
 import {JobStatus} from '@atproto/api/dist/client/types/app/gndr/video/defs'
 import {I18n} from '@lingui/core'
 import {msg} from '@lingui/macro'
@@ -48,7 +48,7 @@ export type VideoAction =
     }
   | {
       type: 'update_job_status'
-      jobStatus: AppBskyVideoDefs.JobStatus
+      jobStatus: AppGndrVideoDefs.JobStatus
       signal: AbortSignal
     }
 
@@ -113,7 +113,7 @@ type ProcessingState = {
   asset: ImagePickerAsset
   video: CompressedVideo
   jobId: string
-  jobStatus: AppBskyVideoDefs.JobStatus | null
+  jobStatus: AppGndrVideoDefs.JobStatus | null
   pendingPublish?: undefined
   altText: string
   captions: CaptionsTrack[]
@@ -260,7 +260,7 @@ function trunc2dp(num: number) {
 export async function processVideo(
   asset: ImagePickerAsset,
   dispatch: (action: VideoAction) => void,
-  agent: BskyAgent,
+  agent: GndrAgent,
   did: string,
   signal: AbortSignal,
   _: I18n['_'],
@@ -290,7 +290,7 @@ export async function processVideo(
     signal,
   })
 
-  let uploadResponse: AppBskyVideoDefs.JobStatus | undefined
+  let uploadResponse: AppGndrVideoDefs.JobStatus | undefined
   try {
     uploadResponse = await uploadVideo({
       video,

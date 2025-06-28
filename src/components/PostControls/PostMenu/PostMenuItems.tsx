@@ -7,9 +7,9 @@ import {
 } from 'react-native'
 import * as Clipboard from 'expo-clipboard'
 import {
-  type AppBskyFeedDefs,
-  AppBskyFeedPost,
-  type AppBskyFeedThreadgate,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
+  type AppGndrFeedThreadgate,
   AtUri,
   type RichText as RichTextAPI,
 } from '@atproto/api'
@@ -95,17 +95,17 @@ let PostMenuItems = ({
   onShowLess,
 }: {
   testID: string
-  post: Shadow<AppBskyFeedDefs.PostView>
+  post: Shadow<AppGndrFeedDefs.PostView>
   postFeedContext: string | undefined
   postReqId: string | undefined
-  record: AppBskyFeedPost.Record
+  record: AppGndrFeedPost.Record
   richText: RichTextAPI
   style?: StyleProp<ViewStyle>
   hitSlop?: PressableProps['hitSlop']
   size?: 'lg' | 'md' | 'sm'
   timestamp: string
-  threadgateRecord?: AppBskyFeedThreadgate.Record
-  onShowLess?: (interaction: AppBskyFeedDefs.Interaction) => void
+  threadgateRecord?: AppGndrFeedThreadgate.Record
+  onShowLess?: (interaction: AppGndrFeedDefs.Interaction) => void
 }): React.ReactNode => {
   const {hasSession, currentAccount} = useSession()
   const {_} = useLingui()
@@ -238,9 +238,9 @@ let PostMenuItems = ({
     await openLink(translatorUrl, true)
 
     if (
-      gndr.dangerousIsType<AppBskyFeedPost.Record>(
+      gndr.dangerousIsType<AppGndrFeedPost.Record>(
         post.record,
-        AppBskyFeedPost.isRecord,
+        AppGndrFeedPost.isRecord,
       )
     ) {
       logger.metric(

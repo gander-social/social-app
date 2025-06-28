@@ -1,7 +1,7 @@
 import {useEffect, useReducer, useState} from 'react'
 import {AppState, type AppStateStatus, View} from 'react-native'
 import Animated, {FadeIn, LayoutAnimationConfig} from 'react-native-reanimated'
-import {AppBskyGraphStarterpack} from '@atproto/api'
+import {AppGndrGraphStarterpack} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -110,9 +110,9 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
         scrollable>
         <View testID="createAccount" style={a.flex_1}>
           {showStarterPackCard &&
-          gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
+          gndr.dangerousIsType<AppGndrGraphStarterpack.Record>(
             starterPack.record,
-            AppBskyGraphStarterpack.isRecord,
+            AppGndrGraphStarterpack.isRecord,
           ) ? (
             <Animated.View entering={!isFetchedAtMount ? FadeIn : undefined}>
               <LinearGradientBackground

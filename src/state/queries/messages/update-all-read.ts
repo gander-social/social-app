@@ -1,4 +1,4 @@
-import {ChatBskyConvoListConvos} from '@atproto/api'
+import {ChatGndrConvoListConvos} from '@atproto/api'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
 
 import {logger} from '#/logger'
@@ -31,12 +31,12 @@ export function useUpdateAllRead(
       return data
     },
     onMutate: () => {
-      let prevPages: ChatBskyConvoListConvos.OutputSchema[] = []
+      let prevPages: ChatGndrConvoListConvos.OutputSchema[] = []
       queryClient.setQueryData(
         CONVO_LIST_KEY(status),
         (old?: {
           pageParams: Array<string | undefined>
-          pages: Array<ChatBskyConvoListConvos.OutputSchema>
+          pages: Array<ChatGndrConvoListConvos.OutputSchema>
         }) => {
           if (!old) return old
           prevPages = old.pages
@@ -61,7 +61,7 @@ export function useUpdateAllRead(
         CONVO_LIST_KEY('all', 'unread'),
         (old?: {
           pageParams: Array<string | undefined>
-          pages: Array<ChatBskyConvoListConvos.OutputSchema>
+          pages: Array<ChatGndrConvoListConvos.OutputSchema>
         }) => {
           if (!old) return old
           return {
@@ -88,7 +88,7 @@ export function useUpdateAllRead(
         CONVO_LIST_KEY(status),
         (old?: {
           pageParams: Array<string | undefined>
-          pages: Array<ChatBskyConvoListConvos.OutputSchema>
+          pages: Array<ChatGndrConvoListConvos.OutputSchema>
         }) => {
           if (!old) return old
           return {

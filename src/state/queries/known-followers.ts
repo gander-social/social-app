@@ -1,4 +1,4 @@
-import {AppBskyActorDefs, AppBskyGraphGetKnownFollowers} from '@atproto/api'
+import {AppGndrActorDefs, AppGndrGraphGetKnownFollowers} from '@atproto/api'
 import {
   InfiniteData,
   QueryClient,
@@ -17,9 +17,9 @@ export const RQKEY = (did: string) => [RQKEY_ROOT, did]
 export function useProfileKnownFollowersQuery(did: string | undefined) {
   const agent = useAgent()
   return useInfiniteQuery<
-    AppBskyGraphGetKnownFollowers.OutputSchema,
+    AppGndrGraphGetKnownFollowers.OutputSchema,
     Error,
-    InfiniteData<AppBskyGraphGetKnownFollowers.OutputSchema>,
+    InfiniteData<AppGndrGraphGetKnownFollowers.OutputSchema>,
     QueryKey,
     RQPageParam
   >({
@@ -41,9 +41,9 @@ export function useProfileKnownFollowersQuery(did: string | undefined) {
 export function* findAllProfilesInQueryData(
   queryClient: QueryClient,
   did: string,
-): Generator<AppBskyActorDefs.ProfileView, void> {
+): Generator<AppGndrActorDefs.ProfileView, void> {
   const queryDatas = queryClient.getQueriesData<
-    InfiniteData<AppBskyGraphGetKnownFollowers.OutputSchema>
+    InfiniteData<AppGndrGraphGetKnownFollowers.OutputSchema>
   >({
     queryKey: [RQKEY_ROOT],
   })

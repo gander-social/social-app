@@ -2,7 +2,7 @@ import React, {useCallback, useMemo} from 'react'
 import {StyleSheet, View} from 'react-native'
 import {useAnimatedRef} from 'react-native-reanimated'
 import {
-  AppBskyGraphDefs,
+  AppGndrGraphDefs,
   AtUri,
   moderateUserList,
   type ModerationOpts,
@@ -149,7 +149,7 @@ function ProfileListScreenLoaded({
   preferences,
 }: Props & {
   uri: string
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   moderationOpts: ModerationOpts
   preferences: UsePreferencesQueryResponse
 }) {
@@ -161,7 +161,7 @@ function ProfileListScreenLoaded({
   const {rkey} = route.params
   const feedSectionRef = React.useRef<SectionRef>(null)
   const aboutSectionRef = React.useRef<SectionRef>(null)
-  const isCurateList = list.purpose === AppBskyGraphDefs.CURATELIST
+  const isCurateList = list.purpose === AppGndrGraphDefs.CURATELIST
   const isScreenFocused = useIsFocused()
   const isHidden = list.labels?.findIndex(l => l.val === '!hide') !== -1
   const isOwner = currentAccount?.did === list.creator.did
@@ -305,7 +305,7 @@ function Header({
   preferences,
 }: {
   rkey: string
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   preferences: UsePreferencesQueryResponse
 }) {
   const pal = usePalette('default')
@@ -885,7 +885,7 @@ const FeedSection = React.forwardRef<SectionRef, FeedSectionProps>(
 )
 
 interface AboutSectionProps {
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
   onPressAddUser: () => void
   headerHeight: number
   scrollElRef: ListRef

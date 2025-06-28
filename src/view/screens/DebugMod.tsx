@@ -1,9 +1,9 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyActorDefs,
-  type AppBskyFeedDefs,
-  type AppBskyFeedPost,
+  type AppGndrActorDefs,
+  type AppGndrFeedDefs,
+  type AppGndrFeedPost,
   type ComAtprotoLabelDefs,
   interpretLabelValueDefinition,
   type LabelPreference,
@@ -220,7 +220,7 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
     })
     const [item] = groupNotifications([notif])
     item.subject = mock.postView({
-      record: notif.record as AppBskyFeedPost.Record,
+      record: notif.record as AppGndrFeedPost.Record,
       author: profile,
       labels: notif.labels,
     })
@@ -809,7 +809,7 @@ function MockPostFeedItem({
   post,
   moderation,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   moderation: ModerationDecision
 }) {
   const t = useTheme()
@@ -823,7 +823,7 @@ function MockPostFeedItem({
   return (
     <PostFeedItem
       post={post}
-      record={post.record as AppBskyFeedPost.Record}
+      record={post.record as AppGndrFeedPost.Record}
       moderation={moderation}
       parentAuthor={undefined}
       showReplyTo={false}
@@ -840,7 +840,7 @@ function MockPostThreadItem({
   moderation,
   reply,
 }: {
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   moderation: ModerationDecision
   reply?: boolean
 }) {
@@ -848,7 +848,7 @@ function MockPostThreadItem({
     <PostThreadItem
       // @ts-ignore
       post={post}
-      record={post.record as AppBskyFeedPost.Record}
+      record={post.record as AppGndrFeedPost.Record}
       moderation={moderation}
       depth={reply ? 1 : 0}
       isHighlightedPost={!reply}
@@ -890,7 +890,7 @@ function MockAccountCard({
   profile,
   moderation,
 }: {
-  profile: AppBskyActorDefs.ProfileViewBasic
+  profile: AppGndrActorDefs.ProfileViewBasic
   moderation: ModerationDecision
 }) {
   const t = useTheme()
@@ -914,7 +914,7 @@ function MockAccountScreen({
   moderation,
   moderationOpts,
 }: {
-  profile: AppBskyActorDefs.ProfileViewBasic
+  profile: AppGndrActorDefs.ProfileViewBasic
   moderation: ModerationDecision
   moderationOpts: ModerationOpts
 }) {

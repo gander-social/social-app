@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-native'
 import {Image} from 'expo-image'
-import {AppBskyGraphStarterpack, AtUri} from '@atproto/api'
+import {AppGndrGraphStarterpack, AtUri} from '@atproto/api'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'
@@ -62,9 +62,9 @@ export function Card({
   const {currentAccount} = useSession()
 
   if (
-    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppGndrGraphStarterpack.Record>(
       record,
-      AppBskyGraphStarterpack.isRecord,
+      AppGndrGraphStarterpack.isRecord,
     )
   ) {
     return null
@@ -126,7 +126,7 @@ export function useStarterPackLink({
 
   return {
     to: `/starter-pack/${handleOrDid}/${rkey}`,
-    label: AppBskyGraphStarterpack.isRecord(view.record)
+    label: AppGndrGraphStarterpack.isRecord(view.record)
       ? _(msg`Navigate to ${view.record.name}`)
       : _(msg`Navigate to starter pack`),
     precache,
@@ -150,7 +150,7 @@ export function Link({
     return {rkey, handleOrDid: creator.handle || creator.did}
   }, [starterPack])
 
-  if (!AppBskyGraphStarterpack.isRecord(record)) {
+  if (!AppGndrGraphStarterpack.isRecord(record)) {
     return null
   }
 

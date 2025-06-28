@@ -1,4 +1,4 @@
-import {type AppBskyFeedGetFeed} from '@atproto/api'
+import {type AppGndrFeedGetFeed} from '@atproto/api'
 import {subDays, subMinutes} from 'date-fns'
 
 const DID = `did:plc:z72i7hdynmk6r22z27h6tvur`
@@ -197,6 +197,6 @@ export const DEMO_FEED = {
       },
     },
   ],
-} satisfies AppBskyFeedGetFeed.OutputSchema
+} satisfies AppGndrFeedGetFeed.OutputSchema
 
 export const BOTTOM_BAR_AVI = 'https://gndr.social/about/adi/user_avi.jpg'

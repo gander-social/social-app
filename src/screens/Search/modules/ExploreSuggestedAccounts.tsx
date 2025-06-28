@@ -1,6 +1,6 @@
 import {memo, useEffect} from 'react'
 import {View} from 'react-native'
-import {type AppBskyActorSearchActors, type ModerationOpts} from '@atproto/api'
+import {type AppGndrActorSearchActors, type ModerationOpts} from '@atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {type InfiniteData} from '@tanstack/react-query'
@@ -30,7 +30,7 @@ export function useLoadEnoughProfiles({
   fetchNextPage,
 }: {
   interest: string | null
-  data?: InfiniteData<AppBskyActorSearchActors.OutputSchema>
+  data?: InfiniteData<AppGndrActorSearchActors.OutputSchema>
   isLoading: boolean
   isFetchingNextPage: boolean
   hasNextPage: boolean

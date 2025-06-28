@@ -1,9 +1,9 @@
 import {useCallback, useEffect, useMemo, useRef} from 'react'
 import {
-  type AppBskyActorDefs,
-  type AppBskyFeedDefs,
-  type AppBskyGraphDefs,
-  type AppBskyUnspeccedGetPopularFeedGenerators,
+  type AppGndrActorDefs,
+  type AppGndrFeedDefs,
+  type AppGndrGraphDefs,
+  type AppGndrUnspeccedGetPopularFeedGenerators,
   AtUri,
   moderateFeedGenerator,
   RichText,
@@ -33,7 +33,7 @@ import {precacheResolvedUri} from './resolve-uri'
 
 export type FeedSourceFeedInfo = {
   type: 'feed'
-  view?: AppBskyFeedDefs.GeneratorView
+  view?: AppGndrFeedDefs.GeneratorView
   uri: string
   feedDescriptor: FeedDescriptor
   route: {
@@ -49,12 +49,12 @@ export type FeedSourceFeedInfo = {
   creatorHandle: string
   likeCount: number | undefined
   likeUri: string | undefined
-  contentMode: AppBskyFeedDefs.GeneratorView['contentMode']
+  contentMode: AppGndrFeedDefs.GeneratorView['contentMode']
 }
 
 export type FeedSourceListInfo = {
   type: 'list'
-  view?: AppBskyGraphDefs.ListView
+  view?: AppGndrGraphDefs.ListView
   uri: string
   feedDescriptor: FeedDescriptor
   route: {
@@ -85,7 +85,7 @@ const feedSourceNSIDs = {
 }
 
 export function hydrateFeedGenerator(
-  view: AppBskyFeedDefs.GeneratorView,
+  view: AppGndrFeedDefs.GeneratorView,
 ): FeedSourceInfo {
   const urip = new AtUri(view.uri)
   const collection =
@@ -120,7 +120,7 @@ export function hydrateFeedGenerator(
   }
 }
 
-export function hydrateList(view: AppBskyGraphDefs.ListView): FeedSourceInfo {
+export function hydrateList(view: AppGndrGraphDefs.ListView): FeedSourceInfo {
   const urip = new AtUri(view.uri)
   const collection =
     urip.collection === 'app.gndr.feed.generator' ? 'feed' : 'lists'
@@ -231,9 +231,9 @@ export function useGetPopularFeedsQuery(options?: GetPopularFeedsOptions) {
   const lastPageCountRef = useRef(0)
 
   const query = useInfiniteQuery<
-    AppBskyUnspeccedGetPopularFeedGenerators.OutputSchema,
+    AppGndrUnspeccedGetPopularFeedGenerators.OutputSchema,
     Error,
-    InfiniteData<AppBskyUnspeccedGetPopularFeedGenerators.OutputSchema>,
+    InfiniteData<AppGndrUnspeccedGetPopularFeedGenerators.OutputSchema>,
     QueryKey,
     string | undefined
   >({
@@ -257,7 +257,7 @@ export function useGetPopularFeedsQuery(options?: GetPopularFeedsOptions) {
     getNextPageParam: lastPage => lastPage.cursor,
     select: useCallback(
       (
-        data: InfiniteData<AppBskyUnspeccedGetPopularFeedGenerators.OutputSchema>,
+        data: InfiniteData<AppGndrUnspeccedGetPopularFeedGenerators.OutputSchema>,
       ) => {
         const {
           savedFeeds,
@@ -382,7 +382,7 @@ export function usePopularFeedsSearch({
 }
 
 export type SavedFeedSourceInfo = FeedSourceInfo & {
-  savedFeed: AppBskyActorDefs.SavedFeed
+  savedFeed: AppGndrActorDefs.SavedFeed
 }
 
 const PWI_DISCOVER_FEED_STUB: SavedFeedSourceInfo = {
@@ -506,17 +506,17 @@ export function usePinnedFeedsInfos() {
 export type SavedFeedItem =
   | {
       type: 'feed'
-      config: AppBskyActorDefs.SavedFeed
-      view: AppBskyFeedDefs.GeneratorView
+      config: AppGndrActorDefs.SavedFeed
+      view: AppGndrFeedDefs.GeneratorView
     }
   | {
       type: 'list'
-      config: AppBskyActorDefs.SavedFeed
-      view: AppBskyGraphDefs.ListView
+      config: AppGndrActorDefs.SavedFeed
+      view: AppGndrGraphDefs.ListView
     }
   | {
       type: 'timeline'
-      config: AppBskyActorDefs.SavedFeed
+      config: AppGndrActorDefs.SavedFeed
       view: undefined
     }
 
@@ -540,8 +540,8 @@ export function useSavedFeeds() {
       )
     },
     queryFn: async () => {
-      const resolvedFeeds = new Map<string, AppBskyFeedDefs.GeneratorView>()
-      const resolvedLists = new Map<string, AppBskyGraphDefs.ListView>()
+      const resolvedFeeds = new Map<string, AppGndrFeedDefs.GeneratorView>()
+      const resolvedLists = new Map<string, AppGndrGraphDefs.ListView>()
 
       const savedFeeds = savedItems.filter(feed => feed.type === 'feed')
       const savedLists = savedItems.filter(feed => feed.type === 'list')
@@ -633,10 +633,10 @@ function precacheFeed(queryClient: QueryClient, hydratedFeed: FeedSourceInfo) {
 
 export function precacheList(
   queryClient: QueryClient,
-  list: AppBskyGraphDefs.ListView,
+  list: AppGndrGraphDefs.ListView,
 ) {
   precacheResolvedUri(queryClient, list.creator.handle, list.creator.did)
-  queryClient.setQueryData<AppBskyGraphDefs.ListView>(
+  queryClient.setQueryData<AppGndrGraphDefs.ListView>(
     listQueryKey(list.uri),
     list,
   )
@@ -644,7 +644,7 @@ export function precacheList(
 
 export function precacheFeedFromGeneratorView(
   queryClient: QueryClient,
-  view: AppBskyFeedDefs.GeneratorView,
+  view: AppGndrFeedDefs.GeneratorView,
 ) {
   const hydratedFeed = hydrateFeedGenerator(view)
   precacheFeed(queryClient, hydratedFeed)

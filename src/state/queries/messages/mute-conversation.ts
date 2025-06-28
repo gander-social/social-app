@@ -1,7 +1,7 @@
 import {
-  ChatBskyConvoDefs,
-  ChatBskyConvoListConvos,
-  ChatBskyConvoMuteConvo,
+  ChatGndrConvoDefs,
+  ChatGndrConvoListConvos,
+  ChatGndrConvoMuteConvo,
 } from '@atproto/api'
 import {InfiniteData, useMutation, useQueryClient} from '@tanstack/react-query'
 
@@ -16,7 +16,7 @@ export function useMuteConvo(
     onSuccess,
     onError,
   }: {
-    onSuccess?: (data: ChatBskyConvoMuteConvo.OutputSchema) => void
+    onSuccess?: (data: ChatGndrConvoMuteConvo.OutputSchema) => void
     onError?: (error: Error) => void
   },
 ) {
@@ -41,7 +41,7 @@ export function useMuteConvo(
       }
     },
     onSuccess: (data, params) => {
-      queryClient.setQueryData<ChatBskyConvoDefs.ConvoView>(
+      queryClient.setQueryData<ChatGndrConvoDefs.ConvoView>(
         CONVO_KEY(data.convo.id),
         prev => {
           if (!prev) return
@@ -52,7 +52,7 @@ export function useMuteConvo(
         },
       )
       queryClient.setQueryData<
-        InfiniteData<ChatBskyConvoListConvos.OutputSchema>
+        InfiniteData<ChatGndrConvoListConvos.OutputSchema>
       >([CONVO_LIST_KEY], prev => {
         if (!prev?.pages) return
         return {

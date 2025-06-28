@@ -1,17 +1,17 @@
 import {type Insets, Platform} from 'react-native'
-import {type AppBskyActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@atproto/api'
 
 export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
 export const STAGING_SERVICE = 'https://staging.gndr.dev'
-export const BSKY_SERVICE = 'https://gndr.social'
-export const PUBLIC_BSKY_SERVICE = 'https://public.api.gndr.app'
-export const DEFAULT_SERVICE = BSKY_SERVICE
+export const GNDR_SERVICE = 'https://gndr.social'
+export const PUBLIC_GNDR_SERVICE = 'https://public.api.gndr.app'
+export const DEFAULT_SERVICE = GNDR_SERVICE
 const HELP_DESK_LANG = 'en-us'
 export const HELP_DESK_URL = `https://ganderweb.zendesk.com/hc/${HELP_DESK_LANG}`
 export const EMBED_SERVICE = 'https://embed.gndr.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
-export const BSKY_DOWNLOAD_URL = 'https://gndr.app/download'
+export const GNDR_DOWNLOAD_URL = 'https://gndr.app/download'
 export const STARTER_PACK_MAX_SIZE = 150
 
 // HACK
@@ -129,7 +129,7 @@ export const MAX_POST_LINES = 25
 
 export const GNDR_APP_ACCOUNT_DID = 'did:plc:z72i7hdynmk6r22z27h6tvur'
 
-export const BSKY_FEED_OWNER_DIDS = [
+export const GNDR_FEED_OWNER_DIDS = [
   GNDR_APP_ACCOUNT_DID,
   'did:plc:vpkhqolt662uhesyj6nxm7ys',
   'did:plc:q6gjnaw2blty4crticxkmujt',
@@ -159,7 +159,7 @@ export const VIDEO_SAVED_FEED = {
 }
 
 export const RECOMMENDED_SAVED_FEEDS: Pick<
-  AppBskyActorDefs.SavedFeed,
+  AppGndrActorDefs.SavedFeed,
   'type' | 'value' | 'pinned'
 >[] = [DISCOVER_SAVED_FEED, TIMELINE_SAVED_FEED]
 

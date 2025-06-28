@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  AppBskyGraphDefs,
+  AppGndrGraphDefs,
   AtUri,
   moderateUserList,
   ModerationUI,
@@ -46,7 +46,7 @@ const CURATELIST = 'app.gndr.graph.defs#curatelist'
 const MODLIST = 'app.gndr.graph.defs#modlist'
 
 type Props = {
-  view: AppBskyGraphDefs.ListView
+  view: AppGndrGraphDefs.ListView
   showPinButton?: boolean
 }
 
@@ -108,7 +108,7 @@ export function TitleAndByline({
 }: {
   title: string
   creator?: gndr.profile.AnyProfileView
-  purpose?: AppBskyGraphDefs.ListView['purpose']
+  purpose?: AppGndrGraphDefs.ListView['purpose']
   modUi?: ModerationUI
 }) {
   const t = useTheme()
@@ -157,7 +157,7 @@ export function TitleAndByline({
 export function createProfileListHref({
   list,
 }: {
-  list: AppBskyGraphDefs.ListView
+  list: AppGndrGraphDefs.ListView
 }) {
   const urip = new AtUri(list.uri)
   const handleOrDid = list.creator.handle || list.creator.did

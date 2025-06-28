@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import {Pressable, type StyleProp, View, type ViewStyle} from 'react-native'
-import {type AppBskyEmbedVideo} from '@atproto/api'
+import {type AppGndrEmbedVideo} from '@atproto/api'
 import {BlueskyVideoView} from '@haileyok/gander-video'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
@@ -25,7 +25,7 @@ export const VideoEmbedInnerNative = React.forwardRef(
       setIsLoading,
       setIsActive,
     }: {
-      embed: AppBskyEmbedVideo.View
+      embed: AppGndrEmbedVideo.View
       setStatus: (status: 'playing' | 'paused') => void
       setIsLoading: (isLoading: boolean) => void
       setIsActive: (isActive: boolean) => void

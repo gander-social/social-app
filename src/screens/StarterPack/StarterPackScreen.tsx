@@ -2,8 +2,8 @@ import React from 'react'
 import {View} from 'react-native'
 import {Image} from 'expo-image'
 import {
-  AppBskyGraphDefs,
-  AppBskyGraphStarterpack,
+  AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
   AtUri,
   type ModerationOpts,
   RichText as RichTextAPI,
@@ -144,8 +144,8 @@ export function StarterPackScreenInner({
   const isValid =
     starterPack &&
     (starterPack.list || starterPack?.creator?.did === currentAccount?.did) &&
-    AppBskyGraphDefs.validateStarterPackView(starterPack) &&
-    AppBskyGraphStarterpack.validateRecord(starterPack.record)
+    AppGndrGraphDefs.validateStarterPackView(starterPack) &&
+    AppGndrGraphStarterpack.validateRecord(starterPack.record)
 
   if (!did || !starterPack || !isValid || !moderationOpts) {
     return (
@@ -176,7 +176,7 @@ function StarterPackScreenLoaded({
   routeParams,
   moderationOpts,
 }: {
-  starterPack: AppBskyGraphDefs.StarterPackView
+  starterPack: AppGndrGraphDefs.StarterPackView
   routeParams: StarterPackScreeProps['route']['params']
   moderationOpts: ModerationOpts
 }) {
@@ -297,7 +297,7 @@ function Header({
   routeParams,
   onOpenShareDialog,
 }: {
-  starterPack: AppBskyGraphDefs.StarterPackView
+  starterPack: AppGndrGraphDefs.StarterPackView
   routeParams: StarterPackScreeProps['route']['params']
   onOpenShareDialog: () => void
 }) {
@@ -344,7 +344,7 @@ function Header({
 
     setIsProcessing(true)
 
-    let listItems: AppBskyGraphDefs.ListItemView[] = []
+    let listItems: AppGndrGraphDefs.ListItemView[] = []
     try {
       listItems = await getAllListMembers(agent, starterPack.list.uri)
     } catch (e) {
@@ -393,9 +393,9 @@ function Header({
   }
 
   if (
-    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppGndrGraphStarterpack.Record>(
       record,
-      AppBskyGraphStarterpack.isRecord,
+      AppGndrGraphStarterpack.isRecord,
     )
   ) {
     return null
@@ -508,7 +508,7 @@ function OverflowMenu({
   routeParams,
   onOpenShareDialog,
 }: {
-  starterPack: AppBskyGraphDefs.StarterPackView
+  starterPack: AppGndrGraphDefs.StarterPackView
   routeParams: StarterPackScreeProps['route']['params']
   onOpenShareDialog: () => void
 }) {
