@@ -19,7 +19,7 @@ import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
 import * as ProfileCard from '#/components/ProfileCard'
 import {Text} from '#/components/Typography'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 import {Globe_Stroke2_Corner0_Rounded} from '../icons/Globe'
 import {SquareArrowTopRight_Stroke2_Corner0_Rounded as SquareArrowTopRightIcon} from '../icons/SquareArrowTopRight'
 import {LiveIndicator} from './LiveIndicator'
@@ -30,7 +30,7 @@ export function LiveStatusDialog({
   embed,
 }: {
   control: Dialog.DialogControlProps
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   status: AppBskyActorDefs.StatusView
   embed: AppBskyEmbedExternal.View
 }) {
@@ -48,7 +48,7 @@ function DialogInner({
   embed,
   navigation,
 }: {
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   embed: AppBskyEmbedExternal.View
   navigation: NavigationProp
 }) {
@@ -84,7 +84,7 @@ export function LiveStatus({
   padding = 'xl',
   onPressOpenProfile,
 }: {
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   embed: AppBskyEmbedExternal.View
   padding?: 'lg' | 'xl'
   onPressOpenProfile: () => void

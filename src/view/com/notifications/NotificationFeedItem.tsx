@@ -70,7 +70,7 @@ import {SubtleWebHover} from '#/components/SubtleWebHover'
 import {Text} from '#/components/Typography'
 import {useSimpleVerificationState} from '#/components/verification'
 import {VerificationCheck} from '#/components/verification/VerificationCheck'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 const MAX_AUTHORS = 5
 
@@ -309,7 +309,7 @@ let NotificationFeedItem = ({
 
     if (
       item.notification.author.viewer?.following &&
-      bsky.dangerousIsType<AppBskyGraphFollow.Record>(
+      gndr.dangerousIsType<AppBskyGraphFollow.Record>(
         item.notification.record,
         AppBskyGraphFollow.isRecord,
       )
@@ -751,7 +751,7 @@ function SayHelloBtn({profile}: {profile: AppBskyActorDefs.ProfileView}) {
       onPress={async () => {
         try {
           setIsLoading(true)
-          const res = await agent.api.chat.bsky.convo.getConvoForMembers(
+          const res = await agent.api.chat.gndr.convo.getConvoForMembers(
             {
               members: [profile.did, agent.session!.did!],
             },
@@ -957,7 +957,7 @@ function AdditionalPostText({post}: {post?: AppBskyFeedDefs.PostView}) {
   const t = useTheme()
   if (
     post &&
-    bsky.dangerousIsType<AppBskyFeedPost.Record>(
+    gndr.dangerousIsType<AppBskyFeedPost.Record>(
       post?.record,
       AppBskyFeedPost.isRecord,
     )

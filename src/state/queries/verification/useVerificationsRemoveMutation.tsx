@@ -9,7 +9,7 @@ import {until} from '#/lib/async/until'
 import {logger} from '#/logger'
 import {useUpdateProfileVerificationCache} from '#/state/queries/verification/useUpdateProfileVerificationCache'
 import {useAgent, useSession} from '#/state/session'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export function useVerificationsRemoveMutation() {
   const agent = useAgent()
@@ -21,7 +21,7 @@ export function useVerificationsRemoveMutation() {
       profile,
       verifications,
     }: {
-      profile: bsky.profile.AnyProfileView
+      profile: gndr.profile.AnyProfileView
       verifications: AppBskyActorDefs.VerificationView[]
     }) {
       if (!currentAccount) {
@@ -32,7 +32,7 @@ export function useVerificationsRemoveMutation() {
 
       await Promise.all(
         uris.map(uri => {
-          return agent.app.bsky.graph.verification.delete({
+          return agent.app.gndr.graph.verification.delete({
             repo: currentAccount.did,
             rkey: new AtUri(uri).rkey,
           })

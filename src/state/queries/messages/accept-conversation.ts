@@ -26,7 +26,7 @@ export function useAcceptConversation(
 
   return useMutation({
     mutationFn: async () => {
-      const {data} = await agent.chat.bsky.convo.acceptConvo(
+      const {data} = await agent.chat.gndr.convo.acceptConvo(
         {convoId},
         {headers: DM_SERVICE_HEADERS},
       )

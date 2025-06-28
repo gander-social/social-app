@@ -9,7 +9,7 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
-var log = logging.Logger("bskyweb")
+var log = logging.Logger("gndrweb")
 
 func init() {
 	logging.SetAllLoggers(logging.LevelDebug)
@@ -23,7 +23,7 @@ func main() {
 func run(args []string) {
 
 	app := cli.App{
-		Name:  "bskyweb",
+		Name:  "gndrweb",
 		Usage: "web server for gndr.app web app (SPA)",
 	}
 
@@ -84,7 +84,7 @@ func run(args []string) {
 					Name:     "cors-allowed-origins",
 					Usage:    "list of allowed origins for CORS requests",
 					Required: false,
-					Value:    cli.NewStringSlice("https://gndr.app", "https://main.bsky.dev", "https://app.staging.bsky.dev"),
+					Value:    cli.NewStringSlice("https://gndr.app", "https://main.gndr.dev", "https://app.staging.gndr.dev"),
 					EnvVars:  []string{"CORS_ALLOWED_ORIGINS"},
 				},
 				&cli.StringFlag{
@@ -95,7 +95,7 @@ func run(args []string) {
 					EnvVars:  []string{"STATIC_CDN_HOST"},
 				},
 				&cli.BoolFlag{
-					Name:     "bsky-canonical-instance",
+					Name:     "gndr-canonical-instance",
 					Usage:    "Enable if this is the canonical deployment (gndr.app)",
 					Value:    false,
 					Required: false,

@@ -3,8 +3,8 @@ import {type AppBskyActorDefs} from '@atproto/api'
 
 export const LOCAL_DEV_SERVICE =
   Platform.OS === 'android' ? 'http://10.0.2.2:2583' : 'http://localhost:2583'
-export const STAGING_SERVICE = 'https://staging.bsky.dev'
-export const BSKY_SERVICE = 'https://bsky.social'
+export const STAGING_SERVICE = 'https://staging.gndr.dev'
+export const BSKY_SERVICE = 'https://gndr.social'
 export const PUBLIC_BSKY_SERVICE = 'https://public.api.gndr.app'
 export const DEFAULT_SERVICE = BSKY_SERVICE
 const HELP_DESK_LANG = 'en-us'
@@ -25,13 +25,13 @@ export const JOINED_THIS_WEEK = 560000 // estimate as of 12/18/24
 
 export const DISCOVER_DEBUG_DIDS: Record<string, true> = {
   'did:plc:oisofpd7lj26yvgiivf3lxsi': true, // hailey.at
-  'did:plc:p2cp5gopk7mgjegy6wadk3ep': true, // samuel.bsky.team
+  'did:plc:p2cp5gopk7mgjegy6wadk3ep': true, // samuel.gndr.team
   'did:plc:ragtjsm2j2vknwkz3zp4oxrd': true, // pfrazee.com
-  'did:plc:vpkhqolt662uhesyj6nxm7ys': true, // why.bsky.team
+  'did:plc:vpkhqolt662uhesyj6nxm7ys': true, // why.gndr.team
   'did:plc:3jpt2mvvsumj2r7eqk4gzzjz': true, // esb.lol
   'did:plc:vjug55kidv6sye7ykr5faxxn': true, // emilyliu.me
-  'did:plc:tgqseeot47ymot4zro244fj3': true, // iwsmith.bsky.social
-  'did:plc:2dzyut5lxna5ljiaasgeuffz': true, // mrnuma.bsky.social
+  'did:plc:tgqseeot47ymot4zro244fj3': true, // iwsmith.gndr.social
+  'did:plc:2dzyut5lxna5ljiaasgeuffz': true, // mrnuma.gndr.social
 }
 
 const BASE_FEEDBACK_FORM_URL = `${HELP_DESK_URL}/requests/new`
@@ -74,10 +74,10 @@ export function IS_PROD_SERVICE(url?: string) {
 }
 
 export const PROD_DEFAULT_FEED = (rkey: string) =>
-  `at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/${rkey}`
+  `at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/${rkey}`
 
 export const STAGING_DEFAULT_FEED = (rkey: string) =>
-  `at://did:plc:yofh3kx63drvfljkibw5zuxo/app.bsky.feed.generator/${rkey}`
+  `at://did:plc:yofh3kx63drvfljkibw5zuxo/app.gndr.feed.generator/${rkey}`
 
 export const PROD_FEEDS = [
   `feedgen|${PROD_DEFAULT_FEED('whats-hot')}`,
@@ -98,7 +98,7 @@ export const POST_IMG_MAX = {
 }
 
 export const STAGING_LINK_META_PROXY =
-  'https://cardyb.staging.bsky.dev/v1/extract?url='
+  'https://cardyb.staging.gndr.dev/v1/extract?url='
 
 export const PROD_LINK_META_PROXY = 'https://cardyb.gndr.app/v1/extract?url='
 
@@ -136,11 +136,11 @@ export const BSKY_FEED_OWNER_DIDS = [
 ]
 
 export const DISCOVER_FEED_URI =
-  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/whats-hot'
 export const VIDEO_FEED_URI =
-  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/thevids'
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/thevids'
 export const STAGING_VIDEO_FEED_URI =
-  'at://did:plc:yofh3kx63drvfljkibw5zuxo/app.bsky.feed.generator/thevids'
+  'at://did:plc:yofh3kx63drvfljkibw5zuxo/app.gndr.feed.generator/thevids'
 export const VIDEO_FEED_URIS = [VIDEO_FEED_URI, STAGING_VIDEO_FEED_URI]
 export const DISCOVER_SAVED_FEED = {
   type: 'feed',
@@ -164,7 +164,7 @@ export const RECOMMENDED_SAVED_FEEDS: Pick<
 >[] = [DISCOVER_SAVED_FEED, TIMELINE_SAVED_FEED]
 
 export const KNOWN_SHUTDOWN_FEEDS = [
-  'at://did:plc:wqowuobffl66jv3kpsvo7ak4/app.bsky.feed.generator/the-algorithm', // for you by skygaze
+  'at://did:plc:wqowuobffl66jv3kpsvo7ak4/app.gndr.feed.generator/the-algorithm', // for you by skygaze
 ]
 
 export const GIF_SERVICE = 'https://gifs.gndr.app'
@@ -197,7 +197,7 @@ export const EMOJI_REACTION_LIMIT = 5
 export const urls = {
   website: {
     blog: {
-      initialVerificationAnnouncement: `https://bsky.social/about/blog/04-21-2025-verification`,
+      initialVerificationAnnouncement: `https://gndr.social/about/blog/04-21-2025-verification`,
     },
   },
 }

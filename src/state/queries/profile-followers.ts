@@ -25,7 +25,7 @@ export function useProfileFollowersQuery(did: string | undefined) {
   >({
     queryKey: RQKEY(did || ''),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getFollowers({
+      const res = await agent.app.gndr.graph.getFollowers({
         actor: did || '',
         limit: PAGE_SIZE,
         cursor: pageParam,

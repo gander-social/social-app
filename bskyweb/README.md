@@ -26,13 +26,13 @@ Then build and copy over the big 'ol `bundle.web.js` file:
 
 Install golang. We generally develop against the current stable release of the language, as declared in `go.mod`.
 
-In this directory (`bskyweb/`):
+In this directory (`gndrweb/`):
 
     # re-build and run daemon
-    go run ./cmd/bskyweb serve
+    go run ./cmd/gndrweb serve
 
     # build and output a binary
-    go build -o bskyweb ./cmd/bskyweb/
+    go build -o gndrweb ./cmd/gndrweb/
 
 The easiest way to configure the daemon is to copy `example.env` to `.env` and
 fill in auth values there.

@@ -30,7 +30,7 @@ import {
 import {SpeakerVolumeFull_Stroke2_Corner0_Rounded as Unmute} from '#/components/icons/Speaker'
 import * as Menu from '#/components/Menu'
 import * as Prompt from '#/components/Prompt'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 import {Bubble_Stroke2_Corner2_Rounded as Bubble} from '../icons/Bubble'
 import {ReportDialog} from './ReportDialog'
 
@@ -46,7 +46,7 @@ let ConvoMenu = ({
   style,
 }: {
   convo: ChatBskyConvoDefs.ConvoView
-  profile: Shadow<bsky.profile.AnyProfileView>
+  profile: Shadow<gndr.profile.AnyProfileView>
   control?: Menu.MenuControlProps
   currentScreen: 'list' | 'conversation'
   showMarkAsRead?: boolean
@@ -145,7 +145,7 @@ function MenuContent({
   blockedByListControl,
 }: {
   convo: ChatBskyConvoDefs.ConvoView
-  profile: Shadow<bsky.profile.AnyProfileView>
+  profile: Shadow<gndr.profile.AnyProfileView>
   showMarkAsRead?: boolean
   blockInfo: {
     listBlocks: ModerationCause[]

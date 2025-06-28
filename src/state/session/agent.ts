@@ -155,10 +155,10 @@ export async function createAgentAndCreateAccount(
         if (getAge(birthDate) < 18) {
           await agent.api.com.atproto.repo.putRecord({
             repo: account.did,
-            collection: 'chat.bsky.actor.declaration',
+            collection: 'chat.gndr.actor.declaration',
             rkey: 'self',
             record: {
-              $type: 'chat.bsky.actor.declaration',
+              $type: 'chat.gndr.actor.declaration',
               allowIncoming: 'none',
             },
           })

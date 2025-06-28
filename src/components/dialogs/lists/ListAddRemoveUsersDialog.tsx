@@ -23,7 +23,7 @@ import {
 } from '#/components/dialogs/SearchablePeopleList'
 import {Loader} from '#/components/Loader'
 import * as ProfileCard from '#/components/ProfileCard'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export function ListAddRemoveUsersDialog({
   control,
@@ -34,7 +34,7 @@ export function ListAddRemoveUsersDialog({
   list: AppBskyGraphDefs.ListView
   onChange?: (
     type: 'add' | 'remove',
-    profile: bsky.profile.AnyProfileView,
+    profile: gndr.profile.AnyProfileView,
   ) => void | undefined
 }) {
   return (
@@ -52,7 +52,7 @@ function DialogInner({
   list: AppBskyGraphDefs.ListView
   onChange?: (
     type: 'add' | 'remove',
-    profile: bsky.profile.AnyProfileView,
+    profile: gndr.profile.AnyProfileView,
   ) => void | undefined
 }) {
   const {_} = useLingui()
@@ -89,12 +89,12 @@ function UserResult({
   onChange,
   moderationOpts,
 }: {
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   list: AppBskyGraphDefs.ListView
   memberships: ListMembersip[] | undefined
   onChange?: (
     type: 'add' | 'remove',
-    profile: bsky.profile.AnyProfileView,
+    profile: gndr.profile.AnyProfileView,
   ) => void | undefined
   moderationOpts?: ModerationOpts
 }) {

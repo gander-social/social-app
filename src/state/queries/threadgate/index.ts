@@ -20,7 +20,7 @@ import {
 } from '#/state/queries/threadgate/util'
 import {useAgent} from '#/state/session'
 import {useThreadgateHiddenReplyUrisAPI} from '#/state/threadgate-hidden-replies'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export * from '#/state/queries/threadgate/types'
 export * from '#/state/queries/threadgate/util'
@@ -89,7 +89,7 @@ export async function getThreadgateView({
   agent: BskyAgent
   postUri: string
 }) {
-  const {data} = await agent.app.bsky.feed.getPostThread({
+  const {data} = await agent.app.gndr.feed.getPostThread({
     uri: postUri!,
     depth: 0,
   })
@@ -134,14 +134,14 @@ export async function getThreadgateRecord({
       () =>
         agent.api.com.atproto.repo.getRecord({
           repo: urip.host,
-          collection: 'app.bsky.feed.threadgate',
+          collection: 'app.gndr.feed.threadgate',
           rkey: urip.rkey,
         }),
     )
 
     if (
       data.value &&
-      bsky.validate(data.value, AppBskyFeedThreadgate.validateRecord)
+      gndr.validate(data.value, AppBskyFeedThreadgate.validateRecord)
     ) {
       return data.value
     } else {
@@ -180,7 +180,7 @@ export async function writeThreadgateRecord({
   await networkRetry(2, () =>
     agent.api.com.atproto.repo.putRecord({
       repo: agent.session!.did,
-      collection: 'app.bsky.feed.threadgate',
+      collection: 'app.gndr.feed.threadgate',
       rkey: postUrip.rkey,
       record,
     }),
@@ -280,7 +280,7 @@ export function useSetThreadgateAllowMutation() {
           return false
         },
         () => {
-          return agent.app.bsky.feed.getPostThread({
+          return agent.app.gndr.feed.getPostThread({
             uri: postUri,
             depth: 0,
           })

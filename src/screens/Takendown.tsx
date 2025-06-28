@@ -215,7 +215,7 @@ export function Takendown() {
                   Your account was found to be in violation of the{' '}
                   <InlineLinkText
                     label={_(msg`Gander Social Terms of Service`)}
-                    to="https://bsky.social/about/support/tos"
+                    to="https://gndr.social/about/support/tos"
                     style={[a.text_md, a.leading_normal]}
                     overridePresentation>
                     Gander Social Terms of Service

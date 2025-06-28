@@ -37,7 +37,7 @@ export function useProfileFollowsQuery(
     staleTime: STALE.MINUTES.ONE,
     queryKey: RQKEY(did || ''),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getFollows({
+      const res = await agent.app.gndr.graph.getFollows({
         actor: did || '',
         limit: limit || PAGE_SIZE,
         cursor: pageParam,

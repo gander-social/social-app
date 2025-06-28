@@ -77,7 +77,7 @@ export function useClearPreferencesMutation() {
 
   return useMutation({
     mutationFn: async () => {
-      await agent.app.bsky.actor.putPreferences({preferences: []})
+      await agent.app.gndr.actor.putPreferences({preferences: []})
       // triggers a refetch
       await queryClient.invalidateQueries({
         queryKey: preferencesQueryKey,
@@ -367,7 +367,7 @@ export function useQueueNudgesMutation() {
 
   return useMutation({
     mutationFn: async (nudges: string | string[]) => {
-      await agent.bskyAppQueueNudges(nudges)
+      await agent.gndrAppQueueNudges(nudges)
       // triggers a refetch
       await queryClient.invalidateQueries({
         queryKey: preferencesQueryKey,
@@ -382,7 +382,7 @@ export function useDismissNudgesMutation() {
 
   return useMutation({
     mutationFn: async (nudges: string | string[]) => {
-      await agent.bskyAppDismissNudges(nudges)
+      await agent.gndrAppDismissNudges(nudges)
       // triggers a refetch
       await queryClient.invalidateQueries({
         queryKey: preferencesQueryKey,
@@ -399,7 +399,7 @@ export function useSetActiveProgressGuideMutation() {
     mutationFn: async (
       guide: AppBskyActorDefs.BskyAppProgressGuide | undefined,
     ) => {
-      await agent.bskyAppSetActiveProgressGuide(guide)
+      await agent.gndrAppSetActiveProgressGuide(guide)
       // triggers a refetch
       await queryClient.invalidateQueries({
         queryKey: preferencesQueryKey,

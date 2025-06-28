@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react'
 import {ListRenderItemInfo, View} from 'react-native'
 import {AppBskyFeedDefs} from '@atproto/api'
-import {GeneratorView} from '@atproto/api/dist/client/types/app/bsky/feed/defs'
+import {GeneratorView} from '@atproto/api/dist/client/types/app/gndr/feed/defs'
 
 import {useBottomBarOffset} from '#/lib/hooks/useBottomBarOffset'
 import {isNative, isWeb} from '#/platform/detection'

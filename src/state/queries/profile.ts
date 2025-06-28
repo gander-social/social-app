@@ -33,7 +33,7 @@ import {
 import {useUpdateProfileVerificationCache} from '#/state/queries/verification/useUpdateProfileVerificationCache'
 import {useAgent, useSession} from '#/state/session'
 import * as userActionHistory from '#/state/userActionHistory'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 import {
   ProgressGuideAction,
   useProgressGuideControls,
@@ -239,7 +239,7 @@ export function useProfileUpdateMutation() {
 }
 
 export function useProfileFollowMutationQueue(
-  profile: Shadow<bsky.profile.AnyProfileView>,
+  profile: Shadow<gndr.profile.AnyProfileView>,
   logContext: LogEvents['profile:follow']['logContext'] &
     LogEvents['profile:follow']['logContext'],
 ) {
@@ -277,7 +277,7 @@ export function useProfileFollowMutationQueue(
       })
 
       if (finalFollowingUri) {
-        agent.app.bsky.graph
+        agent.app.gndr.graph
           .getSuggestedFollowsByActor({
             actor: did,
           })
@@ -313,7 +313,7 @@ export function useProfileFollowMutationQueue(
 
 function useProfileFollowMutation(
   logContext: LogEvents['profile:follow']['logContext'],
-  profile: Shadow<bsky.profile.AnyProfileView>,
+  profile: Shadow<gndr.profile.AnyProfileView>,
 ) {
   const {currentAccount} = useSession()
   const agent = useAgent()
@@ -356,7 +356,7 @@ function useProfileUnfollowMutation(
 }
 
 export function useProfileMuteMutationQueue(
-  profile: Shadow<bsky.profile.AnyProfileView>,
+  profile: Shadow<gndr.profile.AnyProfileView>,
 ) {
   const queryClient = useQueryClient()
   const did = profile.did
@@ -431,7 +431,7 @@ function useProfileUnmuteMutation() {
 }
 
 export function useProfileBlockMutationQueue(
-  profile: Shadow<bsky.profile.AnyProfileView>,
+  profile: Shadow<gndr.profile.AnyProfileView>,
 ) {
   const queryClient = useQueryClient()
   const did = profile.did
@@ -494,7 +494,7 @@ function useProfileBlockMutation() {
       if (!currentAccount) {
         throw new Error('Not signed in')
       }
-      return await agent.app.bsky.graph.block.create(
+      return await agent.app.gndr.graph.block.create(
         {repo: currentAccount.did},
         {subject: did, createdAt: new Date().toISOString()},
       )
@@ -516,7 +516,7 @@ function useProfileUnblockMutation() {
         throw new Error('Not signed in')
       }
       const {rkey} = new AtUri(blockUri)
-      await agent.app.bsky.graph.block.delete({
+      await agent.app.gndr.graph.block.delete({
         repo: currentAccount.did,
         rkey,
       })
@@ -536,7 +536,7 @@ async function whenAppViewReady(
     5, // 5 tries
     1e3, // 1s delay between tries
     fn,
-    () => agent.app.bsky.actor.getProfile({actor}),
+    () => agent.app.gndr.actor.getProfile({actor}),
   )
 }
 

@@ -99,7 +99,7 @@ import * as Hider from '#/components/moderation/Hider'
 import {PostControls} from '#/components/PostControls'
 import {RichText} from '#/components/RichText'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 import {Scrubber, VIDEO_PLAYER_BOTTOM_INSET} from './components/Scrubber'
 
 function createThreeVideoPlayers(
@@ -494,7 +494,7 @@ let VideoItem = ({
     if (active) {
       sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#interactionSeen',
+        event: 'app.gndr.feed.defs#interactionSeen',
         feedContext,
         reqId,
       })
@@ -715,7 +715,7 @@ function Overlay({
   )
 
   const rkey = new AtUri(post.uri).rkey
-  const record = bsky.dangerousIsType<AppBskyFeedPost.Record>(
+  const record = gndr.dangerousIsType<AppBskyFeedPost.Record>(
     post.record,
     AppBskyFeedPost.isRecord,
   )
@@ -1056,7 +1056,7 @@ function PlayPauseTapArea({
       queueLike()
       sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#interactionLike',
+        event: 'app.gndr.feed.defs#interactionLike',
         feedContext,
         reqId,
       })

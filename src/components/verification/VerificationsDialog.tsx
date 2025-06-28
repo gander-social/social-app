@@ -20,7 +20,7 @@ import * as ProfileCard from '#/components/ProfileCard'
 import {Text} from '#/components/Typography'
 import {type FullVerificationState} from '#/components/verification'
 import {VerificationRemovePrompt} from '#/components/verification/VerificationRemovePrompt'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export {useDialogControl} from '#/components/Dialog'
 
@@ -30,7 +30,7 @@ export function VerificationsDialog({
   verificationState,
 }: {
   control: Dialog.DialogControlProps
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   verificationState: FullVerificationState
 }) {
   return (
@@ -51,7 +51,7 @@ function Inner({
   verificationState: state,
 }: {
   control: Dialog.DialogControlProps
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   verificationState: FullVerificationState
 }) {
   const t = useTheme()
@@ -178,7 +178,7 @@ function VerifierCard({
   outerDialogControl,
 }: {
   verification: AppBskyActorDefs.VerificationView
-  subject: bsky.profile.AnyProfileView
+  subject: gndr.profile.AnyProfileView
   outerDialogControl: Dialog.DialogControlProps
 }) {
   const t = useTheme()

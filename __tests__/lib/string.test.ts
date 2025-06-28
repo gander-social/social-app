@@ -134,9 +134,9 @@ describe('detectLinkables', () => {
 
 describe('makeRecordUri', () => {
   const inputs: [string, string, string][] = [
-    ['alice.test', 'app.bsky.feed.post', '3jk7x4irgv52r'],
+    ['alice.test', 'app.gndr.feed.post', '3jk7x4irgv52r'],
   ]
-  const outputs = ['at://alice.test/app.bsky.feed.post/3jk7x4irgv52r']
+  const outputs = ['at://alice.test/app.gndr.feed.post/3jk7x4irgv52r']
 
   it('correctly builds a record URI', () => {
     for (let i = 0; i < inputs.length; i++) {
@@ -229,7 +229,7 @@ describe('toNiceDomain', () => {
   const inputs = [
     'https://example.com/index.html',
     'https://gndr.app',
-    'https://bsky.social',
+    'https://gndr.social',
     '#123123123',
   ]
   const outputs = ['example.com', 'gndr.app', 'Gander Social', '#123123123']
@@ -824,7 +824,7 @@ describe('parseEmbedPlayerFromUrl', () => {
 })
 
 describe('createStarterPackLinkFromAndroidReferrer', () => {
-  const validOutput = 'at://haileyok.com/app.bsky.graph.starterpack/rkey'
+  const validOutput = 'at://haileyok.com/app.gndr.graph.starterpack/rkey'
 
   it('returns a link when input contains utm_source and utm_content', () => {
     expect(
@@ -837,7 +837,7 @@ describe('createStarterPackLinkFromAndroidReferrer', () => {
       createStarterPackLinkFromAndroidReferrer(
         'utm_source=gander&utm_content=starterpack_test-lover-9000.com_rkey',
       ),
-    ).toEqual('at://test-lover-9000.com/app.bsky.graph.starterpack/rkey')
+    ).toEqual('at://test-lover-9000.com/app.gndr.graph.starterpack/rkey')
   })
 
   it('returns a link when input contains utm_source and utm_content in different order', () => {
@@ -951,7 +951,7 @@ describe('parseStarterPackHttpUri', () => {
   })
 
   it('returns the at uri when the input is a valid starterpack at uri', () => {
-    const validAtUri = 'at://did:123/app.bsky.graph.starterpack/rkey'
+    const validAtUri = 'at://did:123/app.gndr.graph.starterpack/rkey'
     expect(parseStarterPackUri(validAtUri)).toEqual({
       name: 'did:123',
       rkey: 'rkey',
@@ -959,12 +959,12 @@ describe('parseStarterPackHttpUri', () => {
   })
 
   it('returns null when the at uri has no rkey', () => {
-    const validAtUri = 'at://did:123/app.bsky.graph.starterpack'
+    const validAtUri = 'at://did:123/app.gndr.graph.starterpack'
     expect(parseStarterPackUri(validAtUri)).toEqual(null)
   })
 
-  it('returns null when the collection is not app.bsky.graph.starterpack', () => {
-    const validAtUri = 'at://did:123/app.bsky.graph.list/rkey'
+  it('returns null when the collection is not app.gndr.graph.starterpack', () => {
+    const validAtUri = 'at://did:123/app.gndr.graph.list/rkey'
     expect(parseStarterPackUri(validAtUri)).toEqual(null)
   })
 

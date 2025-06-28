@@ -70,14 +70,14 @@ export function useFeedFeedback(
     }
 
     // Send to the feed
-    agent.app.bsky.feed
+    agent.app.gndr.feed
       .sendInteractions(
         {interactions},
         {
           encoding: 'application/json',
           headers: {
             // TODO when we start sending to other feeds, we need to grab their DID -prf
-            'atproto-proxy': `${proxyDid}#bsky_fg`,
+            'atproto-proxy': `${proxyDid}#gndr_fg`,
           },
         },
       )
@@ -127,7 +127,7 @@ export function useFeedFeedback(
           queue.current.add(
             toString({
               item: postItem.uri,
-              event: 'app.bsky.feed.defs#interactionSeen',
+              event: 'app.gndr.feed.defs#interactionSeen',
               feedContext,
               reqId,
             }),
@@ -217,13 +217,13 @@ function sendOrAggregateInteractionsForStats(
     switch (interaction.event) {
       // Pressing "Show more" / "Show less" is relatively uncommon so we won't aggregate them.
       // This lets us send the feed context together with them.
-      case 'app.bsky.feed.defs#requestLess': {
+      case 'app.gndr.feed.defs#requestLess': {
         logEvent('discover:showLess', {
           feedContext: interaction.feedContext ?? '',
         })
         break
       }
-      case 'app.bsky.feed.defs#requestMore': {
+      case 'app.gndr.feed.defs#requestMore': {
         logEvent('discover:showMore', {
           feedContext: interaction.feedContext ?? '',
         })
@@ -231,22 +231,22 @@ function sendOrAggregateInteractionsForStats(
       }
 
       // The rest of the events are aggregated and sent later in batches.
-      case 'app.bsky.feed.defs#clickthroughAuthor':
-      case 'app.bsky.feed.defs#clickthroughEmbed':
-      case 'app.bsky.feed.defs#clickthroughItem':
-      case 'app.bsky.feed.defs#clickthroughReposter': {
+      case 'app.gndr.feed.defs#clickthroughAuthor':
+      case 'app.gndr.feed.defs#clickthroughEmbed':
+      case 'app.gndr.feed.defs#clickthroughItem':
+      case 'app.gndr.feed.defs#clickthroughReposter': {
         stats.clickthroughCount++
         break
       }
-      case 'app.bsky.feed.defs#interactionLike':
-      case 'app.bsky.feed.defs#interactionQuote':
-      case 'app.bsky.feed.defs#interactionReply':
-      case 'app.bsky.feed.defs#interactionRepost':
-      case 'app.bsky.feed.defs#interactionShare': {
+      case 'app.gndr.feed.defs#interactionLike':
+      case 'app.gndr.feed.defs#interactionQuote':
+      case 'app.gndr.feed.defs#interactionReply':
+      case 'app.gndr.feed.defs#interactionRepost':
+      case 'app.gndr.feed.defs#interactionShare': {
         stats.engagedCount++
         break
       }
-      case 'app.bsky.feed.defs#interactionSeen': {
+      case 'app.gndr.feed.defs#interactionSeen': {
         stats.seenCount++
         break
       }

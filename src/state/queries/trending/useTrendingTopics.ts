@@ -30,7 +30,7 @@ export function useTrendingTopics() {
     staleTime: STALE.MINUTES.THREE,
     queryKey: trendingTopicsQueryKey,
     async queryFn() {
-      const {data} = await agent.api.app.bsky.unspecced.getTrendingTopics({
+      const {data} = await agent.api.app.gndr.unspecced.getTrendingTopics({
         limit: DEFAULT_LIMIT,
       })
       return {

@@ -16,7 +16,7 @@ import {Loader} from '#/components/Loader'
 import {ScreenTransition} from '#/components/StarterPack/Wizard/ScreenTransition'
 import {WizardProfileCard} from '#/components/StarterPack/Wizard/WizardListCard'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 function keyExtractor(item: AppBskyActorDefs.ProfileViewBasic) {
   return item?.did ?? ''
@@ -51,7 +51,7 @@ export function StepProfiles({
 
   const renderItem = ({
     item,
-  }: ListRenderItemInfo<bsky.profile.AnyProfileView>) => {
+  }: ListRenderItemInfo<gndr.profile.AnyProfileView>) => {
     return (
       <WizardProfileCard
         profile={item}

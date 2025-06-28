@@ -9,7 +9,7 @@ import {atoms as a, useTheme} from '#/alf'
 import {MediaInsetBorder} from '#/components/MediaInsetBorder'
 import {Text} from '#/components/Typography'
 import {PlayButtonIcon} from '#/components/video/PlayButtonIcon'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 /**
  * Streamlined MediaPreview component which just handles images, gifs, and videos
@@ -21,7 +21,7 @@ export function Embed({
   embed: AppBskyFeedDefs.PostView['embed']
   style?: StyleProp<ViewStyle>
 }) {
-  const e = bsky.post.parseEmbed(embed)
+  const e = gndr.post.parseEmbed(embed)
 
   if (!e) return null
 

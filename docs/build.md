@@ -130,10 +130,10 @@ To run the build with Go, use staging credentials, your own, or any other accoun
 ```
 cd social-app
 yarn && yarn build-web
-cd bskyweb/
+cd gndrweb/
 go mod tidy
-go build -v -tags timetzdata -o bskyweb ./cmd/bskyweb
-./bskyweb serve --appview-host=https://public.api.gndr.app
+go build -v -tags timetzdata -o gndrweb ./cmd/gndrweb
+./gndrweb serve --appview-host=https://public.api.gndr.app
 ```
 
 On build success, access the application at [http://localhost:8100/](http://localhost:8100/). Subsequent changes require re-running the above steps in order to be reflected.

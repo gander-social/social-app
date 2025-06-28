@@ -36,7 +36,7 @@ export function useLeaveConvo(
     mutationFn: async () => {
       if (!convoId) throw new Error('No convoId provided')
 
-      const {data} = await agent.chat.bsky.convo.leaveConvo(
+      const {data} = await agent.chat.gndr.convo.leaveConvo(
         {convoId},
         {headers: DM_SERVICE_HEADERS, encoding: 'application/json'},
       )

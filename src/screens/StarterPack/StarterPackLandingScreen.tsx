@@ -38,7 +38,7 @@ import {Default as ProfileCard} from '#/components/ProfileCard'
 import * as Prompt from '#/components/Prompt'
 import {RichText} from '#/components/RichText'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable)
 
@@ -87,7 +87,7 @@ export function LandingScreen({
 
   // Just for types, this cannot be hit
   if (
-    !bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
       starterPack.record,
       AppBskyGraphStarterpack.isRecord,
     )

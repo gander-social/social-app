@@ -6,7 +6,7 @@ import {
   AppBskyFeedPost,
 } from '@atproto/api'
 
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 import {isPostInLanguage} from '../../locale/helpers'
 import {FALLBACK_MARKER_POST} from './feed/home'
 import {type ReasonFeedSource} from './feed/types'
@@ -68,7 +68,7 @@ export class FeedViewPostsSlice {
     }
     if (
       !AppBskyFeedPost.isRecord(post.record) ||
-      !bsky.validate(post.record, AppBskyFeedPost.validateRecord)
+      !gndr.validate(post.record, AppBskyFeedPost.validateRecord)
     ) {
       return
     }
@@ -100,7 +100,7 @@ export class FeedViewPostsSlice {
     if (
       !AppBskyFeedDefs.isPostView(parent) ||
       !AppBskyFeedPost.isRecord(parent.record) ||
-      !bsky.validate(parent.record, AppBskyFeedPost.validateRecord)
+      !gndr.validate(parent.record, AppBskyFeedPost.validateRecord)
     ) {
       this.isOrphan = true
       return
@@ -142,7 +142,7 @@ export class FeedViewPostsSlice {
     if (
       !AppBskyFeedDefs.isPostView(root) ||
       !AppBskyFeedPost.isRecord(root.record) ||
-      !bsky.validate(root.record, AppBskyFeedPost.validateRecord)
+      !gndr.validate(root.record, AppBskyFeedPost.validateRecord)
     ) {
       this.isOrphan = true
       return

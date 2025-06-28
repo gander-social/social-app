@@ -79,7 +79,7 @@ function EmbedDialogInner({
 
     // x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
     // DO NOT ADD ANY NEW INTERPOLATIONS BELOW WITHOUT ESCAPING THEM!
-    // Also, keep this code synced with the bskyembed code in landing.tsx.
+    // Also, keep this code synced with the gndrembed code in landing.tsx.
     // x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x-x
     return `<blockquote class="gander-embed" data-gander-uri="${escapeHtml(
       postUri,

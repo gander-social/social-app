@@ -95,7 +95,7 @@ function ProfileScreenInner({route}: Props) {
   // Apply hard-coded redirects as need
   React.useEffect(() => {
     if (resolveError) {
-      if (name === 'lulaoficial.bsky.social') {
+      if (name === 'lulaoficial.gndr.social') {
         console.log('Applying redirect to lula.com.br')
         navigate('Profile', {name: 'lula.com.br'})
       }

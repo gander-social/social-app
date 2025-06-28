@@ -18,7 +18,7 @@ import {niceDate} from '../utils'
 
 const DEFAULT_POST = 'https://gndr.app/profile/emilyliu.me/post/3jzn6g7ixgq2y'
 const DEFAULT_URI =
-  'at://did:plc:vjug55kidv6sye7ykr5faxxn/app.bsky.feed.post/3jzn6g7ixgq2y'
+  'at://did:plc:vjug55kidv6sye7ykr5faxxn/app.gndr.feed.post/3jzn6g7ixgq2y'
 
 export const EMBED_SERVICE = 'https://embed.gndr.app'
 export const EMBED_SCRIPT = `${EMBED_SERVICE}/static/embed.js`
@@ -80,7 +80,7 @@ function LandingPage() {
                 did = resolution.data.did
               }
 
-              atUri = `at://${did}/app.bsky.feed.post/${rkey}`
+              atUri = `at://${did}/app.gndr.feed.post/${rkey}`
             } catch (err) {
               console.log(err)
               throw new Error('Invalid Bluesky URL')
@@ -118,7 +118,7 @@ function LandingPage() {
   return (
     <main className="w-full min-h-screen flex flex-col items-center gap-8 py-14 px-4 md:pt-32 dark:bg-dimmedBgDarken dark:text-slate-200">
       <Link
-        href="https://bsky.social/about"
+        href="https://gndr.social/about"
         className="transition-transform hover:scale-110">
         <img src={logo} className="h-10" />
       </Link>

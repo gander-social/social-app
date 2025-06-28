@@ -27,7 +27,7 @@ async function _registerPushToken({
   token: Notifications.DevicePushToken
 }) {
   try {
-    await agent.app.bsky.notification.registerPush({
+    await agent.app.gndr.notification.registerPush({
       serviceDid: currentAccount.service?.includes('staging')
         ? PUBLIC_STAGING_APPVIEW_DID
         : PUBLIC_APPVIEW_DID,

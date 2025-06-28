@@ -1,4 +1,4 @@
-module github.com/gander-social/social-app/bskyweb
+module github.com/gander-social/social-app/gndrweb
 
 go 1.23
 

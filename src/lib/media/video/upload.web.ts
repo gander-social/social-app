@@ -30,7 +30,7 @@ export async function uploadVideo({
   }
   await getVideoUploadLimits(agent, _)
 
-  const uri = createVideoEndpointUrl('/xrpc/app.bsky.video.uploadVideo', {
+  const uri = createVideoEndpointUrl('/xrpc/app.gndr.video.uploadVideo', {
     did,
     name: `${nanoid(12)}.${mimeToExt(video.mimeType)}`,
   })

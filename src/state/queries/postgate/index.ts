@@ -21,7 +21,7 @@ import {
   POSTGATE_COLLECTION,
 } from '#/state/queries/postgate/util'
 import {useAgent} from '#/state/session'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export async function getPostgateRecord({
   agent,
@@ -63,7 +63,7 @@ export async function getPostgateRecord({
 
     if (
       data.value &&
-      bsky.validate(data.value, AppBskyFeedPostgate.validateRecord)
+      gndr.validate(data.value, AppBskyFeedPostgate.validateRecord)
     ) {
       return data.value
     } else {
@@ -277,7 +277,7 @@ export function useToggleQuotepostEnabledMutation() {
         if (prev) {
           if (action === 'disable') {
             return mergePostgateRecords(prev, {
-              embeddingRules: [{$type: 'app.bsky.feed.postgate#disableRule'}],
+              embeddingRules: [{$type: 'app.gndr.feed.postgate#disableRule'}],
             })
           } else if (action === 'enable') {
             return {
@@ -289,7 +289,7 @@ export function useToggleQuotepostEnabledMutation() {
           if (action === 'disable') {
             return createPostgateRecord({
               post: postUri,
-              embeddingRules: [{$type: 'app.bsky.feed.postgate#disableRule'}],
+              embeddingRules: [{$type: 'app.gndr.feed.postgate#disableRule'}],
             })
           }
         }

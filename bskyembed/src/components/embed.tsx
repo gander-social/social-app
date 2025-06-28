@@ -186,7 +186,7 @@ export function Embed({
           />
           <Embed
             content={{
-              $type: 'app.bsky.embed.record#view',
+              $type: 'app.gndr.embed.record#view',
               record: content.record.record,
             }}
             labels={content.record.record.labels}

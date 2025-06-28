@@ -1,4 +1,4 @@
-package bskyweb
+package gndrweb
 
 import "embed"
 

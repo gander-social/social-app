@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strings"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 
 	"github.com/labstack/echo/v4"
@@ -54,7 +54,7 @@ func (srv *Server) WebProfileRSS(c echo.Context) error {
 		}
 
 		// check that public view is Ok, and resolve DID
-		pv, err := appbsky.ActorGetProfile(ctx, srv.xrpcc, handle.String())
+		pv, err := appgndr.ActorGetProfile(ctx, srv.xrpcc, handle.String())
 		if err != nil {
 			return echo.NewHTTPError(404, fmt.Sprintf("account not found: %s", handle))
 		}
@@ -72,7 +72,7 @@ func (srv *Server) WebProfileRSS(c echo.Context) error {
 	}
 
 	// check that public view is Ok
-	pv, err := appbsky.ActorGetProfile(ctx, srv.xrpcc, did.String())
+	pv, err := appgndr.ActorGetProfile(ctx, srv.xrpcc, did.String())
 	if err != nil {
 		return echo.NewHTTPError(404, fmt.Sprintf("account not found: %s", did))
 	}
@@ -82,7 +82,7 @@ func (srv *Server) WebProfileRSS(c echo.Context) error {
 		}
 	}
 
-	af, err := appbsky.FeedGetAuthorFeed(ctx, srv.xrpcc, did.String(), "", "posts_no_replies", false, 30)
+	af, err := appgndr.FeedGetAuthorFeed(ctx, srv.xrpcc, did.String(), "", "posts_no_replies", false, 30)
 	if err != nil {
 		log.Warn("failed to fetch author feed", "did", did, "err", err)
 		return err
@@ -98,7 +98,7 @@ func (srv *Server) WebProfileRSS(c echo.Context) error {
 		if err != nil {
 			return err
 		}
-		rec, ok := p.Post.Record.Val.(*appbsky.FeedPost)
+		rec, ok := p.Post.Record.Val.(*appgndr.FeedPost)
 		if !ok {
 			continue
 		}

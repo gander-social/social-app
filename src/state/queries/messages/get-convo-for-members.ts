@@ -18,7 +18,7 @@ export function useGetConvoForMembers({
 
   return useMutation({
     mutationFn: async (members: string[]) => {
-      const {data} = await agent.chat.bsky.convo.getConvoForMembers(
+      const {data} = await agent.chat.gndr.convo.getConvoForMembers(
         {members: members},
         {headers: DM_SERVICE_HEADERS},
       )

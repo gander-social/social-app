@@ -360,7 +360,7 @@ const EXEMPT_PATHS = ['/robots.txt', '/security.txt', '/.well-known/']
 // preserve the tab the app is currently in
 //
 // we also have some additional behaviors - closing the current modal,
-// converting bsky urls, and opening http/s links in the system browser
+// converting gndr urls, and opening http/s links in the system browser
 //
 // this method copies from the onPress implementation but adds our
 // needed customizations

@@ -33,11 +33,11 @@ export async function getServiceAuthToken({
 export async function getVideoUploadLimits(agent: BskyAgent, _: I18n['_']) {
   const token = await getServiceAuthToken({
     agent,
-    lxm: 'app.bsky.video.getUploadLimits',
+    lxm: 'app.gndr.video.getUploadLimits',
     aud: VIDEO_SERVICE_DID,
   })
   const videoAgent = createVideoAgent()
-  const {data: limits} = await videoAgent.app.bsky.video
+  const {data: limits} = await videoAgent.app.gndr.video
     .getUploadLimits({}, {headers: {Authorization: `Bearer ${token}`}})
     .catch(err => {
       if (err instanceof Error) {

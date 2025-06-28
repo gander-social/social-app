@@ -5,20 +5,20 @@ import (
 	"slices"
 	"strings"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 )
 
 // Function to expand shortened links in rich text back to full urls, replacing shortened urls in social card meta tags and the noscript output.
 //
 // This essentially reverses the effect of the typescript function `shortenLinks()` in `src/lib/strings/rich-text-manip.ts`
-func ExpandPostText(post *appbsky.FeedPost) string {
+func ExpandPostText(post *appgndr.FeedPost) string {
 	postText := post.Text
 	var charsAdded int = 0
 	// iterate over facets, check if they're link facets, and if found, grab the uri
 	for _, facet := range post.Facets {
 		linkUri := ""
-		if slices.ContainsFunc(facet.Features, func(feat *appbsky.RichtextFacet_Features_Elem) bool {
-			if feat.RichtextFacet_Link == nil || feat.RichtextFacet_Link.LexiconTypeID != "app.bsky.richtext.facet#link" {
+		if slices.ContainsFunc(facet.Features, func(feat *appgndr.RichtextFacet_Features_Elem) bool {
+			if feat.RichtextFacet_Link == nil || feat.RichtextFacet_Link.LexiconTypeID != "app.gndr.richtext.facet#link" {
 				return false
 			}
 

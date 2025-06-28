@@ -45,7 +45,7 @@ import {PostAlerts} from '#/components/moderation/PostAlerts'
 import {Text} from '#/components/Typography'
 import {useSimpleVerificationState} from '#/components/verification'
 import {VerificationCheck} from '#/components/verification/VerificationCheck'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export let ChatListItem = ({
   convo,
@@ -88,7 +88,7 @@ function ChatListItemReady({
   children,
 }: {
   convo: ChatBskyConvoDefs.ConvoView
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   moderationOpts: ModerationOpts
   showMenu?: boolean
   children?: React.ReactNode

@@ -156,7 +156,7 @@ function SubmitStep({
       if (params.type === 'convoMessage') {
         const {convoId, message} = params
         const subject: $Typed<ChatBskyConvoDefs.MessageRef> = {
-          $type: 'chat.bsky.convo.defs#messageRef',
+          $type: 'chat.gndr.convo.defs#messageRef',
           messageId: message.id,
           convoId,
           did: message.sender.did,

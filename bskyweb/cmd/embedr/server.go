@@ -16,7 +16,7 @@ import (
 	"github.com/gander-social/gander-indigo-sovereign/atproto/identity"
 	"github.com/gander-social/gander-indigo-sovereign/util/cliutil"
 	"github.com/gander-social/gander-indigo-sovereign/xrpc"
-	"github.com/gander-social/social-app/bskyweb"
+	"github.com/gander-social/social-app/gndrweb"
 
 	"github.com/klauspost/compress/gzhttp"
 	"github.com/klauspost/compress/gzip"
@@ -86,7 +86,7 @@ func serve(cctx *cli.Context) error {
 	e.HideBanner = true
 
 	tmpl := &Template{
-		templates: template.Must(template.ParseFS(bskyweb.EmbedrTemplateFS, "embedr-templates/*.html")),
+		templates: template.Must(template.ParseFS(gndrweb.EmbedrTemplateFS, "embedr-templates/*.html")),
 	}
 	e.Renderer = tmpl
 	e.HTTPErrorHandler = server.errorHandler
@@ -141,7 +141,7 @@ func serve(cctx *cli.Context) error {
 			log.Debugf("serving static file from the local file system")
 			return http.FS(os.DirFS("embedr-static"))
 		}
-		fsys, err := fs.Sub(bskyweb.EmbedrStaticFS, "embedr-static")
+		fsys, err := fs.Sub(gndrweb.EmbedrStaticFS, "embedr-static")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -176,7 +176,7 @@ func serve(cctx *cli.Context) error {
 	e.GET("/iframe-resize.js", echo.WrapHandler(staticHandler))
 	e.GET("/embed.js", echo.WrapHandler(staticHandler))
 	e.GET("/oembed", server.WebOEmbed)
-	e.GET("/embed/:did/app.bsky.feed.post/:rkey", server.WebPostEmbed)
+	e.GET("/embed/:did/app.gndr.feed.post/:rkey", server.WebPostEmbed)
 
 	// Start the server.
 	log.Infof("starting server address=%s", httpAddress)

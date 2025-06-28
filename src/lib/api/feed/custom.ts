@@ -33,7 +33,7 @@ export class CustomFeedAPI implements FeedAPI {
 
   async peekLatest(): Promise<AppBskyFeedDefs.FeedViewPost> {
     const contentLangs = getContentLanguages().join(',')
-    const res = await this.agent.app.bsky.feed.getFeed(
+    const res = await this.agent.app.gndr.feed.getFeed(
       {
         ...this.params,
         limit: 1,
@@ -55,7 +55,7 @@ export class CustomFeedAPI implements FeedAPI {
     const isBlueskyOwned = isBlueskyOwnedFeed(this.params.feed)
 
     const res = agent.did
-      ? await this.agent.app.bsky.feed.getFeed(
+      ? await this.agent.app.gndr.feed.getFeed(
           {
             ...this.params,
             cursor,
@@ -120,7 +120,7 @@ async function loggedOutFetch({
 
   // manually construct fetch call so we can add the `lang` cache-busting param
   let res = await fetch(
-    `https://api.gndr.app/xrpc/app.bsky.feed.getFeed?feed=${feed}${
+    `https://api.gndr.app/xrpc/app.gndr.feed.getFeed?feed=${feed}${
       cursor ? `&cursor=${cursor}` : ''
     }&limit=${limit}&lang=${contentLangs}`,
     {
@@ -140,7 +140,7 @@ async function loggedOutFetch({
 
   // no data, try again with language headers removed
   res = await fetch(
-    `https://api.gndr.app/xrpc/app.bsky.feed.getFeed?feed=${feed}${
+    `https://api.gndr.app/xrpc/app.gndr.feed.getFeed?feed=${feed}${
       cursor ? `&cursor=${cursor}` : ''
     }&limit=${limit}`,
     {method: 'GET', headers: {'Accept-Language': '', ...labelersHeader}},

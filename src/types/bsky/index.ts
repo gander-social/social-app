@@ -1,8 +1,8 @@
 import {ValidationResult} from '@atproto/lexicon'
 
-export * as post from '#/types/bsky/post'
-export * as profile from '#/types/bsky/profile'
-export * as starterPack from '#/types/bsky/starterPack'
+export * as post from '#/types/gndr/post'
+export * as profile from '#/types/gndr/profile'
+export * as starterPack from '#/types/gndr/starterPack'
 
 /**
  * Fast type checking without full schema validation, for use with data we
@@ -14,9 +14,9 @@ export * as starterPack from '#/types/bsky/starterPack'
  *
  * Usage:
  * ```ts
- * import * as bsky from '#/types/bsky'
+ * import * as gndr from '#/types/gndr'
  *
- * if (bsky.dangerousIsType<AppBskyFeedPost.Record>(item, AppBskyFeedPost.isRecord)) {
+ * if (gndr.dangerousIsType<AppBskyFeedPost.Record>(item, AppBskyFeedPost.isRecord)) {
  *   // `item` has type `$Typed<AppBskyFeedPost.Record>` here
  * }
  * ```
@@ -36,9 +36,9 @@ export function dangerousIsType<R extends {$type?: string}>(
  *
  * Usage:
  * ```ts
- * import * as bsky from '#/types/bsky'
+ * import * as gndr from '#/types/gndr'
  *
- * if (bsky.validate(item, AppBskyFeedPost.validateRecord)) {
+ * if (gndr.validate(item, AppBskyFeedPost.validateRecord)) {
  *   // `item` has type `$Typed<AppBskyFeedPost.Record>` here
  * }
  * ```

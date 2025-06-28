@@ -22,10 +22,10 @@ export default function (ctx: AppContext, app: Express) {
     originVerifyMiddleware(ctx),
     handler(async (req, res) => {
       const {actor, rkey} = req.params
-      const uri = AtUri.make(actor, 'app.bsky.graph.starterpack', rkey)
+      const uri = AtUri.make(actor, 'app.gndr.graph.starterpack', rkey)
       let starterPack: AppBskyGraphDefs.StarterPackView
       try {
-        const result = await ctx.appviewAgent.api.app.bsky.graph.getStarterPack(
+        const result = await ctx.appviewAgent.api.app.gndr.graph.getStarterPack(
           {starterPack: uri.toString()},
         )
         starterPack = result.data.starterPack

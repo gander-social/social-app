@@ -25,7 +25,7 @@ export function useProfileKnownFollowersQuery(did: string | undefined) {
   >({
     queryKey: RQKEY(did || ''),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getKnownFollowers({
+      const res = await agent.app.gndr.graph.getKnownFollowers({
         actor: did!,
         limit: PAGE_SIZE,
         cursor: pageParam,

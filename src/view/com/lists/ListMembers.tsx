@@ -18,7 +18,7 @@ import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
 import {ListFooter} from '#/components/Lists'
 import * as ProfileCard from '#/components/ProfileCard'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 const LOADING_ITEM = {_reactKey: '__loading__'}
 const EMPTY_ITEM = {_reactKey: '__empty__'}
@@ -119,7 +119,7 @@ export function ListMembers({
   }, [fetchNextPage])
 
   const onPressEditMembership = React.useCallback(
-    (profile: bsky.profile.AnyProfileView) => {
+    (profile: gndr.profile.AnyProfileView) => {
       openModal({
         name: 'user-add-remove-lists',
         subject: profile.did,

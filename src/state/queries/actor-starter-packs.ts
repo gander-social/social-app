@@ -29,7 +29,7 @@ export function useActorStarterPacksQuery({
   >({
     queryKey: RQKEY(did),
     queryFn: async ({pageParam}: {pageParam?: string}) => {
-      const res = await agent.app.bsky.graph.getActorStarterPacks({
+      const res = await agent.app.gndr.graph.getActorStarterPacks({
         actor: did!,
         limit: 10,
         cursor: pageParam,

@@ -1,4 +1,4 @@
 import {subsystemLogger} from '@atproto/common'
 
-export const httpLogger = subsystemLogger('bskylink')
-export const dbLogger = subsystemLogger('bskylink:db')
+export const httpLogger = subsystemLogger('gndrlink')
+export const dbLogger = subsystemLogger('gndrlink:db')

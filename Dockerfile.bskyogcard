@@ -3,11 +3,11 @@ FROM node:20.11-alpine3.18 as build
 # Move files into the image and install
 WORKDIR /app
 
-COPY ./bskyogcard/package.json ./
-COPY ./bskyogcard/yarn.lock ./
+COPY ./gndrogcard/package.json ./
+COPY ./gndrogcard/yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-COPY ./bskyogcard ./
+COPY ./gndrogcard ./
 
 # build then prune dev deps
 RUN yarn install-fonts && yarn build

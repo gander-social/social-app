@@ -7,7 +7,7 @@ import {
   AtUri,
 } from '@atproto/api'
 
-export const POSTGATE_COLLECTION = 'app.bsky.feed.postgate'
+export const POSTGATE_COLLECTION = 'app.gndr.feed.postgate'
 
 export function createPostgateRecord(
   postgate: Partial<AppBskyFeedPostgate.Record> & {
@@ -52,12 +52,12 @@ export function createEmbedViewDetachedRecord({
   uri: string
 }): $Typed<AppBskyEmbedRecord.View> {
   const record: $Typed<AppBskyEmbedRecord.ViewDetached> = {
-    $type: 'app.bsky.embed.record#viewDetached',
+    $type: 'app.gndr.embed.record#viewDetached',
     uri,
     detached: true,
   }
   return {
-    $type: 'app.bsky.embed.record#view',
+    $type: 'app.gndr.embed.record#view',
     record,
   }
 }
@@ -102,7 +102,7 @@ export function createEmbedViewRecordFromPost(
   post: AppBskyFeedDefs.PostView,
 ): $Typed<AppBskyEmbedRecord.ViewRecord> {
   return {
-    $type: 'app.bsky.embed.record#viewRecord',
+    $type: 'app.gndr.embed.record#viewRecord',
     uri: post.uri,
     cid: post.cid,
     author: post.author,
@@ -123,7 +123,7 @@ export function createEmbedRecordView({
   post: AppBskyFeedDefs.PostView
 }): AppBskyEmbedRecord.View {
   return {
-    $type: 'app.bsky.embed.record#view',
+    $type: 'app.gndr.embed.record#view',
     record: createEmbedViewRecordFromPost(post),
   }
 }
@@ -199,5 +199,5 @@ export function getMaybeDetachedQuoteEmbed({
 }
 
 export const embeddingRules = {
-  disableRule: {$type: 'app.bsky.feed.postgate#disableRule'},
+  disableRule: {$type: 'app.gndr.feed.postgate#disableRule'},
 }

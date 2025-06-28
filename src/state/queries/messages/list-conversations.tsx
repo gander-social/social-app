@@ -42,7 +42,7 @@ export function useListConvosQuery({
     enabled,
     queryKey: RQKEY(status ?? 'all', readState),
     queryFn: async ({pageParam}) => {
-      const {data} = await agent.chat.bsky.convo.listConvos(
+      const {data} = await agent.chat.gndr.convo.listConvos(
         {
           limit: 20,
           cursor: pageParam,
@@ -318,7 +318,7 @@ export function ListConvosProviderInner({
                 optimisticUpdate(logRef.convoId, old, convo => ({
                   ...convo,
                   lastReaction: {
-                    $type: 'chat.bsky.convo.defs#messageAndReactionView',
+                    $type: 'chat.gndr.convo.defs#messageAndReactionView',
                     reaction: logRef.reaction,
                     message: logRef.message,
                   },

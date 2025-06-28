@@ -5,7 +5,7 @@ import {until} from '#/lib/async/until'
 import {logger} from '#/logger'
 import {useUpdateProfileVerificationCache} from '#/state/queries/verification/useUpdateProfileVerificationCache'
 import {useAgent, useSession} from '#/state/session'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export function useVerificationCreateMutation() {
   const agent = useAgent()
@@ -13,12 +13,12 @@ export function useVerificationCreateMutation() {
   const updateProfileVerificationCache = useUpdateProfileVerificationCache()
 
   return useMutation({
-    async mutationFn({profile}: {profile: bsky.profile.AnyProfileView}) {
+    async mutationFn({profile}: {profile: gndr.profile.AnyProfileView}) {
       if (!currentAccount) {
         throw new Error('User not logged in')
       }
 
-      const {uri} = await agent.app.bsky.graph.verification.create(
+      const {uri} = await agent.app.gndr.graph.verification.create(
         {repo: currentAccount.did},
         {
           subject: profile.did,

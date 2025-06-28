@@ -44,13 +44,13 @@
 
 {% block noscript_extra -%}
 {%- if postView -%}
-<div id="bsky_post_summary">
+<div id="gndr_post_summary">
   <h3>Post</h3>
-  <p id="bsky_display_name">{{ postView.Author.DisplayName }}</p>
-  <p id="bsky_handle">{{ postView.Author.Handle }}</p>
-  <p id="bsky_did">{{ postView.Author.Did }}</p>
-  <p id="bsky_post_text">{{ postText }}</p>
-  <p id="bsky_post_indexedat">{{ postView.IndexedAt }}</p>
+  <p id="gndr_display_name">{{ postView.Author.DisplayName }}</p>
+  <p id="gndr_handle">{{ postView.Author.Handle }}</p>
+  <p id="gndr_did">{{ postView.Author.Did }}</p>
+  <p id="gndr_post_text">{{ postText }}</p>
+  <p id="gndr_post_indexedat">{{ postView.IndexedAt }}</p>
 </div>
 {% endif -%}
 {%- endblock %}

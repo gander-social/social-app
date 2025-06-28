@@ -72,7 +72,7 @@ import {ProfilesList} from '#/components/StarterPack/Main/ProfilesList'
 import {QrCodeDialog} from '#/components/StarterPack/QrCodeDialog'
 import {ShareDialog} from '#/components/StarterPack/ShareDialog'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 type StarterPackScreeProps = NativeStackScreenProps<
   CommonNavigatorParams,
@@ -393,7 +393,7 @@ function Header({
   }
 
   if (
-    !bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
       record,
       AppBskyGraphStarterpack.isRecord,
     )
@@ -417,7 +417,7 @@ function Header({
         isOwner={isOwn}
         avatar={undefined}
         creator={creator}
-        purpose="app.bsky.graph.defs#referencelist"
+        purpose="app.gndr.graph.defs#referencelist"
         avatarType="starter-pack">
         {hasSession ? (
           <View style={[a.flex_row, a.gap_sm, a.align_center]}>
@@ -644,7 +644,7 @@ function OverflowMenu({
           control={reportDialogControl}
           subject={{
             ...starterPack,
-            $type: 'app.bsky.graph.defs#starterPackView',
+            $type: 'app.gndr.graph.defs#starterPackView',
           }}
         />
       )}

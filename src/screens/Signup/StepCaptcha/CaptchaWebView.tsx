@@ -6,10 +6,10 @@ import {ShouldStartLoadRequest} from 'react-native-webview/lib/WebViewTypes'
 import {SignupState} from '#/screens/Signup/state'
 
 const ALLOWED_HOSTS = [
-  'bsky.social',
+  'gndr.social',
   'gndr.app',
   'staging.gndr.app',
-  'staging.bsky.dev',
+  'staging.gndr.dev',
   'js.hcaptcha.com',
   'newassets.hcaptcha.com',
   'api2.hcaptcha.com',
@@ -32,7 +32,7 @@ export function CaptchaWebView({
     if (!state?.serviceUrl) return 'gndr.app'
 
     return state?.serviceUrl &&
-      new URL(state?.serviceUrl).host === 'staging.bsky.dev'
+      new URL(state?.serviceUrl).host === 'staging.gndr.dev'
       ? 'staging.gndr.app'
       : 'gndr.app'
   }, [state?.serviceUrl])

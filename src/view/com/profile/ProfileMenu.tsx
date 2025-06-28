@@ -444,7 +444,7 @@ let ProfileMenu = ({
         control={reportDialogControl}
         subject={{
           ...profile,
-          $type: 'app.bsky.actor.defs#profileViewDetailed',
+          $type: 'app.gndr.actor.defs#profileViewDetailed',
         }}
       />
 

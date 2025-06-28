@@ -61,7 +61,7 @@ export function useSearchPostsQuery({
   >({
     queryKey: searchPostsQueryKey({query, sort}),
     queryFn: async ({pageParam}) => {
-      const res = await agent.app.bsky.feed.searchPosts({
+      const res = await agent.app.gndr.feed.searchPosts({
         q: query,
         limit: 25,
         cursor: pageParam,

@@ -7,10 +7,10 @@ import {isInvalidHandle} from '#/lib/strings/handles'
 import {startUriToStarterPackUri} from '#/lib/strings/starter-pack'
 import {logger} from '#/logger'
 
-export const GNDR_APP_HOST = 'https://bsky.app'
+export const GNDR_APP_HOST = 'https://gndr.app'
 const BSKY_TRUSTED_HOSTS = [
-  'bsky\\.app',
-  'bsky\\.social',
+  'gndr\\.app',
+  'gndr\\.social',
   'ganderweb\\.xyz',
   'ganderweb\\.zendesk\\.com',
   ...(__DEV__ ? ['localhost:19006', 'localhost:8100'] : []),
@@ -91,7 +91,7 @@ export function toBskyAppUrl(url: string): string {
 }
 
 export function isBskyAppUrl(url: string): boolean {
-  return url.startsWith('https://bsky.app/')
+  return url.startsWith('https://gndr.app/')
 }
 
 export function isRelativeUrl(url: string): boolean {

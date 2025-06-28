@@ -23,7 +23,7 @@ export function useUpdateAllRead(
 
   return useMutation({
     mutationFn: async () => {
-      const {data} = await agent.chat.bsky.convo.updateAllRead(
+      const {data} = await agent.chat.gndr.convo.updateAllRead(
         {status},
         {headers: DM_SERVICE_HEADERS, encoding: 'application/json'},
       )

@@ -13,7 +13,7 @@ help: ## Print info about all commands
 
 .PHONY: build
 build: ## Build all executables
-	go build ./cmd/bskyweb
+	go build ./cmd/gndrweb
 	go build ./cmd/embedr
 
 .PHONY: test
@@ -41,9 +41,9 @@ check: ## Compile everything, checking syntax (does not output binaries)
 .env:
 	if [ ! -f ".env" ]; then cp example.dev.env .env; fi
 
-.PHONY: run-dev-bskyweb
-run-dev-bskyweb: .env ## Runs 'bskyweb' for local dev
-	GOLOG_LOG_LEVEL=info go run ./cmd/bskyweb serve
+.PHONY: run-dev-gndrweb
+run-dev-gndrweb: .env ## Runs 'gndrweb' for local dev
+	GOLOG_LOG_LEVEL=info go run ./cmd/gndrweb serve
 
 .PHONY: run-dev-embedr
 run-dev-embedr: .env ## Runs 'embedr' for local dev

@@ -7,10 +7,10 @@ import (
 	"strings"
 	"testing"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 )
 
-func loadPost(t *testing.T, p string) appbsky.FeedPost {
+func loadPost(t *testing.T, p string) appgndr.FeedPost {
 
 	f, err := os.Open(p)
 	if err != nil {
@@ -22,7 +22,7 @@ func loadPost(t *testing.T, p string) appbsky.FeedPost {
 	if err != nil {
 		t.Fatal(err)
 	}
-	var post appbsky.FeedPost
+	var post appgndr.FeedPost
 	if err := json.Unmarshal(postBytes, &post); err != nil {
 		t.Fatal(err)
 	}

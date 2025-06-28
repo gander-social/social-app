@@ -30,7 +30,7 @@ import {ContentHider} from '#/components/moderation/ContentHider'
 import {PostAlerts} from '#/components/moderation/PostAlerts'
 import {RichText} from '#/components/RichText'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function useMessageEmbed() {
   const route =
@@ -58,7 +58,7 @@ export function useMessageEmbed() {
 
         const url = convertBskyAppUrlIfNeeded(embedUrl)
         const [_0, user, _1, rkey] = url.split('/').filter(Boolean)
-        const uri = makeRecordUri(user, 'app.bsky.feed.post', rkey)
+        const uri = makeRecordUri(user, 'app.gndr.feed.post', rkey)
 
         setEmbed(uri)
       },
@@ -114,7 +114,7 @@ export function MessageInputEmbed({
   const {rt, record} = useMemo(() => {
     if (
       post &&
-      bsky.dangerousIsType<AppBskyFeedPost.Record>(
+      gndr.dangerousIsType<AppBskyFeedPost.Record>(
         post.record,
         AppBskyFeedPost.isRecord,
       )

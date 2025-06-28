@@ -37,18 +37,18 @@
   {%- if requestHost %}
   <link rel="alternate" type="application/rss+xml" href="https://{{ requestHost }}/profile/{{ profileView.Did }}/rss">
   {% endif %}
-  <link rel="alternate" href="at://{{ profileView.Did }}/app.bsky.actor.profile/self" />
+  <link rel="alternate" href="at://{{ profileView.Did }}/app.gndr.actor.profile/self" />
 {% endif -%}
 {%- endblock %}
 
 {% block noscript_extra -%}
 {%- if profileView -%}
-<div id="bsky_profile_summary">
+<div id="gndr_profile_summary">
   <h3>Profile</h3>
-  <p id="bsky_display_name">{{ profileView.DisplayName }}</p>
-  <p id="bsky_handle">{{ profileView.Handle }}</p>
-  <p id="bsky_did">{{ profileView.Did }}</p>
-  <p id="bsky_profile_description">{{ profileView.Description }}</p>
+  <p id="gndr_display_name">{{ profileView.DisplayName }}</p>
+  <p id="gndr_handle">{{ profileView.Handle }}</p>
+  <p id="gndr_did">{{ profileView.Did }}</p>
+  <p id="gndr_profile_description">{{ profileView.Description }}</p>
 </div>
 {% endif -%}
 {%- endblock %}

@@ -110,7 +110,7 @@ let PostControls = ({
         playHaptic('Light')
         sendInteraction({
           item: post.uri,
-          event: 'app.bsky.feed.defs#interactionLike',
+          event: 'app.gndr.feed.defs#interactionLike',
           feedContext,
           reqId,
         })
@@ -139,7 +139,7 @@ let PostControls = ({
       if (!post.viewer?.repost) {
         sendInteraction({
           item: post.uri,
-          event: 'app.bsky.feed.defs#interactionRepost',
+          event: 'app.gndr.feed.defs#interactionRepost',
           feedContext,
           reqId,
         })
@@ -165,7 +165,7 @@ let PostControls = ({
 
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#interactionQuote',
+      event: 'app.gndr.feed.defs#interactionQuote',
       feedContext,
       reqId,
     })
@@ -178,7 +178,7 @@ let PostControls = ({
   const onShare = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#interactionShare',
+      event: 'app.gndr.feed.defs#interactionShare',
       feedContext,
       reqId,
     })

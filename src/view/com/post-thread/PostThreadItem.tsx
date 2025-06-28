@@ -70,7 +70,7 @@ import {SubtleWebHover} from '#/components/SubtleWebHover'
 import {Text} from '#/components/Typography'
 import {VerificationCheckButton} from '#/components/verification/VerificationCheckButton'
 import {WhoCanReply} from '#/components/WhoCanReply'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function PostThreadItem({
   post,
@@ -268,7 +268,7 @@ let PostThreadItemLoaded = ({
   }, [post.uri, post.author])
   const quotesTitle = _(msg`Quotes of this post`)
   const onlyFollowersCanReply = !!threadgateRecord?.allow?.find(
-    rule => rule.$type === 'app.bsky.feed.threadgate#followerRule',
+    rule => rule.$type === 'app.gndr.feed.threadgate#followerRule',
   )
   const showFollowButton =
     currentAccount?.did !== post.author.did && !onlyFollowersCanReply
@@ -290,7 +290,7 @@ let PostThreadItemLoaded = ({
     if (anchorPostSource && isHighlightedPost) {
       feedFeedback.sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#interactionReply',
+        event: 'app.gndr.feed.defs#interactionReply',
         feedContext: anchorPostSource.post.feedContext,
         reqId: anchorPostSource.post.reqId,
       })
@@ -313,7 +313,7 @@ let PostThreadItemLoaded = ({
     if (anchorPostSource) {
       feedFeedback.sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#clickthroughAuthor',
+        event: 'app.gndr.feed.defs#clickthroughAuthor',
         feedContext: anchorPostSource.post.feedContext,
         reqId: anchorPostSource.post.reqId,
       })
@@ -324,7 +324,7 @@ let PostThreadItemLoaded = ({
     if (anchorPostSource) {
       feedFeedback.sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#clickthroughEmbed',
+        event: 'app.gndr.feed.defs#clickthroughEmbed',
         feedContext: anchorPostSource.post.feedContext,
         reqId: anchorPostSource.post.reqId,
       })
@@ -846,7 +846,7 @@ function ExpandedPostDetails({
       openLink(translatorUrl, true)
 
       if (
-        bsky.dangerousIsType<AppBskyFeedPost.Record>(
+        gndr.dangerousIsType<AppBskyFeedPost.Record>(
           post.record,
           AppBskyFeedPost.isRecord,
         )
@@ -903,7 +903,7 @@ function BackdatedPostIndicator({post}: {post: AppBskyFeedDefs.PostView}) {
   const control = Prompt.usePromptControl()
 
   const indexedAt = new Date(post.indexedAt)
-  const createdAt = bsky.dangerousIsType<AppBskyFeedPost.Record>(
+  const createdAt = gndr.dangerousIsType<AppBskyFeedPost.Record>(
     post.record,
     AppBskyFeedPost.isRecord,
   )

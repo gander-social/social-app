@@ -36,7 +36,7 @@ export function usePostQuotesQuery(resolvedUri: string | undefined) {
   >({
     queryKey: RQKEY(resolvedUri || ''),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.api.app.bsky.feed.getQuotes({
+      const res = await agent.api.app.gndr.feed.getQuotes({
         uri: resolvedUri || '',
         limit: PAGE_SIZE,
         cursor: pageParam,

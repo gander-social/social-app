@@ -21,7 +21,7 @@ import {MediaInsetBorder} from '#/components/MediaInsetBorder'
 import {useStarterPackLink} from '#/components/StarterPack/StarterPackCard'
 import {SubtleHover} from '#/components/SubtleHover'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function StarterPackCard({
   view,
@@ -36,7 +36,7 @@ export function StarterPackCard({
   const record = view.record
 
   if (
-    !bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
       record,
       AppBskyGraphStarterpack.isRecord,
     )
@@ -132,7 +132,7 @@ export function AvatarStack({
   numPending,
   total,
 }: {
-  profiles: bsky.profile.AnyProfileView[]
+  profiles: gndr.profile.AnyProfileView[]
   numPending: number
   total?: number
 }) {

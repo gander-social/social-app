@@ -83,7 +83,7 @@ import {
   useReportDialogControl,
 } from '#/components/moderation/ReportDialog'
 import * as Prompt from '#/components/Prompt'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 let PostMenuItems = ({
   post,
@@ -238,7 +238,7 @@ let PostMenuItems = ({
     await openLink(translatorUrl, true)
 
     if (
-      bsky.dangerousIsType<AppBskyFeedPost.Record>(
+      gndr.dangerousIsType<AppBskyFeedPost.Record>(
         post.record,
         AppBskyFeedPost.isRecord,
       )
@@ -265,7 +265,7 @@ let PostMenuItems = ({
 
   const onPressShowMore = () => {
     feedFeedback.sendInteraction({
-      event: 'app.bsky.feed.defs#requestMore',
+      event: 'app.gndr.feed.defs#requestMore',
       item: postUri,
       feedContext: postFeedContext,
       reqId: postReqId,
@@ -275,7 +275,7 @@ let PostMenuItems = ({
 
   const onPressShowLess = () => {
     feedFeedback.sendInteraction({
-      event: 'app.bsky.feed.defs#requestLess',
+      event: 'app.gndr.feed.defs#requestLess',
       item: postUri,
       feedContext: postFeedContext,
       reqId: postReqId,
@@ -716,7 +716,7 @@ let PostMenuItems = ({
         control={reportDialogControl}
         subject={{
           ...post,
-          $type: 'app.bsky.feed.defs#postView',
+          $type: 'app.gndr.feed.defs#postView',
         }}
       />
 

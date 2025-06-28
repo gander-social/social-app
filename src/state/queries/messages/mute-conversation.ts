@@ -27,13 +27,13 @@ export function useMuteConvo(
     mutationFn: async ({mute}: {mute: boolean}) => {
       if (!convoId) throw new Error('No convoId provided')
       if (mute) {
-        const {data} = await agent.api.chat.bsky.convo.muteConvo(
+        const {data} = await agent.api.chat.gndr.convo.muteConvo(
           {convoId},
           {headers: DM_SERVICE_HEADERS, encoding: 'application/json'},
         )
         return data
       } else {
-        const {data} = await agent.api.chat.bsky.convo.unmuteConvo(
+        const {data} = await agent.api.chat.gndr.convo.unmuteConvo(
           {convoId},
           {headers: DM_SERVICE_HEADERS, encoding: 'application/json'},
         )

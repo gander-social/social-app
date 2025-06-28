@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 
 	"github.com/labstack/echo/v4"
@@ -18,11 +18,11 @@ import (
 var ErrPostNotFound = errors.New("post not found")
 var ErrPostNotPublic = errors.New("post is not publicly accessible")
 
-func (srv *Server) getBlueskyPost(ctx context.Context, did syntax.DID, rkey syntax.RecordKey) (*appbsky.FeedDefs_PostView, error) {
+func (srv *Server) getBlueskyPost(ctx context.Context, did syntax.DID, rkey syntax.RecordKey) (*appgndr.FeedDefs_PostView, error) {
 
 	// fetch the post post (with extra context)
-	uri := fmt.Sprintf("at://%s/app.bsky.feed.post/%s", did, rkey)
-	tpv, err := appbsky.FeedGetPostThread(ctx, srv.xrpcc, 1, 0, uri)
+	uri := fmt.Sprintf("at://%s/app.gndr.feed.post/%s", did, rkey)
+	tpv, err := appgndr.FeedGetPostThread(ctx, srv.xrpcc, 1, 0, uri)
 	if err != nil {
 		log.Warnf("failed to fetch post: %s\t%v", uri, err)
 		// TODO: detect 404, specifically?
@@ -108,7 +108,7 @@ func (srv *Server) parseBlueskyURL(ctx context.Context, raw string) (*syntax.ATU
 	}
 
 	// TODO: don't really need to re-parse here, if we had test coverage
-	aturi, err := syntax.ParseATURI(fmt.Sprintf("at://%s/app.bsky.feed.post/%s", did, rkey))
+	aturi, err := syntax.ParseATURI(fmt.Sprintf("at://%s/app.gndr.feed.post/%s", did, rkey))
 	if err != nil {
 		return nil, err
 	} else {
@@ -144,8 +144,8 @@ func (srv *Server) WebOEmbed(c echo.Context) error {
 	if err != nil {
 		return c.String(http.StatusBadRequest, fmt.Sprintf("Expected 'url' to be gndr.app URL or AT-URI: %v", err))
 	}
-	if aturi.Collection() != syntax.NSID("app.bsky.feed.post") {
-		return c.String(http.StatusNotImplemented, "Only posts (app.bsky.feed.post records) can be embedded currently")
+	if aturi.Collection() != syntax.NSID("app.gndr.feed.post") {
+		return c.String(http.StatusNotImplemented, "Only posts (app.gndr.feed.post records) can be embedded currently")
 	}
 	did, err := aturi.Authority().AsDID()
 	if err != nil {

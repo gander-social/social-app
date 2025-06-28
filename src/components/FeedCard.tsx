@@ -34,7 +34,7 @@ import {Loader} from '#/components/Loader'
 import * as Prompt from '#/components/Prompt'
 import {RichText, type RichTextProps} from '#/components/RichText'
 import {Text} from '#/components/Typography'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 import {Trash_Stroke2_Corner0_Rounded as TrashIcon} from './icons/Trash'
 
 type Props = {
@@ -120,7 +120,7 @@ export function TitleAndByline({
   creator,
 }: {
   title: string
-  creator?: bsky.profile.AnyProfileView
+  creator?: gndr.profile.AnyProfileView
 }) {
   const t = useTheme()
 
@@ -254,7 +254,7 @@ function SaveButtonInner({
     useRemoveFeedMutation()
 
   const uri = view.uri
-  const type = view.uri.includes('app.bsky.feed.generator') ? 'feed' : 'list'
+  const type = view.uri.includes('app.gndr.feed.generator') ? 'feed' : 'list'
 
   const savedFeedConfig = React.useMemo(() => {
     return preferences?.savedFeeds?.find(feed => feed.value === uri)

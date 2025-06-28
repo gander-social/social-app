@@ -610,7 +610,7 @@ export function createComposerState({
         embeddingRules: initInteractionSettings?.postgateEmbeddingRules || [],
       }),
       threadgate: threadgateRecordToAllowUISetting({
-        $type: 'app.bsky.feed.threadgate',
+        $type: 'app.gndr.feed.threadgate',
         post: '',
         createdAt: new Date().toString(),
         allow: initInteractionSettings?.threadgateAllowRules,

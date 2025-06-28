@@ -64,9 +64,9 @@ export function Component({
     if (purpose) {
       return purpose
     }
-    return 'app.bsky.graph.defs#curatelist'
+    return 'app.gndr.graph.defs#curatelist'
   }, [list, purpose])
-  const isCurateList = activePurpose === 'app.bsky.graph.defs#curatelist'
+  const isCurateList = activePurpose === 'app.gndr.graph.defs#curatelist'
 
   const [isProcessing, setProcessing] = useState<boolean>(false)
   const [name, setName] = useState<string>(list?.name || '')

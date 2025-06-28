@@ -92,7 +92,7 @@ and run the action.
 >   clients in the wild will be able to receive the update.
 
 **For web,** head to [Actions >
-build-and-push-bskyweb-aws](https://github.com/gander-social/social-app/actions/workflows/build-and-push-bskyweb-aws.yaml)
+build-and-push-gndrweb-aws](https://github.com/gander-social/social-app/actions/workflows/build-and-push-gndrweb-aws.yaml)
 and run the action.
 
 | Steps |     |

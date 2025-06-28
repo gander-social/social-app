@@ -26,7 +26,7 @@ import {Divider} from '#/components/Divider'
 import {LinearGradientBackground} from '#/components/LinearGradientBackground'
 import {InlineLinkText} from '#/components/Link'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function Signup({onPressBack}: {onPressBack: () => void}) {
   const {_} = useLingui()
@@ -110,7 +110,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
         scrollable>
         <View testID="createAccount" style={a.flex_1}>
           {showStarterPackCard &&
-          bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+          gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
             starterPack.record,
             AppBskyGraphStarterpack.isRecord,
           ) ? (

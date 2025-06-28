@@ -1,9 +1,9 @@
 import {type ChatBskyConvoDefs} from '@atproto/api'
 
 import {EMOJI_REACTION_LIMIT} from '#/lib/constants'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
-export function canBeMessaged(profile: bsky.profile.AnyProfileView) {
+export function canBeMessaged(profile: gndr.profile.AnyProfileView) {
   switch (profile.associated?.chat?.allowIncoming) {
     case 'none':
       return false

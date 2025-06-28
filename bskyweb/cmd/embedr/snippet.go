@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"html/template"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 )
 
-func (srv *Server) postEmbedHTML(postView *appbsky.FeedDefs_PostView) (string, error) {
+func (srv *Server) postEmbedHTML(postView *appgndr.FeedDefs_PostView) (string, error) {
 	// ensure that there isn't an injection from the URI
 	aturi, err := syntax.ParseATURI(postView.Uri)
 	if err != nil {
@@ -17,7 +17,7 @@ func (srv *Server) postEmbedHTML(postView *appbsky.FeedDefs_PostView) (string, e
 		return "", err
 	}
 
-	post, ok := postView.Record.Val.(*appbsky.FeedPost)
+	post, ok := postView.Record.Val.(*appgndr.FeedPost)
 	if !ok {
 		log.Error("bad post record value", "err", err)
 		return "", err

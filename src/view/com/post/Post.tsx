@@ -41,7 +41,7 @@ import {PostControls} from '#/components/PostControls'
 import {ProfileHoverCard} from '#/components/ProfileHoverCard'
 import {RichText} from '#/components/RichText'
 import {SubtleWebHover} from '#/components/SubtleWebHover'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function Post({
   post,
@@ -57,7 +57,7 @@ export function Post({
   const moderationOpts = useModerationOpts()
   const record = useMemo<AppBskyFeedPost.Record | undefined>(
     () =>
-      bsky.validate(post.record, AppBskyFeedPost.validateRecord)
+      gndr.validate(post.record, AppBskyFeedPost.validateRecord)
         ? post.record
         : undefined,
     [post],

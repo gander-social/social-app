@@ -94,9 +94,9 @@
     multiformats "^9.9.0"
     uint8arrays "3.0.0"
 
-"@atproto/bsky@^0.0.167":
+"@atproto/gndr@^0.0.167":
   version "0.0.167"
-  resolved "https://registry.yarnpkg.com/@atproto/bsky/-/bsky-0.0.167.tgz#583eb404ef4de409e34d7c2485bf325e5d1f3ff0"
+  resolved "https://registry.yarnpkg.com/@atproto/gndr/-/gndr-0.0.167.tgz#583eb404ef4de409e34d7c2485bf325e5d1f3ff0"
   integrity sha512-VLgaVsx0fYeoXcFHP1KM6joda9Ovhb7LsE3JdES6+hhsAF74DFwW57mVzRfYhy1bwWn/m9poUMs1RkCjOR9ZJA==
   dependencies:
     "@atproto-labs/fetch-node" "0.1.9"
@@ -224,7 +224,7 @@
   integrity sha512-LOujaEmOVBCxSnKQqpJb238fe5vYGIgmTA+OMEFH3kZb+6Y6UXfW2Vhs79tP0DiX0VyoXwib/7PH3Lp5cC/ZFQ==
   dependencies:
     "@atproto/api" "^0.15.21"
-    "@atproto/bsky" "^0.0.167"
+    "@atproto/gndr" "^0.0.167"
     "@atproto/bsync" "^0.0.20"
     "@atproto/common-web" "^0.4.2"
     "@atproto/crypto" "^0.4.4"
@@ -10827,7 +10827,7 @@ eslint-module-utils@^2.12.0:
   dependencies:
     debug "^3.2.7"
 
-"eslint-plugin-bsky-internal@link:./eslint":
+"eslint-plugin-gndr-internal@link:./eslint":
   version "0.0.0"
   uid ""
 

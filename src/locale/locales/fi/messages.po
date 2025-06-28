@@ -4698,13 +4698,13 @@ msgid "Logged-out visibility"
 msgstr "Näkyvyys kirjautumattomana"
 
 #: src/view/shell/desktop/RightNav.tsx:130
-msgid "Logo by @sawaratsuki.bsky.social"
-msgstr "Logo käyttäjältä @sawaratsuki.bsky.social"
+msgid "Logo by @sawaratsuki.gndr.social"
+msgstr "Logo käyttäjältä @sawaratsuki.gndr.social"
 
 #: src/view/shell/desktop/RightNav.tsx:127
-#: src/view/shell/Drawer.tsx:672
-msgid "Logo by <0>@sawaratsuki.bsky.social</0>"
-msgstr "Logo käyttäjältä <0>@sawaratsuki.bsky.social</0>"
+#: src/view/shell/Drawer.tsx:658
+msgid "Logo by <0>@sawaratsuki.gndr.social</0>"
+msgstr "Logo käyttäjältä <0>@sawaratsuki.gndr.social</0>"
 
 #: src/components/RichTextTag.tsx:53
 msgid "Long press to open tag menu for #{tag}"

@@ -18,7 +18,7 @@ import * as Dialog from '#/components/Dialog'
 import {type DialogControlProps} from '#/components/Dialog'
 import {Loader} from '#/components/Loader'
 import {QrCode} from '#/components/StarterPack/QrCode'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function QrCodeDialog({
   starterPack,
@@ -79,7 +79,7 @@ export function QrCodeDialog({
         setIsProcessing(true)
 
         if (
-          !bsky.validate(
+          !gndr.validate(
             starterPack.record,
             AppBskyGraphStarterpack.validateRecord,
           )

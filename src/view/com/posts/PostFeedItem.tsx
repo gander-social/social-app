@@ -60,7 +60,7 @@ import {DiscoverDebug} from '#/components/PostControls/DiscoverDebug'
 import {ProfileHoverCard} from '#/components/ProfileHoverCard'
 import {RichText} from '#/components/RichText'
 import {SubtleWebHover} from '#/components/SubtleWebHover'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 interface FeedItemProps {
   record: AppBskyFeedPost.Record
@@ -185,7 +185,7 @@ let FeedItemInner = ({
   const onPressReply = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#interactionReply',
+      event: 'app.gndr.feed.defs#interactionReply',
       feedContext,
       reqId,
     })
@@ -204,7 +204,7 @@ let FeedItemInner = ({
   const onOpenAuthor = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#clickthroughAuthor',
+      event: 'app.gndr.feed.defs#clickthroughAuthor',
       feedContext,
       reqId,
     })
@@ -213,7 +213,7 @@ let FeedItemInner = ({
   const onOpenReposter = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#clickthroughReposter',
+      event: 'app.gndr.feed.defs#clickthroughReposter',
       feedContext,
       reqId,
     })
@@ -222,7 +222,7 @@ let FeedItemInner = ({
   const onOpenEmbed = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#clickthroughEmbed',
+      event: 'app.gndr.feed.defs#clickthroughEmbed',
       feedContext,
       reqId,
     })
@@ -231,7 +231,7 @@ let FeedItemInner = ({
   const onBeforePress = () => {
     sendInteraction({
       item: post.uri,
-      event: 'app.bsky.feed.defs#clickthroughItem',
+      event: 'app.gndr.feed.defs#clickthroughItem',
       feedContext,
       reqId,
     })
@@ -269,7 +269,7 @@ let FeedItemInner = ({
    * If `post[0]` in this slice is the actual root post (not an orphan thread),
    * then we may have a threadgate record to reference
    */
-  const threadgateRecord = bsky.dangerousIsType<AppBskyFeedThreadgate.Record>(
+  const threadgateRecord = gndr.dangerousIsType<AppBskyFeedThreadgate.Record>(
     rootPost.threadgate?.record,
     AppBskyFeedThreadgate.isRecord,
   )
@@ -511,7 +511,7 @@ let PostContent = ({
   })
   const additionalPostAlerts: AppModerationCause[] = useMemo(() => {
     const isPostHiddenByThreadgate = threadgateHiddenReplies.has(post.uri)
-    const rootPostUri = bsky.dangerousIsType<AppBskyFeedPost.Record>(
+    const rootPostUri = gndr.dangerousIsType<AppBskyFeedPost.Record>(
       post.record,
       AppBskyFeedPost.isRecord,
     )

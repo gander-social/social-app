@@ -2,7 +2,7 @@
 test-coverage.out
 
 # Don't check in the binary.
-/bskyweb
+/gndrweb
 /embedr
 
 # Don't accidentally commit JS-generated code

@@ -105,7 +105,7 @@ export async function post(
     now.setMilliseconds(now.getMilliseconds() + 1)
     tid = TID.next(tid)
     const rkey = tid.toString()
-    const uri = `at://${did}/app.bsky.feed.post/${rkey}`
+    const uri = `at://${did}/app.gndr.feed.post/${rkey}`
     uris.push(uri)
 
     const rt = await rtPromise
@@ -114,7 +114,7 @@ export async function post(
     const record: AppBskyFeedPost.Record = {
       // IMPORTANT: $type has to exist, CID is calculated with the `$type` field
       // present and will produce the wrong CID if you omit it.
-      $type: 'app.bsky.feed.post',
+      $type: 'app.gndr.feed.post',
       createdAt: now.toISOString(),
       text: rt.text,
       facets: rt.facets,
@@ -125,7 +125,7 @@ export async function post(
     }
     writes.push({
       $type: 'com.atproto.repo.applyWrites#create',
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       rkey: rkey,
       value: record,
     })
@@ -133,7 +133,7 @@ export async function post(
     if (i === 0 && thread.threadgate.some(tg => tg.type !== 'everybody')) {
       writes.push({
         $type: 'com.atproto.repo.applyWrites#create',
-        collection: 'app.bsky.feed.threadgate',
+        collection: 'app.gndr.feed.threadgate',
         rkey: rkey,
         value: createThreadgateRecord({
           createdAt: now.toISOString(),
@@ -149,11 +149,11 @@ export async function post(
     ) {
       writes.push({
         $type: 'com.atproto.repo.applyWrites#create',
-        collection: 'app.bsky.feed.postgate',
+        collection: 'app.gndr.feed.postgate',
         rkey: rkey,
         value: {
           ...thread.postgate,
-          $type: 'app.bsky.feed.postgate',
+          $type: 'app.gndr.feed.postgate',
           createdAt: now.toISOString(),
           post: uri,
         },
@@ -245,16 +245,16 @@ async function resolveEmbed(
     ])
     if (resolvedMedia) {
       return {
-        $type: 'app.bsky.embed.recordWithMedia',
+        $type: 'app.gndr.embed.recordWithMedia',
         record: {
-          $type: 'app.bsky.embed.record',
+          $type: 'app.gndr.embed.record',
           record: resolvedQuote,
         },
         media: resolvedMedia,
       }
     }
     return {
-      $type: 'app.bsky.embed.record',
+      $type: 'app.gndr.embed.record',
       record: resolvedQuote,
     }
   }
@@ -275,7 +275,7 @@ async function resolveEmbed(
     )
     if (resolvedLink.type === 'record') {
       return {
-        $type: 'app.bsky.embed.record',
+        $type: 'app.gndr.embed.record',
         record: resolvedLink.record,
       }
     }
@@ -314,7 +314,7 @@ async function resolveMedia(
       }),
     )
     return {
-      $type: 'app.bsky.embed.images',
+      $type: 'app.gndr.embed.images',
       images,
     }
   }
@@ -349,7 +349,7 @@ async function resolveMedia(
     }
 
     return {
-      $type: 'app.bsky.embed.video',
+      $type: 'app.gndr.embed.video',
       video: videoDraft.pendingPublish.blobRef,
       alt: videoDraft.altText || undefined,
       captions: captions.length === 0 ? undefined : captions,
@@ -371,7 +371,7 @@ async function resolveMedia(
       blob = response.data.blob
     }
     return {
-      $type: 'app.bsky.embed.external',
+      $type: 'app.gndr.embed.external',
       external: {
         uri: resolvedGif.uri,
         title: resolvedGif.title,
@@ -395,7 +395,7 @@ async function resolveMedia(
         blob = response.data.blob
       }
       return {
-        $type: 'app.bsky.embed.external',
+        $type: 'app.gndr.embed.external',
         external: {
           uri: resolvedLink.uri,
           title: resolvedLink.title,

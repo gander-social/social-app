@@ -8,7 +8,7 @@ import {
 } from '@atproto/api'
 import {InfiniteData, QueryClient, QueryKey} from '@tanstack/react-query'
 
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export async function truncateAndInvalidate<T = any>(
   queryClient: QueryClient,
@@ -47,7 +47,7 @@ export function getEmbeddedPost(
   v: unknown,
 ): AppBskyEmbedRecord.ViewRecord | undefined {
   if (
-    bsky.dangerousIsType<AppBskyEmbedRecord.View>(v, AppBskyEmbedRecord.isView)
+    gndr.dangerousIsType<AppBskyEmbedRecord.View>(v, AppBskyEmbedRecord.isView)
   ) {
     if (
       AppBskyEmbedRecord.isViewRecord(v.record) &&
@@ -57,7 +57,7 @@ export function getEmbeddedPost(
     }
   }
   if (
-    bsky.dangerousIsType<AppBskyEmbedRecordWithMedia.View>(
+    gndr.dangerousIsType<AppBskyEmbedRecordWithMedia.View>(
       v,
       AppBskyEmbedRecordWithMedia.isView,
     )

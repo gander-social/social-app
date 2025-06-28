@@ -18,12 +18,12 @@ import {
   type LinkProps as BaseLinkProps,
 } from '#/components/Link'
 import {Text} from '#/components/Typography'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function Default({
   starterPack,
 }: {
-  starterPack?: bsky.starterPack.AnyStarterPackView
+  starterPack?: gndr.starterPack.AnyStarterPackView
 }) {
   if (!starterPack) return null
   return (
@@ -36,7 +36,7 @@ export function Default({
 export function Notification({
   starterPack,
 }: {
-  starterPack?: bsky.starterPack.AnyStarterPackView
+  starterPack?: gndr.starterPack.AnyStarterPackView
 }) {
   if (!starterPack) return null
   return (
@@ -51,7 +51,7 @@ export function Card({
   noIcon,
   noDescription,
 }: {
-  starterPack: bsky.starterPack.AnyStarterPackView
+  starterPack: gndr.starterPack.AnyStarterPackView
   noIcon?: boolean
   noDescription?: boolean
 }) {
@@ -62,7 +62,7 @@ export function Card({
   const {currentAccount} = useSession()
 
   if (
-    !bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+    !gndr.dangerousIsType<AppBskyGraphStarterpack.Record>(
       record,
       AppBskyGraphStarterpack.isRecord,
     )
@@ -110,7 +110,7 @@ export function Card({
 export function useStarterPackLink({
   view,
 }: {
-  view: bsky.starterPack.AnyStarterPackView
+  view: gndr.starterPack.AnyStarterPackView
 }) {
   const {_} = useLingui()
   const qc = useQueryClient()
@@ -137,7 +137,7 @@ export function Link({
   starterPack,
   children,
 }: {
-  starterPack: bsky.starterPack.AnyStarterPackView
+  starterPack: gndr.starterPack.AnyStarterPackView
   onPress?: () => void
   children: BaseLinkProps['children']
 }) {
@@ -176,7 +176,7 @@ export function Link({
 export function Embed({
   starterPack,
 }: {
-  starterPack: bsky.starterPack.AnyStarterPackView
+  starterPack: gndr.starterPack.AnyStarterPackView
 }) {
   const t = useTheme()
   const imageUri = getStarterPackOgCard(starterPack)

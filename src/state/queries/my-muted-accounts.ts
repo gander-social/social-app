@@ -23,7 +23,7 @@ export function useMyMutedAccountsQuery() {
   >({
     queryKey: RQKEY(),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getMutes({
+      const res = await agent.app.gndr.graph.getMutes({
         limit: 30,
         cursor: pageParam,
       })

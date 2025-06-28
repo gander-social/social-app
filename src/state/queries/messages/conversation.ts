@@ -25,7 +25,7 @@ export function useConvoQuery(convo: ChatBskyConvoDefs.ConvoView) {
   return useQuery({
     queryKey: RQKEY(convo.id),
     queryFn: async () => {
-      const {data} = await agent.chat.bsky.convo.getConvo(
+      const {data} = await agent.chat.gndr.convo.getConvo(
         {convoId: convo.id},
         {headers: DM_SERVICE_HEADERS},
       )
@@ -58,7 +58,7 @@ export function useMarkAsReadMutation() {
     }) => {
       if (!convoId) throw new Error('No convoId provided')
 
-      await agent.api.chat.bsky.convo.updateRead(
+      await agent.api.chat.gndr.convo.updateRead(
         {
           convoId,
           messageId,

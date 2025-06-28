@@ -1,4 +1,4 @@
-/* eslint-disable bsky-internal/avoid-unwrapped-text */
+/* eslint-disable gndr-internal/avoid-unwrapped-text */
 import React from 'react'
 import {AppBskyGraphDefs, AppBskyGraphStarterpack} from '@atproto/api'
 

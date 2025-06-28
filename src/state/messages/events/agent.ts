@@ -240,7 +240,7 @@ export class MessagesEventBus {
 
     try {
       const response = await networkRetry(2, () => {
-        return this.agent.chat.bsky.convo.getLog(
+        return this.agent.chat.gndr.convo.getLog(
           {},
           {headers: DM_SERVICE_HEADERS},
         )
@@ -336,7 +336,7 @@ export class MessagesEventBus {
 
     try {
       const response = await networkRetry(2, () => {
-        return this.agent.chat.bsky.convo.getLog(
+        return this.agent.chat.gndr.convo.getLog(
           {
             cursor: this.latestRev,
           },

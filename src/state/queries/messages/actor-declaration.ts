@@ -21,10 +21,10 @@ export function useUpdateActorDeclaration({
       if (!currentAccount) throw new Error('Not signed in')
       const result = await agent.com.atproto.repo.putRecord({
         repo: currentAccount.did,
-        collection: 'chat.bsky.actor.declaration',
+        collection: 'chat.gndr.actor.declaration',
         rkey: 'self',
         record: {
-          $type: 'chat.bsky.actor.declaration',
+          $type: 'chat.gndr.actor.declaration',
           allowIncoming,
         },
       })
@@ -71,7 +71,7 @@ export function useDeleteActorDeclaration() {
       if (!currentAccount) throw new Error('Not signed in')
       const result = await agent.api.com.atproto.repo.deleteRecord({
         repo: currentAccount.did,
-        collection: 'chat.bsky.actor.declaration',
+        collection: 'chat.gndr.actor.declaration',
         rkey: 'self',
       })
       return result

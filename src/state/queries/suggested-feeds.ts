@@ -19,7 +19,7 @@ export function useSuggestedFeedsQuery() {
     staleTime: STALE.HOURS.ONE,
     queryKey: suggestedFeedsQueryKey,
     queryFn: async ({pageParam}) => {
-      const res = await agent.app.bsky.feed.getSuggestedFeeds({
+      const res = await agent.app.gndr.feed.getSuggestedFeeds({
         limit: 10,
         cursor: pageParam,
       })

@@ -19,11 +19,11 @@ import (
 	"syscall"
 	"time"
 
-	appbsky "github.com/gander-social/gander-indigo-sovereign/api/bsky"
+	appgndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
 	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 	"github.com/gander-social/gander-indigo-sovereign/util/cliutil"
 	"github.com/gander-social/gander-indigo-sovereign/xrpc"
-	"github.com/gander-social/social-app/bskyweb"
+	"github.com/gander-social/social-app/gndrweb"
 
 	"github.com/flosch/pongo2/v6"
 	"github.com/klauspost/compress/gzhttp"
@@ -63,7 +63,7 @@ func serve(cctx *cli.Context) error {
 	corsOrigins := cctx.StringSlice("cors-allowed-origins")
 	staticCDNHost := cctx.String("static-cdn-host")
 	staticCDNHost = strings.TrimSuffix(staticCDNHost, "/")
-	canonicalInstance := cctx.Bool("bsky-canonical-instance")
+	canonicalInstance := cctx.Bool("gndr-canonical-instance")
 	robotsDisallowAll := cctx.Bool("robots-disallow-all")
 
 	// Echo
@@ -128,7 +128,7 @@ func serve(cctx *cli.Context) error {
 	}
 
 	e.HideBanner = true
-	e.Renderer = NewRenderer("templates/", &bskyweb.TemplateFS, debug)
+	e.Renderer = NewRenderer("templates/", &gndrweb.TemplateFS, debug)
 	e.HTTPErrorHandler = server.errorHandler
 
 	e.IPExtractor = echo.ExtractIPFromXFFHeader()
@@ -199,7 +199,7 @@ func serve(cctx *cli.Context) error {
 			log.Debugf("serving static file from the local file system")
 			return http.FS(os.DirFS("static"))
 		}
-		fsys, err := fs.Sub(bskyweb.StaticFS, "static")
+		fsys, err := fs.Sub(gndrweb.StaticFS, "static")
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -472,7 +472,7 @@ func (srv *Server) WebPost(c echo.Context) error {
 	identifier := handleOrDID.Normalize().String()
 
 	// requires two fetches: first fetch profile (!)
-	pv, err := appbsky.ActorGetProfile(ctx, srv.xrpcc, identifier)
+	pv, err := appgndr.ActorGetProfile(ctx, srv.xrpcc, identifier)
 	if err != nil {
 		log.Warnf("failed to fetch profile for: %s\t%v", identifier, err)
 		return c.Render(http.StatusOK, "post.html", data)
@@ -491,8 +491,8 @@ func (srv *Server) WebPost(c echo.Context) error {
 	data["did"] = did
 
 	// then fetch the post thread (with extra context)
-	uri := fmt.Sprintf("at://%s/app.bsky.feed.post/%s", did, rkey)
-	tpv, err := appbsky.FeedGetPostThread(ctx, srv.xrpcc, 1, 0, uri)
+	uri := fmt.Sprintf("at://%s/app.gndr.feed.post/%s", did, rkey)
+	tpv, err := appgndr.FeedGetPostThread(ctx, srv.xrpcc, 1, 0, uri)
 	if err != nil {
 		log.Warnf("failed to fetch post: %s\t%v", uri, err)
 		return c.Render(http.StatusOK, "post.html", data)
@@ -518,7 +518,7 @@ func (srv *Server) WebPost(c echo.Context) error {
 	}
 
 	if postView.Record != nil {
-		postRecord, ok := postView.Record.Val.(*appbsky.FeedPost)
+		postRecord, ok := postView.Record.Val.(*appgndr.FeedPost)
 		if ok {
 			data["postText"] = ExpandPostText(postRecord)
 		}
@@ -546,8 +546,8 @@ func (srv *Server) WebStarterPack(c echo.Context) error {
 		return c.Render(http.StatusOK, "starterpack.html", data)
 	}
 	identifier := handleOrDID.Normalize().String()
-	starterPackURI := fmt.Sprintf("at://%s/app.bsky.graph.starterpack/%s", identifier, rkey)
-	spv, err := appbsky.GraphGetStarterPack(ctx, srv.xrpcc, starterPackURI)
+	starterPackURI := fmt.Sprintf("at://%s/app.gndr.graph.starterpack/%s", identifier, rkey)
+	spv, err := appgndr.GraphGetStarterPack(ctx, srv.xrpcc, starterPackURI)
 	if err != nil {
 		log.Errorf("failed to fetch starter pack view for: %s\t%v", starterPackURI, err)
 		return c.Render(http.StatusOK, "starterpack.html", data)
@@ -555,7 +555,7 @@ func (srv *Server) WebStarterPack(c echo.Context) error {
 	if spv.StarterPack == nil || spv.StarterPack.Record == nil {
 		return c.Render(http.StatusOK, "starterpack.html", data)
 	}
-	rec, ok := spv.StarterPack.Record.Val.(*appbsky.GraphStarterpack)
+	rec, ok := spv.StarterPack.Record.Val.(*appgndr.GraphStarterpack)
 	if !ok {
 		return c.Render(http.StatusOK, "starterpack.html", data)
 	}
@@ -578,7 +578,7 @@ func (srv *Server) WebProfile(c echo.Context) error {
 	}
 	identifier := handleOrDID.Normalize().String()
 
-	pv, err := appbsky.ActorGetProfile(ctx, srv.xrpcc, identifier)
+	pv, err := appgndr.ActorGetProfile(ctx, srv.xrpcc, identifier)
 	if err != nil {
 		log.Warnf("failed to fetch profile for: %s\t%v", identifier, err)
 		return c.Render(http.StatusOK, "profile.html", data)

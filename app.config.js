@@ -112,7 +112,7 @@ module.exports = function (_config) {
         entitlements: {
           'com.apple.developer.kernel.increased-memory-limit': true,
           'com.apple.developer.kernel.extended-virtual-addressing': true,
-          'com.apple.security.application-groups': 'group.app.bsky',
+          'com.apple.security.application-groups': 'group.app.gndr',
         },
         privacyManifests: {
           NSPrivacyAccessedAPITypes: [
@@ -370,7 +370,7 @@ module.exports = function (_config) {
                     bundleIdentifier: 'xyz.ganderweb.app.Share-with-Bluesky',
                     entitlements: {
                       'com.apple.security.application-groups': [
-                        'group.app.bsky',
+                        'group.app.gndr',
                       ],
                     },
                   },
@@ -379,7 +379,7 @@ module.exports = function (_config) {
                     bundleIdentifier: 'xyz.ganderweb.app.BlueskyNSE',
                     entitlements: {
                       'com.apple.security.application-groups': [
-                        'group.app.bsky',
+                        'group.app.gndr',
                       ],
                     },
                   },

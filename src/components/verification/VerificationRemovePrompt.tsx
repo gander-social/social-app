@@ -8,7 +8,7 @@ import {useVerificationsRemoveMutation} from '#/state/queries/verification/useVe
 import * as Toast from '#/view/com/util/Toast'
 import {type DialogControlProps} from '#/components/Dialog'
 import * as Prompt from '#/components/Prompt'
-import type * as bsky from '#/types/bsky'
+import type * as gndr from '#/types/gndr'
 
 export {useDialogControl as usePromptControl} from '#/components/Dialog'
 
@@ -19,7 +19,7 @@ export function VerificationRemovePrompt({
   onConfirm: onConfirmInner,
 }: {
   control: DialogControlProps
-  profile: bsky.profile.AnyProfileView
+  profile: gndr.profile.AnyProfileView
   verifications: AppBskyActorDefs.VerificationView[]
   onConfirm?: () => void
 }) {

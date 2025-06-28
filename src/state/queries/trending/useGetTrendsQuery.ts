@@ -29,7 +29,7 @@ export function useGetTrendsQuery() {
     queryKey: createGetTrendsQueryKey(),
     queryFn: async () => {
       const contentLangs = getContentLanguages().join(',')
-      const {data} = await agent.app.bsky.unspecced.getTrends(
+      const {data} = await agent.app.gndr.unspecced.getTrends(
         {
           limit: DEFAULT_LIMIT,
         },

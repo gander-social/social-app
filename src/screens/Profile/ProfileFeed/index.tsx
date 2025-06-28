@@ -61,7 +61,7 @@ export function ProfileFeedScreen(props: Props) {
   const navigation = useNavigation<NavigationProp>()
 
   const uri = useMemo(
-    () => makeRecordUri(handleOrDid, 'app.bsky.feed.generator', rkey),
+    () => makeRecordUri(handleOrDid, 'app.gndr.feed.generator', rkey),
     [rkey, handleOrDid],
   )
   const {error, data: resolvedUri} = useResolveUriQuery(uri)

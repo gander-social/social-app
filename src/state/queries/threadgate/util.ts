@@ -1,7 +1,7 @@
 import {AppBskyFeedDefs, AppBskyFeedThreadgate} from '@atproto/api'
 
 import {ThreadgateAllowUISetting} from '#/state/queries/threadgate/types'
-import * as bsky from '#/types/bsky'
+import * as gndr from '#/types/gndr'
 
 export function threadgateViewToAllowUISetting(
   threadgateView: AppBskyFeedDefs.ThreadgateView | undefined,
@@ -9,7 +9,7 @@ export function threadgateViewToAllowUISetting(
   // Validate the record for clarity, since backwards compat code is a little confusing
   const threadgate =
     threadgateView &&
-    bsky.validate(threadgateView.record, AppBskyFeedThreadgate.validateRecord)
+    gndr.validate(threadgateView.record, AppBskyFeedThreadgate.validateRecord)
       ? threadgateView.record
       : undefined
   return threadgateRecordToAllowUISetting(threadgate)
@@ -75,14 +75,14 @@ export function threadgateAllowUISettingToAllowRecordValue(
   if (!threadgate.find(v => v.type === 'nobody')) {
     for (const rule of threadgate) {
       if (rule.type === 'mention') {
-        allow.push({$type: 'app.bsky.feed.threadgate#mentionRule'})
+        allow.push({$type: 'app.gndr.feed.threadgate#mentionRule'})
       } else if (rule.type === 'following') {
-        allow.push({$type: 'app.bsky.feed.threadgate#followingRule'})
+        allow.push({$type: 'app.gndr.feed.threadgate#followingRule'})
       } else if (rule.type === 'followers') {
-        allow.push({$type: 'app.bsky.feed.threadgate#followerRule'})
+        allow.push({$type: 'app.gndr.feed.threadgate#followerRule'})
       } else if (rule.type === 'list') {
         allow.push({
-          $type: 'app.bsky.feed.threadgate#listRule',
+          $type: 'app.gndr.feed.threadgate#listRule',
           list: rule.list,
         })
       }
@@ -133,7 +133,7 @@ export function createThreadgateRecord(
   }
 
   return {
-    $type: 'app.bsky.feed.threadgate',
+    $type: 'app.gndr.feed.threadgate',
     post: threadgate.post,
     createdAt: new Date().toISOString(),
     allow: threadgate.allow, // can be undefined!

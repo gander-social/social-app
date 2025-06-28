@@ -2,7 +2,7 @@ import {useRef} from 'react'
 import type {ListRenderItemInfo} from 'react-native'
 import {View} from 'react-native'
 import {AppBskyActorDefs, ModerationOpts} from '@atproto/api'
-import {GeneratorView} from '@atproto/api/dist/client/types/app/bsky/feed/defs'
+import {GeneratorView} from '@atproto/api/dist/client/types/app/gndr/feed/defs'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

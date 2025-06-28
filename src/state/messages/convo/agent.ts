@@ -561,7 +561,7 @@ export class Convo {
     }>(async (resolve, reject) => {
       try {
         const response = await networkRetry(2, () => {
-          return this.agent.api.chat.bsky.convo.getConvo(
+          return this.agent.api.chat.gndr.convo.getConvo(
             {
               convoId: this.convoId,
             },
@@ -632,7 +632,7 @@ export class Convo {
 
       const nextCursor = this.oldestRev // for TS
       const response = await networkRetry(2, () => {
-        return this.agent.api.chat.bsky.convo.getMessages(
+        return this.agent.api.chat.gndr.convo.getMessages(
           {
             cursor: nextCursor,
             convoId: this.convoId,
@@ -868,7 +868,7 @@ export class Convo {
 
       const {id, message} = pendingMessage
 
-      const response = await this.agent.api.chat.bsky.convo.sendMessage(
+      const response = await this.agent.api.chat.gndr.convo.sendMessage(
         {
           convoId: this.convoId,
           message,
@@ -886,7 +886,7 @@ export class Convo {
        */
       this.newMessages.set(res.id, {
         ...res,
-        $type: 'chat.bsky.convo.defs#messageView',
+        $type: 'chat.gndr.convo.defs#messageView',
       })
       // render new message state, prior to firehose
       this.commit()
@@ -963,7 +963,7 @@ export class Convo {
     )
 
     try {
-      const {data} = await this.agent.api.chat.bsky.convo.sendMessageBatch(
+      const {data} = await this.agent.api.chat.gndr.convo.sendMessageBatch(
         {
           items: messageArray.map(({message}) => ({
             convoId: this.convoId,
@@ -981,7 +981,7 @@ export class Convo {
       for (const item of items) {
         this.newMessages.set(item.id, {
           ...item,
-          $type: 'chat.bsky.convo.defs#messageView',
+          $type: 'chat.gndr.convo.defs#messageView',
         })
       }
 
@@ -1005,7 +1005,7 @@ export class Convo {
 
     try {
       await networkRetry(2, () => {
-        return this.agent.api.chat.bsky.convo.deleteMessageForSelf(
+        return this.agent.api.chat.gndr.convo.deleteMessageForSelf(
           {
             convoId: this.convoId,
             messageId,
@@ -1097,7 +1097,7 @@ export class Convo {
         message: {
           ...m.message,
           embed: undefined,
-          $type: 'chat.bsky.convo.defs#messageView',
+          $type: 'chat.gndr.convo.defs#messageView',
           id: nanoid(),
           rev: '__fake__',
           sentAt: new Date().toISOString(),
@@ -1106,7 +1106,7 @@ export class Convo {
            * `this.sender` is defined
            */
           sender: {
-            $type: 'chat.bsky.convo.defs#messageViewSender',
+            $type: 'chat.gndr.convo.defs#messageViewSender',
             did: this.sender!.did,
           },
         },
@@ -1247,7 +1247,7 @@ export class Convo {
 
     try {
       logger.debug(`Adding reaction ${emoji} to message ${messageId}`)
-      const {data} = await this.agent.chat.bsky.convo.addReaction(
+      const {data} = await this.agent.chat.gndr.convo.addReaction(
         {messageId, value: emoji, convoId: this.convoId},
         {encoding: 'application/json', headers: DM_SERVICE_HEADERS},
       )
@@ -1312,7 +1312,7 @@ export class Convo {
 
     try {
       logger.debug(`Removing reaction ${emoji} from message ${messageId}`)
-      await this.agent.chat.bsky.convo.removeReaction(
+      await this.agent.chat.gndr.convo.removeReaction(
         {messageId, value: emoji, convoId: this.convoId},
         {encoding: 'application/json', headers: DM_SERVICE_HEADERS},
       )

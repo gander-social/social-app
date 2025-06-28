@@ -11,7 +11,7 @@ describe('link service', async () => {
     const env = readEnv()
     const cfg = envToCfg({
       ...env,
-      hostnames: ['test.bsky.link'],
+      hostnames: ['test.gndr.link'],
       appHostname: 'test.gndr.app',
       dbPostgresSchema: 'link_test',
       dbPostgresUrl: process.env.DB_POSTGRES_URL,
@@ -35,7 +35,7 @@ describe('link service', async () => {
   it('creates a starter pack link', async () => {
     const link = await getLink('/start/did:example:alice/xxx')
     const url = new URL(link)
-    assert.strictEqual(url.origin, 'https://test.bsky.link')
+    assert.strictEqual(url.origin, 'https://test.gndr.link')
     assert.match(url.pathname, /^\/[a-z0-9]+$/i)
   })
 
@@ -67,7 +67,7 @@ describe('link service', async () => {
 
   it('returns 404 for unknown link when requesting json', async () => {
     const [status, json] = await getJsonRedirect(
-      'https://test.bsky.link/unknown',
+      'https://test.gndr.link/unknown',
     )
     assert(json.error)
     assert(json.message)
