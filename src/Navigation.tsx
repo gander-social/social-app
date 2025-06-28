@@ -109,7 +109,7 @@ import {
   useEmailDialogControl,
 } from '#/components/dialogs/EmailDialog'
 import {router} from '#/routes'
-import {Referrer} from '../modules/expo-bluesky-swiss-army'
+import {Referrer} from '../modules/expo-gander-swiss-army'
 import {NotificationsActivityListScreen} from './screens/Notifications/ActivityList'
 import {LegacyNotificationSettingsScreen} from './screens/Settings/LegacyNotificationSettings'
 import {NotificationSettingsScreen} from './screens/Settings/NotificationSettings'
@@ -762,7 +762,7 @@ const FlatNavigator = () => {
 
 const LINKING = {
   // TODO figure out what we are going to use
-  prefixes: ['bsky://', 'bluesky://', 'https://gndr.app'],
+  prefixes: ['bsky://', 'gander://', 'https://gndr.app'],
 
   getPathFromState(state: State) {
     // find the current node in the navigation tree

@@ -1342,7 +1342,7 @@ msgid "Bluesky is an open network where you can choose your hosting provider. If
 msgstr "Bluesky on avoin verkosto, jossa voit valita hostauspalveluntarjoajasi. Jos olet kehittäjä, voit hostata omaa palvelintasi."
 
 #: src/view/com/auth/server-input/index.tsx:149
-msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
+msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Gander Social option."
 msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:53
@@ -1351,7 +1351,7 @@ msgid "Bluesky is better with friends!"
 msgstr "Bluesky on parempi kavereiden kanssa!"
 
 #: src/screens/Takendown.tsx:217
-msgid "Bluesky Social Terms of Service"
+msgid "Gander Social Terms of Service"
 msgstr ""
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:310
@@ -10101,7 +10101,7 @@ msgid "Your account repository, containing all public data records, can be downl
 msgstr "Tilisi arkiston, joka sisältää kaikki julkiset tietueet, voi ladata ”CAR”-tiedostona. Tämä tiedosto ei sisällä mediaupotuksia, kuten kuvia, eikä yksityisiä tietojasi, jotka on haettava erikseen."
 
 #: src/screens/Takendown.tsx:214
-msgid "Your account was found to be in violation of the <0>Bluesky Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
+msgid "Your account was found to be in violation of the <0>Gander Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
 msgstr ""
 
 #: src/screens/Takendown.tsx:154

@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
-group = 'expo.modules.blueskygifview'
+group = 'expo.modules.gandergifview'
 version = '0.5.0'
 
 buildscript {
@@ -65,7 +65,7 @@ android {
     }
   }
 
-  namespace "expo.modules.blueskygifview"
+  namespace "expo.modules.gandergifview"
   defaultConfig {
     minSdkVersion safeExtGet("minSdkVersion", 21)
     targetSdkVersion safeExtGet("targetSdkVersion", 34)

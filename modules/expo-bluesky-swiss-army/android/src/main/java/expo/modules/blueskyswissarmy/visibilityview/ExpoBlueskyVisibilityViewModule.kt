@@ -1,4 +1,4 @@
-package expo.modules.blueskyswissarmy.visibilityview
+package expo.modules.ganderswissarmy.visibilityview
 
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition

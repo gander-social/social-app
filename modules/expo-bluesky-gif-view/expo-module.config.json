@@ -4,6 +4,6 @@
     "modules": ["ExpoBlueskyGifViewModule"]
   },
   "android": {
-    "modules": ["expo.modules.blueskygifview.ExpoBlueskyGifViewModule"]
+    "modules": ["expo.modules.gandergifview.ExpoBlueskyGifViewModule"]
   }
 }

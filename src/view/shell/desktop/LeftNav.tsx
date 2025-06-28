@@ -74,7 +74,7 @@ import {CENTER_COLUMN_OFFSET} from '#/components/Layout'
 import * as Menu from '#/components/Menu'
 import * as Prompt from '#/components/Prompt'
 import {Text} from '#/components/Typography'
-import {PlatformInfo} from '../../../../modules/expo-bluesky-swiss-army'
+import {PlatformInfo} from '../../../../modules/expo-gander-swiss-army'
 import {router} from '../../../routes'
 
 const NAV_ICON_WIDTH = 28

@@ -1342,8 +1342,8 @@ msgid "Bluesky is an open network where you can choose your hosting provider. If
 msgstr "Bluesky estas malfermita reto, kie elekteblas provizanto de gastigo. Se vi estas programisto, vi povas gastigi vian propran servilon."
 
 #: src/view/com/auth/server-input/index.tsx:149
-msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
-msgstr "Bluesky estas malfermita reto, kie elekteblas provizanto de gastigo. Se vi estas novulo, ni rekomendas, ke vi restu ĉe la defaŭlta opcio Bluesky Social."
+msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Gander Social option."
+msgstr "Bluesky estas malfermita reto, kie elekteblas provizanto de gastigo. Se vi estas novulo, ni rekomendas, ke vi restu ĉe la defaŭlta opcio Gander Social."
 
 #: src/components/ProgressGuide/List.tsx:53
 #: src/components/ProgressGuide/List.tsx:70
@@ -1351,8 +1351,8 @@ msgid "Bluesky is better with friends!"
 msgstr "Bluesky pli bonas kun amikoj!"
 
 #: src/screens/Takendown.tsx:217
-msgid "Bluesky Social Terms of Service"
-msgstr "Uzokondiĉoj de Bluesky Social"
+msgid "Gander Social Terms of Service"
+msgstr "Uzokondiĉoj de Gander Social"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:310
 msgid "Bluesky will choose a set of recommended accounts from people in your network."
@@ -10101,8 +10101,8 @@ msgid "Your account repository, containing all public data records, can be downl
 msgstr "Via konta deponejo enhavanta ĉiujn publikajn datum-rikordojn estas elŝutebla kiel \"CAR\"-dosiero. Tiu dosiero ne enhavas aŭdvidaĵajn enkorpigaĵojn kiel bildoj aŭ viaj privataj datumoj kiuj devas esti elŝutitaj aparte."
 
 #: src/screens/Takendown.tsx:214
-msgid "Your account was found to be in violation of the <0>Bluesky Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
-msgstr "Via konto evidentiĝis esti kontraŭ la <0>Uzokondiĉoj de Bluesky Social</0>. Ni sendis vin retmesaĝon skizantan la specifan malobservon kaj suspendan periodon, se aplikebla. Vi povas apelacii ĉi tiun decidon se vi kredas, ke ĝi estis farita erare."
+msgid "Your account was found to be in violation of the <0>Gander Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
+msgstr "Via konto evidentiĝis esti kontraŭ la <0>Uzokondiĉoj de Gander Social</0>. Ni sendis vin retmesaĝon skizantan la specifan malobservon kaj suspendan periodon, se aplikebla. Vi povas apelacii ĉi tiun decidon se vi kredas, ke ĝi estis farita erare."
 
 #: src/screens/Takendown.tsx:154
 msgid "Your appeal has been submitted. If your appeal succeeds, you will receive an email."

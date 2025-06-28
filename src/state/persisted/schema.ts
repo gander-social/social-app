@@ -3,7 +3,7 @@ import {z} from 'zod'
 import {deviceLanguageCodes, deviceLocales} from '#/locale/deviceLocales'
 import {findSupportedAppLanguage} from '#/locale/helpers'
 import {logger} from '#/logger'
-import {PlatformInfo} from '../../../modules/expo-bluesky-swiss-army'
+import {PlatformInfo} from '../../../modules/expo-gander-swiss-army'
 
 const externalEmbedOptions = ['show', 'hide'] as const
 

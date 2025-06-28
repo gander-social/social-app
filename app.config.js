@@ -39,9 +39,9 @@ module.exports = function (_config) {
     expo: {
       version: VERSION,
       name: 'Bluesky',
-      slug: 'bluesky',
-      scheme: 'bluesky',
-      owner: 'blueskysocial',
+      slug: 'gander',
+      scheme: 'gander',
+      owner: 'gandersocial',
       runtimeVersion: {
         policy: 'appVersion',
       },
@@ -50,7 +50,7 @@ module.exports = function (_config) {
       primaryColor: '#1083fe',
       ios: {
         supportsTablet: false,
-        bundleIdentifier: 'xyz.blueskyweb.app',
+        bundleIdentifier: 'xyz.ganderweb.app',
         config: {
           usesNonExemptEncryption: false,
         },
@@ -154,7 +154,7 @@ module.exports = function (_config) {
           backgroundColor: '#1185FE',
         },
         googleServicesFile: './google-services.json',
-        package: 'xyz.blueskyweb.app',
+        package: 'xyz.ganderweb.app',
         intentFilters: [
           {
             action: 'VIEW',
@@ -203,7 +203,7 @@ module.exports = function (_config) {
         USE_SENTRY && [
           '@sentry/react-native/expo',
           {
-            organization: 'blueskyweb',
+            organization: 'ganderweb',
             project: 'app',
             url: 'https://sentry.io',
           },
@@ -367,7 +367,7 @@ module.exports = function (_config) {
                 appExtensions: [
                   {
                     targetName: 'Share-with-Bluesky',
-                    bundleIdentifier: 'xyz.blueskyweb.app.Share-with-Bluesky',
+                    bundleIdentifier: 'xyz.ganderweb.app.Share-with-Bluesky',
                     entitlements: {
                       'com.apple.security.application-groups': [
                         'group.app.bsky',
@@ -376,7 +376,7 @@ module.exports = function (_config) {
                   },
                   {
                     targetName: 'BlueskyNSE',
-                    bundleIdentifier: 'xyz.blueskyweb.app.BlueskyNSE',
+                    bundleIdentifier: 'xyz.ganderweb.app.BlueskyNSE',
                     entitlements: {
                       'com.apple.security.application-groups': [
                         'group.app.bsky',
@@ -385,7 +385,7 @@ module.exports = function (_config) {
                   },
                   {
                     targetName: 'BlueskyClip',
-                    bundleIdentifier: 'xyz.blueskyweb.app.AppClip',
+                    bundleIdentifier: 'xyz.ganderweb.app.AppClip',
                   },
                 ],
               },

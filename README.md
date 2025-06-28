@@ -1,12 +1,12 @@
-# Bluesky Social App
+# Gander Social App
 
-Welcome friends! This is the codebase for the Bluesky Social app.
+Welcome friends! This is the codebase for the Gander Social app.
 
 Get the app itself:
 
 - **Web: [gndr.app](https://gndr.app)**
 - **iOS: [App Store](https://apps.apple.com/us/app/gander-social/id6444370199)**
-- **Android: [Play Store](https://play.google.com/store/apps/details?id=xyz.blueskyweb.app)**
+- **Android: [Play Store](https://play.google.com/store/apps/details?id=xyz.ganderweb.app)**
 
 ## Development Resources
 
@@ -23,7 +23,7 @@ The Authenticated Transfer Protocol ("AT Protocol" or "atproto") is a decentrali
 - [Protocol Specifications](https://atproto.com/specs/atp)
 - [Blogpost on self-authenticating data structures](https://bsky.social/about/blog/3-6-2022-a-self-authenticating-social-protocol)
 
-The Bluesky Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
+The Gander Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
 
 ## Contributions
 

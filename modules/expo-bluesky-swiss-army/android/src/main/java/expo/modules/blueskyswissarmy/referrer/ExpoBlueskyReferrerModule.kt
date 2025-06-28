@@ -1,4 +1,4 @@
-package expo.modules.blueskyswissarmy.referrer
+package expo.modules.ganderswissarmy.referrer
 
 import android.content.Intent
 import android.net.Uri

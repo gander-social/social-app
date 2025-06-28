@@ -33,7 +33,7 @@ async function _registerPushToken({
         : PUBLIC_APPVIEW_DID,
       platform: Platform.OS,
       token: token.data,
-      appId: 'xyz.blueskyweb.app',
+      appId: 'xyz.ganderweb.app',
     })
 
     logger.debug(`registerPushToken: success`, {

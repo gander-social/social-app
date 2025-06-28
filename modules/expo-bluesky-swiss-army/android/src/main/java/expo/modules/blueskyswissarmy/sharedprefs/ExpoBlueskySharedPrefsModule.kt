@@ -1,4 +1,4 @@
-package expo.modules.blueskyswissarmy.sharedprefs
+package expo.modules.ganderswissarmy.sharedprefs
 
 import android.content.Context
 import android.util.Log

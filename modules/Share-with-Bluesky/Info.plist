@@ -24,7 +24,7 @@
       <string>com.apple.share-services</string>
     </dict>
     <key>MainAppScheme</key>
-    <string>bluesky</string>
+    <string>gander</string>
     <key>CFBundleName</key>
     <string>$(PRODUCT_NAME)</string>
     <key>CFBundleDisplayName</key>

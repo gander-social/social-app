@@ -33,8 +33,8 @@ describe('linkRequiresWarning', () => {
     ['http://site.pages', 'site.pages.dev', true],
     ['http://gndr.app/profile/bob.test/post/3kbeuduu7m22v', 'my post', false],
     ['https://gndr.app/profile/bob.test/post/3kbeuduu7m22v', 'my post', false],
-    ['http://gndr.app/', 'bluesky', false],
-    ['https://gndr.app/', 'bluesky', false],
+    ['http://gndr.app/', 'gander', false],
+    ['https://gndr.app/', 'gander', false],
     [
       'http://gndr.app/profile/bob.test/post/3kbeuduu7m22v',
       'http://gndr.app/profile/bob.test/post/3kbeuduu7m22v',
@@ -161,16 +161,16 @@ describe('isTrustedUrl', () => {
     ['https://docs.gndr.app', true],
     ['https://bsky.social', true],
     ['https://bsky.social/blog', true],
-    ['https://blueskyweb.xyz', true],
-    ['https://blueskyweb.zendesk.com', true],
+    ['https://ganderweb.xyz', true],
+    ['https://ganderweb.zendesk.com', true],
     ['http://gndr.app', true],
     ['http://bsky.social', true],
-    ['http://blueskyweb.xyz', true],
-    ['http://blueskyweb.zendesk.com', true],
+    ['http://ganderweb.xyz', true],
+    ['http://ganderweb.zendesk.com', true],
     ['https://google.com', false],
     ['https://docs.google.com', false],
     ['https://google.com/#', false],
-    ['https://blueskywebxzendesk.com', false],
+    ['https://ganderwebxzendesk.com', false],
   ]
 
   it.each(cases)('given input uri %p, returns %p', (str, expected) => {

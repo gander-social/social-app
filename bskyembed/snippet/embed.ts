@@ -1,13 +1,13 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Window {
-  bluesky: {
+  gander: {
     scan: (element?: Pick<Element, 'querySelectorAll'>) => void
   }
 }
 
 const EMBED_URL = 'https://embed.gndr.app'
 
-window.bluesky = window.bluesky || {
+window.gander = window.gander || {
   scan,
 }
 
@@ -27,7 +27,7 @@ window.addEventListener('message', event => {
   }
 
   const embed = document.querySelector<HTMLIFrameElement>(
-    `[data-bluesky-id="${id}"]`,
+    `[data-gander-id="${id}"]`,
   )
 
   if (!embed) {
@@ -42,20 +42,20 @@ window.addEventListener('message', event => {
 })
 
 /**
- * Scan the document for all elements with the data-bluesky-aturi attribute,
+ * Scan the document for all elements with the data-gander-aturi attribute,
  * and initialize them as Bluesky embeds.
  *
  * @param element Only scan this specific element @default document @optional
  * @returns
  */
 function scan(node = document) {
-  const embeds = node.querySelectorAll<HTMLIFrameElement>('[data-bluesky-uri]')
+  const embeds = node.querySelectorAll<HTMLIFrameElement>('[data-gander-uri]')
 
   for (let i = 0; i < embeds.length; i++) {
     const id = String(Math.random()).slice(2)
 
     const embed = embeds[i]
-    const aturi = embed.getAttribute('data-bluesky-uri')
+    const aturi = embed.getAttribute('data-gander-uri')
 
     if (!aturi) {
       continue
@@ -68,12 +68,12 @@ function scan(node = document) {
     if (ref_url.startsWith('http')) {
       searchParams.set('ref_url', encodeURIComponent(ref_url))
     }
-    if (embed.dataset.blueskyEmbedColorMode) {
-      searchParams.set('colorMode', embed.dataset.blueskyEmbedColorMode)
+    if (embed.dataset.ganderEmbedColorMode) {
+      searchParams.set('colorMode', embed.dataset.ganderEmbedColorMode)
     }
 
     const iframe = document.createElement('iframe')
-    iframe.setAttribute('data-bluesky-id', id)
+    iframe.setAttribute('data-gander-id', id)
     iframe.src = `${EMBED_URL}/embed/${aturi.slice(
       'at://'.length,
     )}?${searchParams.toString()}`
@@ -90,7 +90,7 @@ function scan(node = document) {
     container.style.marginTop = '10px'
     container.style.marginBottom = '10px'
     container.style.display = 'flex'
-    container.className = 'bluesky-embed'
+    container.className = 'gander-embed'
 
     container.appendChild(iframe)
 

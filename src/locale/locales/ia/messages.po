@@ -1342,8 +1342,8 @@ msgid "Bluesky is an open network where you can choose your hosting provider. If
 msgstr "Bluesky es un rete aperte ubi tu pote eliger tu fornitor de albergamento. Si tu es un disveloppator, tu pote albergar tu proprie servitor."
 
 #: src/view/com/auth/server-input/index.tsx:149
-msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
-msgstr "Bluesky es un rete aperte ubi tu pote eliger tu fornitor. Si tu es nove hic, nos recommenda eliger le option predefinite, Bluesky Social."
+msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Gander Social option."
+msgstr "Bluesky es un rete aperte ubi tu pote eliger tu fornitor. Si tu es nove hic, nos recommenda eliger le option predefinite, Gander Social."
 
 #: src/components/ProgressGuide/List.tsx:53
 #: src/components/ProgressGuide/List.tsx:70
@@ -1351,8 +1351,8 @@ msgid "Bluesky is better with friends!"
 msgstr "Bluesky es melior con amicos!"
 
 #: src/screens/Takendown.tsx:217
-msgid "Bluesky Social Terms of Service"
-msgstr "Conditiones de servicio de Bluesky Social"
+msgid "Gander Social Terms of Service"
+msgstr "Conditiones de servicio de Gander Social"
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:310
 msgid "Bluesky will choose a set of recommended accounts from people in your network."
@@ -10101,7 +10101,7 @@ msgid "Your account repository, containing all public data records, can be downl
 msgstr ""
 
 #: src/screens/Takendown.tsx:214
-msgid "Your account was found to be in violation of the <0>Bluesky Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
+msgid "Your account was found to be in violation of the <0>Gander Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
 msgstr ""
 
 #: src/screens/Takendown.tsx:154

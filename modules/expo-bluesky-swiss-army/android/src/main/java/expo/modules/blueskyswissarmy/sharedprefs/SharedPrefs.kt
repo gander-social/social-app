@@ -1,4 +1,4 @@
-package expo.modules.blueskyswissarmy.sharedprefs
+package expo.modules.ganderswissarmy.sharedprefs
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -32,7 +32,7 @@ class SharedPrefs(
     ): SharedPreferences {
       if (instance == null) {
         Log.d(NAME, "No preferences instance found, creating one.")
-        instance = context.getSharedPreferences("xyz.blueskyweb.app", Context.MODE_PRIVATE)
+        instance = context.getSharedPreferences("xyz.ganderweb.app", Context.MODE_PRIVATE)
       }
 
       val safeInstance = instance ?: throw Error("Preferences is null: $info")

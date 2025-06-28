@@ -23,7 +23,7 @@ func (srv *Server) postEmbedHTML(postView *appbsky.FeedDefs_PostView) (string, e
 		return "", err
 	}
 
-	const tpl = `<blockquote class="bluesky-embed" data-bluesky-uri="{{ .PostURI }}" data-bluesky-cid="{{ .PostCID }}"><p{{ if .PostLang }} lang="{{ .PostLang }}"{{ end }}>{{ .PostText }}</p>&mdash; <a href="{{ .ProfileURL }}">{{ .PostAuthor }}</a> <a href="{{ .PostURL }}">{{ .PostIndexedAt }}</a></blockquote><script async src="{{ .WidgetURL }}" charset="utf-8"></script>`
+	const tpl = `<blockquote class="gander-embed" data-gander-uri="{{ .PostURI }}" data-gander-cid="{{ .PostCID }}"><p{{ if .PostLang }} lang="{{ .PostLang }}"{{ end }}>{{ .PostText }}</p>&mdash; <a href="{{ .ProfileURL }}">{{ .PostAuthor }}</a> <a href="{{ .PostURL }}">{{ .PostIndexedAt }}</a></blockquote><script async src="{{ .WidgetURL }}" charset="utf-8"></script>`
 
 	t, err := template.New("snippet").Parse(tpl)
 	if err != nil {

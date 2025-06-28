@@ -1,4 +1,4 @@
-package expo.modules.blueskyswissarmy.platforminfo
+package expo.modules.ganderswissarmy.platforminfo
 
 import android.provider.Settings
 import expo.modules.kotlin.modules.Module

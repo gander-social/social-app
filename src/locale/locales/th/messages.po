@@ -1342,7 +1342,7 @@ msgid "Bluesky is an open network where you can choose your hosting provider. If
 msgstr "Bluesky เป็นเครือข่ายเปิดที่คุณสามารถเลือกผู้ให้บริการโฮสติ้งของคุณได้ หากคุณเป็นนักพัฒนา คุณสามารถโฮสต์เซิร์ฟเวอร์ของคุณเองได้"
 
 #: src/view/com/auth/server-input/index.tsx:149
-msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Bluesky Social option."
+msgid "Bluesky is an open network where you can choose your own provider. If you're new here, we recommend sticking with the default Gander Social option."
 msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:53
@@ -1351,7 +1351,7 @@ msgid "Bluesky is better with friends!"
 msgstr "Bluesky สนุกยิ่งขึ้นเมื่อมีเพื่อน!"
 
 #: src/screens/Takendown.tsx:217
-msgid "Bluesky Social Terms of Service"
+msgid "Gander Social Terms of Service"
 msgstr ""
 
 #: src/components/StarterPack/ProfileStarterPacks.tsx:310
@@ -10101,7 +10101,7 @@ msgid "Your account repository, containing all public data records, can be downl
 msgstr "คลังข้อมูลบัญชีของคุณ ซึ่งประกอบด้วยบันทึกข้อมูลสาธารณะทั้งหมด สามารถดาวน์โหลดเป็นไฟล์ \"CAR\" ไฟล์นี้ไม่รวมสื่อที่ฝังไว้ เช่น รูปภาพ หรือข้อมูลส่วนตัวของคุณ ซึ่งต้องดึงข้อมูลแยกต่างหาก"
 
 #: src/screens/Takendown.tsx:214
-msgid "Your account was found to be in violation of the <0>Bluesky Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
+msgid "Your account was found to be in violation of the <0>Gander Social Terms of Service</0>. You have been sent an email outlining the specific violation and suspension period, if applicable. You can appeal this decision if you believe it was made in error."
 msgstr ""
 
 #: src/screens/Takendown.tsx:154

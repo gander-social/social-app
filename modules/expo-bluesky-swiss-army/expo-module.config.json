@@ -10,10 +10,10 @@
   },
   "android": {
     "modules": [
-      "expo.modules.blueskyswissarmy.sharedprefs.ExpoBlueskySharedPrefsModule",
-      "expo.modules.blueskyswissarmy.referrer.ExpoBlueskyReferrerModule",
-      "expo.modules.blueskyswissarmy.visibilityview.ExpoBlueskyVisibilityViewModule",
-      "expo.modules.blueskyswissarmy.platforminfo.ExpoPlatformInfoModule"
+      "expo.modules.ganderswissarmy.sharedprefs.ExpoBlueskySharedPrefsModule",
+      "expo.modules.ganderswissarmy.referrer.ExpoBlueskyReferrerModule",
+      "expo.modules.ganderswissarmy.visibilityview.ExpoBlueskyVisibilityViewModule",
+      "expo.modules.ganderswissarmy.platforminfo.ExpoPlatformInfoModule"
     ]
   }
 }
