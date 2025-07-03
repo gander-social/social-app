@@ -118,3 +118,5 @@ src/locale/locales/**/*.js
 
 # ogcard assets
 gndrogcard/src/assets/fonts/noto-*
+
+.mise.toml
