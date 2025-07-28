@@ -64,8 +64,7 @@ export const SplashScreen = ({
                     color: 'white',
                     textAlign: 'center',
                     fontSize: 21,
-                    fontFamily: 'Hanken Grotesk',
-                    fontWeight: '600',
+                    fontWeight: '700',
                     lineHeight: 28,
                   },
                 ]}>
