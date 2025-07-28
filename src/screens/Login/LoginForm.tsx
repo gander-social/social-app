@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import {useRef, useState} from 'react'
 import {
   ActivityIndicator,
   Keyboard,
@@ -12,22 +12,25 @@ import {
 } from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
+import * as EmailValidator from 'email-validator'
 
 import {useRequestNotificationsPermission} from '#/lib/notifications/notifications'
 import {isNetworkError} from '#/lib/strings/errors'
 import {cleanError} from '#/lib/strings/errors'
 import {createFullHandle} from '#/lib/strings/handles'
+import {colors} from '#/lib/styles'
 import {logger} from '#/logger'
 import {useSetHasCheckedForStarterPack} from '#/state/preferences/used-starter-packs'
 import {useSessionApi} from '#/state/session'
 import {useLoggedOutViewControls} from '#/state/shell/logged-out'
+import {Logo} from '#/view/icons/Logo'
 import {atoms as a, useTheme} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {FormError} from '#/components/forms/FormError'
-import {HostingProvider} from '#/components/forms/HostingProvider'
+// import {HostingProvider} from '#/components/forms/HostingProvider'
 import * as TextField from '#/components/forms/TextField'
-import {At_Stroke2_Corner0_Rounded as At} from '#/components/icons/At'
-import {Lock_Stroke2_Corner0_Rounded as Lock} from '#/components/icons/Lock'
+// import {At_Stroke2_Corner0_Rounded as At} from '#/components/icons/At'
+// import {Lock_Stroke2_Corner0_Rounded as Lock} from '#/components/icons/Lock'
 import {Ticket_Stroke2_Corner0_Rounded as Ticket} from '#/components/icons/Ticket'
 import {Loader} from '#/components/Loader'
 import {Text} from '#/components/Typography'
@@ -41,7 +44,7 @@ export const LoginForm = ({
   serviceDescription,
   initialHandle,
   setError,
-  setServiceUrl,
+  // setServiceUrl,
   onPressRetryConnect,
   onPressBack,
   onPressForgotPassword,
@@ -76,9 +79,9 @@ export const LoginForm = ({
   const {setShowLoggedOut} = useLoggedOutViewControls()
   const setHasCheckedForStarterPack = useSetHasCheckedForStarterPack()
 
-  const onPressSelectService = React.useCallback(() => {
-    Keyboard.dismiss()
-  }, [])
+  // const onPressSelectService = React.useCallback(() => {
+  //   Keyboard.dismiss()
+  // }, [])
 
   const onPressNext = async () => {
     if (isProcessing) return
@@ -91,7 +94,12 @@ export const LoginForm = ({
     const authFactorToken = authFactorTokenValueRef.current
 
     if (!identifier) {
-      setError(_(msg`Please enter your username`))
+      setError(_(msg`Please enter your email address`))
+      return
+    }
+    if (!EmailValidator.validate(identifier)) {
+      setError(_(msg`Your email appears to be invalid.`))
+
       return
     }
 
@@ -100,6 +108,10 @@ export const LoginForm = ({
       return
     }
 
+    if (password.length < 8) {
+      setError(_(msg`Your password must be at least 8 characters long.`))
+      return
+    }
     setIsProcessing(true)
 
     try {
@@ -178,92 +190,107 @@ export const LoginForm = ({
   }
 
   return (
-    <FormContainer testID="loginForm" titleText={<Trans>Sign in</Trans>}>
-      <View>
-        <TextField.LabelText>
-          <Trans>Hosting provider</Trans>
-        </TextField.LabelText>
-        <HostingProvider
-          serviceUrl={serviceUrl}
-          onSelectServiceUrl={setServiceUrl}
-          onOpenDialog={onPressSelectService}
-        />
+    <FormContainer testID="loginForm" style={a.px_0}>
+      <Button
+        style={[a.self_start, a.mx_2xl]}
+        label={_(msg`Cancel`)}
+        variant="solid"
+        color="secondary"
+        size="small"
+        onPress={onPressBack}>
+        <ButtonText>
+          <Trans>Cancel</Trans>
+        </ButtonText>
+      </Button>
+      <View
+        style={[
+          a.self_center,
+          a.pb_5xl_8,
+          a.pt_s50,
+          a.px_md,
+          a.mb_2xl,
+          a.mt_3xl,
+          a.border_0,
+          a.rounded_full,
+          a.mx_2xl,
+          {
+            backgroundColor: colors.black,
+          },
+        ]}>
+        <Logo width={104} fill={colors.white} />
       </View>
-      <View>
-        <TextField.LabelText>
-          <Trans>Account</Trans>
-        </TextField.LabelText>
-        <View style={[a.gap_sm]}>
-          <TextField.Root>
-            <TextField.Icon icon={At} />
-            <TextField.Input
-              testID="loginUsernameInput"
-              label={_(msg`Username or email address`)}
-              autoCapitalize="none"
-              autoFocus
-              autoCorrect={false}
-              autoComplete="username"
-              returnKeyType="next"
-              textContentType="username"
-              defaultValue={initialHandle || ''}
-              onChangeText={v => {
-                identifierValueRef.current = v
-              }}
-              onSubmitEditing={() => {
-                passwordRef.current?.focus()
-              }}
-              blurOnSubmit={false} // prevents flickering due to onSubmitEditing going to next field
-              editable={!isProcessing}
-              accessibilityHint={_(
-                msg`Enter the username or email address you used when you created your account`,
-              )}
-            />
-          </TextField.Root>
-
-          <TextField.Root>
-            <TextField.Icon icon={Lock} />
-            <TextField.Input
-              testID="loginPasswordInput"
-              inputRef={passwordRef}
-              label={_(msg`Password`)}
-              autoCapitalize="none"
-              autoCorrect={false}
-              autoComplete="password"
-              returnKeyType="done"
-              enablesReturnKeyAutomatically={true}
-              secureTextEntry={true}
-              textContentType="password"
-              clearButtonMode="while-editing"
-              onChangeText={v => {
-                passwordValueRef.current = v
-              }}
-              onSubmitEditing={onPressNext}
-              blurOnSubmit={false} // HACK: https://github.com/facebook/react-native/issues/21911#issuecomment-558343069 Keyboard blur behavior is now handled in onSubmitEditing
-              editable={!isProcessing}
-              accessibilityHint={_(msg`Enter your password`)}
-            />
-            <Button
-              testID="forgotPasswordButton"
-              onPress={onPressForgotPassword}
-              label={_(msg`Forgot password?`)}
-              accessibilityHint={_(msg`Opens password reset form`)}
-              variant="solid"
-              color="secondary"
+      <Text style={[a.self_center, a.text_4xl, a.font_bold, a.mb_xl, a.mx_2xl]}>
+        <Trans>Sign in to Gander.</Trans>
+      </Text>
+      <View style={a.mx_2xl}>
+        <TextField.Root>
+          <TextField.Input
+            isFirst={true}
+            testID="loginUsernameInput"
+            label={_(msg`Email address`)}
+            autoCapitalize="none"
+            autoFocus
+            autoCorrect={false}
+            autoComplete="username"
+            returnKeyType="next"
+            textContentType="emailAddress"
+            defaultValue={initialHandle || ''}
+            onChangeText={v => {
+              identifierValueRef.current = v
+            }}
+            onSubmitEditing={() => {
+              passwordRef.current?.focus()
+            }}
+            blurOnSubmit={false} // prevents flickering due to onSubmitEditing going to next field
+            editable={!isProcessing}
+            accessibilityHint={_(
+              msg`Enter the email address you used when you created your account`,
+            )}
+          />
+        </TextField.Root>
+        <TextField.Root>
+          <TextField.Input
+            isLast={true}
+            testID="loginPasswordInput"
+            inputRef={passwordRef}
+            label={_(msg`Password`)}
+            autoCapitalize="none"
+            autoCorrect={false}
+            autoComplete="password"
+            returnKeyType="done"
+            enablesReturnKeyAutomatically={true}
+            secureTextEntry={true}
+            textContentType="password"
+            // clearButtonMode="while-editing"
+            onChangeText={v => {
+              passwordValueRef.current = v
+            }}
+            onSubmitEditing={onPressNext}
+            blurOnSubmit={false} // HACK: https://github.com/facebook/react-native/issues/21911#issuecomment-558343069 Keyboard blur behavior is now handled in onSubmitEditing
+            editable={!isProcessing}
+            accessibilityHint={_(msg`Enter your password`)}
+          />
+          <Button
+            testID="forgotPasswordButton"
+            onPress={onPressForgotPassword}
+            label={_(msg`Forgot password?`)}
+            accessibilityHint={_(msg`Opens password reset form`)}
+            variant="ghost"
+            color="secondary">
+            <ButtonText
               style={[
-                a.rounded_sm,
-                // t.atoms.bg_contrast_100,
-                {marginLeft: 'auto', left: 6, padding: 6},
-                a.z_10,
+                a.underline,
+                {
+                  color: colors.black,
+                },
               ]}>
-              <ButtonText>
-                <Trans>Forgot?</Trans>
-              </ButtonText>
-            </Button>
-          </TextField.Root>
-        </View>
+              <Trans>Forgot?</Trans>
+            </ButtonText>
+          </Button>
+        </TextField.Root>
       </View>
       {isAuthFactorTokenNeeded && (
-        <View>
+        <View style={a.mx_2xl}>
           <TextField.LabelText>
             <Trans>2FA Confirmation</Trans>
           </TextField.LabelText>
@@ -304,8 +331,19 @@ export const LoginForm = ({
           </Text>
         </View>
       )}
-      <FormError error={error} />
-      <View style={[a.flex_row, a.align_center, a.pt_md]}>
+      <View style={a.mx_2xl}>
+        <FormError error={error} />
+      </View>
+      <View style={a.flex_1} />
+      <View
+        style={[
+          a.flex_row,
+          a.align_center,
+          a.pt_lg,
+          a.border_t,
+          a.px_2xl,
+          {borderColor: '#D8D8D8'},
+        ]}>
         <Button
           label={_(msg`Back`)}
           variant="solid"
@@ -313,7 +351,7 @@ export const LoginForm = ({
           size="large"
           onPress={onPressBack}>
           <ButtonText>
-            <Trans>Back</Trans>
+            <Trans>Cancel</Trans>
           </ButtonText>
         </Button>
         <View style={a.flex_1} />
@@ -347,7 +385,7 @@ export const LoginForm = ({
             size="large"
             onPress={onPressNext}>
             <ButtonText>
-              <Trans>Next</Trans>
+              <Trans>Agree and continue</Trans>
             </ButtonText>
             {isProcessing && <ButtonIcon icon={Loader} />}
           </Button>

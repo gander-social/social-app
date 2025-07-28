@@ -194,7 +194,9 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
         description={description}
         scrollable>
         <LayoutAnimationConfig skipEntering skipExiting>
-          <ScreenTransition key={currentForm}>{content}</ScreenTransition>
+          <ScreenTransition style={a.flex_1} key={currentForm}>
+            {content}
+          </ScreenTransition>
         </LayoutAnimationConfig>
       </LoggedOutLayout>
     </KeyboardAvoidingView>

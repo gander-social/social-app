@@ -16,6 +16,7 @@ import {
 } from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
 
+import {colors} from '#/lib/styles'
 import {atoms as a, flatten, select, tokens, useTheme} from '#/alf'
 import {type Props as SVGIconProps} from '#/components/icons/common'
 import {Text} from '#/components/Typography'
@@ -207,7 +208,7 @@ export const Button = React.forwardRef<View, ButtonProps>(
         if (variant === 'solid') {
           if (!disabled) {
             baseStyles.push({
-              backgroundColor: t.palette.primary_500,
+              backgroundColor: t.palette.black,
             })
             hoverStyles.push({
               backgroundColor: t.palette.primary_600,
@@ -249,7 +250,7 @@ export const Button = React.forwardRef<View, ButtonProps>(
       } else if (color === 'secondary') {
         if (variant === 'solid') {
           if (!disabled) {
-            baseStyles.push(t.atoms.bg_contrast_25)
+            baseStyles.push({backgroundColor: '#AAAAAA'})
             hoverStyles.push(t.atoms.bg_contrast_50)
           } else {
             baseStyles.push(t.atoms.bg_contrast_100)
@@ -413,17 +414,18 @@ export const Button = React.forwardRef<View, ButtonProps>(
       if (shape === 'default') {
         if (size === 'large') {
           baseStyles.push({
-            paddingVertical: 13,
-            paddingHorizontal: 20,
-            borderRadius: 8,
+            paddingVertical: 18,
+            paddingHorizontal: 24,
+            borderRadius: 30,
             gap: 8,
           })
         } else if (size === 'small') {
           baseStyles.push({
-            paddingVertical: 9,
-            paddingHorizontal: 12,
-            borderRadius: 6,
+            paddingVertical: 12,
+            paddingHorizontal: 15,
+            borderRadius: 24,
             gap: 6,
+            backgroundColor: '#F7F4F3',
           })
         } else if (size === 'tiny') {
           baseStyles.push({
@@ -618,7 +620,7 @@ export function useSharedButtonTextStyles() {
       if (variant === 'solid' || variant === 'gradient') {
         if (!disabled) {
           baseStyles.push({
-            color: t.palette.contrast_700,
+            color: t.palette.white,
           })
         } else {
           baseStyles.push({
@@ -742,7 +744,7 @@ export function useSharedButtonTextStyles() {
     if (size === 'large') {
       baseStyles.push(a.text_md, a.leading_tight)
     } else if (size === 'small') {
-      baseStyles.push(a.text_sm, a.leading_tight)
+      baseStyles.push(a.text_sm, a.leading_tight, {color: colors.black})
     } else if (size === 'tiny') {
       baseStyles.push(a.text_xs, a.leading_tight)
     }
