@@ -18,6 +18,7 @@ import {SetNewPasswordForm} from '#/screens/Login/SetNewPasswordForm'
 import {atoms as a} from '#/alf'
 import {ChooseAccountForm} from './ChooseAccountForm'
 import {ScreenTransition} from './ScreenTransition'
+import {Welcome} from './Welcome'
 
 enum Forms {
   Login,
@@ -118,6 +119,8 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   let description = ''
 
   switch (currentForm) {
+    case Forms.ForgotPassword:
+      return <Welcome />
     case Forms.Login:
       title = _(msg`Sign in`)
       description = _(msg`Enter your username and password`)
@@ -194,7 +197,9 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
         description={description}
         scrollable>
         <LayoutAnimationConfig skipEntering skipExiting>
-          <ScreenTransition key={currentForm}>{content}</ScreenTransition>
+          <ScreenTransition style={a.flex_1} key={currentForm}>
+            {content}
+          </ScreenTransition>
         </LayoutAnimationConfig>
       </LoggedOutLayout>
     </KeyboardAvoidingView>
