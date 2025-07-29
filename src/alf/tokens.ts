@@ -10,7 +10,9 @@ export const color = {
 export const space = {
   _2xs: 2,
   xs: 4,
+  s6: 6,
   sm: 8,
+  s10: 10,
   md: 12,
   lg: 16,
   xl: 20,
@@ -18,6 +20,7 @@ export const space = {
   _3xl: 28,
   _4xl: 32,
   _5xl: 40,
+  s50: 50,
 } as const
 
 export const fontSize = {

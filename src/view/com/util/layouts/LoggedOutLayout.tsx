@@ -1,5 +1,5 @@
-import React from 'react'
 import {ScrollView, StyleSheet, View} from 'react-native'
+import type React from 'react'
 
 import {useColorSchemeStyle} from '#/lib/hooks/useColorSchemeStyle'
 import {useIsKeyboardVisible} from '#/lib/hooks/useIsKeyboardVisible'
@@ -40,9 +40,12 @@ export const LoggedOutLayout = ({
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="none"
           contentContainerStyle={[
-            {paddingBottom: isKeyboardVisible ? 300 : 0},
+            a.flex_grow,
+            {
+              paddingBottom: isKeyboardVisible ? 300 : 0,
+            },
           ]}>
-          <View style={a.pt_md}>{children}</View>
+          <View style={[a.pt_md, a.flex_1]}>{children}</View>
         </ScrollView>
       )
     } else {
