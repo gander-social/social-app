@@ -13,6 +13,7 @@ import {Trans} from '@lingui/macro'
 import {HITSLOP_20} from '#/lib/constants'
 import {mergeRefs} from '#/lib/merge-refs'
 import {
+  android,
   applyFonts,
   atoms as a,
   type TextStyleProp,
@@ -200,7 +201,7 @@ export function createInput(Component: typeof TextInput) {
       },
       // ios({paddingTop: 12, paddingBottom: 13}),
       // // Needs to be sm on Paper, md on Fabric for some godforsaken reason -sfn
-      // android(a.py_sm),
+      android(a.py_0),
       // // fix for autofill styles covering border
       // web({
       //   paddingTop: 10,

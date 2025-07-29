@@ -195,7 +195,7 @@ export const LoginForm = ({
         style={[a.self_start, a.mx_2xl]}
         label={_(msg`Cancel`)}
         variant="solid"
-        color="secondary"
+        color="soft_neutral"
         size="small"
         onPress={onPressBack}>
         <ButtonText>
@@ -276,14 +276,8 @@ export const LoginForm = ({
             label={_(msg`Forgot password?`)}
             accessibilityHint={_(msg`Opens password reset form`)}
             variant="ghost"
-            color="secondary">
-            <ButtonText
-              style={[
-                a.underline,
-                {
-                  color: colors.black,
-                },
-              ]}>
+            color="link">
+            <ButtonText>
               <Trans>Forgot?</Trans>
             </ButtonText>
           </Button>

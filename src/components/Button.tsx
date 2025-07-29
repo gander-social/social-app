@@ -16,7 +16,6 @@ import {
 } from 'react-native'
 import {LinearGradient} from 'expo-linear-gradient'
 
-import {colors} from '#/lib/styles'
 import {atoms as a, flatten, select, tokens, useTheme} from '#/alf'
 import {type Props as SVGIconProps} from '#/components/icons/common'
 import {Text} from '#/components/Typography'
@@ -35,6 +34,10 @@ export type ButtonColor =
   | 'gradient_sunset'
   | 'gradient_nordic'
   | 'gradient_bonfire'
+  | 'cta_red'
+  | 'link'
+  | 'soft_neutral'
+
 export type ButtonSize = 'tiny' | 'small' | 'large'
 export type ButtonShape = 'round' | 'square' | 'default'
 export type VariantProps = {
@@ -409,6 +412,33 @@ export const Button = React.forwardRef<View, ButtonProps>(
             })
           }
         }
+      } else if (color === 'cta_red') {
+        if (variant === 'solid') {
+          if (!disabled) {
+            baseStyles.push({
+              backgroundColor: '#C30B0D',
+            })
+            hoverStyles.push({
+              backgroundColor: '#C30B0D',
+            })
+          } else {
+            baseStyles.push({
+              backgroundColor: '#C30B0D',
+            })
+          }
+        }
+      } else if (color === 'link') {
+        if (variant === 'ghost') {
+          if (!disabled) {
+            baseStyles.push(a.bg_transparent)
+          }
+        }
+      } else if (color === 'soft_neutral') {
+        if (variant === 'solid') {
+          baseStyles.push({
+            backgroundColor: '#F7F4F3',
+          })
+        }
       }
 
       if (shape === 'default') {
@@ -425,7 +455,6 @@ export const Button = React.forwardRef<View, ButtonProps>(
             paddingHorizontal: 15,
             borderRadius: 24,
             gap: 6,
-            backgroundColor: '#F7F4F3',
           })
         } else if (size === 'tiny') {
           baseStyles.push({
@@ -487,6 +516,9 @@ export const Button = React.forwardRef<View, ButtonProps>(
         gradient_sunset: tokens.gradients.sunset,
         gradient_nordic: tokens.gradients.nordic,
         gradient_bonfire: tokens.gradients.bonfire,
+        link: tokens.gradients.bonfire,
+        cta_red: tokens.gradients.bonfire,
+        soft_neutral: tokens.gradients.bonfire,
       }[color || 'primary']
 
       if (variant === 'gradient') {
@@ -733,6 +765,33 @@ export function useSharedButtonTextStyles() {
           baseStyles.push({color: t.palette.negative_400, opacity: 0.5})
         }
       }
+    } else if (color === 'cta_red') {
+      if (variant === 'solid' || variant === 'gradient') {
+        if (!disabled) {
+          baseStyles.push({
+            color: t.palette.white,
+          })
+        } else {
+          baseStyles.push({
+            color: t.palette.contrast_400,
+          })
+        }
+      }
+    } else if (color === 'link') {
+      if (variant === 'ghost') {
+        baseStyles.push(
+          {
+            color: t.palette.black,
+          },
+          a.underline,
+        )
+      }
+    } else if (color === 'soft_neutral') {
+      if (variant === 'solid') {
+        baseStyles.push({
+          color: t.palette.black,
+        })
+      }
     } else {
       if (!disabled) {
         baseStyles.push({color: t.palette.white})
@@ -744,7 +803,7 @@ export function useSharedButtonTextStyles() {
     if (size === 'large') {
       baseStyles.push(a.text_md, a.leading_tight)
     } else if (size === 'small') {
-      baseStyles.push(a.text_sm, a.leading_tight, {color: colors.black})
+      baseStyles.push(a.text_sm, a.leading_tight)
     } else if (size === 'tiny') {
       baseStyles.push(a.text_xs, a.leading_tight)
     }
