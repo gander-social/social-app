@@ -1,6 +1,7 @@
 import {StatusBar, StyleSheet, View} from 'react-native'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {ResizeMode, Video} from 'expo-av'
+// import {LinearGradient} from 'expo-linear-gradient'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 
@@ -39,6 +40,22 @@ export const SplashScreen = ({
         shouldPlay
         isLooping
         isMuted
+      />
+
+      {/* Gradient overlay with 20% opacity */}
+      {/* <LinearGradient
+        colors={['rgba(255, 255, 255, 0.2)', 'rgba(0, 0, 0, 0.8)']}
+        style={StyleSheet.absoluteFill}
+        start={{x: 0, y: 0}}
+        end={{x: 0, y: 1}}
+      /> */}
+
+      {/* Additional black tint overlay */}
+      <View
+        style={[
+          StyleSheet.absoluteFill,
+          {backgroundColor: 'rgba(0, 0, 0, 0.45)'},
+        ]}
       />
 
       {/* UI Content */}
