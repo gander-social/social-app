@@ -6,7 +6,7 @@ import {useLingui} from '@lingui/react'
 
 import {useActorStatus} from '#/lib/actor-status'
 import {sanitizeDisplayName} from '#/lib/strings/display-names'
-import {sanitizeHandle} from '#/lib/strings/handles'
+// import {sanitizeHandle} from '#/lib/strings/handles'
 import {useProfilesQuery} from '#/state/queries/profile'
 import {type SessionAccount, useSession} from '#/state/session'
 import {UserAvatar} from '#/view/com/util/UserAvatar'
@@ -43,12 +43,7 @@ export function AccountList({
   return (
     <View
       pointerEvents={pendingDid ? 'none' : 'auto'}
-      style={[
-        a.rounded_md,
-        a.overflow_hidden,
-        {borderWidth: 1},
-        t.atoms.border_contrast_low,
-      ]}>
+      style={[a.rounded_md, a.overflow_hidden, t.atoms.border_contrast_low]}>
       {accounts.map(account => (
         <React.Fragment key={account.did}>
           <AccountItem
@@ -58,7 +53,7 @@ export function AccountList({
             isCurrentAccount={account.did === currentAccount?.did}
             isPendingAccount={account.did === pendingDid}
           />
-          <View style={[{borderBottomWidth: 1}, t.atoms.border_contrast_low]} />
+          <View style={[{borderBottomWidth: 1, borderColor: '#D8D8D8  '}]} />
         </React.Fragment>
       ))}
       <Button
@@ -72,22 +67,20 @@ export function AccountList({
               a.flex_1,
               a.flex_row,
               a.align_center,
-              {height: 48},
+              a.py_2xl,
               (hovered || pressed) && t.atoms.bg_contrast_25,
             ]}>
             <Text
               style={[
-                a.font_bold,
                 a.flex_1,
                 a.flex_row,
-                a.py_sm,
+                a.font_bold,
                 a.leading_tight,
-                t.atoms.text_contrast_medium,
-                {paddingLeft: 56},
+                a.text_md,
               ]}>
-              {otherLabel ?? <Trans>Other account</Trans>}
+              {otherLabel ?? <Trans>Other Account</Trans>}
             </Text>
-            <Chevron size="sm" style={[t.atoms.text, a.mr_md]} />
+            <Chevron size="sm" style={[t.atoms.text]} />
           </View>
         )}
       </Button>
@@ -134,24 +127,23 @@ function AccountItem({
             a.flex_1,
             a.flex_row,
             a.align_center,
-            a.px_md,
             a.gap_sm,
-            {height: 56},
+            a.py_2xl,
             (hovered || pressed || isPendingAccount) && t.atoms.bg_contrast_25,
           ]}>
           <UserAvatar
             avatar={profile?.avatar}
-            size={36}
+            size={45}
             type={profile?.associated?.labeler ? 'labeler' : 'user'}
             live={live}
             hideLiveBadge
           />
 
-          <View style={[a.flex_1, a.gap_2xs, a.pr_2xl]}>
+          <View style={[a.flex_1, a.pr_2xl]}>
             <View style={[a.flex_row, a.align_center, a.gap_xs]}>
               <Text
                 emoji
-                style={[a.font_bold, a.leading_tight]}
+                style={[a.font_bold, a.leading_tight, a.text_md]}
                 numberOfLines={1}>
                 {sanitizeDisplayName(
                   profile?.displayName || profile?.handle || account.handle,
@@ -160,15 +152,12 @@ function AccountItem({
               {verification.showBadge && (
                 <View>
                   <VerificationCheck
-                    width={12}
+                    width={15}
                     verifier={verification.role === 'verifier'}
                   />
                 </View>
               )}
             </View>
-            <Text style={[a.leading_tight, t.atoms.text_contrast_medium]}>
-              {sanitizeHandle(account.handle, '@')}
-            </Text>
           </View>
 
           {isCurrentAccount ? (
