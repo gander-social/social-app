@@ -490,7 +490,7 @@ msgstr "⚠無效的帳號代碼"
 msgid "24 hours"
 msgstr "24 小時"
 
-#: src/screens/Login/LoginForm.tsx:317
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "雙重驗證"
 
@@ -795,7 +795,7 @@ msgstr "成人內容標記"
 msgid "Advanced"
 msgstr "進階設定"
 
-#: src/screens/Login/LoginForm.tsx:410
+#: src/screens/Login/LoginForm.tsx:419
 msgid "Agree and continue"
 msgstr ""
 
@@ -1185,7 +1185,7 @@ msgstr "自動播放影片和 GIF"
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:370
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1490,9 +1490,9 @@ msgstr "相機"
 #: src/screens/Deactivated.tsx:158
 #: src/screens/Login/ChooseAccountForm.tsx:81
 #: src/screens/Login/ChooseAccountForm.tsx:87
-#: src/screens/Login/LoginForm.tsx:205
-#: src/screens/Login/LoginForm.tsx:211
-#: src/screens/Login/LoginForm.tsx:376
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1672,7 +1672,7 @@ msgstr "對話"
 msgid "Check my status"
 msgstr "檢查我的狀態"
 
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr "在這裡輸入傳送至您電子信箱的登入驗證碼。"
 
@@ -1954,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "確認您的出生日期"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:323
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1962,7 +1962,7 @@ msgstr "確認您的出生日期"
 msgid "Confirmation code"
 msgstr "驗證碼"
 
-#: src/screens/Login/LoginForm.tsx:397
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "連線中……"
 
@@ -2730,6 +2730,9 @@ msgstr "例如：不斷使用廣告洗版的帳號。"
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr "每組邀請碼只能使用一次。後續您將定期收到更多邀請碼。"
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2852,7 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "已啟用電子郵件雙重驗證"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:257
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "電子郵件地址"
 
@@ -2988,7 +2991,7 @@ msgstr "輸入您收到的代碼以變更密碼。"
 msgid "Enter the domain you want to use"
 msgstr "輸入您想使用的網域"
 
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:282
 msgid "Enter the email address you used when you created your account"
 msgstr ""
 
@@ -3005,7 +3008,7 @@ msgstr "輸入您的出生日期"
 msgid "Enter your email address"
 msgstr "輸入您的電子郵件地址"
 
-#: src/screens/Login/LoginForm.tsx:299
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr "輸入您的密碼"
 
@@ -3666,11 +3669,11 @@ msgstr "永遠"
 msgid "Forgot Password"
 msgstr "忘記密碼"
 
-#: src/screens/Login/LoginForm.tsx:304
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "忘記密碼？"
 
-#: src/screens/Login/LoginForm.tsx:309
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "忘記了？"
 
@@ -4076,6 +4079,7 @@ msgstr "首頁"
 msgid "Host:"
 msgstr "主機："
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
 msgid "Hosting provider"
 msgstr "託管服務提供者"
@@ -4229,7 +4233,7 @@ msgstr "低俗言論或敏感內容連結"
 msgid "Inbox zero!"
 msgstr "收件匣清零！"
 
-#: src/screens/Login/LoginForm.tsx:185
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "用戶名稱或密碼錯誤"
 
@@ -4249,7 +4253,7 @@ msgstr "輸入新密碼"
 msgid "Input password for account deletion"
 msgstr "輸入密碼以刪除帳號"
 
-#: src/screens/Login/LoginForm.tsx:338
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "輸入傳送至您電子信箱的代碼"
 
@@ -4265,7 +4269,7 @@ msgstr "互動設定"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:177
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "無效的雙重驗證碼。"
@@ -5119,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr "前往新手包"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:404
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "前往下一個畫面"
@@ -5266,7 +5270,7 @@ msgstr "新聞"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:403
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5771,7 +5775,7 @@ msgstr "開啟邀請碼列表"
 msgid "Opens live status dialog"
 msgstr "開啟直播狀態對話框"
 
-#: src/screens/Login/LoginForm.tsx:305
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "開啟密碼重設表單"
 
@@ -5852,7 +5856,7 @@ msgstr "頁面不存在"
 msgid "Page Not Found"
 msgstr "頁面不存在"
 
-#: src/screens/Login/LoginForm.tsx:285
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -6060,7 +6064,7 @@ msgstr "請輸入我們傳送至 <0>{0}</0> 的代碼。"
 msgid "Please enter the security code we sent to your previous email address."
 msgstr "請輸入我們先前傳送到您電子郵件地址的驗證碼。"
 
-#: src/screens/Login/LoginForm.tsx:106
+#: src/screens/Login/LoginForm.tsx:107
 msgid "Please enter your email address"
 msgstr ""
 
@@ -6077,7 +6081,7 @@ msgstr "請輸入您的邀請碼。"
 msgid "Please enter your new email address."
 msgstr "請輸入您的新電子郵件地址。"
 
-#: src/screens/Login/LoginForm.tsx:116
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr "請輸入您的密碼"
 
@@ -6992,7 +6996,7 @@ msgstr "重設入門引導進度"
 msgid "Reset password"
 msgstr "重設密碼"
 
-#: src/screens/Login/LoginForm.tsx:384
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr "重試登入"
 
@@ -7008,8 +7012,8 @@ msgstr "重新執行上一個出現錯誤的動作"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:383
-#: src/screens/Login/LoginForm.tsx:390
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7767,7 +7771,7 @@ msgid "Sign in to Bluesky or create a new account"
 msgstr "登入 Bluesky 或建立新的帳號"
 
 #: src/screens/Login/ChooseAccountForm.tsx:108
-#: src/screens/Login/LoginForm.tsx:239
+#: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
 
@@ -8825,7 +8829,7 @@ msgstr "無法連線到伺服器。請檢查您的網路連線，然後再試一
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
 #: src/screens/Login/index.tsx:88
-#: src/screens/Login/LoginForm.tsx:190
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -10155,7 +10159,6 @@ msgid "Your current handle <0>{0}</0> will automatically remain reserved for you
 msgstr "您現在使用的帳號代碼 <0>{0}</0> 將自動為您保留。您可以在日後隨時切換回來。"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:51
-#: src/screens/Login/LoginForm.tsx:110
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55
@@ -10211,7 +10214,7 @@ msgstr "您的靜音字詞"
 msgid "Your password has been changed successfully!"
 msgstr "成功變更您的密碼！"
 
-#: src/screens/Login/LoginForm.tsx:121
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr "您輸入的密碼必須至少包含 8 個字元。"

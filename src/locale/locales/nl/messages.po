@@ -490,7 +490,7 @@ msgstr "⚠Ongeldige handle"
 msgid "24 hours"
 msgstr "24 uur"
 
-#: src/screens/Login/LoginForm.tsx:317
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "2FA-bevestiging"
 
@@ -795,7 +795,7 @@ msgstr "Labels voor inhoud voor volwassenen"
 msgid "Advanced"
 msgstr "Geavanceerd"
 
-#: src/screens/Login/LoginForm.tsx:410
+#: src/screens/Login/LoginForm.tsx:419
 msgid "Agree and continue"
 msgstr ""
 
@@ -1185,7 +1185,7 @@ msgstr "Video's en GIF's automatisch afspelen"
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:370
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1490,9 +1490,9 @@ msgstr "Camera"
 #: src/screens/Deactivated.tsx:158
 #: src/screens/Login/ChooseAccountForm.tsx:81
 #: src/screens/Login/ChooseAccountForm.tsx:87
-#: src/screens/Login/LoginForm.tsx:205
-#: src/screens/Login/LoginForm.tsx:211
-#: src/screens/Login/LoginForm.tsx:376
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1672,7 +1672,7 @@ msgstr "Chats"
 msgid "Check my status"
 msgstr "Mijn status controleren"
 
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr "Controleer je e-mail voor een aanmeldcode en vul deze hier in."
 
@@ -1954,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "Bevestig je geboortedatum"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:323
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1962,7 +1962,7 @@ msgstr "Bevestig je geboortedatum"
 msgid "Confirmation code"
 msgstr "Bevestigingscode"
 
-#: src/screens/Login/LoginForm.tsx:397
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "Verbinden..."
 
@@ -2730,6 +2730,9 @@ msgstr "Bijvoorbeeld gebruikers die herhaaldelijk met advertenties reageren."
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr "Elke code werkt één keer. Je ontvangt periodiek meer uitnodigingscodes."
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2852,7 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "E-mail 2FA ingeschakeld"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:257
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "E-mailadres"
 
@@ -2988,7 +2991,7 @@ msgstr "Vul de code in die je hebt ontvangen voor het wijzigen van je wachtwoord
 msgid "Enter the domain you want to use"
 msgstr "Vul het domein in dat je wilt gebruiken"
 
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:282
 msgid "Enter the email address you used when you created your account"
 msgstr ""
 
@@ -3005,7 +3008,7 @@ msgstr "Vul je geboortedatum in"
 msgid "Enter your email address"
 msgstr "Vul je e-mailadres in"
 
-#: src/screens/Login/LoginForm.tsx:299
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr "Vul je wachtwoord in"
 
@@ -3666,11 +3669,11 @@ msgstr "Voor altijd"
 msgid "Forgot Password"
 msgstr "Wachtwoord vergeten"
 
-#: src/screens/Login/LoginForm.tsx:304
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "Wachtwoord vergeten?"
 
-#: src/screens/Login/LoginForm.tsx:309
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "Vergeten?"
 
@@ -4076,6 +4079,7 @@ msgstr "Startpagina"
 msgid "Host:"
 msgstr "Host:"
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
 msgid "Hosting provider"
 msgstr "Hostingprovider"
@@ -4229,7 +4233,7 @@ msgstr "Ongepaste privéberichten of expliciete links"
 msgid "Inbox zero!"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:185
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "Ongeldige gebruikersnaam of wachtwoord"
 
@@ -4249,7 +4253,7 @@ msgstr "Vul nieuw wachtwoord in"
 msgid "Input password for account deletion"
 msgstr "Vul wachtwoord in voor accountverwijdering"
 
-#: src/screens/Login/LoginForm.tsx:338
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "Vul de code in die naar je is gemaild"
 
@@ -4265,7 +4269,7 @@ msgstr "Interactie-instellingen"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:177
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "Ongeldige 2FA-bevestigingscode."
@@ -5119,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:404
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "Navigeert naar het volgende scherm"
@@ -5266,7 +5270,7 @@ msgstr "Nieuws"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:403
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5771,7 +5775,7 @@ msgstr "Opent lijst met uitnodigingscodes"
 msgid "Opens live status dialog"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:305
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "Opent formulier om het wachtwoord opnieuw in te stellen"
 
@@ -5852,7 +5856,7 @@ msgstr "Pagina niet gevonden"
 msgid "Page Not Found"
 msgstr "Pagina niet gevonden"
 
-#: src/screens/Login/LoginForm.tsx:285
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -6060,7 +6064,7 @@ msgstr ""
 msgid "Please enter the security code we sent to your previous email address."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:106
+#: src/screens/Login/LoginForm.tsx:107
 msgid "Please enter your email address"
 msgstr ""
 
@@ -6077,7 +6081,7 @@ msgstr "Vul je uitnodigingscode in."
 msgid "Please enter your new email address."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:116
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr ""
 
@@ -6992,7 +6996,7 @@ msgstr "Introductie-status opnieuw instellen"
 msgid "Reset password"
 msgstr "Wachtwoord opnieuw instellen"
 
-#: src/screens/Login/LoginForm.tsx:384
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr ""
 
@@ -7008,8 +7012,8 @@ msgstr "Probeert de laatste mislukte actie opnieuw"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:383
-#: src/screens/Login/LoginForm.tsx:390
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7767,7 +7771,7 @@ msgid "Sign in to Bluesky or create a new account"
 msgstr ""
 
 #: src/screens/Login/ChooseAccountForm.tsx:108
-#: src/screens/Login/LoginForm.tsx:239
+#: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
 
@@ -8825,7 +8829,7 @@ msgstr "Kan geen verbinding maken. Controleer uw internetverbinding en probeer o
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
 #: src/screens/Login/index.tsx:88
-#: src/screens/Login/LoginForm.tsx:190
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -10155,7 +10159,6 @@ msgid "Your current handle <0>{0}</0> will automatically remain reserved for you
 msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:51
-#: src/screens/Login/LoginForm.tsx:110
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55
@@ -10211,7 +10214,7 @@ msgstr "Je genegeerde woorden"
 msgid "Your password has been changed successfully!"
 msgstr "Je wachtwoord is succesvol gewijzigd!"
 
-#: src/screens/Login/LoginForm.tsx:121
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr ""
