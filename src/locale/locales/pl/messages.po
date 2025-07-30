@@ -6,14 +6,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: pl\n"
-"Project-Id-Version: 49a8cb746fbc2ae5707392ee41ddec4c\n"
+"Project-Id-Version: gander\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-07-02 00:33\n"
+"PO-Revision-Date: 2025-07-30 11:45\n"
 "Last-Translator: \n"
 "Language-Team: Polish\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
-"X-Crowdin-Project: 49a8cb746fbc2ae5707392ee41ddec4c\n"
-"X-Crowdin-Project-ID: 1\n"
+"X-Crowdin-Project: gander\n"
+"X-Crowdin-Project-ID: 814326\n"
 "X-Crowdin-Language: pl\n"
 "X-Crowdin-File: /main/src/locale/locales/en/messages.po\n"
 "X-Crowdin-File-ID: 11\n"
@@ -861,7 +861,7 @@ msgstr "Już zalogowano jako @{0}"
 #: src/view/com/composer/GifAltText.tsx:100
 #: src/view/com/composer/photos/Gallery.tsx:187
 msgid "ALT"
-msgstr "ALT"
+msgstr ""
 
 #: src/screens/Settings/AccessibilitySettings.tsx:54
 #: src/view/com/composer/GifAltText.tsx:154
@@ -1329,12 +1329,12 @@ msgstr "Blokowanie nie przeszkodzi w umieszczaniu ostrzeżeń na twoim koncie, a
 
 #: src/view/com/auth/SplashScreen.web.tsx:175
 msgid "Blog"
-msgstr "Blog"
+msgstr ""
 
 #: src/view/com/auth/server-input/index.tsx:136
 #: src/view/com/auth/server-input/index.tsx:137
 msgid "Bluesky"
-msgstr "Bluesky"
+msgstr ""
 
 #: src/screens/PostThread/components/ThreadItemAnchor.tsx:659
 #: src/view/com/post-thread/PostThreadItem.tsx:980
@@ -1377,7 +1377,7 @@ msgstr ""
 
 #: src/screens/Settings/AppIconSettings/index.tsx:99
 msgid "Bluesky+"
-msgstr "Bluesky+"
+msgstr ""
 
 #: src/screens/Settings/AppIconSettings/index.tsx:102
 msgid "Bluesky+ icons"
@@ -2840,7 +2840,7 @@ msgstr "Autor listy cię zablokował, lub został zablokowany przez ciebie."
 #: src/screens/Settings/AccountSettings.tsx:63
 #: src/screens/Signup/StepInfo/index.tsx:193
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:64
 msgctxt "toast"
@@ -3776,7 +3776,7 @@ msgstr "Pierwsze kroki"
 
 #: src/components/MediaPreview.tsx:116
 msgid "GIF"
-msgstr "GIF"
+msgstr ""
 
 #: src/screens/Onboarding/StepProfile/index.tsx:232
 msgid "Give your profile a face"
@@ -3909,11 +3909,11 @@ msgstr "Prześladowanie, trolling lub nietolerancja"
 
 #: src/Navigation.tsx:524
 msgid "Hashtag"
-msgstr "Hashtag"
+msgstr ""
 
 #: src/components/RichTextTag.tsx:51
 msgid "Hashtag {tag}"
-msgstr "Hashtag {tag}"
+msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:198
 #: src/components/dialogs/EmailDialog/screens/Verify.tsx:315
@@ -4074,7 +4074,7 @@ msgstr "Główna"
 
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:417
 msgid "Host:"
-msgstr "Host:"
+msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:83
 msgid "Hosting provider"
@@ -4825,7 +4825,7 @@ msgstr "Wzmianki"
 
 #: src/components/Menu/index.tsx:111
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #: src/components/dms/MessageProfileButton.tsx:96
 msgid "Message {0}"
@@ -5538,7 +5538,7 @@ msgstr "O nie! Coś poszło nie tak."
 #: src/screens/Settings/AppIconSettings/index.tsx:48
 #: src/screens/Settings/AppIconSettings/index.tsx:229
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: src/screens/Login/PasswordUpdatedForm.tsx:37
 #: src/screens/PostThread/components/ThreadItemAnchor.tsx:664
@@ -7919,7 +7919,7 @@ msgstr "Źródło: <0>{sourceName}</0>"
 #: src/lib/moderation/useReportOptions.ts:72
 #: src/lib/moderation/useReportOptions.ts:85
 msgid "Spam"
-msgstr "Spam"
+msgstr ""
 
 #: src/components/moderation/ReportDialog/utils/useReportOptions.ts:55
 #: src/lib/moderation/useReportOptions.ts:55
@@ -8800,7 +8800,7 @@ msgstr "Spróbuj ponownie"
 
 #: src/screens/Onboarding/state.ts:115
 msgid "TV"
-msgstr "TV"
+msgstr ""
 
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:65
 msgid "Two-factor authentication (2FA)"
@@ -10251,3 +10251,4 @@ msgstr ""
 #: src/components/verification/VerificationsDialog.tsx:65
 msgid "Your verifications"
 msgstr ""
+

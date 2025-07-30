@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react'
+import React, {useRef, useState} from 'react'
 import {
   ActivityIndicator,
   Keyboard,
@@ -12,7 +12,6 @@ import {
 } from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
-import * as EmailValidator from 'email-validator'
 
 import {useRequestNotificationsPermission} from '#/lib/notifications/notifications'
 import {isNetworkError} from '#/lib/strings/errors'
@@ -21,12 +20,15 @@ import {createFullHandle} from '#/lib/strings/handles'
 import {colors} from '#/lib/styles'
 import {logger} from '#/logger'
 import {useSetHasCheckedForStarterPack} from '#/state/preferences/used-starter-packs'
-import {useSessionApi} from '#/state/session'
+import {useProfilesQuery} from '#/state/queries/profile'
+import {type SessionAccount, useSession, useSessionApi} from '#/state/session'
 import {useLoggedOutViewControls} from '#/state/shell/logged-out'
 import {Logo} from '#/view/icons/Logo'
 import {atoms as a, useTheme} from '#/alf'
+import {AccountItem} from '#/components/AccountList'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import {FormError} from '#/components/forms/FormError'
+import {HostingProvider} from '#/components/forms/HostingProvider'
 // import {HostingProvider} from '#/components/forms/HostingProvider'
 import * as TextField from '#/components/forms/TextField'
 // import {At_Stroke2_Corner0_Rounded as At} from '#/components/icons/At'
@@ -50,7 +52,11 @@ export const LoginForm = ({
   onPressForgotPassword,
   onAttemptSuccess,
   onAttemptFailed,
+  account,
+  pendingDid,
+  setServiceUrl,
 }: {
+  account: null | SessionAccount
   error: string
   serviceUrl: string
   serviceDescription: ServiceDescription | undefined
@@ -62,6 +68,7 @@ export const LoginForm = ({
   onPressForgotPassword: () => void
   onAttemptSuccess: () => void
   onAttemptFailed: () => void
+  pendingDid: string | null
 }) => {
   const t = useTheme()
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
@@ -78,7 +85,10 @@ export const LoginForm = ({
   const requestNotificationsPermission = useRequestNotificationsPermission()
   const {setShowLoggedOut} = useLoggedOutViewControls()
   const setHasCheckedForStarterPack = useSetHasCheckedForStarterPack()
-
+  const {currentAccount, accounts} = useSession()
+  const {data: profiles} = useProfilesQuery({
+    handles: accounts.map(acc => acc.did),
+  })
   // const onPressSelectService = React.useCallback(() => {
   //   Keyboard.dismiss()
   // }, [])
@@ -95,11 +105,6 @@ export const LoginForm = ({
 
     if (!identifier) {
       setError(_(msg`Please enter your email address`))
-      return
-    }
-    if (!EmailValidator.validate(identifier)) {
-      setError(_(msg`Your email appears to be invalid.`))
-
       return
     }
 
@@ -188,6 +193,9 @@ export const LoginForm = ({
       }
     }
   }
+  const onPressSelectService = React.useCallback(() => {
+    Keyboard.dismiss()
+  }, [])
 
   return (
     <FormContainer testID="loginForm" style={a.px_0}>
@@ -208,8 +216,8 @@ export const LoginForm = ({
           a.pb_5xl_8,
           a.pt_s50,
           a.px_md,
-          a.mb_2xl,
-          a.mt_3xl,
+          a.mb_md,
+          a.mt_lg,
           a.border_0,
           a.rounded_full,
           a.mx_2xl,
@@ -219,38 +227,67 @@ export const LoginForm = ({
         ]}>
         <Logo width={104} fill={colors.white} />
       </View>
-      <Text style={[a.self_center, a.text_4xl, a.font_bold, a.mb_xl, a.mx_2xl]}>
+      <Text
+        style={[
+          a.self_center,
+          a.text_4xl,
+          a.font_bold,
+          account ? a.mb_md : a.mb_xl,
+          a.mx_2xl,
+        ]}>
         <Trans>Sign in to Gander.</Trans>
       </Text>
-      <View style={a.mx_2xl}>
-        <TextField.Root>
-          <TextField.Input
-            isFirst={true}
-            testID="loginUsernameInput"
-            label={_(msg`Email address`)}
-            autoCapitalize="none"
-            autoFocus
-            autoCorrect={false}
-            autoComplete="username"
-            returnKeyType="next"
-            textContentType="emailAddress"
-            defaultValue={initialHandle || ''}
-            onChangeText={v => {
-              identifierValueRef.current = v
-            }}
-            onSubmitEditing={() => {
-              passwordRef.current?.focus()
-            }}
-            blurOnSubmit={false} // prevents flickering due to onSubmitEditing going to next field
-            editable={!isProcessing}
-            accessibilityHint={_(
-              msg`Enter the email address you used when you created your account`,
-            )}
+      {account ? null : (
+        <View style={[a.mx_2xl, a.mb_md]}>
+          <HostingProvider
+            serviceUrl={serviceUrl}
+            onSelectServiceUrl={setServiceUrl}
+            onOpenDialog={onPressSelectService}
           />
-        </TextField.Root>
+        </View>
+      )}
+
+      <View style={[a.mx_2xl, account ? a.gap_2xl : {}]}>
+        {account ? (
+          <AccountItem
+            profile={profiles?.profiles.find(p => p.did === account.did)}
+            account={account}
+            onSelect={() => {}}
+            isCurrentAccount={account.did === currentAccount?.did}
+            isPendingAccount={account.did === pendingDid}
+            hideEndIcon={true}
+          />
+        ) : (
+          <TextField.Root>
+            <TextField.Input
+              isFirst={true}
+              testID="loginUsernameInput"
+              label={_(msg`Email address`)}
+              autoCapitalize="none"
+              autoFocus
+              autoCorrect={false}
+              autoComplete="username"
+              returnKeyType="next"
+              textContentType="emailAddress"
+              defaultValue={initialHandle || ''}
+              onChangeText={v => {
+                identifierValueRef.current = v
+              }}
+              onSubmitEditing={() => {
+                passwordRef.current?.focus()
+              }}
+              blurOnSubmit={false} // prevents flickering due to onSubmitEditing going to next field
+              editable={!isProcessing}
+              accessibilityHint={_(
+                msg`Enter the email address you used when you created your account`,
+              )}
+            />
+          </TextField.Root>
+        )}
+
         <TextField.Root>
           <TextField.Input
-            isLast={true}
+            isLast={!account && true}
             testID="loginPasswordInput"
             inputRef={passwordRef}
             label={_(msg`Password`)}
@@ -261,7 +298,7 @@ export const LoginForm = ({
             enablesReturnKeyAutomatically={true}
             secureTextEntry={true}
             textContentType="password"
-            // clearButtonMode="while-editing"
+            defaultValue=""
             onChangeText={v => {
               passwordValueRef.current = v
             }}
