@@ -128,6 +128,11 @@ msgstr "{0, plural, other {게시물 {1}개}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, other {#명}}이 이 스타터 팩을 사용했습니다!"
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr "{hours, plural, other {#시간}}"
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr "{joinedAllTimeCount, plural, other {#명}}의 사용자가 가입했습니다!"
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, other {#분}}"
@@ -481,7 +490,7 @@ msgstr "⚠잘못된 핸들"
 msgid "24 hours"
 msgstr "24시간"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "2단계 인증"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "접근성 설정"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "성인 콘텐츠 라벨"
 msgid "Advanced"
 msgstr "고급"
 
+#: src/screens/Login/LoginForm.tsx:419
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr "alice@example.com"
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "새 메시지를 허용할 대상"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "다이렉트 메시지 접근 허용"
 msgid "Already have a code?"
 msgstr "이미 코드가 있나요?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "이미 @{0}(으)로 로그인했습니다"
 
@@ -991,7 +1003,7 @@ msgstr "누구나 상호작용할 수 있음"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "동영상 및 GIF 자동 재생"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "카메라"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr "대화"
 msgid "Check my status"
 msgstr "내 상태 확인"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr "이메일에서 로그인 코드를 확인한 후 여기에 입력하세요."
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "생년월일 확인"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "생년월일 확인"
 msgid "Confirmation code"
 msgstr "인증 코드"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "연결 중…"
 
@@ -2012,7 +2026,7 @@ msgstr "컨텍스트 메뉴 배경을 클릭하여 메뉴를 닫습니다."
 msgid "Continue"
 msgstr "계속"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "{0}(으)로 계속하기 (현재 로그인)"
 
@@ -2209,7 +2223,7 @@ msgstr "스타터 팩 만들기"
 msgid "Create a starter pack for me"
 msgstr "나를 위한 스타터 팩 만들기"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "대신 아바타 만들기"
 msgid "Create another"
 msgstr "다른 스타터 팩 만들기"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "새 계정 만들기"
@@ -2716,6 +2730,9 @@ msgstr "예: 반복적으로 광고 답글을 다는 계정."
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr "각 코드는 한 번만 사용할 수 있습니다. 주기적으로 더 많은 초대 코드를 받게 됩니다."
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2838,6 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "이메일 2단계 인증 활성화됨"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "이메일 주소"
 
@@ -2973,13 +2991,13 @@ msgstr "비밀번호를 변경하려면 받은 코드를 입력하세요."
 msgid "Enter the domain you want to use"
 msgstr "사용할 도메인 입력"
 
+#: src/screens/Login/LoginForm.tsx:282
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "계정을 만들 때 사용한 이메일을 입력하세요. 새 비밀번호를 설정할 수 있도록 \"재설정 코드\"를 보내 드립니다."
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr "계정을 만들 때 사용한 사용자 이름 또는 이메일 주소를 입력하세요"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3008,11 @@ msgstr "생년월일을 입력하세요"
 msgid "Enter your email address"
 msgstr "이메일 주소를 입력하세요"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr "비밀번호를 입력합니다"
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "사용자 이름 및 비밀번호 입력"
 
@@ -3015,7 +3033,7 @@ msgstr "오류"
 msgid "Error loading post"
 msgstr "게시물 불러오기 오류"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3664,16 @@ msgstr "추천"
 msgid "Forever"
 msgstr "무기한"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr "비밀번호 분실"
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "비밀번호를 잊으셨나요?"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "분실"
 
@@ -3747,8 +3765,13 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
 msgstr "시작하기"
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
+msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
 msgid "Getting started"
@@ -4056,8 +4079,8 @@ msgstr "홈"
 msgid "Host:"
 msgstr "호스트:"
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr "호스팅 제공자"
 
@@ -4210,7 +4233,7 @@ msgstr "부적절한 메시지 또는 노골적인 링크"
 msgid "Inbox zero!"
 msgstr "수신함 제로!"
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "사용자 이름 또는 비밀번호가 올바르지 않습니다"
 
@@ -4230,7 +4253,7 @@ msgstr "새 비밀번호를 입력합니다"
 msgid "Input password for account deletion"
 msgstr "계정을 삭제하기 위해 비밀번호를 입력합니다"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "이메일로 전송된 코드를 입력합니다"
 
@@ -4246,7 +4269,7 @@ msgstr "상호작용 설정"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "잘못된 2단계 인증 코드입니다."
@@ -4396,6 +4419,7 @@ msgstr "더 알아보기"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4456,8 @@ msgstr "이 경고에 대해 더 알아보기"
 msgid "Learn more about verification on Bluesky"
 msgstr "Bluesky의 인증에 대해 더 알아보기"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "Bluesky에서 공개되는 항목에 대해 자세히 알아보세요."
 
@@ -4441,6 +4465,10 @@ msgstr "Bluesky에서 공개되는 항목에 대해 자세히 알아보세요."
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "더 알아보기"
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4504,8 @@ msgstr "명 남았습니다."
 msgid "Let me choose"
 msgstr "직접 선택하기"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "비밀번호를 재설정해 봅시다!"
 
@@ -4693,7 +4721,7 @@ msgstr "불러오는 중…"
 msgid "Log"
 msgstr "로그"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "로그아웃 표시"
 
@@ -5095,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr "스타터 팩으로 이동하기"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "다음 화면으로 이동합니다"
@@ -5242,8 +5270,7 @@ msgstr "뉴스"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5288,10 @@ msgstr "다음"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "다음 이미지"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5344,7 @@ msgstr "아직 알림이 없습니다"
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "없음"
 
@@ -5420,7 +5451,7 @@ msgstr "찾을 수 없음"
 msgid "Note about sharing"
 msgstr "공유 관련 참고 사항"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "참고: Bluesky는 개방형 공개 네트워크입니다. 이 설정은 Bluesky 앱과 웹사이트에서만 내 콘텐츠가 표시되는 것을 제한하며, 다른 앱에서는 이 설정을 준수하지 않을 수 있습니다. 다른 앱과 웹사이트에서는 로그아웃한 사용자에게 내 콘텐츠가 계속 표시될 수 있습니다."
 
@@ -5564,7 +5595,7 @@ msgstr "문자, 숫자, 하이픈만 포함"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5745,12 @@ msgstr "기기의 사진 갤러리를 엽니다"
 msgid "Opens emoji picker"
 msgstr "이모티콘 선택기를 엽니다"
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "새 Bluesky 계정을 만드는 화면을 엽니다"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr "존재하는 Bluesky 계정에 로그인하는 화면을 엽니다"
@@ -5744,7 +5775,7 @@ msgstr "초대 코드 목록을 엽니다"
 msgid "Opens live status dialog"
 msgstr "라이브 상태 대화 상자를 엽니다"
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "비밀번호 재설정 양식을 엽니다"
 
@@ -5800,9 +5831,9 @@ msgstr "OTA 상태: 사용할 수 없음"
 msgid "Other"
 msgstr "기타"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "다른 계정"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5856,7 @@ msgstr "페이지를 찾을 수 없음"
 msgid "Page Not Found"
 msgstr "페이지를 찾을 수 없음"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5873,7 @@ msgstr "비밀번호 변경됨"
 msgid "Password must be at least 8 characters long."
 msgstr "비밀번호는 8자 이상이어야 합니다."
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "비밀번호 변경됨"
 
@@ -6033,6 +6064,10 @@ msgstr "아래에 <0>{0}</0>(으)로 전송된 코드를 입력하세요."
 msgid "Please enter the security code we sent to your previous email address."
 msgstr "기존 이메일 주소로 전송된 보안 코드를 입력하세요."
 
+#: src/screens/Login/LoginForm.tsx:107
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6081,13 @@ msgstr "초대 코드를 입력하세요."
 msgid "Please enter your new email address."
 msgstr "새 이메일 주소를 입력하세요."
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr "비밀번호를 입력하세요"
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "비밀번호를 입력하세요."
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr "사용자 이름을 입력하세요"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6996,7 @@ msgstr "온보딩 상태 초기화"
 msgid "Reset password"
 msgstr "비밀번호 재설정"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr "로그인을 다시 시도합니다"
 
@@ -6981,8 +7012,8 @@ msgstr "오류가 발생한 마지막 작업을 다시 시도합니다"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7259,6 @@ msgstr "탐색 슬라이더. 화살표 키를 사용하여 앞뒤로 탐색하�
 msgid "Select a color"
 msgstr "색상 선택"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "계정 선택"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr "앱 언어를 선택하세요"
@@ -7260,7 +7287,7 @@ msgstr "콘텐츠 언어 선택"
 msgid "Select duration"
 msgstr "시간 선택"
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "기존 계정에서 선택하기"
 
@@ -7443,8 +7470,11 @@ msgid "Settings"
 msgstr "설정"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7734,10 @@ msgstr "콘텐츠를 표시합니다"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7749,9 @@ msgstr "콘텐츠를 표시합니다"
 msgid "Sign in"
 msgstr "로그인"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "{0}(으)로 로그인"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "로그인"
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7762,18 @@ msgstr "로그인 또는 계정 만들기"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "대화에 참여하려면 로그인하거나 계정을 만드세요!"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr "목록에 없는 계정으로 로그인"
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Bluesky에 로그인하거나 새 계정 만들기"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:238
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7807,7 @@ msgid "Sign-in Required"
 msgstr "로그인 필요"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "@{0}(으)로 로그인했습니다"
 
@@ -8527,6 +8557,10 @@ msgstr "이 정보는 다른 사용자와 공유되지 않습니다."
 msgid "This is not a valid link"
 msgstr "올바른 링크가 아닙니다"
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "이 라벨은 작성자가 적용했습니다."
@@ -8794,8 +8828,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "연결할 수 없습니다. 인터넷 연결을 확인한 후 다시 시도하세요."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9190,6 @@ msgstr "사용자 리스트를 생성했습니다"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "사용자 리스트를 업데이트했습니다"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "사용자 이름 또는 이메일 주소"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9605,7 @@ msgstr "어떤 주제에 관심이 있으신가요?"
 msgid "What do you want to call your starter pack?"
 msgstr "스타터 팩의 이름을 무엇으로 할까요?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9819,7 @@ msgstr "어떤 설정을 선택하든 진행 중인 대화를 계속할 수 있�
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "이제 새 비밀번호로 로그인할 수 있습니다."
@@ -10184,6 +10214,7 @@ msgstr "뮤트한 단어"
 msgid "Your password has been changed successfully!"
 msgstr "비밀번호를 성공적으로 변경했습니다."
 
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr "비밀번호는 8자 이상이어야 합니다."
