@@ -128,6 +128,11 @@ msgstr "{0, plural, other {{1} postak}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, other {# pertsonek}} erabili dute abio multzo hau!"
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr "{hours, plural, one {ordu #} other {# ordu}}"
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr "{joinedAllTimeCount, plural, other {# erabiltzaile}} elkartu dira!"
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {minutu #} other {# minutu}}"
@@ -481,7 +490,7 @@ msgstr "⚠Erabiltzaile Baliogabea"
 msgid "24 hours"
 msgstr "24 ordu"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:317
 msgid "2FA Confirmation"
 msgstr "2FA Baieztapena"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "Erabilerraztasun Doikuntzak"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "Eduki Heldu etiketak"
 msgid "Advanced"
 msgstr "Aurreratua"
 
+#: src/screens/Login/LoginForm.tsx:410
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr "ane@adibidea.com"
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "Baimendu mezu berriak bertatik"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "Mezu zuzenetara sarrera baimentzen da"
 msgid "Already have a code?"
 msgstr "Dagoeneko kode bat daukazu?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "Dagoeneko izena emanda @{0} bezala"
 
@@ -991,7 +1003,7 @@ msgstr "Edozeinek elkarreragin dezake"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "Bideo eta GIF erreprodukzio automatikoa"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:370
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "Kamera"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:205
+#: src/screens/Login/LoginForm.tsx:211
+#: src/screens/Login/LoginForm.tsx:376
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr "Txatak"
 msgid "Check my status"
 msgstr "Egiaztatu nire egoera"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:350
 msgid "Check your email for a sign in code and enter it here."
 msgstr "Egiaztatu zure e-posta, saioa hasteko kodea hartu eta sartu hemen."
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "Berretsi zure jaioteguna"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:323
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "Berretsi zure jaioteguna"
 msgid "Confirmation code"
 msgstr "Baieztapen kodea"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:397
 msgid "Connecting..."
 msgstr "Konektatzen..."
 
@@ -2012,7 +2026,7 @@ msgstr "Testuinguru-menuaren atzeko planoa, egin klik menua ixteko."
 msgid "Continue"
 msgstr "Jarraitu"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "Jarraitu {0} gisa (une honetan saioa hasita)"
 
@@ -2209,7 +2223,7 @@ msgstr "Sortu abio multzo bat"
 msgid "Create a starter pack for me"
 msgstr "Sortu niretzat abio multzo bat"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "Sortu abatar bat horren ordez"
 msgid "Create another"
 msgstr "Sortu beste bat"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "Sortu kontu berria"
@@ -2838,6 +2852,7 @@ msgid "Email 2FA enabled"
 msgstr "2FA posta elektronikoa gaituta"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:257
 msgid "Email address"
 msgstr "Email helbidea"
 
@@ -2973,13 +2988,13 @@ msgstr "Sartu jaso duzun kodea pasahitza aldatzeko."
 msgid "Enter the domain you want to use"
 msgstr "Sartu erabili nahi duzun domeinua"
 
+#: src/screens/Login/LoginForm.tsx:274
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "Sartu zure kontua sortzeko erabili duzun posta elektronikoa. \"Berrezarri kodea\" bidaliko dizugu pasahitz berri bat ezar dezazun."
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr "Sartu kontua sortu zenuenean erabili zenuen erabiltzaile-izena edo helbide elektronikoa"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3005,11 @@ msgstr "Sartu zure jaiotze data"
 msgid "Enter your email address"
 msgstr "Sartu zure posta elektroniko helbidea"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:299
 msgid "Enter your password"
 msgstr "Sartu zure pasahitza"
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "Sartu zure erabiltzaile-izena eta pasahitza"
 
@@ -3015,7 +3030,7 @@ msgstr "Errorea"
 msgid "Error loading post"
 msgstr "Errorea posta kargatzean"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3661,16 @@ msgstr "Zuretzat"
 msgid "Forever"
 msgstr "Betirako"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr "Pasahitza Ahaztua"
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:304
 msgid "Forgot password?"
 msgstr "Pasahitza ahaztu duzu?"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:309
 msgid "Forgot?"
 msgstr "Ahaztuta?"
 
@@ -3747,8 +3762,13 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
 msgstr "Hasi"
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
+msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
 msgid "Getting started"
@@ -4057,7 +4077,6 @@ msgid "Host:"
 msgstr "Hostalaria:"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr "Hostatze hornitzailea"
 
@@ -4210,7 +4229,7 @@ msgstr "Mezu desegokiak edo esteka esplizituak"
 msgid "Inbox zero!"
 msgstr "Sarrera-ontzia hutsik!"
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:185
 msgid "Incorrect username or password"
 msgstr "Erabiltzaile-izen edo pasahitz baliogabea"
 
@@ -4230,7 +4249,7 @@ msgstr "Idatzi pasahitz berria"
 msgid "Input password for account deletion"
 msgstr "Sartu pasahitza kontua ezabatzeko"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:338
 msgid "Input the code which has been emailed to you"
 msgstr "Sartu posta elektronikoz bidali zaizun kodea"
 
@@ -4246,7 +4265,7 @@ msgstr "Interakzio ezarpenak"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:177
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "2FA baieztapen kode baliogabea."
@@ -4396,6 +4415,7 @@ msgstr "gehiago ikasi"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4452,8 @@ msgstr "Gehiago ikasi abisu honi buruz"
 msgid "Learn more about verification on Bluesky"
 msgstr "Ikasi gehiago Bluesky-n egiaztapenari buruz"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "Gehiago ikasi Bluesky-n publikoa denari buruz."
 
@@ -4441,6 +4461,10 @@ msgstr "Gehiago ikasi Bluesky-n publikoa denari buruz."
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "Ikasi gehiago."
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4500,8 @@ msgstr "joateko utzi."
 msgid "Let me choose"
 msgstr "Utzidazu aukeratzen"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "Lor dezagun pasahitza berrezartzea!"
 
@@ -4693,7 +4717,7 @@ msgstr "Kargatzen..."
 msgid "Log"
 msgstr "Erregistroa"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "Saioa amaitutako ikusgarritasuna"
 
@@ -5095,7 +5119,7 @@ msgid "Navigate to starter pack"
 msgstr "Joan abio multzora"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:404
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "Hurrengo pantailara nabigatzen da"
@@ -5242,8 +5266,7 @@ msgstr "Berriak"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:403
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5284,10 @@ msgstr "Hurrengoa"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "Hurrengo irudia"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5340,7 @@ msgstr "Oraindik ez dago jakinarazpenik!"
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "Inor ez"
 
@@ -5420,7 +5447,7 @@ msgstr "Ez da aurkitu"
 msgid "Note about sharing"
 msgstr "Partekatzeari buruzko oharra"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "Oharra: Bluesky sare ireki eta publikoa da. Ezarpen honek zure edukiaren ikusgarritasuna mugatzen du Bluesky aplikazioan eta webgunean, eta baliteke beste aplikazio batzuek ezarpen hau ez errespetatzea. Baliteke zure edukia saioa amaitutako erabiltzaileei erakustea beste aplikazio eta webgune batzuek."
 
@@ -5564,7 +5591,7 @@ msgstr "Letrak, zenbakiak eta marratxoak bakarrik"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5741,12 @@ msgstr "Gailuaren argazki galeria irekitzen du"
 msgid "Opens emoji picker"
 msgstr "Emoji-hautatzailea irekitzen du"
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "Fluxua irekitzen du Bluesky kontu berri bat sortzeko"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr "Fluxua irekitzen du lehendik duzun Bluesky kontuan saioa hasteko"
@@ -5744,7 +5771,7 @@ msgstr "Gonbidapen kodeen zerrenda irekitzen du"
 msgid "Opens live status dialog"
 msgstr "Zuzeneko egoeraren elkarrizketa-koadroa irekitzen du"
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:305
 msgid "Opens password reset form"
 msgstr "Pasahitza berrezartzeko formularioa irekitzen du"
 
@@ -5800,9 +5827,9 @@ msgstr "OTA egoera: Ez dago bat ere eskuragarri"
 msgid "Other"
 msgstr "Beste bat"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "Beste kontu bat"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5852,7 @@ msgstr "Orria ez da aurkitu"
 msgid "Page Not Found"
 msgstr "Orria Ez da Aurkitu"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:285
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5869,7 @@ msgstr "Pasahitza Aldatu da"
 msgid "Password must be at least 8 characters long."
 msgstr "Pasahitzak 8 karaktereko luzera izan behar du gutxienez."
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "Pasahitza eguneratu da"
 
@@ -6033,6 +6060,10 @@ msgstr "Mesedez, sartu behean <0>{0}</0> helbidera bidali dugun kodea."
 msgid "Please enter the security code we sent to your previous email address."
 msgstr "Mesedez, sartu zure aurreko helbide elektronikora bidali dizugun segurtasun-kodea."
 
+#: src/screens/Login/LoginForm.tsx:106
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6077,13 @@ msgstr "Mesedez, sartu zure gonbidapen kodea."
 msgid "Please enter your new email address."
 msgstr "Mesedez, sartu zure helbide elektroniko berria."
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:116
 msgid "Please enter your password"
 msgstr "Mesedez, sartu zure pasahitza"
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "Mesedez, sartu zure pasahitza ere:"
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr "Mesedez, sartu zure erabiltzaile-izena"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6992,7 @@ msgstr "Berrezarri sartze-egoera"
 msgid "Reset password"
 msgstr "Berrezarri pasahitza"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:384
 msgid "Retries signing in"
 msgstr "Saioa hasi berriro"
 
@@ -6981,8 +7008,8 @@ msgstr "Azken ekintza berriro saiatzen da, errorea izan duena"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:383
+#: src/screens/Login/LoginForm.tsx:390
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7255,6 @@ msgstr "Bilaketa graduatzailea. Erabili gezi-teklak aurrera eta atzera bilatzeko
 msgid "Select a color"
 msgstr "Aukeratu kolore bat"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "Aukeratu kontua"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr "Aukeratu aplikazioaren hizkuntza bat"
@@ -7260,7 +7283,7 @@ msgstr "Aukeratu edukien hizkuntzak"
 msgid "Select duration"
 msgstr "Hautatu iraupena"
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "Aukeratu lehendik dagoen kontu batetik"
 
@@ -7443,8 +7466,11 @@ msgid "Settings"
 msgstr "Ezarpenak"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7730,10 @@ msgstr "Edukia erakusten du"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7745,9 @@ msgstr "Edukia erakusten du"
 msgid "Sign in"
 msgstr "Hasi saioa"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "Hasi saioa {0} gisa"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "Hasi saioa honela..."
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7758,18 @@ msgstr "Hasi saioa edo sortu kontua"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "Hasi saioa edo sortu zure kontua elkarrizketan sartzeko!"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr "Hasi saioa zerrendan ez dagoen kontuan"
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Hasi saioa Bluesky-n edo sortu kontu berri bat"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:239
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7803,7 @@ msgid "Sign-in Required"
 msgstr "Saioa hasi behar da"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "@{0} gisa hasi duzu saioa"
 
@@ -8527,6 +8553,10 @@ msgstr "Informazio hau ez da beste erabiltzaile batzuekin partekatzen."
 msgid "This is not a valid link"
 msgstr "Esteka hau ez da baliozkoa"
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "Etiketa hau egileak aplikatu du."
@@ -8794,8 +8824,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "Ezin da konektatu. Mesedez, egiaztatu Interneteko konexioa eta saiatu berriro."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:190
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9186,6 @@ msgstr "Erabiltzaile zerrenda sortua"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "Erabiltzaile zerrenda eguneratua"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "Erabiltzaile-izena edo helbide elektronikoa"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9601,7 @@ msgstr "Zeintzuk dira zure interesak?"
 msgid "What do you want to call your starter pack?"
 msgstr "Nola deitu nahi diozu zure abio multzoari?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9815,7 @@ msgstr "Etengabeko elkarrizketekin jarrai dezakezu aukeratzen duzun ezarpena edo
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "Orain pasahitz berriarekin saioa hasi dezakezu."
@@ -10129,6 +10155,7 @@ msgid "Your current handle <0>{0}</0> will automatically remain reserved for you
 msgstr "Zure oraingo handlea <0>{0}</0> zuretzako automatikoki erreserbatuko da. Edozein momentutan berriro aukeratu dezakezu kontu honetatik."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/LoginForm.tsx:110
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55
@@ -10184,6 +10211,7 @@ msgstr "Zure mutututako hitzak"
 msgid "Your password has been changed successfully!"
 msgstr "Zure pasahitza ondo aldatu da!"
 
+#: src/screens/Login/LoginForm.tsx:121
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr "Pasahitzak 8 karaktereko luzera izan behar du gutxienez."

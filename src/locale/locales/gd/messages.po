@@ -128,6 +128,11 @@ msgstr "{0, plural, one {{1} phost} two {{1} phost} few {{1} puist}other {{1} po
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "Chleachd {0, plural, one {# duine} two {# dhuine} few {# daoine} other {# duin}} a’ phacaid tòiseachaidh seo!"
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr "{hours, plural, one {# uair a thìde} two {# uair a thìde} few {# uaire
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr "Chaidh {joinedAllTimeCount, plural, one {# chleachdaiche} two {# chleachdaiche} few {# cleachdaichean} other {# cleachdaiche}} an sàs ann!"
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {# mhionaid} two {# mhionaid} few {# mionaidean} other {# mionaid}}"
@@ -481,7 +490,7 @@ msgstr "⚠Làmhrachan mì-dhligheach"
 msgid "24 hours"
 msgstr "24 uair a thìde"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:317
 msgid "2FA Confirmation"
 msgstr "Daingneachadh 2FA"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "Roghainnean na so-ruigsinneachd"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "Leubailean susbaint inbheach"
 msgid "Advanced"
 msgstr "Adhartach"
 
+#: src/screens/Login/LoginForm.tsx:410
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr "meadhbh@eisimpleir.com"
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "Ceadaich teachdaireachdan ùra"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "Bheir seo cead-inntrigidh dha na teachdaireachdan dìreach"
 msgid "Already have a code?"
 msgstr "A bheil còd agad mar-thà?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "Air clàradh a-steach mar @{0} mu thràth"
 
@@ -991,7 +1003,7 @@ msgstr "Faodaidh duine sam bith eadar-ghabhail a dhèanamh"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "Cluich videothan is GIFs gu fèin-obrachail"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:370
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "An camara"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:205
+#: src/screens/Login/LoginForm.tsx:211
+#: src/screens/Login/LoginForm.tsx:376
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr "Cabadaich"
 msgid "Check my status"
 msgstr "Thoir sùil air an staid agam"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:350
 msgid "Check your email for a sign in code and enter it here."
 msgstr "Thoir sùil air a' phost-d agad is cuir an còd airson clàradh a-steach an-seo."
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "Dearbh latha do bhreith"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:323
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "Dearbh latha do bhreith"
 msgid "Confirmation code"
 msgstr "An còd dearbhaidh"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:397
 msgid "Connecting..."
 msgstr "A’ dèanamh ceangal…"
 
@@ -2012,7 +2026,7 @@ msgstr "Cùlaibh a’ chlàir-thaice cho-theacsail, dèan briogadh airson an cl�
 msgid "Continue"
 msgstr "Air adhart"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "Lean ort mar {0} (clàraichte a-staigh aig an àm seo)"
 
@@ -2209,7 +2223,7 @@ msgstr "Cruthaich pacaid tòiseachaidh"
 msgid "Create a starter pack for me"
 msgstr "Cruthaich pacaid tòiseachaidh dhomh"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "Cruthaich avatar na àite"
 msgid "Create another"
 msgstr "Cruthaich fear eile"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "Cruthaich cunntas ùr"
@@ -2838,6 +2852,7 @@ msgid "Email 2FA enabled"
 msgstr "Tha 2FA air a’ phost-d an comas"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:257
 msgid "Email address"
 msgstr "Seòladh puist-d"
 
@@ -2973,13 +2988,13 @@ msgstr "Cuir a-steach an còd a fhuair thu airson am facal-faire agad atharracha
 msgid "Enter the domain you want to use"
 msgstr "Cuir a-steach an àrainn a tha thu airson cleachdadh"
 
+#: src/screens/Login/LoginForm.tsx:274
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "Cuir a-steach am post-d a chleachd thu nuair a chruthaich thu an cunntas agad. Chuir sinn “còd ath-shuidheachaidh” thugad agus is urrainn dhut facal-faire ùr a chur an sàs leis."
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr "Cuir a-steach an t-ainm-cleachdaiche no seòladh a’ phuist-d a chleachd thu nuair a chruthaich thu an cunntas agad"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3005,11 @@ msgstr "Cuir a-steach an do latha-breith"
 msgid "Enter your email address"
 msgstr "Cuir a-steach an seòladh puist-d agad"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:299
 msgid "Enter your password"
 msgstr "Cuir a-steach am facal-faire agad"
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "Cuir a-steach an t-ainm-cleachdaiche ’s am facal-faire agad"
 
@@ -3015,7 +3030,7 @@ msgstr "Mearachd"
 msgid "Error loading post"
 msgstr "Dh’èirich mearachd rè luchdadh a’ phuist"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3661,16 @@ msgstr "Dhut-sa"
 msgid "Forever"
 msgstr "Gu bràth"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr "Dhìochuimhnich mi am facal-faire"
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:304
 msgid "Forgot password?"
 msgstr "Na dhìochuimhnich thu am facal-faire?"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:309
 msgid "Forgot?"
 msgstr "Na dhìochuimhnich thu e?"
 
@@ -3747,8 +3762,13 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
 msgstr "Dèan toiseach-tòiseachaidh"
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
+msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
 msgid "Getting started"
@@ -4057,7 +4077,6 @@ msgid "Host:"
 msgstr "An t-òstair:"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr "Solaraiche na h-òstaireachd"
 
@@ -4210,7 +4229,7 @@ msgstr "Teachdaireachdan mì-iomchaidh no ceanglaichean feòlmhor"
 msgid "Inbox zero!"
 msgstr "Bogsa a-steach falamh!"
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:185
 msgid "Incorrect username or password"
 msgstr "Tha an t-ainm-cleachdaiche no facal-faire ceàrr"
 
@@ -4230,7 +4249,7 @@ msgstr "Cuir a-steach facal-faire ùr"
 msgid "Input password for account deletion"
 msgstr "Cuir a-steach am facal-faire airson an cunntas a sguabadh às"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:338
 msgid "Input the code which has been emailed to you"
 msgstr "Cuir a-steach an còd a chuir sinn thugad air a’ phost-d"
 
@@ -4246,7 +4265,7 @@ msgstr "Roghainnean na h-eadar-ghabhalach"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:177
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "Tha an còd dearbhaidh 2FA mì-dhligheach."
@@ -4396,6 +4415,7 @@ msgstr "barrachd fiosrachaidh"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4452,8 @@ msgstr "Barrachd fiosrachaidh mun rabhadh seo"
 msgid "Learn more about verification on Bluesky"
 msgstr "Barrachd fiosrachaidh mun dearbhadh air Bluesky"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "Barrachd fiosrachaidh mu na rudan a tha poblach air Bluesky."
 
@@ -4441,6 +4461,10 @@ msgstr "Barrachd fiosrachaidh mu na rudan a tha poblach air Bluesky."
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "Barrachd fiosrachaidh."
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4500,8 @@ msgstr "air fhàgail."
 msgid "Let me choose"
 msgstr "Leig leamsa roghnachadh"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "Ath-shuidhicheamaid am facal-faire agad!"
 
@@ -4693,7 +4717,7 @@ msgstr "Ga luchdadh…"
 msgid "Log"
 msgstr "Loga"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "Faicsinneachd do dhaoine a chlàraich a-mach"
 
@@ -5095,7 +5119,7 @@ msgid "Navigate to starter pack"
 msgstr "Tadhail air a’ phacaid tòiseachaidh"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:404
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "Bheir seo thu gun ath-sgrìn"
@@ -5242,8 +5266,7 @@ msgstr "Naidheachdan"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:403
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5284,10 @@ msgstr "Air adhart"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "An t-ath-dhealbh"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5340,7 @@ msgstr "Chan eil brath sam bith ann fhathast!"
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "Na ceadaich iad o dhuine sam bith"
 
@@ -5420,7 +5447,7 @@ msgstr "Cha deach a lorg"
 msgid "Note about sharing"
 msgstr "Fiosrachadh mu cho-roinneadh"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "An aire: Tha Bluesky na lìonra fosgailte agus poblach. Chan eil an roghainn seo a’ cuingeachadh ach faicsinneachd na susbainte agad ann an aplacaid Bluesky is air an làrach-lìn ach dh’fhaoidte nach gèill aplacaidean eile ris an roghainn seo. Dh’fhaoidte gun seall aplacaidean is làraichean-lìn eile an t-susbaint agad do luchd-cleachdaidh a rinn clàradh a-mach."
 
@@ -5564,7 +5591,7 @@ msgstr "Chan fhaod ach litrichean, àireamhan is tàthanan a bhith ann"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5741,12 @@ msgstr "Fosglaidh seo gailearaidh dhealbhan an uidheim"
 msgid "Opens emoji picker"
 msgstr "Fosglaidh seo ròghnaichear nan emoji"
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "Fosglaidh seo an sruth airson cunntas Bhluesky ùr a chruthachadh"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr "Fosglaidh seo an sruth airson clàradh a-steach dhan chunntas Bhluesky agad"
@@ -5744,7 +5771,7 @@ msgstr "Fosglaidh seo liosta nan còdaichean cuiridh"
 msgid "Opens live status dialog"
 msgstr "Fosglaidh seo còmhradh an t-srutha bheò"
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:305
 msgid "Opens password reset form"
 msgstr "Fosglaidh seo foirm ath-shuidheachadh an fhacail-fhaire"
 
@@ -5800,9 +5827,9 @@ msgstr "Staid OTA: Chan eil gin ri fhaighinn"
 msgid "Other"
 msgstr "Rud eile"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "Cunntas eile"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5852,7 @@ msgstr "Cha deach an duilleag a lorg"
 msgid "Page Not Found"
 msgstr "Cha deach an duilleag a lorg"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:285
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5869,7 @@ msgstr "Chaidh am facal-faire atharrachadh"
 msgid "Password must be at least 8 characters long."
 msgstr "Feumaidh co-dhiù 8 caractaran bhith san fhacal-faire."
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "Chaidh am facal-faire ùrachadh"
 
@@ -6033,6 +6060,10 @@ msgstr "Cuir a-steach an còd a chuir sinn gu <0>{0}</0> gu h-ìosal."
 msgid "Please enter the security code we sent to your previous email address."
 msgstr "Cuir a-steach an còd tèarainteachd a chuir sinn gu seòladh an t-seann phuist-d agad."
 
+#: src/screens/Login/LoginForm.tsx:106
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6077,13 @@ msgstr "Cuir a-steach an còd cuiridh agad."
 msgid "Please enter your new email address."
 msgstr "Cuir a-steach an seòladh puist-d ùr agad."
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:116
 msgid "Please enter your password"
 msgstr "Cuir a-steach am facal-faire agad"
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "Cuir a-steach am facal-faire agad cuideachd:"
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr "Cuir a-steach an t-ainm-cleachdaiche agad"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6992,7 @@ msgstr "Ath-shuidhich staid a’ bhòrdachaidh"
 msgid "Reset password"
 msgstr "Ath-shuidhich am facal-faire"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:384
 msgid "Retries signing in"
 msgstr "Feuchaidh seo ri clàradh a-steach a-rithist"
 
@@ -6981,8 +7008,8 @@ msgstr "Feuchaidh seo ris a’ ghnìomh mu dheireadh a-rithist is e air fàillig
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:383
+#: src/screens/Login/LoginForm.tsx:390
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7255,6 @@ msgstr "Sleamhnachan an t-siridh. Cleachd na saighdean airson gluasad air ais no
 msgid "Select a color"
 msgstr "Tagh dath"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "Tagh cunntas"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr "Tagh cànan dhan aplacaid"
@@ -7260,7 +7283,7 @@ msgstr "Tagh cànain na susbainte"
 msgid "Select duration"
 msgstr "Tagh dè cho fada"
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "Tagh cunntas làithreach"
 
@@ -7443,8 +7466,11 @@ msgid "Settings"
 msgstr "Roghainnean"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7730,10 @@ msgstr "Seallaidh seo an t-susbaint"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7745,9 @@ msgstr "Seallaidh seo an t-susbaint"
 msgid "Sign in"
 msgstr "Clàraich a-steach"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "Clàraich a-steach mar {0}"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "Clàraich a-stach mar…"
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7758,18 @@ msgstr "Clàraich a-steach no cruthaich cunntas"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "Clàraich a-steach no cruthaich cunntas is thig a chòmhradh!"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr "Clàraich a-steach gu cunntas nach eil air an liosta"
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Clàraich a-steach gu Bluesky no cruthaich cunntas ùr"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:239
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7803,7 @@ msgid "Sign-in Required"
 msgstr "Feumaidh tu clàradh a-steach"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "Chlàraich thu a-steach mar @{0}"
 
@@ -8527,6 +8553,10 @@ msgstr "Chan fhaic luchd-cleachdaidh eile am fiosrachadh seo."
 msgid "This is not a valid link"
 msgstr "Chan e ceangal dligheach a tha seo"
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "Chuir an t-ùghdar an leubail seo an sàs."
@@ -8794,8 +8824,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "Cha ghabh ceangal a dhèanamh. Thoir sùil air a’ cheangal ris an eadar-lìon agad is feuch ris a-rithist."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:190
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9186,6 @@ msgstr "Chaidh an liosta luchd-cleachdaidh a chruthachadh"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "Chaidh an liosta luchd-cleachdaidh ùrachadh"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "Ainm-chleachdaiche no seòladh puist-d"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9601,7 @@ msgstr "Dè na rudan sa bheil ùidh agad?"
 msgid "What do you want to call your starter pack?"
 msgstr "Dè an t-ainm a chuireas sinn air a’ phacaid tòiseachaidh agad?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9815,7 @@ msgstr "’S urrainn dhut còmhradh beò a leigeil seachad, ge be dè an roghain
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "’S urrainn dhut clàradh a-steach leis an fhacal-fhaire ùr agad a-nis."
@@ -10129,6 +10155,7 @@ msgid "Your current handle <0>{0}</0> will automatically remain reserved for you
 msgstr "Glèidhidh sinn an làmhrachan làithreach agad, <0>{0}</0>, dhut gu fèin-obrachail. ’S urrainn dhut a thilleadh uair sam bith on chunntas seo."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/LoginForm.tsx:110
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55
@@ -10184,6 +10211,7 @@ msgstr "Na faclan a mhùch thu"
 msgid "Your password has been changed successfully!"
 msgstr "Chaidh am facal-faire agad atharrachadh!"
 
+#: src/screens/Login/LoginForm.tsx:121
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr "Feumaidh co-dhiù 8 caractaran bhith san fhacal-faire agad."
