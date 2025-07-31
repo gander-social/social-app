@@ -21,7 +21,7 @@ jobs:
         with:
           go-version: '1.23'
       - name: Dummy Static Files
-        run: touch gndrweb/static/js/blah.js && touch gndrweb/static/css/blah.txt && touch gndrweb/static/media/blah.txt
+        run: mkdir -p gndrweb/static/js gndrweb/static/css gndrweb/static/media touch gndrweb/static/js/blah.js && touch gndrweb/static/css/blah.txt && touch gndrweb/static/media/blah.txt
       - name: Check
         run: cd gndrweb/ && make check
       - name: Build (binary)
@@ -38,6 +38,6 @@ jobs:
         with:
           go-version: '1.23'
       - name: Dummy Static Files
-        run: touch gndrweb/static/js/blah.js && touch gndrweb/static/css/blah.txt && touch gndrweb/static/media/blah.txt
+        run: mkdir -p gndrweb/static/js gndrweb/static/css gndrweb/static/media touch gndrweb/static/js/blah.js && touch gndrweb/static/css/blah.txt && touch gndrweb/static/media/blah.txt
       - name: Lint
         run: cd gndrweb/ &&  make lint
