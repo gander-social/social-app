@@ -329,8 +329,14 @@ export const atoms = {
   font_normal: {
     fontWeight: tokens.fontWeight.normal,
   },
+  font_medium: {
+    fontWeight: tokens.fontWeight.medium,
+  },
   font_bold: {
     fontWeight: tokens.fontWeight.bold,
+  },
+  font_extra_bold: {
+    fontWeight: tokens.fontWeight.font_extra_bold,
   },
   font_heavy: {
     fontWeight: tokens.fontWeight.heavy,

@@ -296,7 +296,12 @@ export function LabelText({
   return (
     <Text
       nativeID={nativeID}
-      style={[a.text_xs, a.font_normal, {color: '#696969'}, a.mb_2xs]}>
+      style={[
+        a.text_xs,
+        a.font_normal,
+        {color: '#696969', lineHeight: 18},
+        a.mb_2xs,
+      ]}>
       {children}
     </Text>
   )

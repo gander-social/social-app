@@ -18,7 +18,6 @@ import {SetNewPasswordForm} from '#/screens/Login/SetNewPasswordForm'
 import {atoms as a} from '#/alf'
 import {ChooseAccountForm} from './ChooseAccountForm'
 import {ScreenTransition} from './ScreenTransition'
-import {Welcome} from './Welcome'
 
 enum Forms {
   Login,
@@ -127,8 +126,6 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   let description = ''
 
   switch (currentForm) {
-    case Forms.ForgotPassword:
-      return <Welcome />
     case Forms.Login:
       title = _(msg`Sign in`)
       description = _(msg`Enter your username and password`)
@@ -173,7 +170,7 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
           setError={setError}
           setServiceUrl={setServiceUrl}
           onPressBack={() => gotoForm(Forms.Login)}
-          onEmailSent={() => gotoForm(Forms.SetNewPassword)}
+          onPasswordSet={() => gotoForm(Forms.PasswordUpdated)}
         />
       )
       break
