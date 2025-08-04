@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import {type TextInput, View} from 'react-native'
+import {Keyboard, type TextInput, View} from 'react-native'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import * as EmailValidator from 'email-validator'
@@ -10,14 +10,13 @@ import {logger} from '#/logger'
 import {ScreenTransition} from '#/screens/Login/ScreenTransition'
 import {is13, is18, useSignupContext} from '#/screens/Signup/state'
 import {Policies} from '#/screens/Signup/StepInfo/Policies'
-import {atoms as a, native} from '#/alf'
+import {atoms as a} from '#/alf'
+import {Button, ButtonText} from '#/components/Button'
 import * as DateField from '#/components/forms/DateField'
 import {type DateFieldRef} from '#/components/forms/DateField/types'
 import {FormError} from '#/components/forms/FormError'
 import {HostingProvider} from '#/components/forms/HostingProvider'
 import * as TextField from '#/components/forms/TextField'
-import {Envelope_Stroke2_Corner0_Rounded as Envelope} from '#/components/icons/Envelope'
-import {Lock_Stroke2_Corner0_Rounded as Lock} from '#/components/icons/Lock'
 import {Ticket_Stroke2_Corner0_Rounded as Ticket} from '#/components/icons/Ticket'
 import {Loader} from '#/components/Loader'
 import {BackNextButtons} from '../BackNextButtons'
@@ -56,6 +55,7 @@ export function StepInfo({
   const birthdateInputRef = useRef<DateFieldRef>(null)
 
   const [hasWarnedEmail, setHasWarnedEmail] = React.useState<boolean>(false)
+  const [showPassword, setShowPassword] = React.useState<boolean>(false)
 
   const tldtsRef = React.useRef<typeof tldts>()
   React.useEffect(() => {
@@ -142,117 +142,141 @@ export function StepInfo({
     )
   }
 
+  const onPressSelectService = React.useCallback(() => {
+    Keyboard.dismiss()
+  }, [])
+
+  const togglePasswordVisibility = React.useCallback(() => {
+    setShowPassword(prev => !prev)
+  }, [])
+
   return (
     <ScreenTransition>
       <View style={[a.gap_md]}>
         <FormError error={state.error} />
-        <HostingProvider
-          minimal
-          serviceUrl={state.serviceUrl}
-          onSelectServiceUrl={v => dispatch({type: 'setServiceUrl', value: v})}
-        />
+        <View style={[a.mb_md]}>
+          <HostingProvider
+            serviceUrl={state.serviceUrl}
+            onSelectServiceUrl={v =>
+              dispatch({type: 'setServiceUrl', value: v})
+            }
+            onOpenDialog={onPressSelectService}
+          />
+        </View>
         {state.isLoading || isLoadingStarterPack ? (
           <View style={[a.align_center]}>
             <Loader size="xl" />
           </View>
         ) : state.serviceDescription ? (
-          <>
+          <View>
             {state.serviceDescription.inviteCodeRequired && (
-              <View>
-                <TextField.LabelText>
-                  <Trans>Invite code</Trans>
-                </TextField.LabelText>
-                <TextField.Root isInvalid={state.errorField === 'invite-code'}>
-                  <TextField.Icon icon={Ticket} />
-                  <TextField.Input
-                    onChangeText={value => {
-                      inviteCodeValueRef.current = value.trim()
-                      if (
-                        state.errorField === 'invite-code' &&
-                        value.trim().length > 0
-                      ) {
-                        dispatch({type: 'clearError'})
-                      }
-                    }}
-                    label={_(msg`Required for this provider`)}
-                    defaultValue={state.inviteCode}
-                    autoCapitalize="none"
-                    autoComplete="email"
-                    keyboardType="email-address"
-                    returnKeyType="next"
-                    submitBehavior={native('submit')}
-                    onSubmitEditing={native(() =>
-                      emailInputRef.current?.focus(),
-                    )}
-                  />
-                </TextField.Root>
-              </View>
-            )}
-            <View>
-              <TextField.LabelText>
-                <Trans>Email</Trans>
-              </TextField.LabelText>
-              <TextField.Root isInvalid={state.errorField === 'email'}>
-                <TextField.Icon icon={Envelope} />
+              <TextField.Root isInvalid={state.errorField === 'invite-code'}>
+                <TextField.Icon icon={Ticket} />
                 <TextField.Input
-                  testID="emailInput"
-                  inputRef={emailInputRef}
+                  isFirst={true}
                   onChangeText={value => {
-                    emailValueRef.current = value.trim()
-                    if (hasWarnedEmail) {
-                      setHasWarnedEmail(false)
-                    }
+                    inviteCodeValueRef.current = value.trim()
                     if (
-                      state.errorField === 'email' &&
-                      value.trim().length > 0 &&
-                      EmailValidator.validate(value.trim())
+                      state.errorField === 'invite-code' &&
+                      value.trim().length > 0
                     ) {
                       dispatch({type: 'clearError'})
                     }
                   }}
-                  label={_(msg`Enter your email address`)}
-                  defaultValue={state.email}
+                  label={_(msg`Invite code`)}
+                  defaultValue={state.inviteCode}
                   autoCapitalize="none"
+                  autoCorrect={false}
                   autoComplete="email"
-                  keyboardType="email-address"
                   returnKeyType="next"
-                  submitBehavior={native('submit')}
-                  onSubmitEditing={native(() =>
-                    passwordInputRef.current?.focus(),
-                  )}
-                />
-              </TextField.Root>
-            </View>
-            <View>
-              <TextField.LabelText>
-                <Trans>Password</Trans>
-              </TextField.LabelText>
-              <TextField.Root isInvalid={state.errorField === 'password'}>
-                <TextField.Icon icon={Lock} />
-                <TextField.Input
-                  testID="passwordInput"
-                  inputRef={passwordInputRef}
-                  onChangeText={value => {
-                    passwordValueRef.current = value
-                    if (state.errorField === 'password' && value.length >= 8) {
-                      dispatch({type: 'clearError'})
-                    }
+                  textContentType="emailAddress"
+                  onSubmitEditing={() => {
+                    emailInputRef.current?.focus()
                   }}
-                  label={_(msg`Choose your password`)}
-                  defaultValue={state.password}
-                  secureTextEntry
-                  autoComplete="new-password"
-                  autoCapitalize="none"
-                  returnKeyType="next"
-                  submitBehavior={native('blurAndSubmit')}
-                  onSubmitEditing={native(() =>
-                    birthdateInputRef.current?.focus(),
-                  )}
-                  passwordRules="minlength: 8;"
+                  blurOnSubmit={false}
                 />
               </TextField.Root>
-            </View>
-            <View>
+            )}
+            <TextField.Root isInvalid={state.errorField === 'email'}>
+              <TextField.Input
+                isFirst={!state.serviceDescription.inviteCodeRequired}
+                testID="emailInput"
+                inputRef={emailInputRef}
+                label={_(msg`Email address`)}
+                autoCapitalize="none"
+                autoCorrect={false}
+                autoComplete="username"
+                returnKeyType="next"
+                textContentType="emailAddress"
+                defaultValue={state.email}
+                onChangeText={value => {
+                  emailValueRef.current = value.trim()
+                  if (hasWarnedEmail) {
+                    setHasWarnedEmail(false)
+                  }
+                  if (
+                    state.errorField === 'email' &&
+                    value.trim().length > 0 &&
+                    EmailValidator.validate(value.trim())
+                  ) {
+                    dispatch({type: 'clearError'})
+                  }
+                }}
+                onSubmitEditing={() => {
+                  passwordInputRef.current?.focus()
+                }}
+                blurOnSubmit={false}
+                accessibilityHint={_(
+                  msg`Enter the email address you used when you created your account`,
+                )}
+              />
+            </TextField.Root>
+            <TextField.Root isInvalid={state.errorField === 'password'}>
+              <TextField.Input
+                isLast={true}
+                testID="passwordInput"
+                inputRef={passwordInputRef}
+                label={_(msg`Password`)}
+                autoCapitalize="none"
+                autoCorrect={false}
+                autoComplete="new-password"
+                returnKeyType="done"
+                enablesReturnKeyAutomatically={true}
+                secureTextEntry={!showPassword}
+                textContentType="password"
+                defaultValue={state.password}
+                onChangeText={value => {
+                  passwordValueRef.current = value
+                  if (state.errorField === 'password' && value.length >= 8) {
+                    dispatch({type: 'clearError'})
+                  }
+                }}
+                onSubmitEditing={() => {
+                  birthdateInputRef.current?.focus()
+                }}
+                blurOnSubmit={false}
+                passwordRules="minlength: 8;"
+                accessibilityHint={_(msg`Enter your password`)}
+              />
+              <Button
+                testID="showPasswordButton"
+                onPress={togglePasswordVisibility}
+                label={
+                  showPassword ? _(msg`Hide password?`) : _(msg`Show password?`)
+                }
+                accessibilityHint={
+                  showPassword
+                    ? _(msg`Hides the password`)
+                    : _(msg`Shows the password`)
+                }
+                variant="ghost"
+                color="link">
+                <ButtonText>
+                  <Trans>{showPassword ? 'Hide' : 'Show'}</Trans>
+                </ButtonText>
+              </Button>
+            </TextField.Root>
+            <View style={[a.mt_xl]}>
               <DateField.LabelText>
                 <Trans>Your birth date</Trans>
               </DateField.LabelText>
@@ -276,9 +300,10 @@ export function StepInfo({
               needsGuardian={!is18(state.dateOfBirth)}
               under13={!is13(state.dateOfBirth)}
             />
-          </>
+          </View>
         ) : undefined}
       </View>
+      <View style={[a.border_t, {borderColor: '#D8D8D8'}]} />
       <BackNextButtons
         hideNext={!is13(state.dateOfBirth)}
         showRetry={isServerError}
