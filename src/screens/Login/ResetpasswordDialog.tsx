@@ -1,5 +1,5 @@
 import {useCallback, useState} from 'react'
-import {ActivityIndicator, View} from 'react-native'
+import {ActivityIndicator, Keyboard, View} from 'react-native'
 import {useWindowDimensions} from 'react-native'
 import {BskyAgent} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
@@ -24,6 +24,7 @@ export function ResetPasswordDialog({
   serviceUrl,
   error,
   setError,
+  email,
 }: {
   onPasswordSet: () => void
   control: Dialog.DialogOuterProps['control']
@@ -31,6 +32,7 @@ export function ResetPasswordDialog({
   error: string
   serviceUrl: string
   setError: (v: string) => void
+  email: string
 }) {
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
   const [resetCode, setResetCode] = useState<string>('')
@@ -44,7 +46,9 @@ export function ResetPasswordDialog({
   const onClose = useCallback(() => {
     setError('')
   }, [setError])
-  const onPressBack = () => {}
+  const onPressBack = () => {
+    control.close()
+  }
   const onSubmitPress = useCallback(async () => {
     // Check that the code is correct. We do this again just incase the user enters the code after their pw and we
     // don't get to call onBlur first
@@ -107,7 +111,29 @@ export function ResetPasswordDialog({
     }
     setResetCode(formattedCode)
   }
-  const onResenPress = () => {}
+  const onResenPress = async () => {
+    setError('')
+    setIsProcessing(true)
+
+    try {
+      const agent = new BskyAgent({service: serviceUrl})
+      await agent.com.atproto.server.requestPasswordReset({email})
+      Keyboard.dismiss()
+    } catch (e: any) {
+      const errMsg = e.toString()
+      logger.warn('Failed to request password reset', {error: e})
+      setIsProcessing(false)
+      if (isNetworkError(e)) {
+        setError(
+          _(
+            msg`Unable to contact your service. Please check your Internet connection.`,
+          ),
+        )
+      } else {
+        setError(cleanError(errMsg))
+      }
+    }
+  }
   const onShowPassowrd = () => {
     setPasswordVisible(v => !v)
   }

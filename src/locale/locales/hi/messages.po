@@ -584,6 +584,10 @@ msgstr "सूची द्वारा खाता म्यूट किय�
 msgid "Account options"
 msgstr "खाते के विकल्प"
 
+#: src/components/forms/HostingProvider.tsx:75
+msgid "Account Provider"
+msgstr ""
+
 #: src/screens/Settings/Settings.tsx:565
 msgid "Account removed from quick access"
 msgstr "जल्द पहुँच से खाता हटाया गया"
@@ -848,7 +852,6 @@ msgstr "इन्हें जवाब देने की अनुमति �
 msgid "Allows access to direct messages"
 msgstr "आपके सीधे संदेशों तक पहुँच देता है"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:171
 #: src/view/com/modals/ChangePassword.tsx:182
 msgid "Already have a code?"
 msgstr "पहले से कोड है?"
@@ -1183,9 +1186,11 @@ msgstr "वीडियो और GIF स्वतः चलाएँ"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ForgotPasswordForm.tsx:123
-#: src/screens/Login/ForgotPasswordForm.tsx:129
+#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/LoginForm.tsx:379
+#: src/screens/Login/ResetpasswordDialog.tsx:213
+#: src/screens/Login/ResetpasswordDialog.tsx:219
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -2026,7 +2031,7 @@ msgstr "संदर्भ मेनू पृष्ठभूमि, मेन�
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:126
 msgid "Continue as {0} (currently signed in)"
 msgstr "(अभी साइन इन किया गया) {0} के रूप मे जारी रखें"
 
@@ -2573,6 +2578,7 @@ msgid "Dismiss error"
 msgstr "त्रुटि ख़ारिज करें"
 
 #: src/components/ProgressGuide/List.tsx:42
+#: src/screens/Login/ResetpasswordDialog.tsx:129
 msgid "Dismiss getting started guide"
 msgstr "शुरुआती गाइड ख़ारिज करें"
 
@@ -2854,11 +2860,6 @@ msgstr "ईमेल 2FA अक्षम करें"
 msgid "Email 2FA enabled"
 msgstr "ईमेल 2FA सक्षम"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:265
-msgid "Email address"
-msgstr "ईमेल"
-
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
 msgstr "ईमेल फिर से भेजा गया"
@@ -2983,6 +2984,10 @@ msgstr ""
 msgid "Enter fullscreen"
 msgstr "फ़ुलस्क्रीन में जाएँ"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:142
+msgid "Enter the code we sent to ben@theartdepartment.studio"
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:165
 msgid "Enter the code you received to change your password."
 msgstr "पासवर्ड बदलने के लिए प्राप्त किया गया कोड दर्ज करें"
@@ -2992,18 +2997,14 @@ msgid "Enter the domain you want to use"
 msgstr "आप जिस डोमेन का उपयोग करना चाहते हैं उसे दर्ज करें"
 
 #: src/screens/Login/LoginForm.tsx:282
-msgid "Enter the email address you used when you created your account"
+msgid "Enter the username or email address you used when you created your account"
 msgstr ""
-
-#: src/screens/Login/ForgotPasswordForm.tsx:113
-msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
-msgstr "वह ईमेल दर्ज करें जिसका उपयोग आपने अपना खाता बनाने के लिए किया था। हम आपको एक \"reset code\" भेजेंगे ताकि आप एक नया पासवर्ड सेट कर सकें।"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
 msgstr "अपना जन्मतिथि दर्ज करें"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:99
+#: src/screens/Login/ForgotPasswordForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "अपना ईमेल पता दर्ज करें"
@@ -3012,7 +3013,7 @@ msgstr "अपना ईमेल पता दर्ज करें"
 msgid "Enter your password"
 msgstr ""
 
-#: src/screens/Login/index.tsx:134
+#: src/screens/Login/index.tsx:131
 msgid "Enter your username and password"
 msgstr "अपने उपयोगकर्ता नाम और पासवर्ड दर्ज करें"
 
@@ -3664,8 +3665,9 @@ msgstr ""
 msgid "Forever"
 msgstr "हमेशा"
 
-#: src/screens/Login/index.tsx:166
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/ForgotPasswordForm.tsx:95
+#: src/screens/Login/index.tsx:163
+#: src/screens/Login/index.tsx:178
 msgid "Forgot Password"
 msgstr "पासवर्ड भूल गए"
 
@@ -3858,7 +3860,7 @@ msgstr ""
 msgid "Go to conversation with {0}"
 msgstr "{0} के साथ बातचीत पर जाएँ"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:165
+#: src/screens/Login/ForgotPasswordForm.tsx:136
 #: src/view/com/modals/ChangePassword.tsx:179
 msgid "Go to next"
 msgstr "अगले पर जाएँ"
@@ -3966,6 +3968,7 @@ msgstr "छिपाई गई सूची"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "छिपाएँ"
@@ -4079,11 +4082,6 @@ msgstr "होम फ़ीड"
 msgid "Host:"
 msgstr "होस्ट:"
 
-#: src/components/forms/HostingProvider.tsx:75
-#: src/screens/Login/ForgotPasswordForm.tsx:83
-msgid "Hosting provider"
-msgstr "होस्टिंग प्रदाता"
-
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:194
 msgid "Hot"
 msgstr ""
@@ -4099,6 +4097,10 @@ msgstr "गर्मागर्म जवाब पहले"
 #: src/components/dialogs/InAppBrowserConsent.tsx:66
 msgid "How should we open this link?"
 msgstr "इस लिंक को हम कैसे खोलें?"
+
+#: src/screens/Login/ForgotPasswordForm.tsx:143
+msgid "I already have a reset code?"
+msgstr ""
 
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:133
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:136
@@ -4237,6 +4239,7 @@ msgstr ""
 msgid "Incorrect username or password"
 msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:161
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "पासवर्ड रीसेट करने के लिए आपके ईमेल में भेजी गई कोड दर्ज करें"
@@ -4245,6 +4248,7 @@ msgstr "पासवर्ड रीसेट करने के लिए आ�
 msgid "Input confirmation code for account deletion"
 msgstr "खाता मिटाने के लिए पुष्टिकरण कोड दर्ज करें"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:181
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "नया पासवर्ड दर्ज करें"
@@ -4504,8 +4508,8 @@ msgstr "बाक़ी"
 msgid "Let me choose"
 msgstr "मुझे चुनने दें।"
 
-#: src/screens/Login/index.tsx:167
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:164
+#: src/screens/Login/index.tsx:179
 msgid "Let's get your password reset!"
 msgstr "चलिए आपका पासवर्ड रीसेट करें!"
 
@@ -4738,6 +4742,7 @@ msgstr "<0>@sawaratsuki.bsky.social</0> द्वारा लोगो"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "#{tag} के लिए टैग मेनू खोलने के लिए लंबा दबाएँ"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:149
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "XXXXX-XXXXX जैसा दिखता है"
@@ -5122,7 +5127,7 @@ msgstr "{0} पर जाएँ"
 msgid "Navigate to starter pack"
 msgstr ""
 
-#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
@@ -5212,6 +5217,7 @@ msgstr "नया मॉडरेशन सूची"
 msgid "New password"
 msgstr "नया पासवर्ड"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:170
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "नया पासवर्ड"
@@ -5268,8 +5274,7 @@ msgstr "सबसे नया जवाब पहले"
 msgid "News"
 msgstr "समाचार"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:137
-#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/ForgotPasswordForm.tsx:180
 #: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
@@ -5831,7 +5836,7 @@ msgstr ""
 msgid "Other"
 msgstr "अन्य"
 
-#: src/components/AccountList.tsx:86
+#: src/components/AccountList.tsx:83
 msgid "Other Account"
 msgstr ""
 
@@ -5873,7 +5878,7 @@ msgstr "पासवर्ड बदला गया"
 msgid "Password must be at least 8 characters long."
 msgstr ""
 
-#: src/screens/Login/index.tsx:194
+#: src/screens/Login/index.tsx:191
 msgid "Password updated"
 msgstr "पासवर्ड अपडेट किया गया"
 
@@ -6030,6 +6035,7 @@ msgstr "कृपया सत्यापन कैपचा समाप्त
 msgid "Please double-check that you have entered your email address correctly."
 msgstr ""
 
+#: src/screens/Login/ResetpasswordDialog.tsx:65
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr ""
@@ -6313,7 +6319,7 @@ msgid "Processing video..."
 msgstr "वीडियो प्रसंस्करण हो रहा है..."
 
 #: src/lib/api/index.ts:60
-#: src/screens/Login/ForgotPasswordForm.tsx:149
+#: src/screens/Login/ForgotPasswordForm.tsx:192
 msgid "Processing..."
 msgstr "प्रसंस्करण हो रहा है..."
 
@@ -6992,7 +6998,7 @@ msgstr "कोड रीसेट करें"
 msgid "Reset onboarding state"
 msgstr "ज्ञानप्राप्ति स्थिति को रीसेट करें"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:80
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 msgid "Reset password"
 msgstr "पासवर्ड रीसेट करें"
 
@@ -7287,7 +7293,7 @@ msgstr "सामग्री भाषाएँ चुनें"
 msgid "Select duration"
 msgstr ""
 
-#: src/screens/Login/index.tsx:157
+#: src/screens/Login/index.tsx:154
 msgid "Select from an existing account"
 msgstr "मौजूदा खाते से चुनें"
 
@@ -7356,6 +7362,10 @@ msgstr "चुनें कि आप अपनी सदस्यता वा�
 msgid "Select your date of birth"
 msgstr "अपनी जन्मतिथि चुनें"
 
+#: src/screens/Login/ForgotPasswordForm.tsx:100
+msgid "Select your hosting provider and enter the email you used to create your account. We’ll send you a “reset code” so you can set a new password."
+msgstr ""
+
 #: src/screens/Onboarding/StepInterests/index.tsx:192
 #: src/screens/Settings/InterestsSettings.tsx:161
 msgid "Select your interests from the options below"
@@ -7376,6 +7386,14 @@ msgstr ""
 #: src/components/dms/ChatEmptyPill.tsx:38
 msgid "Send a neat website!"
 msgstr "कितना सुंदर वेबसाइट है!"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:205
+msgid "Send a new code"
+msgstr ""
+
+#: src/screens/Login/ForgotPasswordForm.tsx:186
+msgid "Send Code"
+msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:174
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:181
@@ -7458,7 +7476,7 @@ msgstr "नया पासवर्ड सेट करें"
 msgid "Set up your account"
 msgstr "खाता बनाएँ"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:107
+#: src/screens/Login/ForgotPasswordForm.tsx:125
 msgid "Sets email for password reset"
 msgstr "पासवर्ड रीसेट करने के लिए ईमेल चुनता है"
 
@@ -7609,6 +7627,7 @@ msgstr "साझा की गई प्राथमिकताओं का �
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 msgid "Show"
 msgstr "दिखाएँ"
 
@@ -7666,6 +7685,11 @@ msgstr ""
 #: src/view/com/post-thread/PostThreadShowHiddenReplies.tsx:22
 msgid "Show muted replies"
 msgstr "म्यूट किए गए जवाब देखें"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:187
+msgid "Show password"
+msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
 msgid "Show post replies in a threaded tree view"
@@ -7734,8 +7758,8 @@ msgstr ""
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:133
-#: src/screens/Login/index.tsx:156
+#: src/screens/Login/index.tsx:130
+#: src/screens/Login/index.tsx:153
 #: src/view/com/auth/SplashScreen.tsx:59
 #: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
@@ -7749,7 +7773,7 @@ msgstr ""
 msgid "Sign in"
 msgstr "साइन इन करें"
 
-#: src/components/AccountList.tsx:130
+#: src/components/AccountList.tsx:127
 msgid "Sign in as {0}"
 msgstr "{0} के रूप में साइन इन करें"
 
@@ -7762,7 +7786,8 @@ msgstr ""
 msgid "Sign in or create your account to join the conversation!"
 msgstr "बातचीत में जुड़ने के लिए साइन इन करें या अपना खाता बनाएँ"
 
-#: src/components/AccountList.tsx:69
+#: src/components/AccountList.tsx:64
+#: src/screens/Login/ResetpasswordDialog.tsx:202
 msgid "Sign in to account that is not listed"
 msgstr ""
 
@@ -7770,7 +7795,7 @@ msgstr ""
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Bluesky में साइन इन करें या नया खाता बनाएँ"
 
-#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/ChooseAccountForm.tsx:109
 #: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
@@ -8010,6 +8035,8 @@ msgstr "कहानी की किताब"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
+#: src/screens/Login/ResetpasswordDialog.tsx:227
+#: src/screens/Login/ResetpasswordDialog.tsx:233
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8827,9 +8854,10 @@ msgstr "प्रकार:"
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "कनेक्ट करने में असफल। कृपया अपना इंटरनेट कनेक्शन जाँच ले और फिर प्रयास करें।"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:88
+#: src/screens/Login/ForgotPasswordForm.tsx:72
+#: src/screens/Login/index.tsx:87
 #: src/screens/Login/LoginForm.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:89
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9064,6 +9092,7 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "जवाब दृश्यता का अपडेट असफल"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:239
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "अपडेट हो रहा है..."
@@ -9190,6 +9219,10 @@ msgstr "उपयोगकर्ता सूची बनाई गई"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "उपयोगकर्ता सूची अपडेट की गई"
+
+#: src/screens/Login/LoginForm.tsx:265
+msgid "Username or Email Address"
+msgstr ""
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9819,7 +9852,7 @@ msgstr "कोई भी सेटिंग चुनने पर भी आप
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:195
+#: src/screens/Login/index.tsx:192
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "अब आप अपने नए पासवर्ड के साथ साइन इन कर सकते हैं।"
@@ -9880,6 +9913,8 @@ msgstr "आपने इस उपयोगकर्ता को अवरु�
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr ""
 
+#: src/screens/Login/ResetpasswordDialog.tsx:56
+#: src/screens/Login/ResetpasswordDialog.tsx:103
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10158,7 +10193,7 @@ msgstr ""
 msgid "Your current handle <0>{0}</0> will automatically remain reserved for you. You can switch back to it at any time from this account."
 msgstr "आपका वर्तमान हैंडल <0>{0}</0> आपके लिए आरक्षित रहेगा। आप इस खाते से कभी भी उस हैंडल पर वापस जा सकते हैं।"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/ForgotPasswordForm.tsx:54
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55

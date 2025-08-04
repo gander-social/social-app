@@ -584,6 +584,10 @@ msgstr "该账户已被列表隐藏"
 msgid "Account options"
 msgstr "账户选项"
 
+#: src/components/forms/HostingProvider.tsx:75
+msgid "Account Provider"
+msgstr ""
+
 #: src/screens/Settings/Settings.tsx:565
 msgid "Account removed from quick access"
 msgstr "已从快速访问中移除该账户"
@@ -848,7 +852,6 @@ msgstr "允许这些来源回复："
 msgid "Allows access to direct messages"
 msgstr "允许读取私信"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:171
 #: src/view/com/modals/ChangePassword.tsx:182
 msgid "Already have a code?"
 msgstr "已经有验证码了？"
@@ -1183,9 +1186,11 @@ msgstr "自动播放视频及 GIF"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ForgotPasswordForm.tsx:123
-#: src/screens/Login/ForgotPasswordForm.tsx:129
+#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/LoginForm.tsx:379
+#: src/screens/Login/ResetpasswordDialog.tsx:213
+#: src/screens/Login/ResetpasswordDialog.tsx:219
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -2026,7 +2031,7 @@ msgstr "上下文菜单背景，点击以关闭菜单。"
 msgid "Continue"
 msgstr "继续"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:126
 msgid "Continue as {0} (currently signed in)"
 msgstr "以 {0} 的身份继续（当前已登录）"
 
@@ -2573,6 +2578,7 @@ msgid "Dismiss error"
 msgstr "忽略错误"
 
 #: src/components/ProgressGuide/List.tsx:42
+#: src/screens/Login/ResetpasswordDialog.tsx:129
 msgid "Dismiss getting started guide"
 msgstr "跳过入门指南"
 
@@ -2854,11 +2860,6 @@ msgstr "已停用电子邮箱两步验证"
 msgid "Email 2FA enabled"
 msgstr "已启用电子邮箱两步验证"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:265
-msgid "Email address"
-msgstr "电子邮箱地址"
-
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
 msgstr "重新发送电子邮件"
@@ -2983,6 +2984,10 @@ msgstr "输入验证码"
 msgid "Enter fullscreen"
 msgstr "进入全屏模式"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:142
+msgid "Enter the code we sent to ben@theartdepartment.studio"
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:165
 msgid "Enter the code you received to change your password."
 msgstr "输入你收到的验证码以更改密码。"
@@ -2992,18 +2997,14 @@ msgid "Enter the domain you want to use"
 msgstr "输入你想使用的域名"
 
 #: src/screens/Login/LoginForm.tsx:282
-msgid "Enter the email address you used when you created your account"
+msgid "Enter the username or email address you used when you created your account"
 msgstr ""
-
-#: src/screens/Login/ForgotPasswordForm.tsx:113
-msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
-msgstr "输入你创建账户时使用的电子邮箱。我们将向你发送用于密码重置的验证码。"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
 msgstr "输入你的出生日期"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:99
+#: src/screens/Login/ForgotPasswordForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "输入你的电子邮箱地址"
@@ -3012,7 +3013,7 @@ msgstr "输入你的电子邮箱地址"
 msgid "Enter your password"
 msgstr "输入你的密码"
 
-#: src/screens/Login/index.tsx:134
+#: src/screens/Login/index.tsx:131
 msgid "Enter your username and password"
 msgstr "输入你的用户名和密码"
 
@@ -3664,8 +3665,9 @@ msgstr "为你推荐"
 msgid "Forever"
 msgstr "永久"
 
-#: src/screens/Login/index.tsx:166
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/ForgotPasswordForm.tsx:95
+#: src/screens/Login/index.tsx:163
+#: src/screens/Login/index.tsx:178
 msgid "Forgot Password"
 msgstr "忘记密码"
 
@@ -3858,7 +3860,7 @@ msgstr "转到 {firstAuthorName} 的个人资料"
 msgid "Go to conversation with {0}"
 msgstr "转到你与 {0} 的对话"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:165
+#: src/screens/Login/ForgotPasswordForm.tsx:136
 #: src/view/com/modals/ChangePassword.tsx:179
 msgid "Go to next"
 msgstr "前往下一步"
@@ -3966,6 +3968,7 @@ msgstr "隐藏列表"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "隐藏"
@@ -4079,11 +4082,6 @@ msgstr "主页"
 msgid "Host:"
 msgstr "主机："
 
-#: src/components/forms/HostingProvider.tsx:75
-#: src/screens/Login/ForgotPasswordForm.tsx:83
-msgid "Hosting provider"
-msgstr "托管服务提供商"
-
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:194
 msgid "Hot"
 msgstr "热门"
@@ -4099,6 +4097,10 @@ msgstr "热门回复优先"
 #: src/components/dialogs/InAppBrowserConsent.tsx:66
 msgid "How should we open this link?"
 msgstr "我们应该如何开启这条链接？"
+
+#: src/screens/Login/ForgotPasswordForm.tsx:143
+msgid "I already have a reset code?"
+msgstr ""
 
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:133
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:136
@@ -4237,6 +4239,7 @@ msgstr "收件箱清空啦！"
 msgid "Incorrect username or password"
 msgstr "用户名或密码不正确"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:161
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "输入发送到你电子邮箱的验证码以重置密码"
@@ -4245,6 +4248,7 @@ msgstr "输入发送到你电子邮箱的验证码以重置密码"
 msgid "Input confirmation code for account deletion"
 msgstr "输入删除用户的验证码"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:181
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "输入新的密码"
@@ -4504,8 +4508,8 @@ msgstr "个人排在你前面。"
 msgid "Let me choose"
 msgstr "自定义"
 
-#: src/screens/Login/index.tsx:167
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:164
+#: src/screens/Login/index.tsx:179
 msgid "Let's get your password reset!"
 msgstr "让我们来重置你的密码吧！"
 
@@ -4738,6 +4742,7 @@ msgstr "网站标志由 <0>@sawaratsuki.bsky.social</0> 绘制"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "长按开启 #{tag} 标签菜单"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:149
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "应该类似这样 XXXXX-XXXXX"
@@ -5122,7 +5127,7 @@ msgstr "转到 {0}"
 msgid "Navigate to starter pack"
 msgstr "转到新手包"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
@@ -5212,6 +5217,7 @@ msgstr "新的内容审核列表"
 msgid "New password"
 msgstr "新密码"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:170
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "新密码"
@@ -5268,8 +5274,7 @@ msgstr "最新回复优先"
 msgid "News"
 msgstr "新闻"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:137
-#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/ForgotPasswordForm.tsx:180
 #: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
@@ -5831,7 +5836,7 @@ msgstr "OTA 状态：无可用"
 msgid "Other"
 msgstr "其他"
 
-#: src/components/AccountList.tsx:86
+#: src/components/AccountList.tsx:83
 msgid "Other Account"
 msgstr ""
 
@@ -5873,7 +5878,7 @@ msgstr "已修改密码"
 msgid "Password must be at least 8 characters long."
 msgstr "密码应至少包含 8 个字符。"
 
-#: src/screens/Login/index.tsx:194
+#: src/screens/Login/index.tsx:191
 msgid "Password updated"
 msgstr "已更新密码"
 
@@ -6030,6 +6035,7 @@ msgstr "请完成 CAPTCHA（人机验证）。"
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "请再次确认你输入的电子邮箱地址是否正确。"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:65
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "请输入密码。"
@@ -6313,7 +6319,7 @@ msgid "Processing video..."
 msgstr "正在处理视频……"
 
 #: src/lib/api/index.ts:60
-#: src/screens/Login/ForgotPasswordForm.tsx:149
+#: src/screens/Login/ForgotPasswordForm.tsx:192
 msgid "Processing..."
 msgstr "处理中……"
 
@@ -6992,7 +6998,7 @@ msgstr "重置码"
 msgid "Reset onboarding state"
 msgstr "重置入门引导状态"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:80
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 msgid "Reset password"
 msgstr "重置密码"
 
@@ -7287,7 +7293,7 @@ msgstr "选择内容语言"
 msgid "Select duration"
 msgstr "选择持续时长"
 
-#: src/screens/Login/index.tsx:157
+#: src/screens/Login/index.tsx:154
 msgid "Select from an existing account"
 msgstr "从现有账户中选择"
 
@@ -7356,6 +7362,10 @@ msgstr "选择你希望在动态源中显示的语言。如果留空，将默认
 msgid "Select your date of birth"
 msgstr "输入你的出生日期"
 
+#: src/screens/Login/ForgotPasswordForm.tsx:100
+msgid "Select your hosting provider and enter the email you used to create your account. We’ll send you a “reset code” so you can set a new password."
+msgstr ""
+
 #: src/screens/Onboarding/StepInterests/index.tsx:192
 #: src/screens/Settings/InterestsSettings.tsx:161
 msgid "Select your interests from the options below"
@@ -7376,6 +7386,14 @@ msgstr "第 {0} 个选项，共 {numItems} 个"
 #: src/components/dms/ChatEmptyPill.tsx:38
 msgid "Send a neat website!"
 msgstr "发送一个有趣的网站吧！"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:205
+msgid "Send a new code"
+msgstr ""
+
+#: src/screens/Login/ForgotPasswordForm.tsx:186
+msgid "Send Code"
+msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:174
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:181
@@ -7458,7 +7476,7 @@ msgstr "设置新密码"
 msgid "Set up your account"
 msgstr "设置你的账户"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:107
+#: src/screens/Login/ForgotPasswordForm.tsx:125
 msgid "Sets email for password reset"
 msgstr "设置用于重置密码的电子邮箱"
 
@@ -7609,6 +7627,7 @@ msgstr "共享偏好测试器"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 msgid "Show"
 msgstr "显示"
 
@@ -7666,6 +7685,11 @@ msgstr "显示更多回复"
 #: src/view/com/post-thread/PostThreadShowHiddenReplies.tsx:22
 msgid "Show muted replies"
 msgstr "显示已隐藏的回复"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:187
+msgid "Show password"
+msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
 msgid "Show post replies in a threaded tree view"
@@ -7734,8 +7758,8 @@ msgstr "显示内容"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:133
-#: src/screens/Login/index.tsx:156
+#: src/screens/Login/index.tsx:130
+#: src/screens/Login/index.tsx:153
 #: src/view/com/auth/SplashScreen.tsx:59
 #: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
@@ -7749,7 +7773,7 @@ msgstr "显示内容"
 msgid "Sign in"
 msgstr "登录"
 
-#: src/components/AccountList.tsx:130
+#: src/components/AccountList.tsx:127
 msgid "Sign in as {0}"
 msgstr "以 {0} 登录"
 
@@ -7762,7 +7786,8 @@ msgstr "登录或创建账户"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "登录或创建你的账户来加入对话吧！"
 
-#: src/components/AccountList.tsx:69
+#: src/components/AccountList.tsx:64
+#: src/screens/Login/ResetpasswordDialog.tsx:202
 msgid "Sign in to account that is not listed"
 msgstr "登录未列出的账户"
 
@@ -7770,7 +7795,7 @@ msgstr "登录未列出的账户"
 msgid "Sign in to Bluesky or create a new account"
 msgstr "登录 Bluesky 或创建新账户"
 
-#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/ChooseAccountForm.tsx:109
 #: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
@@ -8010,6 +8035,8 @@ msgstr ""
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
+#: src/screens/Login/ResetpasswordDialog.tsx:227
+#: src/screens/Login/ResetpasswordDialog.tsx:233
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8827,9 +8854,10 @@ msgstr "类型："
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "无法连接到服务器。请检查网络连接并重试。"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:88
+#: src/screens/Login/ForgotPasswordForm.tsx:72
+#: src/screens/Login/index.tsx:87
 #: src/screens/Login/LoginForm.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:89
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9064,6 +9092,7 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "更新回复可见性失败"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:239
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "更新中……"
@@ -9190,6 +9219,10 @@ msgstr "已创建用户列表"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "已更新用户列表"
+
+#: src/screens/Login/LoginForm.tsx:265
+msgid "Username or Email Address"
+msgstr ""
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9819,7 +9852,7 @@ msgstr "无论使用哪种设置，都不会影响已发起的对话。"
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:195
+#: src/screens/Login/index.tsx:192
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "你现在可以使用新密码登录。"
@@ -9880,6 +9913,8 @@ msgstr "你已屏蔽该用户，无法查看其内容。"
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "你已完全禁用了回复、引用及提及通知，因此此选项卡将不再更新。要调整此功能，请访问 <0>通知设置</0>。"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:56
+#: src/screens/Login/ResetpasswordDialog.tsx:103
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10158,7 +10193,7 @@ msgstr "你的选择将会应用于今后开启的链接，你可以随时在设
 msgid "Your current handle <0>{0}</0> will automatically remain reserved for you. You can switch back to it at any time from this account."
 msgstr "你当前使用的账户代码 <0>{0}</0> 将自动预留给你，以便你能够在日后随时切换回来。"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/ForgotPasswordForm.tsx:54
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55

@@ -43,12 +43,7 @@ export function AccountList({
   return (
     <View
       pointerEvents={pendingDid ? 'none' : 'auto'}
-      style={[
-        a.overflow_hidden,
-        t.atoms.border_contrast_low,
-        a.gap_2xl,
-        a.mt_md,
-      ]}>
+      style={[a.overflow_hidden, t.atoms.border_contrast_low, a.mt_md]}>
       {accounts.map(account => (
         <React.Fragment key={account.did}>
           <AccountItem
@@ -73,6 +68,7 @@ export function AccountList({
               a.flex_1,
               a.flex_row,
               a.align_center,
+              a.py_2xl,
               (hovered || pressed) && t.atoms.bg_contrast_25,
             ]}>
             <Text
@@ -82,6 +78,7 @@ export function AccountList({
                 a.font_bold,
                 a.leading_tight,
                 a.text_md,
+                a.py_md,
               ]}>
               {otherLabel ?? <Trans>Other Account</Trans>}
             </Text>
@@ -136,7 +133,7 @@ export function AccountItem({
             a.flex_row,
             a.align_center,
             a.gap_sm,
-
+            a.py_2xl,
             (hovered || pressed || isPendingAccount) && t.atoms.bg_contrast_25,
           ]}>
           <UserAvatar

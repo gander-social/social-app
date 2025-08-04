@@ -81,6 +81,7 @@ export const ForgotPasswordForm = ({
   return (
     <FormContainer testID="forgotPasswordForm" style={a.gap_2xl}>
       <ResetPasswordDialog
+        email={email}
         control={resetPasswordDialogControl}
         onSelect={() => {
           Keyboard.dismiss()

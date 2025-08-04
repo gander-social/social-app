@@ -584,6 +584,10 @@ msgstr "Kontua Mututua Zerrendagatik"
 msgid "Account options"
 msgstr "Kontuaren aukerak"
 
+#: src/components/forms/HostingProvider.tsx:75
+msgid "Account Provider"
+msgstr ""
+
 #: src/screens/Settings/Settings.tsx:565
 msgid "Account removed from quick access"
 msgstr "Kontua ezabatua sarrera azkarretik"
@@ -848,7 +852,6 @@ msgstr "Baimendu erantzunak bertatik:"
 msgid "Allows access to direct messages"
 msgstr "Mezu zuzenetara sarrera baimentzen da"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:171
 #: src/view/com/modals/ChangePassword.tsx:182
 msgid "Already have a code?"
 msgstr "Dagoeneko kode bat daukazu?"
@@ -1183,9 +1186,11 @@ msgstr "Bideo eta GIF erreprodukzio automatikoa"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ForgotPasswordForm.tsx:123
-#: src/screens/Login/ForgotPasswordForm.tsx:129
+#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/LoginForm.tsx:379
+#: src/screens/Login/ResetpasswordDialog.tsx:213
+#: src/screens/Login/ResetpasswordDialog.tsx:219
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -2026,7 +2031,7 @@ msgstr "Testuinguru-menuaren atzeko planoa, egin klik menua ixteko."
 msgid "Continue"
 msgstr "Jarraitu"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:126
 msgid "Continue as {0} (currently signed in)"
 msgstr "Jarraitu {0} gisa (une honetan saioa hasita)"
 
@@ -2573,6 +2578,7 @@ msgid "Dismiss error"
 msgstr "Baztertu errorea"
 
 #: src/components/ProgressGuide/List.tsx:42
+#: src/screens/Login/ResetpasswordDialog.tsx:129
 msgid "Dismiss getting started guide"
 msgstr "Baztertu hasteko gida"
 
@@ -2854,11 +2860,6 @@ msgstr "E-posta bidezko 2FA desgaituta"
 msgid "Email 2FA enabled"
 msgstr "2FA posta elektronikoa gaituta"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:265
-msgid "Email address"
-msgstr "Email helbidea"
-
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
 msgstr "Posta elektronikoa Birbidali"
@@ -2983,6 +2984,10 @@ msgstr "Sartu kodea"
 msgid "Enter fullscreen"
 msgstr "Sartu pantaila osoan"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:142
+msgid "Enter the code we sent to ben@theartdepartment.studio"
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:165
 msgid "Enter the code you received to change your password."
 msgstr "Sartu jaso duzun kodea pasahitza aldatzeko."
@@ -2992,18 +2997,14 @@ msgid "Enter the domain you want to use"
 msgstr "Sartu erabili nahi duzun domeinua"
 
 #: src/screens/Login/LoginForm.tsx:282
-msgid "Enter the email address you used when you created your account"
+msgid "Enter the username or email address you used when you created your account"
 msgstr ""
-
-#: src/screens/Login/ForgotPasswordForm.tsx:113
-msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
-msgstr "Sartu zure kontua sortzeko erabili duzun posta elektronikoa. \"Berrezarri kodea\" bidaliko dizugu pasahitz berri bat ezar dezazun."
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
 msgstr "Sartu zure jaiotze data"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:99
+#: src/screens/Login/ForgotPasswordForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "Sartu zure posta elektroniko helbidea"
@@ -3012,7 +3013,7 @@ msgstr "Sartu zure posta elektroniko helbidea"
 msgid "Enter your password"
 msgstr "Sartu zure pasahitza"
 
-#: src/screens/Login/index.tsx:134
+#: src/screens/Login/index.tsx:131
 msgid "Enter your username and password"
 msgstr "Sartu zure erabiltzaile-izena eta pasahitza"
 
@@ -3664,8 +3665,9 @@ msgstr "Zuretzat"
 msgid "Forever"
 msgstr "Betirako"
 
-#: src/screens/Login/index.tsx:166
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/ForgotPasswordForm.tsx:95
+#: src/screens/Login/index.tsx:163
+#: src/screens/Login/index.tsx:178
 msgid "Forgot Password"
 msgstr "Pasahitza Ahaztua"
 
@@ -3858,7 +3860,7 @@ msgstr "Joan {firstAuthorName}-ren profilera"
 msgid "Go to conversation with {0}"
 msgstr "Joan {0}rekin elkarrizketara"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:165
+#: src/screens/Login/ForgotPasswordForm.tsx:136
 #: src/view/com/modals/ChangePassword.tsx:179
 msgid "Go to next"
 msgstr "Joan hurrengora"
@@ -3966,6 +3968,7 @@ msgstr "Ezkutuko zerrenda"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "Ezkutatu"
@@ -4079,11 +4082,6 @@ msgstr "Hasiera"
 msgid "Host:"
 msgstr "Hostalaria:"
 
-#: src/components/forms/HostingProvider.tsx:75
-#: src/screens/Login/ForgotPasswordForm.tsx:83
-msgid "Hosting provider"
-msgstr "Hostatze hornitzailea"
-
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:194
 msgid "Hot"
 msgstr "Pil-pilean"
@@ -4099,6 +4097,10 @@ msgstr "Erantzun berrienak lehenik"
 #: src/components/dialogs/InAppBrowserConsent.tsx:66
 msgid "How should we open this link?"
 msgstr "Nola ireki behar dugu esteka hau?"
+
+#: src/screens/Login/ForgotPasswordForm.tsx:143
+msgid "I already have a reset code?"
+msgstr ""
 
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:133
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:136
@@ -4237,6 +4239,7 @@ msgstr "Sarrera-ontzia hutsik!"
 msgid "Incorrect username or password"
 msgstr "Erabiltzaile-izen edo pasahitz baliogabea"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:161
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "Sartu zure posta elektronikora bidalitako kodea pasahitza berrezartzeko"
@@ -4245,6 +4248,7 @@ msgstr "Sartu zure posta elektronikora bidalitako kodea pasahitza berrezartzeko"
 msgid "Input confirmation code for account deletion"
 msgstr "Sartu baieztapen kodea kontua ezabatzeko"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:181
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "Idatzi pasahitz berria"
@@ -4504,8 +4508,8 @@ msgstr "joateko utzi."
 msgid "Let me choose"
 msgstr "Utzidazu aukeratzen"
 
-#: src/screens/Login/index.tsx:167
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:164
+#: src/screens/Login/index.tsx:179
 msgid "Let's get your password reset!"
 msgstr "Lor dezagun pasahitza berrezartzea!"
 
@@ -4738,6 +4742,7 @@ msgstr "<0>@sawaratsuki.bsky.social</0>-ren logotipoa"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "Luze sakatu #{tag} etiketa-menua irekitzeko"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:149
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "XXXXX-XXXX itxura du"
@@ -5122,7 +5127,7 @@ msgstr "Nabigatu {0}-ra"
 msgid "Navigate to starter pack"
 msgstr "Joan abio multzora"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:166
+#: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
@@ -5212,6 +5217,7 @@ msgstr "Moderazio Zerrenda berria"
 msgid "New password"
 msgstr "Pasahitz berria"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:170
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "Pasahitz Berria"
@@ -5268,8 +5274,7 @@ msgstr "Erantzun berrienak lehenengo"
 msgid "News"
 msgstr "Berriak"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:137
-#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/ForgotPasswordForm.tsx:180
 #: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
@@ -5831,7 +5836,7 @@ msgstr "OTA egoera: Ez dago bat ere eskuragarri"
 msgid "Other"
 msgstr "Beste bat"
 
-#: src/components/AccountList.tsx:86
+#: src/components/AccountList.tsx:83
 msgid "Other Account"
 msgstr ""
 
@@ -5873,7 +5878,7 @@ msgstr "Pasahitza Aldatu da"
 msgid "Password must be at least 8 characters long."
 msgstr "Pasahitzak 8 karaktereko luzera izan behar du gutxienez."
 
-#: src/screens/Login/index.tsx:194
+#: src/screens/Login/index.tsx:191
 msgid "Password updated"
 msgstr "Pasahitza eguneratu da"
 
@@ -6030,6 +6035,7 @@ msgstr "Mesedez, bete egiaztapen-captcha."
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "Egiaztatu zure e-posta helbidea zuzen idatzi duzula."
 
+#: src/screens/Login/ResetpasswordDialog.tsx:65
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "Sartu pasahitz bat, mesedez."
@@ -6313,7 +6319,7 @@ msgid "Processing video..."
 msgstr "Bideoa prozesatzen..."
 
 #: src/lib/api/index.ts:60
-#: src/screens/Login/ForgotPasswordForm.tsx:149
+#: src/screens/Login/ForgotPasswordForm.tsx:192
 msgid "Processing..."
 msgstr "Prozesatzen..."
 
@@ -6992,7 +6998,7 @@ msgstr "Berrezarri Kodea"
 msgid "Reset onboarding state"
 msgstr "Berrezarri sartze-egoera"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:80
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 msgid "Reset password"
 msgstr "Berrezarri pasahitza"
 
@@ -7287,7 +7293,7 @@ msgstr "Aukeratu edukien hizkuntzak"
 msgid "Select duration"
 msgstr "Hautatu iraupena"
 
-#: src/screens/Login/index.tsx:157
+#: src/screens/Login/index.tsx:154
 msgid "Select from an existing account"
 msgstr "Aukeratu lehendik dagoen kontu batetik"
 
@@ -7356,6 +7362,10 @@ msgstr "Aukeratu harpidetutako feedak zein hizkuntzatan nahi dituzun. Bat ere ez
 msgid "Select your date of birth"
 msgstr "Aukeratu zure jaioteguna"
 
+#: src/screens/Login/ForgotPasswordForm.tsx:100
+msgid "Select your hosting provider and enter the email you used to create your account. We’ll send you a “reset code” so you can set a new password."
+msgstr ""
+
 #: src/screens/Onboarding/StepInterests/index.tsx:192
 #: src/screens/Settings/InterestsSettings.tsx:161
 msgid "Select your interests from the options below"
@@ -7376,6 +7386,14 @@ msgstr "{0}/{numItems} aukera hautatzen du"
 #: src/components/dms/ChatEmptyPill.tsx:38
 msgid "Send a neat website!"
 msgstr "Bidali webgune txukun bat!"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:205
+msgid "Send a new code"
+msgstr ""
+
+#: src/screens/Login/ForgotPasswordForm.tsx:186
+msgid "Send Code"
+msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:174
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:181
@@ -7458,7 +7476,7 @@ msgstr "Ezarri pasahitz berria"
 msgid "Set up your account"
 msgstr "Konfiguratu zure kontua"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:107
+#: src/screens/Login/ForgotPasswordForm.tsx:125
 msgid "Sets email for password reset"
 msgstr "Pasahitza berrezartzeko posta elektronikoa ezartzen du"
 
@@ -7609,6 +7627,7 @@ msgstr "Partekatutako Hobespenen Probatzailea"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
+#: src/screens/Login/ResetpasswordDialog.tsx:191
 msgid "Show"
 msgstr "Erakutsi"
 
@@ -7666,6 +7685,11 @@ msgstr "Erakutsi erantzun gehiago"
 #: src/view/com/post-thread/PostThreadShowHiddenReplies.tsx:22
 msgid "Show muted replies"
 msgstr "Erakutsi erantzun mututuak"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:187
+msgid "Show password"
+msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
 msgid "Show post replies in a threaded tree view"
@@ -7734,8 +7758,8 @@ msgstr "Edukia erakusten du"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:133
-#: src/screens/Login/index.tsx:156
+#: src/screens/Login/index.tsx:130
+#: src/screens/Login/index.tsx:153
 #: src/view/com/auth/SplashScreen.tsx:59
 #: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
@@ -7749,7 +7773,7 @@ msgstr "Edukia erakusten du"
 msgid "Sign in"
 msgstr "Hasi saioa"
 
-#: src/components/AccountList.tsx:130
+#: src/components/AccountList.tsx:127
 msgid "Sign in as {0}"
 msgstr "Hasi saioa {0} gisa"
 
@@ -7762,7 +7786,8 @@ msgstr "Hasi saioa edo sortu kontua"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "Hasi saioa edo sortu zure kontua elkarrizketan sartzeko!"
 
-#: src/components/AccountList.tsx:69
+#: src/components/AccountList.tsx:64
+#: src/screens/Login/ResetpasswordDialog.tsx:202
 msgid "Sign in to account that is not listed"
 msgstr "Hasi saioa zerrendan ez dagoen kontuan"
 
@@ -7770,7 +7795,7 @@ msgstr "Hasi saioa zerrendan ez dagoen kontuan"
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Hasi saioa Bluesky-n edo sortu kontu berri bat"
 
-#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/ChooseAccountForm.tsx:109
 #: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
@@ -8010,6 +8035,8 @@ msgstr "Ipuin liburua"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
+#: src/screens/Login/ResetpasswordDialog.tsx:227
+#: src/screens/Login/ResetpasswordDialog.tsx:233
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8827,9 +8854,10 @@ msgstr "Mota:"
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "Ezin da konektatu. Mesedez, egiaztatu Interneteko konexioa eta saiatu berriro."
 
-#: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:88
+#: src/screens/Login/ForgotPasswordForm.tsx:72
+#: src/screens/Login/index.tsx:87
 #: src/screens/Login/LoginForm.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:89
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9064,6 +9092,7 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "Ezin izan da eguneratu erantzunen ikusgaitasuna"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:239
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "Eguneratzen..."
@@ -9190,6 +9219,10 @@ msgstr "Erabiltzaile zerrenda sortua"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "Erabiltzaile zerrenda eguneratua"
+
+#: src/screens/Login/LoginForm.tsx:265
+msgid "Username or Email Address"
+msgstr ""
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9819,7 +9852,7 @@ msgstr "Etengabeko elkarrizketekin jarrai dezakezu aukeratzen duzun ezarpena edo
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:195
+#: src/screens/Login/index.tsx:192
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "Orain pasahitz berriarekin saioa hasi dezakezu."
@@ -9880,6 +9913,8 @@ msgstr "Erabiltzaile hau blokeatu duzu. Ezin duzu bere edukia ikusi."
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "Erabat desgaitu dituzu erantzun eta aipamen jakinarazpenak, beraz, fitxa hau ez da gehiago eguneratuko. Hori doitzeko, joan zure <0>jakinarazpenen ezarpenetara</0>."
 
+#: src/screens/Login/ResetpasswordDialog.tsx:56
+#: src/screens/Login/ResetpasswordDialog.tsx:103
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10158,7 +10193,7 @@ msgstr "Zure aukera etorkizuneko esteketarako gogoratuko da. Edozein unetan alda
 msgid "Your current handle <0>{0}</0> will automatically remain reserved for you. You can switch back to it at any time from this account."
 msgstr "Zure oraingo handlea <0>{0}</0> zuretzako automatikoki erreserbatuko da. Edozein momentutan berriro aukeratu dezakezu kontu honetatik."
 
-#: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/ForgotPasswordForm.tsx:54
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55
