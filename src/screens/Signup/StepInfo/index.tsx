@@ -9,6 +9,7 @@ import {isEmailMaybeInvalid} from '#/lib/strings/email'
 import {logger} from '#/logger'
 import {ScreenTransition} from '#/screens/Login/ScreenTransition'
 import {is13, is18, useSignupContext} from '#/screens/Signup/state'
+import {PasswordValidation} from '#/screens/Signup/StepInfo/PasswordValidation'
 import {Policies} from '#/screens/Signup/StepInfo/Policies'
 import {atoms as a} from '#/alf'
 import {Button, ButtonText} from '#/components/Button'
@@ -56,6 +57,10 @@ export function StepInfo({
 
   const [hasWarnedEmail, setHasWarnedEmail] = React.useState<boolean>(false)
   const [showPassword, setShowPassword] = React.useState<boolean>(false)
+  const [currentPassword, setCurrentPassword] = React.useState<string>(
+    state.password,
+  )
+  const [currentEmail, setCurrentEmail] = React.useState<string>(state.email)
 
   const tldtsRef = React.useRef<typeof tldts>()
   React.useEffect(() => {
@@ -125,6 +130,27 @@ export function StepInfo({
       return dispatch({
         type: 'setError',
         value: _(msg`Your password must be at least 8 characters long.`),
+        field: 'password',
+      })
+    }
+    if (
+      !(
+        /\d/.test(password) ||
+        /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)
+      )
+    ) {
+      return dispatch({
+        type: 'setError',
+        value: _(
+          msg`Your password must contain at least one symbol or number.`,
+        ),
+        field: 'password',
+      })
+    }
+    if (email && password.toLowerCase().includes(email.toLowerCase())) {
+      return dispatch({
+        type: 'setError',
+        value: _(msg`Your password cannot include your email address.`),
         field: 'password',
       })
     }
@@ -210,14 +236,16 @@ export function StepInfo({
                 textContentType="emailAddress"
                 defaultValue={state.email}
                 onChangeText={value => {
-                  emailValueRef.current = value.trim()
+                  const trimmedValue = value.trim()
+                  emailValueRef.current = trimmedValue
+                  setCurrentEmail(trimmedValue)
                   if (hasWarnedEmail) {
                     setHasWarnedEmail(false)
                   }
                   if (
                     state.errorField === 'email' &&
-                    value.trim().length > 0 &&
-                    EmailValidator.validate(value.trim())
+                    trimmedValue.length > 0 &&
+                    EmailValidator.validate(trimmedValue)
                   ) {
                     dispatch({type: 'clearError'})
                   }
@@ -247,7 +275,17 @@ export function StepInfo({
                 defaultValue={state.password}
                 onChangeText={value => {
                   passwordValueRef.current = value
-                  if (state.errorField === 'password' && value.length >= 8) {
+                  setCurrentPassword(value)
+                  if (
+                    state.errorField === 'password' &&
+                    value.length >= 8 &&
+                    (/\d/.test(value) ||
+                      /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(value)) &&
+                    (!emailValueRef.current ||
+                      !value
+                        .toLowerCase()
+                        .includes(emailValueRef.current.toLowerCase()))
+                  ) {
                     dispatch({type: 'clearError'})
                   }
                 }}
@@ -276,6 +314,10 @@ export function StepInfo({
                 </ButtonText>
               </Button>
             </TextField.Root>
+            <PasswordValidation
+              password={currentPassword}
+              email={currentEmail}
+            />
             <View style={[a.mt_xl]}>
               <DateField.LabelText>
                 <Trans>Your birth date</Trans>
@@ -295,15 +337,17 @@ export function StepInfo({
                 maximumDate={new Date()}
               />
             </View>
-            <Policies
-              serviceDescription={state.serviceDescription}
-              needsGuardian={!is18(state.dateOfBirth)}
-              under13={!is13(state.dateOfBirth)}
-            />
+            <View style={[a.mt_md, a.mb_md]}>
+              <Policies
+                serviceDescription={state.serviceDescription}
+                needsGuardian={!is18(state.dateOfBirth)}
+                under13={!is13(state.dateOfBirth)}
+              />
+            </View>
           </View>
         ) : undefined}
       </View>
-      <View style={[a.border_t, {borderColor: '#D8D8D8'}]} />
+      <View style={[a.border_t, {borderColor: '#D8D8D8', borderWidth: 2.5}]} />
       <BackNextButtons
         hideNext={!is13(state.dateOfBirth)}
         showRetry={isServerError}
