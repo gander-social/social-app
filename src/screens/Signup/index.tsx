@@ -21,6 +21,7 @@ import {StepCaptcha} from '#/screens/Signup/StepCaptcha'
 import {StepHandle} from '#/screens/Signup/StepHandle'
 import {StepInfo} from '#/screens/Signup/StepInfo'
 import {atoms as a, useBreakpoints} from '#/alf'
+import {Button, ButtonText} from '#/components/Button'
 import {LinearGradientBackground} from '#/components/LinearGradientBackground'
 import {Text} from '#/components/Typography'
 import * as bsky from '#/types/bsky'
@@ -141,16 +142,29 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
               !gtMobile && {paddingBottom: 100},
             ]}>
             <View style={[a.gap_sm, a.pb_3xl]}>
-              <Text
-                style={[{fontWeight: '700', color: '#000000', fontSize: 16}]}>
-                <Trans>
-                  Step {state.activeStep + 1} of{' '}
-                  {state.serviceDescription &&
-                  !state.serviceDescription.phoneVerificationRequired
-                    ? '2'
-                    : '3'}
-                </Trans>
-              </Text>
+              <View style={[a.flex_row, a.justify_between, a.align_center]}>
+                <Text
+                  style={[{fontWeight: '700', color: '#000000', fontSize: 16}]}>
+                  <Trans>
+                    Step {state.activeStep + 1} of{' '}
+                    {state.serviceDescription &&
+                    !state.serviceDescription.phoneVerificationRequired
+                      ? '2'
+                      : '3'}
+                  </Trans>
+                </Text>
+                <Button
+                  style={[a.self_start]}
+                  label={_(msg`Cancel`)}
+                  variant="solid"
+                  color="soft_neutral"
+                  size="small"
+                  onPress={onPressBack}>
+                  <ButtonText style={[{color: '#000000', fontSize: 16}]}>
+                    <Trans>Cancel</Trans>
+                  </ButtonText>
+                </Button>
+              </View>
               {state.activeStep === SignupStep.INFO && (
                 <View style={[a.mt_lg, a.mb_md]}>
                   <Svg width={48} height={49} viewBox="0 0 48 49" fill="none">

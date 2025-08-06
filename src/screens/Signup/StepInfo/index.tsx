@@ -9,10 +9,12 @@ import {isEmailMaybeInvalid} from '#/lib/strings/email'
 import {logger} from '#/logger'
 import {ScreenTransition} from '#/screens/Login/ScreenTransition'
 import {is13, is18, useSignupContext} from '#/screens/Signup/state'
+import {ConfirmationDialog} from '#/screens/Signup/StepInfo/ConfirmationDialog'
 import {PasswordValidation} from '#/screens/Signup/StepInfo/PasswordValidation'
 import {Policies} from '#/screens/Signup/StepInfo/Policies'
 import {atoms as a} from '#/alf'
-import {Button, ButtonText} from '#/components/Button'
+import {Button, ButtonIcon, ButtonText} from '#/components/Button'
+import {useDialogControl} from '#/components/Dialog'
 import * as DateField from '#/components/forms/DateField'
 import {type DateFieldRef} from '#/components/forms/DateField/types'
 import {FormError} from '#/components/forms/FormError'
@@ -20,7 +22,6 @@ import {HostingProvider} from '#/components/forms/HostingProvider'
 import * as TextField from '#/components/forms/TextField'
 import {Ticket_Stroke2_Corner0_Rounded as Ticket} from '#/components/icons/Ticket'
 import {Loader} from '#/components/Loader'
-import {BackNextButtons} from '../BackNextButtons'
 
 function sanitizeDate(date: Date): Date {
   if (!date || date.toString() === 'Invalid Date') {
@@ -61,6 +62,7 @@ export function StepInfo({
     state.password,
   )
   const [currentEmail, setCurrentEmail] = React.useState<string>(state.email)
+  const confirmationDialogControl = useDialogControl()
 
   const tldtsRef = React.useRef<typeof tldts>()
   React.useEffect(() => {
@@ -73,65 +75,71 @@ export function StepInfo({
     import('react-native-view-shot/src/index')
   }, [])
 
-  const onNextPress = () => {
+  const validateForm = () => {
     const inviteCode = inviteCodeValueRef.current
     const email = emailValueRef.current
     const emailChanged = prevEmailValueRef.current !== email
     const password = passwordValueRef.current
 
     if (!is13(state.dateOfBirth)) {
-      return
+      return false
     }
 
     if (state.serviceDescription?.inviteCodeRequired && !inviteCode) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Please enter your invite code.`),
         field: 'invite-code',
       })
+      return false
     }
     if (!email) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Please enter your email.`),
         field: 'email',
       })
+      return false
     }
     if (!EmailValidator.validate(email)) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Your email appears to be invalid.`),
         field: 'email',
       })
+      return false
     }
     if (emailChanged && tldtsRef.current) {
       if (isEmailMaybeInvalid(email, tldtsRef.current)) {
         prevEmailValueRef.current = email
         setHasWarnedEmail(true)
-        return dispatch({
+        dispatch({
           type: 'setError',
           value: _(
             msg`Please double-check that you have entered your email address correctly.`,
           ),
         })
+        return false
       }
     } else if (hasWarnedEmail) {
       setHasWarnedEmail(false)
     }
     prevEmailValueRef.current = email
     if (!password) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Please choose your password.`),
         field: 'password',
       })
+      return false
     }
     if (password.length < 8) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Your password must be at least 8 characters long.`),
         field: 'password',
       })
+      return false
     }
     if (
       !(
@@ -139,21 +147,31 @@ export function StepInfo({
         /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)
       )
     ) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(
           msg`Your password must contain at least one symbol or number.`,
         ),
         field: 'password',
       })
+      return false
     }
     if (email && password.toLowerCase().includes(email.toLowerCase())) {
-      return dispatch({
+      dispatch({
         type: 'setError',
         value: _(msg`Your password cannot include your email address.`),
         field: 'password',
       })
+      return false
     }
+
+    return true
+  }
+
+  const onNextPress = () => {
+    const inviteCode = inviteCodeValueRef.current
+    const email = emailValueRef.current
+    const password = passwordValueRef.current
 
     dispatch({type: 'setInviteCode', value: inviteCode})
     dispatch({type: 'setEmail', value: email})
@@ -337,7 +355,7 @@ export function StepInfo({
                 maximumDate={new Date()}
               />
             </View>
-            <View style={[a.mt_md, a.mb_md]}>
+            <View style={[a.mt_lg, a.mb_lg]}>
               <Policies
                 serviceDescription={state.serviceDescription}
                 needsGuardian={!is18(state.dateOfBirth)}
@@ -347,15 +365,63 @@ export function StepInfo({
           </View>
         ) : undefined}
       </View>
-      <View style={[a.border_t, {borderColor: '#D8D8D8', borderWidth: 2.5}]} />
-      <BackNextButtons
-        hideNext={!is13(state.dateOfBirth)}
-        showRetry={isServerError}
-        isLoading={state.isLoading}
-        onBackPress={onPressBack}
-        onNextPress={onNextPress}
-        onRetryPress={refetchServer}
-        overrideNextText={hasWarnedEmail ? _(msg`It's correct`) : undefined}
+      <View
+        style={[a.border_t, a.w_full, {borderColor: '#D8D8D8', borderWidth: 1}]}
+      />
+      <View style={[a.flex_row, a.align_center, a.pt_lg]}>
+        <Button
+          label={_(msg`Cancel`)}
+          variant="solid"
+          color="secondary"
+          size="large"
+          onPress={onPressBack}>
+          <ButtonText>
+            <Trans>Cancel</Trans>
+          </ButtonText>
+        </Button>
+        <View style={a.flex_1} />
+        {isServerError ? (
+          <Button
+            testID="retryButton"
+            label={_(msg`Retry`)}
+            accessibilityHint={_(msg`Retries connection`)}
+            variant="solid"
+            color="secondary"
+            size="large"
+            onPress={refetchServer}>
+            <ButtonText>
+              <Trans>Retry</Trans>
+            </ButtonText>
+          </Button>
+        ) : (
+          <Button
+            testID="nextBtn"
+            label={_(msg`Continue to next step`)}
+            accessibilityHint={_(msg`Opens confirmation dialog`)}
+            variant="solid"
+            color="primary"
+            size="large"
+            disabled={state.isLoading || !is13(state.dateOfBirth)}
+            onPress={() => {
+              if (validateForm()) {
+                confirmationDialogControl.open()
+              }
+            }}>
+            <ButtonText>
+              {hasWarnedEmail ? (
+                _(msg`It's correct`)
+              ) : (
+                <Trans>Agree and continue</Trans>
+              )}
+            </ButtonText>
+            {state.isLoading && <ButtonIcon icon={Loader} />}
+          </Button>
+        )}
+      </View>
+      <ConfirmationDialog
+        control={confirmationDialogControl}
+        onConfirm={onNextPress}
+        email={currentEmail}
       />
     </ScreenTransition>
   )
