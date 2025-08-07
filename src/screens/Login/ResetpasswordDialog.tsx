@@ -16,6 +16,7 @@ import * as TextField from '#/components/forms/TextField'
 import {ChevronRight_Stroke2_Corner0_Rounded as Chevron} from '#/components/icons/Chevron'
 import {TimesLarge_Stroke2_Corner0_Rounded as Times} from '#/components/icons/Times'
 import {Text} from '#/components/Typography'
+import {PasswordValidation} from '../Signup/StepInfo/PasswordValidation'
 
 export function ResetPasswordDialog({
   control,
@@ -212,6 +213,7 @@ export function ResetPasswordDialog({
             </TextField.Root>
           </View>
           <FormError error={error} />
+          <PasswordValidation password={password} email={email} />
           {isAlreadyHaveCode ? null : (
             <Button
               hitSlop={24}
