@@ -24,6 +24,7 @@ export const ChooseAccountForm = ({
   onPressBack: () => void
 }) => {
   const [pendingDid, setPendingDid] = React.useState<string | null>(null)
+
   const {_} = useLingui()
   const {currentAccount} = useSession()
   const {resumeSession} = useSessionApi()
@@ -92,8 +93,8 @@ export const ChooseAccountForm = ({
           a.pb_5xl_8,
           a.pt_s50,
           a.px_md,
-          a.mb_2xl,
-          a.mt_3xl,
+          a.mb_md,
+          a.mt_lg,
           a.border_0,
           a.rounded_full,
           a.mx_2xl,

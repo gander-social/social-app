@@ -128,6 +128,11 @@ msgstr ""
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr ""
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr ""
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr ""
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr ""
@@ -481,7 +490,7 @@ msgstr "⚠ अमान्य हैंडल"
 msgid "24 hours"
 msgstr "24 घंटे"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "2FA पुष्टिकरण"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "सुलभता के सेटिंग"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "वयस्क सामग्री लेबल"
 msgid "Advanced"
 msgstr "विकसित"
 
+#: src/screens/Login/LoginForm.tsx:419
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr ""
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "इनसे नए संदेश आने की अनुमति दें:"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "आपके सीधे संदेशों तक पहुँच �
 msgid "Already have a code?"
 msgstr "पहले से कोड है?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "@{0} द्वारा पहले से साइन इन किया गया है"
 
@@ -991,7 +1003,7 @@ msgstr "कोई भी संपर्क कर सकता है"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "वीडियो और GIF स्वतः चलाएँ"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "कैमरा"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr ""
 msgid "Check my status"
 msgstr "मेरी स्थिति दिखाएँ"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr ""
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "अपने जन्मतिथि की पुष्टि करें"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "अपने जन्मतिथि की पुष्टि कर�
 msgid "Confirmation code"
 msgstr "पुष्टिकरण कोड"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "कनेक्ट किया जा रहा..."
 
@@ -2012,7 +2026,7 @@ msgstr "संदर्भ मेनू पृष्ठभूमि, मेन�
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "(अभी साइन इन किया गया) {0} के रूप मे जारी रखें"
 
@@ -2209,7 +2223,7 @@ msgstr "स्टार्टर पैक बनाएँ"
 msgid "Create a starter pack for me"
 msgstr "मेरे लिए स्टार्टर पैक बनाएँ"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "इसके बदले अवतार बनाएँ"
 msgid "Create another"
 msgstr "एक और बनाएँ"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "नया खाता बनाएँ"
@@ -2716,6 +2730,9 @@ msgstr "उदाहरण के लिए, उपयोगकर्ता ज�
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr "प्रत्येक कोड एक बार काम करता है। आपको समय-समय पर अधिक आमंत्रण कोड प्राप्त होंगे।"
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2838,6 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "ईमेल 2FA सक्षम"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "ईमेल"
 
@@ -2973,13 +2991,13 @@ msgstr "पासवर्ड बदलने के लिए प्राप�
 msgid "Enter the domain you want to use"
 msgstr "आप जिस डोमेन का उपयोग करना चाहते हैं उसे दर्ज करें"
 
+#: src/screens/Login/LoginForm.tsx:282
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "वह ईमेल दर्ज करें जिसका उपयोग आपने अपना खाता बनाने के लिए किया था। हम आपको एक \"reset code\" भेजेंगे ताकि आप एक नया पासवर्ड सेट कर सकें।"
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr ""
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3008,11 @@ msgstr "अपना जन्मतिथि दर्ज करें"
 msgid "Enter your email address"
 msgstr "अपना ईमेल पता दर्ज करें"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr ""
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "अपने उपयोगकर्ता नाम और पासवर्ड दर्ज करें"
 
@@ -3015,7 +3033,7 @@ msgstr "त्रुटि"
 msgid "Error loading post"
 msgstr ""
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3664,16 @@ msgstr ""
 msgid "Forever"
 msgstr "हमेशा"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr "पासवर्ड भूल गए"
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "पासवर्ड भूल गए?"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "भूल गए?"
 
@@ -3747,7 +3765,12 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
+msgstr ""
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
 msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
@@ -4056,8 +4079,8 @@ msgstr "होम फ़ीड"
 msgid "Host:"
 msgstr "होस्ट:"
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr "होस्टिंग प्रदाता"
 
@@ -4210,7 +4233,7 @@ msgstr "अनुचित संदेश या अश्लील लिं�
 msgid "Inbox zero!"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "अमान्य उपयोगकर्ता नाम या पासवर्ड"
 
@@ -4230,7 +4253,7 @@ msgstr "नया पासवर्ड दर्ज करें"
 msgid "Input password for account deletion"
 msgstr "खाता मिटाने किए लिए पासवर्ड दर्ज करें"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "आपको ईमेल की गई कोड दर्ज करें"
 
@@ -4246,7 +4269,7 @@ msgstr ""
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "अमान्य 2FA पुष्टिकरण कोड"
@@ -4396,6 +4419,7 @@ msgstr "अधिक जानें"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4456,8 @@ msgstr "इस चेतावनी के बारे में अधिक 
 msgid "Learn more about verification on Bluesky"
 msgstr ""
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "Bluesky पर क्या सार्वजनिक है, इसके के बारे में अधिक जानें"
 
@@ -4441,6 +4465,10 @@ msgstr "Bluesky पर क्या सार्वजनिक है, इस�
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "अधिक जानें।"
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4504,8 @@ msgstr "बाक़ी"
 msgid "Let me choose"
 msgstr "मुझे चुनने दें।"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "चलिए आपका पासवर्ड रीसेट करें!"
 
@@ -4693,7 +4721,7 @@ msgstr "लोड हो रहा है..."
 msgid "Log"
 msgstr "लॉग"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "लॉग आउट दृश्यता"
 
@@ -5095,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "अगले स्क्रीन पर जाता है"
@@ -5242,8 +5270,7 @@ msgstr "समाचार"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5288,10 @@ msgstr "अगला"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "अगली छवि"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5344,7 @@ msgstr "अभी तक कोई अधिसूचनाएँ नहीं!"
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "कोई नहीं"
 
@@ -5420,7 +5451,7 @@ msgstr "नहीं मिला"
 msgid "Note about sharing"
 msgstr "साझा करने के बारे में"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "टिप्पणी: Bluesky एक खुला और सार्वजनिक नेटवर्क है। यह सेटिंग आपके सामग्री की दृश्यता केवल Bluesky ऐप और वेबसाइट पर सीमित करता है, और अन्य ऐप इस सेटिंग की अवमानना कर सकते हैं। अन्य ऐप और वेबसाइट पर आपके सामग्री को लॉग आउट उपयोगकर्ताओं को दिखा सकते हैं।"
 
@@ -5564,7 +5595,7 @@ msgstr "केवल आक्षर, संख्या और हाइफ़न 
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5745,12 @@ msgstr "उपकरण की तस्वीर गैलरी खोलत�
 msgid "Opens emoji picker"
 msgstr ""
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "नया Bluesky खाता बनाने का साधन खोलता है"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr "अपने मौजूदा Bluesky खाते में साइन इन करने का साधन खोलता है"
@@ -5744,7 +5775,7 @@ msgstr "आमंत्रण कोड की सूची खोलता ह�
 msgid "Opens live status dialog"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "पासवर्ड रीसेट फ़ॉर्म खोलें"
 
@@ -5800,9 +5831,9 @@ msgstr ""
 msgid "Other"
 msgstr "अन्य"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "अन्य खाता"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5856,7 @@ msgstr "पृष्ठ नहीं मिला"
 msgid "Page Not Found"
 msgstr "पृष्ठ नहीं मिला"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5873,7 @@ msgstr "पासवर्ड बदला गया"
 msgid "Password must be at least 8 characters long."
 msgstr ""
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "पासवर्ड अपडेट किया गया"
 
@@ -6033,6 +6064,10 @@ msgstr ""
 msgid "Please enter the security code we sent to your previous email address."
 msgstr ""
 
+#: src/screens/Login/LoginForm.tsx:107
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6081,13 @@ msgstr "कृपया अपना ईमेल दर्ज करें।"
 msgid "Please enter your new email address."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr ""
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "कृपया अपना पासवर्ड भी दर्ज करें:"
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr ""
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6996,7 @@ msgstr "ज्ञानप्राप्ति स्थिति को री
 msgid "Reset password"
 msgstr "पासवर्ड रीसेट करें"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr ""
 
@@ -6981,8 +7012,8 @@ msgstr "पिछली क्रिया का फिर से प्रय�
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7259,6 @@ msgstr "सीक स्लाइडर। एरो की से आगे औ
 msgid "Select a color"
 msgstr "रंग चुनें"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "खाता चुनें"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr ""
@@ -7260,7 +7287,7 @@ msgstr "सामग्री भाषाएँ चुनें"
 msgid "Select duration"
 msgstr ""
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "मौजूदा खाते से चुनें"
 
@@ -7443,8 +7470,11 @@ msgid "Settings"
 msgstr "सेटिंग"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7734,10 @@ msgstr ""
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7749,9 @@ msgstr ""
 msgid "Sign in"
 msgstr "साइन इन करें"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "{0} के रूप में साइन इन करें"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "... के रूप में साइन इन करें"
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7762,18 @@ msgstr ""
 msgid "Sign in or create your account to join the conversation!"
 msgstr "बातचीत में जुड़ने के लिए साइन इन करें या अपना खाता बनाएँ"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr ""
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Bluesky में साइन इन करें या नया खाता बनाएँ"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:238
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7807,7 @@ msgid "Sign-in Required"
 msgstr "साइन इन आवश्यक"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "@{0} कए रूप में साइन इन किया गया है"
 
@@ -8527,6 +8557,10 @@ msgstr "यह जानकारी अन्य उपयोगकर्ता
 msgid "This is not a valid link"
 msgstr ""
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "यह लेबल लेखक द्वारा लगाई गई है।"
@@ -8794,8 +8828,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "कनेक्ट करने में असफल। कृपया अपना इंटरनेट कनेक्शन जाँच ले और फिर प्रयास करें।"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9190,6 @@ msgstr "उपयोगकर्ता सूची बनाई गई"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "उपयोगकर्ता सूची अपडेट की गई"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "उपयोगकर्ता नाम या ईमेल पता"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9605,7 @@ msgstr "आपकी क्या दिलचस्पियाँ हैं?"
 msgid "What do you want to call your starter pack?"
 msgstr "आप अपने स्टार्टर पैक को क्या नाम देना चाहते हैं?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9819,7 @@ msgstr "कोई भी सेटिंग चुनने पर भी आप
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "अब आप अपने नए पासवर्ड के साथ साइन इन कर सकते हैं।"
@@ -10184,6 +10214,7 @@ msgstr "आपके म्यूट किए गए शब्द"
 msgid "Your password has been changed successfully!"
 msgstr "आपके पासवर्ड को सफलतापूर्वक बदला गया!"
 
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr ""

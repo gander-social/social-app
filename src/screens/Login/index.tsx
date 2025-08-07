@@ -46,6 +46,9 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   const [initialHandle, setInitialHandle] = React.useState<string>(
     requestedAccount?.handle || '',
   )
+  const [account, setAccount] = React.useState<SessionAccount | null>(
+    requestedAccount ?? null,
+  )
   const [currentForm, setCurrentForm] = React.useState<Forms>(
     requestedAccount
       ? Forms.Login
@@ -60,11 +63,16 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
     refetch: refetchService,
   } = useServiceQuery(serviceUrl)
 
-  const onSelectAccount = (account?: SessionAccount) => {
-    if (account?.service) {
-      setServiceUrl(account.service)
+  const onSelectAccount = (_account?: SessionAccount) => {
+    if (_account) {
+      setAccount(_account)
+    } else {
+      setAccount(null)
     }
-    setInitialHandle(account?.handle || '')
+    if (_account?.service) {
+      setServiceUrl(_account.service)
+    }
+    setInitialHandle(_account?.handle || '')
     setCurrentForm(Forms.Login)
   }
 
@@ -127,6 +135,7 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
       content = (
         <LoginForm
           error={error}
+          account={account}
           serviceUrl={serviceUrl}
           serviceDescription={serviceDescription}
           initialHandle={initialHandle}
@@ -139,6 +148,7 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
           }
           onPressForgotPassword={onPressForgotPassword}
           onPressRetryConnect={refetchService}
+          pendingDid={null}
         />
       )
       break
