@@ -72,7 +72,7 @@ export function HostingProvider({
           <>
             <View style={[a.pb_s10, a.pt_s6, a.flex_1, a.px_md]}>
               <TextField.LabelText>
-                <Trans>Hosting provider</Trans>
+                <Trans>Account Provider</Trans>
               </TextField.LabelText>
               <Text style={[a.text_md, a.flex_1]}>
                 {toNiceDomain(serviceUrl)}

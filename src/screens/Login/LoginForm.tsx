@@ -247,7 +247,15 @@ export const LoginForm = ({
         </View>
       )}
 
-      <View style={[a.mx_2xl, account ? a.gap_2xl : {}]}>
+      <View
+        style={[
+          account ? a.mx_lg : a.mx_2xl,
+          {
+            borderTopRightRadius: 8,
+            borderTopLeftRadius: 8,
+            overflow: 'hidden',
+          },
+        ]}>
         {account ? (
           <AccountItem
             profile={profiles?.profiles.find(p => p.did === account.did)}
@@ -262,13 +270,13 @@ export const LoginForm = ({
             <TextField.Input
               isFirst={true}
               testID="loginUsernameInput"
-              label={_(msg`Email address`)}
+              label={_(msg`Username or Email Address`)}
               autoCapitalize="none"
               autoFocus
               autoCorrect={false}
               autoComplete="username"
               returnKeyType="next"
-              textContentType="emailAddress"
+              textContentType="username"
               defaultValue={initialHandle || ''}
               onChangeText={v => {
                 identifierValueRef.current = v
@@ -279,7 +287,7 @@ export const LoginForm = ({
               blurOnSubmit={false} // prevents flickering due to onSubmitEditing going to next field
               editable={!isProcessing}
               accessibilityHint={_(
-                msg`Enter the email address you used when you created your account`,
+                msg`Enter the username or email address you used when you created your account`,
               )}
             />
           </TextField.Root>
@@ -320,6 +328,7 @@ export const LoginForm = ({
           </Button>
         </TextField.Root>
       </View>
+
       {isAuthFactorTokenNeeded && (
         <View style={a.mx_2xl}>
           <TextField.LabelText>

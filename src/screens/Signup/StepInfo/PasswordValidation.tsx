@@ -121,13 +121,18 @@ export function PasswordValidation({
       showAlways: true,
       color: '#696969',
     },
-    {
-      id: 'email',
-      label: _(msg`Can't include your email address`),
-      isValid: !email || !password.toLowerCase().includes(email.toLowerCase()),
-      showAlways: false,
-      color: '#C30B0D',
-    },
+    ...(email
+      ? [
+          {
+            id: 'email',
+            label: _(msg`Can't include your email address`),
+            isValid:
+              !email || !password.toLowerCase().includes(email.toLowerCase()),
+            showAlways: false,
+            color: '#C30B0D',
+          },
+        ]
+      : []),
     {
       id: 'symbolOrNumber',
       label: _(msg`Must have at least one symbol or number`),

@@ -128,8 +128,8 @@ msgstr "{0, plural, other {{1}件の投稿}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, other {#人が}}このスターターパックを使用しました！"
 
-#: src/screens/Login/Welcome.tsx:55
-#: src/screens/Login/Welcome.tsx:64
+#: src/screens/Welcome/index.tsx:74
+#: src/screens/Welcome/index.tsx:83
 msgid "{0}"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgstr "⚠無効なハンドル"
 msgid "24 hours"
 msgstr "24時間"
 
-#: src/screens/Login/LoginForm.tsx:326
+#: src/screens/Login/LoginForm.tsx:335
 msgid "2FA Confirmation"
 msgstr "２要素認証の確認"
 
@@ -583,6 +583,10 @@ msgstr "リストによってミュート中のアカウント"
 #: src/screens/Settings/Settings.tsx:529
 msgid "Account options"
 msgstr "アカウントオプション"
+
+#: src/components/forms/HostingProvider.tsx:75
+msgid "Account Provider"
+msgstr ""
 
 #: src/screens/Settings/Settings.tsx:565
 msgid "Account removed from quick access"
@@ -795,7 +799,7 @@ msgstr "成人向けコンテンツのラベル"
 msgid "Advanced"
 msgstr "高度な設定"
 
-#: src/screens/Login/LoginForm.tsx:419
+#: src/screens/Login/LoginForm.tsx:428
 msgid "Agree and continue"
 msgstr ""
 
@@ -848,7 +852,6 @@ msgstr "誰が返信できるか："
 msgid "Allows access to direct messages"
 msgstr "ダイレクトメッセージへのアクセスを許可"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:171
 #: src/view/com/modals/ChangePassword.tsx:182
 msgid "Already have a code?"
 msgstr "コードをすでに持っていますか？"
@@ -1183,9 +1186,11 @@ msgstr "ビデオとGIFの自動再生"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ForgotPasswordForm.tsx:123
-#: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:379
+#: src/screens/Login/ForgotPasswordForm.tsx:172
+#: src/screens/Login/ForgotPasswordForm.tsx:178
+#: src/screens/Login/LoginForm.tsx:388
+#: src/screens/Login/ResetpasswordDialog.tsx:234
+#: src/screens/Login/ResetpasswordDialog.tsx:240
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1492,7 +1497,7 @@ msgstr "カメラ"
 #: src/screens/Login/ChooseAccountForm.tsx:87
 #: src/screens/Login/LoginForm.tsx:204
 #: src/screens/Login/LoginForm.tsx:210
-#: src/screens/Login/LoginForm.tsx:385
+#: src/screens/Login/LoginForm.tsx:394
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1672,7 +1677,7 @@ msgstr "チャット"
 msgid "Check my status"
 msgstr "ステータスを確認"
 
-#: src/screens/Login/LoginForm.tsx:359
+#: src/screens/Login/LoginForm.tsx:368
 msgid "Check your email for a sign in code and enter it here."
 msgstr "確認コードが記載されたメールを確認し、ここに入力してください。"
 
@@ -1954,7 +1959,7 @@ msgid "Confirm your birthdate"
 msgstr "生年月日の確認"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:332
+#: src/screens/Login/LoginForm.tsx:341
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1962,7 +1967,7 @@ msgstr "生年月日の確認"
 msgid "Confirmation code"
 msgstr "確認コード"
 
-#: src/screens/Login/LoginForm.tsx:406
+#: src/screens/Login/LoginForm.tsx:415
 msgid "Connecting..."
 msgstr "接続中…"
 
@@ -2026,7 +2031,7 @@ msgstr "コンテキストメニューの背景をクリックし、メニュー
 msgid "Continue"
 msgstr "続行"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:135
 msgid "Continue as {0} (currently signed in)"
 msgstr "{0}として続行（現在サインイン中）"
 
@@ -2573,6 +2578,7 @@ msgid "Dismiss error"
 msgstr "エラーを消す"
 
 #: src/components/ProgressGuide/List.tsx:42
+#: src/screens/Login/ResetpasswordDialog.tsx:145
 msgid "Dismiss getting started guide"
 msgstr "入門ガイドを消す"
 
@@ -2854,11 +2860,6 @@ msgstr "メールでの２要素認証を無効にしました"
 msgid "Email 2FA enabled"
 msgstr "メールでの２要素認証が有効"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:93
-#: src/screens/Login/LoginForm.tsx:265
-msgid "Email address"
-msgstr "メールアドレス"
-
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
 msgstr "メール再送済"
@@ -2983,6 +2984,10 @@ msgstr "コードを入力"
 msgid "Enter fullscreen"
 msgstr "全画面表示にする"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:159
+msgid "Enter the code we sent to {0}"
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:165
 msgid "Enter the code you received to change your password."
 msgstr "パスワードをリセットするために受け取ったコードを入力してください。"
@@ -2991,28 +2996,24 @@ msgstr "パスワードをリセットするために受け取ったコードを
 msgid "Enter the domain you want to use"
 msgstr "使用するドメインを入力してください"
 
-#: src/screens/Login/LoginForm.tsx:282
-msgid "Enter the email address you used when you created your account"
+#: src/screens/Login/LoginForm.tsx:290
+msgid "Enter the username or email address you used when you created your account"
 msgstr ""
-
-#: src/screens/Login/ForgotPasswordForm.tsx:113
-msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
-msgstr "アカウントの作成に使用したメールアドレスを入力します。新しいパスワードを設定できるように、「リセットコード」をお送りします。"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
 msgstr "生年月日を入力してください"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:99
+#: src/screens/Login/ForgotPasswordForm.tsx:122
 #: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "メールアドレスを入力してください"
 
-#: src/screens/Login/LoginForm.tsx:308
+#: src/screens/Login/LoginForm.tsx:316
 msgid "Enter your password"
 msgstr "パスワードを入力"
 
-#: src/screens/Login/index.tsx:134
+#: src/screens/Login/index.tsx:141
 msgid "Enter your username and password"
 msgstr "ユーザー名とパスワードを入力してください"
 
@@ -3664,16 +3665,17 @@ msgstr "あなたへ"
 msgid "Forever"
 msgstr "永久"
 
-#: src/screens/Login/index.tsx:166
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/ForgotPasswordForm.tsx:100
+#: src/screens/Login/index.tsx:173
+#: src/screens/Login/index.tsx:188
 msgid "Forgot Password"
 msgstr "パスワードを忘れた"
 
-#: src/screens/Login/LoginForm.tsx:313
+#: src/screens/Login/LoginForm.tsx:321
 msgid "Forgot password?"
 msgstr "パスワードを忘れた？"
 
-#: src/screens/Login/LoginForm.tsx:318
+#: src/screens/Login/LoginForm.tsx:326
 msgid "Forgot?"
 msgstr "忘れた？"
 
@@ -3765,11 +3767,11 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
-#: src/screens/Login/Welcome.tsx:89
+#: src/screens/Welcome/index.tsx:108
 msgid "Get started"
 msgstr "開始"
 
-#: src/screens/Login/Welcome.tsx:83
+#: src/screens/Welcome/index.tsx:102
 msgid "GetStarted"
 msgstr ""
 
@@ -3800,7 +3802,7 @@ msgstr "法律または利用規約への明らかな違反"
 #: src/screens/VideoFeed/components/Header.tsx:163
 #: src/screens/VideoFeed/index.tsx:1141
 #: src/screens/VideoFeed/index.tsx:1145
-#: src/view/com/auth/LoggedOut.tsx:72
+#: src/view/com/auth/LoggedOut.tsx:78
 #: src/view/screens/NotFound.tsx:57
 #: src/view/screens/ProfileList.tsx:1038
 msgid "Go back"
@@ -3858,7 +3860,7 @@ msgstr "{firstAuthorName}のプロフィールに移動"
 msgid "Go to conversation with {0}"
 msgstr "{0}との会話へ"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:165
+#: src/screens/Login/ForgotPasswordForm.tsx:142
 #: src/view/com/modals/ChangePassword.tsx:179
 msgid "Go to next"
 msgstr "次へ"
@@ -3966,6 +3968,7 @@ msgstr "非表示のリスト"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
+#: src/screens/Login/ResetpasswordDialog.tsx:209
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "非表示"
@@ -4079,11 +4082,6 @@ msgstr "ホーム"
 msgid "Host:"
 msgstr "ホスト："
 
-#: src/components/forms/HostingProvider.tsx:75
-#: src/screens/Login/ForgotPasswordForm.tsx:83
-msgid "Hosting provider"
-msgstr "ホスティングプロバイダー"
-
 #: src/screens/Search/modules/ExploreTrendingTopics.tsx:194
 msgid "Hot"
 msgstr "ホット"
@@ -4099,6 +4097,10 @@ msgstr "ホットな返信を先頭に"
 #: src/components/dialogs/InAppBrowserConsent.tsx:66
 msgid "How should we open this link?"
 msgstr "このリンクをどのように開きますか？"
+
+#: src/screens/Login/ForgotPasswordForm.tsx:149
+msgid "I already have a reset code?"
+msgstr ""
 
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:133
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:136
@@ -4237,6 +4239,7 @@ msgstr "受信トレイが空です！"
 msgid "Incorrect username or password"
 msgstr "無効なユーザー名またはパスワード"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:179
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "パスワードをリセットするためにあなたのメールアドレスに送られたコードを入力"
@@ -4245,6 +4248,7 @@ msgstr "パスワードをリセットするためにあなたのメールアド
 msgid "Input confirmation code for account deletion"
 msgstr "アカウント削除のために確認コードを入力"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:199
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "新しいパスワードを入力"
@@ -4253,7 +4257,7 @@ msgstr "新しいパスワードを入力"
 msgid "Input password for account deletion"
 msgstr "アカウント削除のためにパスワードを入力"
 
-#: src/screens/Login/LoginForm.tsx:347
+#: src/screens/Login/LoginForm.tsx:356
 msgid "Input the code which has been emailed to you"
 msgstr "メールで送られたコードを入力"
 
@@ -4419,10 +4423,10 @@ msgstr "詳細"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
-#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
+#: src/screens/Welcome/index.tsx:96
 msgid "Learn more"
 msgstr "詳細"
 
@@ -4466,7 +4470,7 @@ msgstr "Blueskyで公開されている内容はこちらを参照してくだ�
 msgid "Learn more."
 msgstr "詳細。"
 
-#: src/screens/Login/Welcome.tsx:70
+#: src/screens/Welcome/index.tsx:89
 msgid "Learnmore"
 msgstr ""
 
@@ -4504,8 +4508,8 @@ msgstr "あと少しです。"
 msgid "Let me choose"
 msgstr "選ばせて"
 
-#: src/screens/Login/index.tsx:167
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:174
+#: src/screens/Login/index.tsx:189
 msgid "Let's get your password reset!"
 msgstr "パスワードをリセットしましょう！"
 
@@ -4738,6 +4742,7 @@ msgstr "<0>@sawaratsuki.bsky.social</0>によるロゴ"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "長押しで #{tag} のタグメニューを開く"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "XXXXX-XXXXXみたいなもの"
@@ -5122,8 +5127,8 @@ msgstr "{0}へ移動します"
 msgid "Navigate to starter pack"
 msgstr "スターターパックに移動"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:413
+#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/LoginForm.tsx:422
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "次の画面に移動します"
@@ -5212,6 +5217,7 @@ msgstr "新しいモデレーションリスト"
 msgid "New password"
 msgstr "新しいパスワード"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:188
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "新しいパスワード"
@@ -5268,9 +5274,8 @@ msgstr "新しい順に返信を表示"
 msgid "News"
 msgstr "ニュース"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:137
-#: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:412
+#: src/screens/Login/ForgotPasswordForm.tsx:186
+#: src/screens/Login/LoginForm.tsx:421
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5289,7 +5294,7 @@ msgstr "次へ"
 msgid "Next image"
 msgstr "次の画像"
 
-#: src/screens/Login/Welcome.tsx:45
+#: src/screens/Welcome/index.tsx:64
 msgid "Nicely done.Welcome to Gander."
 msgstr ""
 
@@ -5775,7 +5780,7 @@ msgstr "招待コードのリストを開く"
 msgid "Opens live status dialog"
 msgstr "ライブステータスのダイアログを開く"
 
-#: src/screens/Login/LoginForm.tsx:314
+#: src/screens/Login/LoginForm.tsx:322
 msgid "Opens password reset form"
 msgstr "パスワードリセットのフォームを開く"
 
@@ -5831,7 +5836,7 @@ msgstr "OTA ステータス: 利用可能なものはありません"
 msgid "Other"
 msgstr "その他"
 
-#: src/components/AccountList.tsx:86
+#: src/components/AccountList.tsx:92
 msgid "Other Account"
 msgstr ""
 
@@ -5856,7 +5861,7 @@ msgstr "ページが見つかりません"
 msgid "Page Not Found"
 msgstr "ページが見つかりません"
 
-#: src/screens/Login/LoginForm.tsx:293
+#: src/screens/Login/LoginForm.tsx:301
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5873,7 +5878,7 @@ msgstr "パスワードが変更されました"
 msgid "Password must be at least 8 characters long."
 msgstr "パスワードは 8 文字以上である必要があります。"
 
-#: src/screens/Login/index.tsx:194
+#: src/screens/Login/index.tsx:201
 msgid "Password updated"
 msgstr "パスワードが更新されました"
 
@@ -6030,6 +6035,7 @@ msgstr "CAPTCHA認証を完了してください。"
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "メールアドレスが正しく入力されていることを再確認してください。"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:71
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "パスワードを入力してください。"
@@ -6313,7 +6319,7 @@ msgid "Processing video..."
 msgstr "ビデオを処理中…"
 
 #: src/lib/api/index.ts:60
-#: src/screens/Login/ForgotPasswordForm.tsx:149
+#: src/screens/Login/ForgotPasswordForm.tsx:198
 msgid "Processing..."
 msgstr "処理中…"
 
@@ -6992,11 +6998,11 @@ msgstr "リセットコード"
 msgid "Reset onboarding state"
 msgstr "オンボーディングの状態をリセット"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:80
+#: src/screens/Login/ResetpasswordDialog.tsx:137
 msgid "Reset password"
 msgstr "パスワードをリセット"
 
-#: src/screens/Login/LoginForm.tsx:393
+#: src/screens/Login/LoginForm.tsx:402
 msgid "Retries signing in"
 msgstr "サインインを再試行"
 
@@ -7012,8 +7018,8 @@ msgstr "エラーになった最後のアクションをやり直す"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:392
-#: src/screens/Login/LoginForm.tsx:399
+#: src/screens/Login/LoginForm.tsx:401
+#: src/screens/Login/LoginForm.tsx:408
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7287,7 +7293,7 @@ msgstr "コンテンツの言語を選択"
 msgid "Select duration"
 msgstr "配信の長さを選択"
 
-#: src/screens/Login/index.tsx:157
+#: src/screens/Login/index.tsx:164
 msgid "Select from an existing account"
 msgstr "既存のアカウントから選択"
 
@@ -7356,6 +7362,10 @@ msgstr "登録されたフィードに含める言語を選択します。選択
 msgid "Select your date of birth"
 msgstr "生年月日を選択"
 
+#: src/screens/Login/ForgotPasswordForm.tsx:105
+msgid "Select your hosting provider and enter the email you used to create your account. We’ll send you a “reset code” so you can set a new password."
+msgstr ""
+
 #: src/screens/Onboarding/StepInterests/index.tsx:192
 #: src/screens/Settings/InterestsSettings.tsx:161
 msgid "Select your interests from the options below"
@@ -7376,6 +7386,14 @@ msgstr "{numItems}個中{0}個目のオプションを選択"
 #: src/components/dms/ChatEmptyPill.tsx:38
 msgid "Send a neat website!"
 msgstr "素敵なウェブサイトを送って！"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:224
+msgid "Send a new code"
+msgstr ""
+
+#: src/screens/Login/ForgotPasswordForm.tsx:192
+msgid "Send Code"
+msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:174
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Disable.tsx:181
@@ -7458,7 +7476,7 @@ msgstr "新しいパスワードを設定"
 msgid "Set up your account"
 msgstr "アカウントを設定する"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:107
+#: src/screens/Login/ForgotPasswordForm.tsx:130
 msgid "Sets email for password reset"
 msgstr "パスワードをリセットするためのメールアドレスを入力"
 
@@ -7609,6 +7627,7 @@ msgstr "Shared Preferencesのテスター"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
+#: src/screens/Login/ResetpasswordDialog.tsx:209
 msgid "Show"
 msgstr "表示"
 
@@ -7666,6 +7685,11 @@ msgstr "さらに返信を表示"
 #: src/view/com/post-thread/PostThreadShowHiddenReplies.tsx:22
 msgid "Show muted replies"
 msgstr "ミュートした返信を表示"
+
+#: src/screens/Login/ResetpasswordDialog.tsx:204
+#: src/screens/Login/ResetpasswordDialog.tsx:205
+msgid "Show password"
+msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
 msgid "Show post replies in a threaded tree view"
@@ -7734,8 +7758,8 @@ msgstr "コンテンツを表示"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:133
-#: src/screens/Login/index.tsx:156
+#: src/screens/Login/index.tsx:140
+#: src/screens/Login/index.tsx:163
 #: src/view/com/auth/SplashScreen.tsx:59
 #: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
@@ -7749,7 +7773,7 @@ msgstr "コンテンツを表示"
 msgid "Sign in"
 msgstr "サインイン"
 
-#: src/components/AccountList.tsx:130
+#: src/components/AccountList.tsx:136
 msgid "Sign in as {0}"
 msgstr "{0}としてサインイン"
 
@@ -7762,7 +7786,8 @@ msgstr "サインインまたはアカウントを作成"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "会話に参加するにはサインインするか新しくアカウントを登録してください！"
 
-#: src/components/AccountList.tsx:69
+#: src/components/AccountList.tsx:71
+#: src/screens/Login/ResetpasswordDialog.tsx:221
 msgid "Sign in to account that is not listed"
 msgstr "リストにないアカウントにサインイン"
 
@@ -7770,7 +7795,7 @@ msgstr "リストにないアカウントにサインイン"
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Blueskyにサインイン または 新規アカウントの登録"
 
-#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/ChooseAccountForm.tsx:109
 #: src/screens/Login/LoginForm.tsx:238
 msgid "Sign in to Gander."
 msgstr ""
@@ -8010,6 +8035,8 @@ msgstr "ストーリーブック"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
+#: src/screens/Login/ResetpasswordDialog.tsx:248
+#: src/screens/Login/ResetpasswordDialog.tsx:254
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8557,7 +8584,7 @@ msgstr "この情報は他のユーザーと共有されません。"
 msgid "This is not a valid link"
 msgstr "有効なリンクではありません"
 
-#: src/screens/Login/Welcome.tsx:48
+#: src/screens/Welcome/index.tsx:67
 msgid "This is where social media gets sane again."
 msgstr ""
 
@@ -8827,9 +8854,11 @@ msgstr "タイプ："
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "接続できません。インターネットへの接続を確認して再度試してください。"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:88
+#: src/screens/Login/ForgotPasswordForm.tsx:75
+#: src/screens/Login/index.tsx:93
 #: src/screens/Login/LoginForm.tsx:186
+#: src/screens/Login/ResetpasswordDialog.tsx:96
+#: src/screens/Login/ResetpasswordDialog.tsx:121
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9064,6 +9093,7 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "返信の表示設定の更新に失敗しました"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:260
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "更新中…"
@@ -9190,6 +9220,10 @@ msgstr "ユーザーリストを作成しました"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "ユーザーリストを更新しました"
+
+#: src/screens/Login/LoginForm.tsx:273
+msgid "Username or Email Address"
+msgstr ""
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9819,7 +9853,7 @@ msgstr "どの設定を選択しても進行中の会話は続けることがで
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:195
+#: src/screens/Login/index.tsx:202
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "新しいパスワードでサインインできるようになりました。"
@@ -9880,6 +9914,7 @@ msgstr "あなたはこのユーザーをブロックしているため、コン
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "返信、引用、メンションの通知が完全に無効になっているので、このタブは更新されません。調整するには、<0>通知設定</0>を開いてください。"
 
+#: src/screens/Login/ResetpasswordDialog.tsx:62
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10158,7 +10193,7 @@ msgstr "あなたの選択は将来のリンクのために記憶されます。
 msgid "Your current handle <0>{0}</0> will automatically remain reserved for you. You can switch back to it at any time from this account."
 msgstr "あなたの現在のハンドル<0>{0}</0>は自動的に予約されたままになります。いつでもこのアカウントに戻すことができます。"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:51
+#: src/screens/Login/ForgotPasswordForm.tsx:56
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55

@@ -75,7 +75,7 @@ export const ChooseAccountForm = ({
   )
 
   return (
-    <FormContainer testID="chooseAccountForm">
+    <FormContainer style={[a.px_lg]} testID="chooseAccountForm">
       <Button
         style={a.self_start}
         label={_(msg`Cancel`)}
@@ -104,15 +104,16 @@ export const ChooseAccountForm = ({
         ]}>
         <Logo width={104} fill={colors.white} />
       </View>
-      <Text style={[a.self_center, a.text_4xl, a.font_bold, a.mx_2xl]}>
-        <Trans>Sign in to Gander.</Trans>
-      </Text>
-
-      <AccountList
-        onSelectAccount={onSelect}
-        onSelectOther={() => onSelectAccount()}
-        pendingDid={pendingDid}
-      />
+      <View>
+        <Text style={[a.self_center, a.text_4xl, a.font_bold, a.mx_2xl]}>
+          <Trans>Sign in to Gander.</Trans>
+        </Text>
+        <AccountList
+          onSelectAccount={onSelect}
+          onSelectOther={() => onSelectAccount()}
+          pendingDid={pendingDid}
+        />
+      </View>
     </FormContainer>
   )
 }

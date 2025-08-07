@@ -18,7 +18,6 @@ import {SetNewPasswordForm} from '#/screens/Login/SetNewPasswordForm'
 import {atoms as a} from '#/alf'
 import {ChooseAccountForm} from './ChooseAccountForm'
 import {ScreenTransition} from './ScreenTransition'
-import {Welcome} from './Welcome'
 
 enum Forms {
   Login,
@@ -28,7 +27,13 @@ enum Forms {
   PasswordUpdated,
 }
 
-export const Login = ({onPressBack}: {onPressBack: () => void}) => {
+export const Login = ({
+  onPressBack,
+  // showWelcomeScreen,
+}: {
+  onPressBack: () => void
+  showWelcomeScreen: () => void
+}) => {
   const {_} = useLingui()
   const failedAttemptCountRef = useRef(0)
   const startTimeRef = useRef(Date.now())
@@ -98,6 +103,10 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   }, [serviceError, serviceUrl, _])
 
   const onPressForgotPassword = () => {
+    // It is for showing signup thanks screen
+    // showWelcomeScreen()
+    // return
+
     setCurrentForm(Forms.ForgotPassword)
     logEvent('signin:forgotPasswordPressed', {})
   }
@@ -127,8 +136,6 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   let description = ''
 
   switch (currentForm) {
-    case Forms.ForgotPassword:
-      return <Welcome />
     case Forms.Login:
       title = _(msg`Sign in`)
       description = _(msg`Enter your username and password`)
@@ -173,7 +180,7 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
           setError={setError}
           setServiceUrl={setServiceUrl}
           onPressBack={() => gotoForm(Forms.Login)}
-          onEmailSent={() => gotoForm(Forms.SetNewPassword)}
+          onPasswordSet={() => gotoForm(Forms.PasswordUpdated)}
         />
       )
       break

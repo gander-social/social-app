@@ -169,21 +169,7 @@ export function StepInfo({
   }
 
   const onNextPress = () => {
-    const inviteCode = inviteCodeValueRef.current
-    const email = emailValueRef.current
-    const password = passwordValueRef.current
-
-    dispatch({type: 'setInviteCode', value: inviteCode})
-    dispatch({type: 'setEmail', value: email})
-    dispatch({type: 'setPassword', value: password})
-    dispatch({type: 'next'})
-    logger.metric(
-      'signup:nextPressed',
-      {
-        activeStep: state.activeStep,
-      },
-      {statsig: true},
-    )
+    return true
   }
 
   const onPressSelectService = React.useCallback(() => {
