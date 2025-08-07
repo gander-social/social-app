@@ -169,7 +169,7 @@ export function StepInfo({
   }
 
   const onNextPress = () => {
-    return true
+    dispatch({type: 'next'})
   }
 
   const onPressSelectService = React.useCallback(() => {
