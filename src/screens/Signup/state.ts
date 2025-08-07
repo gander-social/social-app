@@ -22,6 +22,7 @@ const DEFAULT_DATE = new Date(Date.now() - 60e3 * 60 * 24 * 365 * 20) // default
 
 export enum SignupStep {
   INFO,
+  VERIFICATION,
   HANDLE,
   CAPTCHA,
 }
@@ -353,7 +354,10 @@ export function useSubmitSignup() {
           value: error,
           field: isHandleError ? 'handle' : undefined,
         })
-        dispatch({type: 'setStep', value: isHandleError ? 2 : 1})
+        dispatch({
+          type: 'setStep',
+          value: isHandleError ? SignupStep.HANDLE : SignupStep.INFO,
+        })
 
         logger.error('Signup Flow Error', {
           errorMessage: error,
