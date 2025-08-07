@@ -128,6 +128,11 @@ msgstr "{0, plural, one {}other {{1} opslag}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, one {}other {# personer have}} har brugt denne startpakke!"
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr "{hours, plural, one {# time} other {# timer}}"
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr "{joinedAllTimeCount, plural, one {}other {# brugere}} har oprettet sig!"
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr "{minutes, plural, one {# minut} other {# minutter}}"
@@ -481,7 +490,7 @@ msgstr "⚠Ugyldigt handle"
 msgid "24 hours"
 msgstr "24 timer"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "Tofaktorgodkendelse"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "Tilgængelighedsindstillinger"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "Voksenindholdsmærkater"
 msgid "Advanced"
 msgstr "Avanceret"
 
+#: src/screens/Login/LoginForm.tsx:419
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr "mette@eksempel.dk"
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "Tillad nye beskeder fra"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "Tillader adgang til direkte beskeder"
 msgid "Already have a code?"
 msgstr "Har du allerede modtaget en bekræftelseskode?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "Allerede logget ind som @{0}"
 
@@ -991,7 +1003,7 @@ msgstr "Alle kan interagere"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "Afspil videoer og GIF'er automatisk"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "Kamera"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr "Chats"
 msgid "Check my status"
 msgstr "Tjek min status"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr "Tjek din e-mail efter en bekræftelseskode og indtast den her."
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "Bekræft din fødselsdato"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "Bekræft din fødselsdato"
 msgid "Confirmation code"
 msgstr "Bekræftelseskode"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "Forbinder..."
 
@@ -2012,7 +2026,7 @@ msgstr "Baggrund for kontekstmenu, klik for at lukke menuen."
 msgid "Continue"
 msgstr "Fortsæt"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "Fortsæt som {0} (allerede logget ind)"
 
@@ -2209,7 +2223,7 @@ msgstr "Opret en startpakke"
 msgid "Create a starter pack for me"
 msgstr "Opret en startpakke for mig"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "Opret en avatar i stedet"
 msgid "Create another"
 msgstr "Opret endnu en"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "Opret ny konto"
@@ -2716,6 +2730,9 @@ msgstr "fx Brugere, der laver for mange reklameopslag."
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr "Hver kode virker én gang. Du vil jævnligt blive tildelt flere invitationskoder."
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2838,6 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "2FA via e-mail aktiveret"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "E-mailadresse"
 
@@ -2973,13 +2991,13 @@ msgstr "Indtast den modtagne kode for at skifte adgangskode."
 msgid "Enter the domain you want to use"
 msgstr "Indtast det domæne, du ønsker at bruge"
 
+#: src/screens/Login/LoginForm.tsx:282
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "Indtast den e-mailadresse, du brugte, da du oprettede din konto. Vi sender dig en nulstillingskode, så du kan vælge en ny adgangskode."
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr "Indtast det brugernavn eller den e-mailadresse, du brugte, da du oprettede din konto"
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3008,11 @@ msgstr "Indtast din fødselsdato"
 msgid "Enter your email address"
 msgstr "Indtast din e-mailadresse"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr "Indtast din adgangskode"
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "Indtsat dit brugernavn og din adgangskode"
 
@@ -3015,7 +3033,7 @@ msgstr "Fejl"
 msgid "Error loading post"
 msgstr ""
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3664,16 @@ msgstr "Til dig"
 msgid "Forever"
 msgstr "Indtil videre"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr "Glemt adgangskode"
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "Glemt adgangskode?"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "Glemt?"
 
@@ -3747,8 +3765,13 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
 msgstr "Kom i gang"
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
+msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
 msgid "Getting started"
@@ -4056,8 +4079,8 @@ msgstr "Forside"
 msgid "Host:"
 msgstr "Server:"
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr "Udbyder"
 
@@ -4210,7 +4233,7 @@ msgstr "Upassende beskeder eller links med seksuelt indhold"
 msgid "Inbox zero!"
 msgstr "Tom indbakke!"
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "Forkert brugernavn eller adgangskode"
 
@@ -4230,7 +4253,7 @@ msgstr "Indtast ny adgangskode"
 msgid "Input password for account deletion"
 msgstr "Indtast adgangskode for sletning af konto"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "Indtast den kode, du har modtaget på e-mail"
 
@@ -4246,7 +4269,7 @@ msgstr "Interaktionsindstillinger"
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "Ugyldig 2FA-bekræftelseskode"
@@ -4396,6 +4419,7 @@ msgstr "læs mere"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4456,8 @@ msgstr "Læs mere om denne advarsel"
 msgid "Learn more about verification on Bluesky"
 msgstr "Læs mere om verificering på Bluesky"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "Læs mere om, hvad der er offentligt på Bluesky."
 
@@ -4441,6 +4465,10 @@ msgstr "Læs mere om, hvad der er offentligt på Bluesky."
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "Læs mere."
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4504,8 @@ msgstr "foran dig i køen."
 msgid "Let me choose"
 msgstr "Lad mig vælge"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "Lad os få nulstillet din adgangskode!"
 
@@ -4693,7 +4721,7 @@ msgstr "Indlæser..."
 msgid "Log"
 msgstr "Log"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "Synlighed for udloggede brugere"
 
@@ -5095,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr "Gå til startpakke"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "Går til næste skærmbillede"
@@ -5242,8 +5270,7 @@ msgstr "Nyheder"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5288,10 @@ msgstr "Næste"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "Næste billede"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5344,7 @@ msgstr "Ingen notifikationer endnu!"
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "Ingen"
 
@@ -5420,7 +5451,7 @@ msgstr "Ikke fundet"
 msgid "Note about sharing"
 msgstr "Note vedr. deling"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "OBS: Bluesky er et åbent og offentligt netværk. Denne indstilling begrænser kun synligheden af dit indhold her på Bluesky. Andre apps og websites respekterer ikke nødvendigvis denne indstilling. Dit indhold kan stadig blive vist i andre apps og på andre websites til udloggede brugere."
 
@@ -5564,7 +5595,7 @@ msgstr "Indeholder kun bogstaver (a-z), tal og bindestreger"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5745,12 @@ msgstr "Åbner enhedens fotogalleri"
 msgid "Opens emoji picker"
 msgstr "Åbner emojivælger"
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "Åbner formular til oprettelse af en ny Bluesky-konto"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr "Åbner formular til at logge ind på din eksisterende Bluesky-konto"
@@ -5744,7 +5775,7 @@ msgstr "Åbner listen over invitationskoder"
 msgid "Opens live status dialog"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "Åbner formular til nulstilling af adgangskode"
 
@@ -5800,9 +5831,9 @@ msgstr "OTA-status: Ingen tilgængelig"
 msgid "Other"
 msgstr "Andet"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "Anden konto"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5856,7 @@ msgstr "Side ikke fundet"
 msgid "Page Not Found"
 msgstr "Side ikke fundet"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5873,7 @@ msgstr "Adgangskode ændret"
 msgid "Password must be at least 8 characters long."
 msgstr "Adgangskoden skal bestå af mindst 8 tegn."
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "Adgangskode opdateret!"
 
@@ -6033,6 +6064,10 @@ msgstr ""
 msgid "Please enter the security code we sent to your previous email address."
 msgstr ""
 
+#: src/screens/Login/LoginForm.tsx:107
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6081,13 @@ msgstr "Indtast din invitationskode."
 msgid "Please enter your new email address."
 msgstr "Indtast din nye e-mailadresse."
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr "Indtast din adgangskode"
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "Indtast også din adgangskode:"
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr "Indtast dit brugernavn"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6996,7 @@ msgstr "Nulstil velkomsttilstand"
 msgid "Reset password"
 msgstr "Nulstil adgangskode"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr "Forsøger at logge ind igen"
 
@@ -6981,8 +7012,8 @@ msgstr "Prøver at gentage den seneste handling, der fejlede"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7259,6 @@ msgstr "Spoleskyder. Brug piletaster for at spole frem og tilbage, og mellemrum 
 msgid "Select a color"
 msgstr "Vælg en farve"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "Vælg konto"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr ""
@@ -7260,7 +7287,7 @@ msgstr "Vælg sprog"
 msgid "Select duration"
 msgstr ""
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "Vælg en eksisterende konto"
 
@@ -7443,8 +7470,11 @@ msgid "Settings"
 msgstr "Indstillinger"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7734,10 @@ msgstr "Viser indholdet"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7749,9 @@ msgstr "Viser indholdet"
 msgid "Sign in"
 msgstr "Log ind"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "Log ind som {0}"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "Log ind som..."
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7762,18 @@ msgstr "Log ind eller opret en konto"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "Log ind eller opret en konto for at deltage i samtalen!"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr "Log på konto, der ikke er anført"
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "Log på Bluesky eller opret en ny konto"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:238
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7807,7 @@ msgid "Sign-in Required"
 msgstr "Indlogning krævet"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "Logget ind som @{0}"
 
@@ -8527,6 +8557,10 @@ msgstr "Denne oplysning vil ikke blive delt med andre brugere."
 msgid "This is not a valid link"
 msgstr ""
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "Denne mærkat blev sat af forfatteren"
@@ -8794,8 +8828,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "Kan ikke forbinde. Tjek din internetforbindelse og prøv igen."
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9190,6 @@ msgstr "Brugerliste oprettet"
 msgctxt "toast"
 msgid "User list updated"
 msgstr "Brugerliste opdateret"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "Brugernavn eller e-mailadresse"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9605,7 @@ msgstr "Hvad interesserer du dig for?"
 msgid "What do you want to call your starter pack?"
 msgstr "Hvad vil du kalde din startpakke?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9819,7 @@ msgstr "Du kan fortsætte igangværende samtaler, uanset hvilken indstilling du 
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "Du kan nu logge ind med din nye adgangskode."
@@ -10184,6 +10214,7 @@ msgstr "Dine skjulte ord"
 msgid "Your password has been changed successfully!"
 msgstr "Din adgangskode blev ændret!"
 
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr "Din adgangskode skal bestå af mindst 8 tegn."

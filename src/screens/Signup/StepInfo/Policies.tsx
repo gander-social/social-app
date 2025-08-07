@@ -43,60 +43,85 @@ export const Policies = ({
   }
 
   let els: ReactElement
-  if (tos && pp) {
-    els = (
-      <Trans>
-        By creating an account you agree to the{' '}
-        <InlineLinkText
-          label={_(msg`Read the Bluesky Terms of Service`)}
-          key="tos"
-          to={tos}>
-          Terms of Service
-        </InlineLinkText>{' '}
-        and{' '}
-        <InlineLinkText
-          label={_(msg`Read the Bluesky Privacy Policy`)}
-          key="pp"
-          to={pp}>
-          Privacy Policy
-        </InlineLinkText>
-        .
-      </Trans>
-    )
-  } else if (tos) {
-    els = (
-      <Trans>
-        By creating an account you agree to the{' '}
-        <InlineLinkText
-          label={_(msg`Read the Bluesky Terms of Service`)}
-          key="tos"
-          to={tos}>
-          Terms of Service
-        </InlineLinkText>
-        .
-      </Trans>
-    )
-  } else if (pp) {
-    els = (
-      <Trans>
-        By creating an account you agree to the{' '}
-        <InlineLinkText
-          label={_(msg`Read the Bluesky Privacy Policy`)}
-          key="pp"
-          to={pp}>
-          Privacy Policy
-        </InlineLinkText>
-        .
-      </Trans>
-    )
-  } else {
-    return null
-  }
+  els = (
+    <Trans>
+      By selecting Agree and continue below, I agree to Gander's{' '}
+      <InlineLinkText
+        label={_(msg`Read the Gander Terms of Service`)}
+        key="tos"
+        to={tos || '#'}
+        style={{
+          color: '#C30B0D',
+          textDecorationLine: 'underline',
+          fontSize: 15,
+          fontWeight: 'medium',
+        }}>
+        Terms of Service
+      </InlineLinkText>
+      ,{' '}
+      <InlineLinkText
+        label={_(msg`Read the Gander Payments Terms of Service`)}
+        key="payments"
+        to="#"
+        style={{
+          color: '#C30B0D',
+          textDecorationLine: 'underline',
+          fontSize: 15,
+          fontWeight: 'medium',
+        }}>
+        Payments Terms of Service
+      </InlineLinkText>
+      ,{' '}
+      <InlineLinkText
+        label={_(msg`Read the Gander Privacy Policy`)}
+        key="pp"
+        to={pp || '#'}
+        style={{
+          color: '#C30B0D',
+          textDecorationLine: 'underline',
+          fontSize: 15,
+          fontWeight: 'medium',
+        }}>
+        Privacy Policy
+      </InlineLinkText>
+      ,{' '}
+      <InlineLinkText
+        label={_(msg`Read the Gander Nondiscrimination Policy`)}
+        key="nondiscrimination"
+        to="#"
+        style={{
+          color: '#C30B0D',
+          textDecorationLine: 'underline',
+          fontSize: 15,
+          fontWeight: 'medium',
+        }}>
+        Nondiscrimination Policy
+      </InlineLinkText>
+      , and{' '}
+      <InlineLinkText
+        label={_(msg`Read the Gander Biometric Terms of Service`)}
+        key="biometric"
+        to="#"
+        style={{
+          color: '#C30B0D',
+          textDecorationLine: 'underline',
+          fontSize: 15,
+          fontWeight: 'medium',
+        }}>
+        Biometric Terms of Service
+      </InlineLinkText>
+      .
+    </Trans>
+  )
 
   return (
     <View style={[a.gap_sm]}>
       {els ? (
-        <Text style={[a.leading_snug, t.atoms.text_contrast_medium]}>
+        <Text
+          style={[
+            a.leading_snug,
+            {color: '#000000', fontSize: 15, fontWeight: 'medium'},
+          ]}>
           {els}
         </Text>
       ) : null}

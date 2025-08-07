@@ -128,6 +128,11 @@ msgstr ""
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr ""
 
+#: src/screens/Login/Welcome.tsx:55
+#: src/screens/Login/Welcome.tsx:64
+msgid "{0}"
+msgstr ""
+
 #. Pattern: {wordValue} in tags
 #: src/components/dialogs/MutedWords.tsx:475
 msgid "{0} <0>in <1>tags</1></0>"
@@ -391,6 +396,10 @@ msgstr ""
 msgid "{joinedAllTimeCount, plural, other {# users have}} joined!"
 msgstr ""
 
+#: src/components/forms/TextField.tsx:231
+msgid "{label}"
+msgstr ""
+
 #: src/components/live/utils.ts:10
 msgid "{minutes, plural, one {# minute} other {# minutes}}"
 msgstr ""
@@ -481,7 +490,7 @@ msgstr ""
 msgid "24 hours"
 msgstr "២៤ ម៉ោង"
 
-#: src/screens/Login/LoginForm.tsx:268
+#: src/screens/Login/LoginForm.tsx:326
 msgid "2FA Confirmation"
 msgstr "ការបញ្ជាក់ 2FA"
 
@@ -538,7 +547,6 @@ msgid "Accessibility Settings"
 msgstr "ការកំណត់មានភាពងាយស្រួល"
 
 #: src/Navigation.tsx:384
-#: src/screens/Login/LoginForm.tsx:194
 #: src/screens/Settings/AccountSettings.tsx:48
 #: src/screens/Settings/Settings.tsx:165
 #: src/screens/Settings/Settings.tsx:168
@@ -787,6 +795,10 @@ msgstr "ស្លាកមាតិកាសម្រាប់មនុស្ស
 msgid "Advanced"
 msgstr "កម្រិតខ្ពស់"
 
+#: src/screens/Login/LoginForm.tsx:419
+msgid "Agree and continue"
+msgstr ""
+
 #: src/components/dialogs/EmailDialog/screens/Update.tsx:223
 msgid "alice@example.com"
 msgstr ""
@@ -820,7 +832,7 @@ msgid "Allow new messages from"
 msgstr "អនុញ្ញាតឱ្យសារថ្មីពី"
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:52
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:90
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:92
 msgid "Allow others to be notified of your posts"
 msgstr ""
 
@@ -841,7 +853,7 @@ msgstr "អនុញ្ញាតឱ្យចូលប្រើសារផ្ទ
 msgid "Already have a code?"
 msgstr "មានលេខកូដរួចហើយ?"
 
-#: src/screens/Login/ChooseAccountForm.tsx:43
+#: src/screens/Login/ChooseAccountForm.tsx:46
 msgid "Already signed in as @{0}"
 msgstr "បាន​ចូល​ជា @{0} រួច​ហើយ"
 
@@ -991,7 +1003,7 @@ msgstr "អ្នក​ណា​ក៏​អាច​ធ្វើ​អន្ត
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:111
 #: src/screens/Settings/ActivityPrivacySettings.tsx:116
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:161
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:163
 msgid "Anyone who follows me"
 msgstr ""
 
@@ -1171,12 +1183,9 @@ msgstr "ចាក់វីដេអូ និង GIFs ដោយស្វ័យ�
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ChooseAccountForm.tsx:90
-#: src/screens/Login/ChooseAccountForm.tsx:95
 #: src/screens/Login/ForgotPasswordForm.tsx:123
 #: src/screens/Login/ForgotPasswordForm.tsx:129
-#: src/screens/Login/LoginForm.tsx:310
-#: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Login/LoginForm.tsx:379
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1479,6 +1488,11 @@ msgstr "កាមេរ៉ា"
 #: src/components/Prompt.tsx:143
 #: src/components/Prompt.tsx:145
 #: src/screens/Deactivated.tsx:158
+#: src/screens/Login/ChooseAccountForm.tsx:81
+#: src/screens/Login/ChooseAccountForm.tsx:87
+#: src/screens/Login/LoginForm.tsx:204
+#: src/screens/Login/LoginForm.tsx:210
+#: src/screens/Login/LoginForm.tsx:385
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1658,7 +1672,7 @@ msgstr ""
 msgid "Check my status"
 msgstr "ពិនិត្យស្ថានភាពរបស់ខ្ញុំ"
 
-#: src/screens/Login/LoginForm.tsx:301
+#: src/screens/Login/LoginForm.tsx:359
 msgid "Check your email for a sign in code and enter it here."
 msgstr ""
 
@@ -1940,7 +1954,7 @@ msgid "Confirm your birthdate"
 msgstr "បញ្ជាក់ថ្ងៃខែឆ្នាំកំណើតរបស់អ្នក។"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:274
+#: src/screens/Login/LoginForm.tsx:332
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1948,7 +1962,7 @@ msgstr "បញ្ជាក់ថ្ងៃខែឆ្នាំកំណើតរ
 msgid "Confirmation code"
 msgstr "លេខកូដបញ្ជាក់"
 
-#: src/screens/Login/LoginForm.tsx:337
+#: src/screens/Login/LoginForm.tsx:406
 msgid "Connecting..."
 msgstr "កំពុងភ្ជាប់..."
 
@@ -2012,7 +2026,7 @@ msgstr "ផ្ទាំងខាងក្រោយម៉ឺនុយបរិប
 msgid "Continue"
 msgstr "បន្ត"
 
-#: src/components/AccountList.tsx:128
+#: src/components/AccountList.tsx:129
 msgid "Continue as {0} (currently signed in)"
 msgstr "បន្ត​ជា {0} (បច្ចុប្បន្ន​ចូល)"
 
@@ -2209,7 +2223,7 @@ msgstr "បង្កើតកញ្ចប់ចាប់ផ្តើម"
 msgid "Create a starter pack for me"
 msgstr "បង្កើតកញ្ចប់ចាប់ផ្តើមសម្រាប់ខ្ញុំ"
 
-#: src/view/com/auth/SplashScreen.tsx:55
+#: src/view/com/auth/SplashScreen.tsx:53
 #: src/view/com/auth/SplashScreen.web.tsx:117
 #: src/view/shell/bottom-bar/BottomBar.tsx:345
 #: src/view/shell/bottom-bar/BottomBar.tsx:350
@@ -2242,7 +2256,7 @@ msgstr "បង្កើតរូបតំណាងជំនួសវិញ"
 msgid "Create another"
 msgstr "បង្កើតមួយផ្សេងទៀត"
 
-#: src/view/com/auth/SplashScreen.tsx:47
+#: src/view/com/auth/SplashScreen.tsx:45
 #: src/view/com/auth/SplashScreen.web.tsx:109
 msgid "Create new account"
 msgstr "បង្កើតគណនីថ្មី"
@@ -2716,6 +2730,9 @@ msgstr ""
 msgid "Each code works once. You'll receive more invite codes periodically."
 msgstr ""
 
+#: src/components/forms/HostingProvider.tsx:85
+#: src/components/forms/HostingProvider.tsx:87
+#: src/components/forms/HostingProvider.tsx:91
 #: src/screens/Settings/AccountSettings.tsx:123
 #: src/screens/Settings/NotificationSettings/ActivityNotificationSettings.tsx:249
 #: src/screens/StarterPack/StarterPackScreen.tsx:588
@@ -2838,6 +2855,7 @@ msgid "Email 2FA enabled"
 msgstr "អ៊ីមែល 2FA ត្រូវបានបើក"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:93
+#: src/screens/Login/LoginForm.tsx:265
 msgid "Email address"
 msgstr "អាសយដ្ឋានអ៊ីមែល"
 
@@ -2973,13 +2991,13 @@ msgstr "បញ្ចូលលេខកូដដែលអ្នកបានទទ
 msgid "Enter the domain you want to use"
 msgstr "បញ្ចូល Domain ដែលអ្នកចង់ប្រើ"
 
+#: src/screens/Login/LoginForm.tsx:282
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/ForgotPasswordForm.tsx:113
 msgid "Enter the email you used to create your account. We'll send you a \"reset code\" so you can set a new password."
 msgstr "បញ្ចូលអ៊ីមែលដែលអ្នកធ្លាប់បង្កើតគណនីរបស់អ្នក។ យើងនឹងផ្ញើ \"កំណត់លេខកូដឡើងវិញ\" ដល់អ្នក ដូច្នេះអ្នកអាចកំណត់ពាក្យសម្ងាត់ថ្មី"
-
-#: src/screens/Login/LoginForm.tsx:218
-msgid "Enter the username or email address you used when you created your account"
-msgstr ""
 
 #: src/components/dialogs/BirthDateSettings.tsx:104
 msgid "Enter your birth date"
@@ -2990,11 +3008,11 @@ msgstr "បញ្ចូលថ្ងៃខែឆ្នាំកំណើតរប
 msgid "Enter your email address"
 msgstr "បញ្ចូលអាសយដ្ឋានអ៊ីមែលរបស់អ្នក"
 
-#: src/screens/Login/LoginForm.tsx:243
+#: src/screens/Login/LoginForm.tsx:308
 msgid "Enter your password"
 msgstr ""
 
-#: src/screens/Login/index.tsx:123
+#: src/screens/Login/index.tsx:134
 msgid "Enter your username and password"
 msgstr "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់ និងពាក្យសម្ងាត់របស់អ្នក។"
 
@@ -3015,7 +3033,7 @@ msgstr "កំហុស"
 msgid "Error loading post"
 msgstr ""
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:152
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:154
 msgid "Error loading preference"
 msgstr ""
 
@@ -3646,16 +3664,16 @@ msgstr ""
 msgid "Forever"
 msgstr "ជារៀងរហូត"
 
-#: src/screens/Login/index.tsx:153
-#: src/screens/Login/index.tsx:168
+#: src/screens/Login/index.tsx:166
+#: src/screens/Login/index.tsx:181
 msgid "Forgot Password"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:248
+#: src/screens/Login/LoginForm.tsx:313
 msgid "Forgot password?"
 msgstr "ភ្លេចពាក្យសម្ងា?ត់"
 
-#: src/screens/Login/LoginForm.tsx:259
+#: src/screens/Login/LoginForm.tsx:318
 msgid "Forgot?"
 msgstr "ភ្លេច?"
 
@@ -3747,7 +3765,12 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
+#: src/screens/Login/Welcome.tsx:89
 msgid "Get started"
+msgstr ""
+
+#: src/screens/Login/Welcome.tsx:83
+msgid "GetStarted"
 msgstr ""
 
 #: src/components/ProgressGuide/List.tsx:35
@@ -4056,8 +4079,8 @@ msgstr "ទំព័រដើម"
 msgid "Host:"
 msgstr ""
 
+#: src/components/forms/HostingProvider.tsx:75
 #: src/screens/Login/ForgotPasswordForm.tsx:83
-#: src/screens/Login/LoginForm.tsx:184
 msgid "Hosting provider"
 msgstr ""
 
@@ -4210,7 +4233,7 @@ msgstr "សារមិនសមរម្យ ឬតំណច្បាស់ល�
 msgid "Inbox zero!"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:164
+#: src/screens/Login/LoginForm.tsx:181
 msgid "Incorrect username or password"
 msgstr "ឈ្មោះអ្នកប្រើ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ"
 
@@ -4230,7 +4253,7 @@ msgstr "បញ្ចូលពាក្យសម្ងាត់ថ្មី"
 msgid "Input password for account deletion"
 msgstr "បញ្ចូលពាក្យសម្ងាត់សម្រាប់ការលុបគណនី"
 
-#: src/screens/Login/LoginForm.tsx:289
+#: src/screens/Login/LoginForm.tsx:347
 msgid "Input the code which has been emailed to you"
 msgstr "បញ្ចូលលេខកូដដែលបានផ្ញើទៅអ្នក"
 
@@ -4246,7 +4269,7 @@ msgstr ""
 msgid "Introducing activity notifications"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:156
+#: src/screens/Login/LoginForm.tsx:173
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:70
 msgid "Invalid 2FA confirmation code."
 msgstr "លេខកូដបញ្ជាក់ 2FA មិនត្រឹមត្រូវ"
@@ -4396,6 +4419,7 @@ msgstr "ស្វែងយល់បន្ថែម"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
+#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
@@ -4432,8 +4456,8 @@ msgstr "ស្វែងយល់បន្ថែមអំពីការព្រ
 msgid "Learn more about verification on Bluesky"
 msgstr ""
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:126
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:129
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:128
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:131
 msgid "Learn more about what is public on Bluesky."
 msgstr "ស្វែងយល់បន្ថែមអំពីអ្វីដែលជាសាធារណៈនៅលើ Bluesky"
 
@@ -4441,6 +4465,10 @@ msgstr "ស្វែងយល់បន្ថែមអំពីអ្វីដែ
 #: src/view/com/auth/server-input/index.tsx:220
 msgid "Learn more."
 msgstr "ស្វែងយល់បន្ថែម"
+
+#: src/screens/Login/Welcome.tsx:70
+msgid "Learnmore"
+msgstr ""
 
 #: src/components/dms/LeaveConvoPrompt.tsx:48
 msgid "Leave"
@@ -4476,8 +4504,8 @@ msgstr "ចាកចេញទៅ"
 msgid "Let me choose"
 msgstr "អនុញ្ញាតឱ្យខ្ញុំជ្រើសរើស"
 
-#: src/screens/Login/index.tsx:154
-#: src/screens/Login/index.tsx:169
+#: src/screens/Login/index.tsx:167
+#: src/screens/Login/index.tsx:182
 msgid "Let's get your password reset!"
 msgstr "ចូរយើងកំណត់ពាក្យសម្ងាត់របស់អ្នកឡើងវិញ"
 
@@ -4693,7 +4721,7 @@ msgstr "កំពុងផ្ទុក..."
 msgid "Log"
 msgstr "កំណត់ហេតុ"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:105
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:107
 msgid "Logged-out visibility"
 msgstr "ភាពមើលឃើញពីការចេញពីគណនី"
 
@@ -5095,7 +5123,7 @@ msgid "Navigate to starter pack"
 msgstr ""
 
 #: src/screens/Login/ForgotPasswordForm.tsx:166
-#: src/screens/Login/LoginForm.tsx:344
+#: src/screens/Login/LoginForm.tsx:413
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "រុករកទៅអេក្រង់បន្ទាប់"
@@ -5242,8 +5270,7 @@ msgstr "ព័ត៌មាន"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:137
 #: src/screens/Login/ForgotPasswordForm.tsx:143
-#: src/screens/Login/LoginForm.tsx:343
-#: src/screens/Login/LoginForm.tsx:350
+#: src/screens/Login/LoginForm.tsx:412
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5261,6 +5288,10 @@ msgstr "បន្ទាប់"
 #: src/view/com/lightbox/Lightbox.web.tsx:169
 msgid "Next image"
 msgstr "រូបភាពបន្ទាប់"
+
+#: src/screens/Login/Welcome.tsx:45
+msgid "Nicely done.Welcome to Gander."
+msgstr ""
 
 #: src/screens/Settings/AppPasswords.tsx:108
 msgid "No app passwords yet"
@@ -5313,7 +5344,7 @@ msgstr "មិនមានការជូនដំណឹងនៅឡើយទេ
 #: src/screens/Messages/Settings.tsx:104
 #: src/screens/Settings/ActivityPrivacySettings.tsx:129
 #: src/screens/Settings/ActivityPrivacySettings.tsx:134
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:160
 msgid "No one"
 msgstr "គ្មាននរណាម្នាក់"
 
@@ -5420,7 +5451,7 @@ msgstr "រកមិនឃើញ"
 msgid "Note about sharing"
 msgstr "ចំណាំអំពីការចែករំលែក"
 
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:115
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:117
 msgid "Note: Bluesky is an open and public network. This setting only limits the visibility of your content on the Bluesky app and website, and other apps may not respect this setting. Your content may still be shown to logged-out users by other apps and websites."
 msgstr "ចំណាំ៖ Bluesky គឺជាបណ្តាញបើកចំហ និងសាធារណៈ។ ការកំណត់នេះកំណត់តែការមើលឃើញខ្លឹមសាររបស់អ្នកនៅលើកម្មវិធី និងគេហទំព័រ Bluesky ហើយកម្មវិធីផ្សេងទៀតប្រហែលជាមិនគោរពការកំណត់នេះទេ។ ខ្លឹមសាររបស់អ្នកអាចនៅតែត្រូវបានបង្ហាញដល់អ្នកប្រើប្រាស់ដែលបានចេញពីគណនីដោយកម្មវិធី និងគេហទំព័រផ្សេងទៀត"
 
@@ -5564,7 +5595,7 @@ msgstr "មាន​តែ​អក្សរ លេខ និង​សហសញ�
 
 #: src/screens/Settings/ActivityPrivacySettings.tsx:120
 #: src/screens/Settings/ActivityPrivacySettings.tsx:125
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:156
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:158
 msgid "Only followers who I follow"
 msgstr ""
 
@@ -5714,12 +5745,12 @@ msgstr "បើកវិចិត្រសាលរូបភាពឧបករណ
 msgid "Opens emoji picker"
 msgstr ""
 
-#: src/view/com/auth/SplashScreen.tsx:49
+#: src/view/com/auth/SplashScreen.tsx:47
 #: src/view/com/auth/SplashScreen.web.tsx:111
 msgid "Opens flow to create a new Bluesky account"
 msgstr "បើកលំហូរដើម្បីបង្កើតគណនី Bluesky ថ្មី"
 
-#: src/view/com/auth/SplashScreen.tsx:63
+#: src/view/com/auth/SplashScreen.tsx:61
 #: src/view/com/auth/SplashScreen.web.tsx:125
 msgid "Opens flow to sign in to your existing Bluesky account"
 msgstr ""
@@ -5744,7 +5775,7 @@ msgstr "បើកបញ្ជីលេខកូដអញ្ជើញ"
 msgid "Opens live status dialog"
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:249
+#: src/screens/Login/LoginForm.tsx:314
 msgid "Opens password reset form"
 msgstr "បើកទម្រង់កំណត់ពាក្យសម្ងាត់ឡើងវិញ"
 
@@ -5800,9 +5831,9 @@ msgstr ""
 msgid "Other"
 msgstr "ផ្សេងទៀត។"
 
-#: src/components/AccountList.tsx:88
-msgid "Other account"
-msgstr "គណនីផ្សេងទៀត"
+#: src/components/AccountList.tsx:86
+msgid "Other Account"
+msgstr ""
 
 #: src/view/com/composer/select-language/SelectLangBtn.tsx:93
 msgid "Other..."
@@ -5825,7 +5856,7 @@ msgstr "រកមិនឃើញទំព័រ"
 msgid "Page Not Found"
 msgstr "រកមិនឃើញទំព័រ"
 
-#: src/screens/Login/LoginForm.tsx:228
+#: src/screens/Login/LoginForm.tsx:293
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5842,7 +5873,7 @@ msgstr "បានផ្លាស់ប្តូរពាក្យសម្ងា
 msgid "Password must be at least 8 characters long."
 msgstr ""
 
-#: src/screens/Login/index.tsx:181
+#: src/screens/Login/index.tsx:194
 msgid "Password updated"
 msgstr "បានធ្វើបច្ចុប្បន្នភាពពាក្យសម្ងាត់"
 
@@ -6033,6 +6064,10 @@ msgstr ""
 msgid "Please enter the security code we sent to your previous email address."
 msgstr ""
 
+#: src/screens/Login/LoginForm.tsx:107
+msgid "Please enter your email address"
+msgstr ""
+
 #: src/screens/Signup/state.ts:262
 #: src/screens/Signup/StepInfo/index.tsx:91
 msgid "Please enter your email."
@@ -6046,17 +6081,13 @@ msgstr "សូមបញ្ចូលលេខកូដអញ្ជើញរបស
 msgid "Please enter your new email address."
 msgstr ""
 
-#: src/screens/Login/LoginForm.tsx:99
+#: src/screens/Login/LoginForm.tsx:112
 msgid "Please enter your password"
 msgstr ""
 
 #: src/view/com/modals/DeleteAccount.tsx:235
 msgid "Please enter your password as well:"
 msgstr "សូមបញ្ចូលពាក្យសម្ងាត់របស់អ្នកផងដែរ៖"
-
-#: src/screens/Login/LoginForm.tsx:94
-msgid "Please enter your username"
-msgstr ""
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:290
 msgid "Please explain why you think this label was incorrectly applied by {0}"
@@ -6965,7 +6996,7 @@ msgstr "កំណត់ស្ថានភាពចាប់ផ្តើមឡើ
 msgid "Reset password"
 msgstr "កំណត់ពាក្យសម្ងាត់ឡើងវិញ"
 
-#: src/screens/Login/LoginForm.tsx:324
+#: src/screens/Login/LoginForm.tsx:393
 msgid "Retries signing in"
 msgstr ""
 
@@ -6981,8 +7012,8 @@ msgstr "ព្យាយាមម្តងទៀតនូវសកម្មភា
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:323
-#: src/screens/Login/LoginForm.tsx:330
+#: src/screens/Login/LoginForm.tsx:392
+#: src/screens/Login/LoginForm.tsx:399
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7228,10 +7259,6 @@ msgstr "ស្វែងរកគ្រាប់រំកិល។ ប្រើ�
 msgid "Select a color"
 msgstr "ជ្រើសរើសពណ៌មួយ"
 
-#: src/screens/Login/ChooseAccountForm.tsx:77
-msgid "Select account"
-msgstr "ជ្រើសរើសគណនី"
-
 #: src/components/AppLanguageDropdown.tsx:60
 msgid "Select an app language"
 msgstr ""
@@ -7260,7 +7287,7 @@ msgstr "ជ្រើសរើសភាសាមាតិកា"
 msgid "Select duration"
 msgstr ""
 
-#: src/screens/Login/index.tsx:144
+#: src/screens/Login/index.tsx:157
 msgid "Select from an existing account"
 msgstr "ជ្រើសរើសពីគណនីដែលមានស្រាប់"
 
@@ -7443,8 +7470,11 @@ msgid "Settings"
 msgstr "ការកំណត់"
 
 #: src/screens/Settings/NotificationSettings/index.tsx:187
-#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:84
-msgid "Settings for activity alerts"
+msgid "Settings for activity from others"
+msgstr ""
+
+#: src/screens/Settings/PrivacyAndSecuritySettings.tsx:85
+msgid "Settings for allowing others to be notified of your posts"
 msgstr ""
 
 #: src/screens/Settings/NotificationSettings/index.tsx:121
@@ -7704,11 +7734,10 @@ msgstr ""
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:122
-#: src/screens/Login/index.tsx:143
-#: src/screens/Login/LoginForm.tsx:181
-#: src/view/com/auth/SplashScreen.tsx:61
-#: src/view/com/auth/SplashScreen.tsx:69
+#: src/screens/Login/index.tsx:133
+#: src/screens/Login/index.tsx:156
+#: src/view/com/auth/SplashScreen.tsx:59
+#: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
 #: src/view/com/auth/SplashScreen.web.tsx:131
 #: src/view/shell/bottom-bar/BottomBar.tsx:355
@@ -7720,13 +7749,9 @@ msgstr ""
 msgid "Sign in"
 msgstr "ចូលគណនី"
 
-#: src/components/AccountList.tsx:129
+#: src/components/AccountList.tsx:130
 msgid "Sign in as {0}"
 msgstr "ចូលគណនីជា {0}"
-
-#: src/screens/Login/ChooseAccountForm.tsx:80
-msgid "Sign in as..."
-msgstr "ចូលគណនីជា..."
 
 #: src/screens/Deactivated.tsx:203
 #: src/screens/Deactivated.tsx:209
@@ -7737,13 +7762,18 @@ msgstr ""
 msgid "Sign in or create your account to join the conversation!"
 msgstr "ចូល ឬបង្កើតគណនីរបស់អ្នក ដើម្បីចូលរួមការសន្ទនា"
 
-#: src/components/AccountList.tsx:68
+#: src/components/AccountList.tsx:69
 msgid "Sign in to account that is not listed"
 msgstr "ចូលទៅគណនីដែលមិនមានក្នុងបញ្ជី"
 
 #: src/components/dialogs/Signin.tsx:46
 msgid "Sign in to Bluesky or create a new account"
 msgstr "ចូល Bluesky ឬបង្កើតគណនីថ្មីមួយ"
+
+#: src/screens/Login/ChooseAccountForm.tsx:108
+#: src/screens/Login/LoginForm.tsx:238
+msgid "Sign in to Gander."
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:461
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:463
@@ -7777,7 +7807,7 @@ msgid "Sign-in Required"
 msgstr "តម្រូវឱ្យចូល"
 
 #: src/lib/hooks/useAccountSwitcher.ts:41
-#: src/screens/Login/ChooseAccountForm.tsx:53
+#: src/screens/Login/ChooseAccountForm.tsx:56
 msgid "Signed in as @{0}"
 msgstr "ចូលជា @{0}"
 
@@ -8527,6 +8557,10 @@ msgstr "ព័ត៌មាននេះមិនត្រូវបានចែក
 msgid "This is not a valid link"
 msgstr ""
 
+#: src/screens/Login/Welcome.tsx:48
+msgid "This is where social media gets sane again."
+msgstr ""
+
 #: src/components/moderation/ModerationDetailsDialog.tsx:168
 msgid "This label was applied by the author."
 msgstr "ស្លាកនេះត្រូវបានអនុវត្តដោយអ្នកនិពន្ធ"
@@ -8794,8 +8828,8 @@ msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "មិនអាចភ្ជាប់បានទេ។ សូមពិនិត្យមើលការតភ្ជាប់អ៊ីនធឺណិតរបស់អ្នក ហើយព្យាយាមម្តងទៀត"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:68
-#: src/screens/Login/index.tsx:79
-#: src/screens/Login/LoginForm.tsx:169
+#: src/screens/Login/index.tsx:88
+#: src/screens/Login/LoginForm.tsx:186
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9156,10 +9190,6 @@ msgstr "បាន​បង្កើត​បញ្ជី​អ្នក​ប្
 msgctxt "toast"
 msgid "User list updated"
 msgstr "ធ្វើបច្ចុប្បន្នភាពបញ្ជីអ្នកប្រើប្រាស់"
-
-#: src/screens/Login/LoginForm.tsx:201
-msgid "Username or email address"
-msgstr "ឈ្មោះអ្នកប្រើប្រាស់ ឬអាសយដ្ឋានអ៊ីមែល"
 
 #: src/components/WhoCanReply.tsx:301
 msgid "users followed by <0>@{0}</0>"
@@ -9575,7 +9605,7 @@ msgstr "តើអ្នកចាប់អារម្មណ៍អ្វី?"
 msgid "What do you want to call your starter pack?"
 msgstr "តើអ្នកចង់ហៅកញ្ចប់ចាប់ផ្តើមរបស់អ្នកថាម៉េច?"
 
-#: src/view/com/auth/SplashScreen.tsx:38
+#: src/view/com/auth/SplashScreen.tsx:36
 #: src/view/com/auth/SplashScreen.web.tsx:99
 #: src/view/com/composer/Composer.tsx:774
 msgid "What's up?"
@@ -9789,7 +9819,7 @@ msgstr "អ្នកអាចបន្តការសន្ទនាបន្ត
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:182
+#: src/screens/Login/index.tsx:195
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "ឥឡូវនេះ អ្នកអាចចូលដោយប្រើពាក្យសម្ងាត់ថ្មីរបស់អ្នក"
@@ -10184,6 +10214,7 @@ msgstr "ពាក្យដែលអ្នកបានបិទ"
 msgid "Your password has been changed successfully!"
 msgstr "ពាក្យសម្ងាត់របស់អ្នកត្រូវបានផ្លាស់ប្តូរដោយជោគជ័យ"
 
+#: src/screens/Login/LoginForm.tsx:117
 #: src/screens/Signup/StepInfo/index.tsx:127
 msgid "Your password must be at least 8 characters long."
 msgstr ""

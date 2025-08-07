@@ -43,7 +43,12 @@ export function AccountList({
   return (
     <View
       pointerEvents={pendingDid ? 'none' : 'auto'}
-      style={[a.rounded_md, a.overflow_hidden, t.atoms.border_contrast_low]}>
+      style={[
+        a.overflow_hidden,
+        t.atoms.border_contrast_low,
+        a.gap_2xl,
+        a.mt_md,
+      ]}>
       {accounts.map(account => (
         <React.Fragment key={account.did}>
           <AccountItem
@@ -53,10 +58,11 @@ export function AccountList({
             isCurrentAccount={account.did === currentAccount?.did}
             isPendingAccount={account.did === pendingDid}
           />
-          <View style={[{borderBottomWidth: 1, borderColor: '#D8D8D8  '}]} />
+          <View style={[{borderBottomWidth: 1, borderColor: '#D8D8D8'}]} />
         </React.Fragment>
       ))}
       <Button
+        hitSlop={24}
         testID="chooseAddAccountBtn"
         style={[a.flex_1]}
         onPress={pendingDid ? undefined : onPressAddAccount}
@@ -67,7 +73,6 @@ export function AccountList({
               a.flex_1,
               a.flex_row,
               a.align_center,
-              a.py_2xl,
               (hovered || pressed) && t.atoms.bg_contrast_25,
             ]}>
             <Text
@@ -88,18 +93,20 @@ export function AccountList({
   )
 }
 
-function AccountItem({
+export function AccountItem({
   profile,
   account,
   onSelect,
   isCurrentAccount,
   isPendingAccount,
+  hideEndIcon = false,
 }: {
   profile?: AppBskyActorDefs.ProfileViewDetailed
   account: SessionAccount
   onSelect: (account: SessionAccount) => void
   isCurrentAccount: boolean
   isPendingAccount: boolean
+  hideEndIcon?: boolean
 }) {
   const t = useTheme()
   const {_} = useLingui()
@@ -112,6 +119,7 @@ function AccountItem({
 
   return (
     <Button
+      hitSlop={24}
       testID={`chooseAccountBtn-${account.handle}`}
       key={account.did}
       style={[a.w_full]}
@@ -128,7 +136,7 @@ function AccountItem({
             a.flex_row,
             a.align_center,
             a.gap_sm,
-            a.py_2xl,
+
             (hovered || pressed || isPendingAccount) && t.atoms.bg_contrast_25,
           ]}>
           <UserAvatar
@@ -160,7 +168,7 @@ function AccountItem({
             </View>
           </View>
 
-          {isCurrentAccount ? (
+          {hideEndIcon ? null : isCurrentAccount ? (
             <Check size="sm" style={[{color: t.palette.positive_600}]} />
           ) : (
             <Chevron size="sm" style={[t.atoms.text]} />
