@@ -247,7 +247,15 @@ export const LoginForm = ({
         </View>
       )}
 
-      <View style={a.mx_2xl}>
+      <View
+        style={[
+          account ? a.mx_lg : a.mx_2xl,
+          {
+            borderTopRightRadius: 8,
+            borderTopLeftRadius: 8,
+            overflow: 'hidden',
+          },
+        ]}>
         {account ? (
           <AccountItem
             profile={profiles?.profiles.find(p => p.did === account.did)}
@@ -320,6 +328,7 @@ export const LoginForm = ({
           </Button>
         </TextField.Root>
       </View>
+
       {isAuthFactorTokenNeeded && (
         <View style={a.mx_2xl}>
           <TextField.LabelText>

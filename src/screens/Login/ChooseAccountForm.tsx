@@ -75,7 +75,7 @@ export const ChooseAccountForm = ({
   )
 
   return (
-    <FormContainer testID="chooseAccountForm">
+    <FormContainer style={[a.px_lg]} testID="chooseAccountForm">
       <Button
         style={a.self_start}
         label={_(msg`Cancel`)}

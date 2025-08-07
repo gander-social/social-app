@@ -27,7 +27,13 @@ enum Forms {
   PasswordUpdated,
 }
 
-export const Login = ({onPressBack}: {onPressBack: () => void}) => {
+export const Login = ({
+  onPressBack,
+  // showWelcomeScreen,
+}: {
+  onPressBack: () => void
+  showWelcomeScreen: () => void
+}) => {
   const {_} = useLingui()
   const failedAttemptCountRef = useRef(0)
   const startTimeRef = useRef(Date.now())
@@ -97,6 +103,10 @@ export const Login = ({onPressBack}: {onPressBack: () => void}) => {
   }, [serviceError, serviceUrl, _])
 
   const onPressForgotPassword = () => {
+    // It is for showing signup thanks screen
+    // showWelcomeScreen()
+    // return
+
     setCurrentForm(Forms.ForgotPassword)
     logEvent('signin:forgotPasswordPressed', {})
   }

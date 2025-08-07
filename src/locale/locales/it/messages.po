@@ -128,8 +128,8 @@ msgstr "{0, plural, other {{1} post}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, other {# persone hanno}} usato questo starter pack!"
 
-#: src/screens/Login/Welcome.tsx:55
-#: src/screens/Login/Welcome.tsx:64
+#: src/screens/Welcome/index.tsx:74
+#: src/screens/Welcome/index.tsx:83
 msgid "{0}"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgstr "⚠Nome utente non valido"
 msgid "24 hours"
 msgstr "24 ore"
 
-#: src/screens/Login/LoginForm.tsx:326
+#: src/screens/Login/LoginForm.tsx:335
 msgid "2FA Confirmation"
 msgstr "Conferma 2FA"
 
@@ -799,7 +799,7 @@ msgstr "Etichette per contenuti per adulti"
 msgid "Advanced"
 msgstr "Avanzate"
 
-#: src/screens/Login/LoginForm.tsx:419
+#: src/screens/Login/LoginForm.tsx:428
 msgid "Agree and continue"
 msgstr ""
 
@@ -1186,11 +1186,11 @@ msgstr "Riproduci automaticamente video e GIF"
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
-#: src/screens/Login/ForgotPasswordForm.tsx:166
 #: src/screens/Login/ForgotPasswordForm.tsx:172
-#: src/screens/Login/LoginForm.tsx:379
-#: src/screens/Login/ResetpasswordDialog.tsx:213
-#: src/screens/Login/ResetpasswordDialog.tsx:219
+#: src/screens/Login/ForgotPasswordForm.tsx:178
+#: src/screens/Login/LoginForm.tsx:388
+#: src/screens/Login/ResetpasswordDialog.tsx:234
+#: src/screens/Login/ResetpasswordDialog.tsx:240
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1497,7 +1497,7 @@ msgstr "Fotocamera"
 #: src/screens/Login/ChooseAccountForm.tsx:87
 #: src/screens/Login/LoginForm.tsx:204
 #: src/screens/Login/LoginForm.tsx:210
-#: src/screens/Login/LoginForm.tsx:385
+#: src/screens/Login/LoginForm.tsx:394
 #: src/screens/Profile/Header/EditProfileDialog.tsx:225
 #: src/screens/Profile/Header/EditProfileDialog.tsx:233
 #: src/screens/Search/Shell.tsx:349
@@ -1677,7 +1677,7 @@ msgstr "Messaggi"
 msgid "Check my status"
 msgstr "Verifica il mio stato"
 
-#: src/screens/Login/LoginForm.tsx:359
+#: src/screens/Login/LoginForm.tsx:368
 msgid "Check your email for a sign in code and enter it here."
 msgstr "Controlla la tua casella di posta e inserisci qui il codice di accesso."
 
@@ -1959,7 +1959,7 @@ msgid "Confirm your birthdate"
 msgstr "Conferma la tua data di nascita"
 
 #: src/components/dialogs/EmailDialog/components/TokenField.tsx:36
-#: src/screens/Login/LoginForm.tsx:332
+#: src/screens/Login/LoginForm.tsx:341
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:144
 #: src/screens/Settings/components/DisableEmail2FADialog.tsx:150
 #: src/view/com/modals/DeleteAccount.tsx:220
@@ -1967,7 +1967,7 @@ msgstr "Conferma la tua data di nascita"
 msgid "Confirmation code"
 msgstr "Codice di conferma"
 
-#: src/screens/Login/LoginForm.tsx:406
+#: src/screens/Login/LoginForm.tsx:415
 msgid "Connecting..."
 msgstr "Connessione in corso..."
 
@@ -2031,7 +2031,7 @@ msgstr "Sfondo del menu contestuale, clicca per chiudere il menu."
 msgid "Continue"
 msgstr "Continua"
 
-#: src/components/AccountList.tsx:126
+#: src/components/AccountList.tsx:135
 msgid "Continue as {0} (currently signed in)"
 msgstr "Continua come {0} (attualmente connesso)"
 
@@ -2578,7 +2578,7 @@ msgid "Dismiss error"
 msgstr "Ignora errore"
 
 #: src/components/ProgressGuide/List.tsx:42
-#: src/screens/Login/ResetpasswordDialog.tsx:129
+#: src/screens/Login/ResetpasswordDialog.tsx:145
 msgid "Dismiss getting started guide"
 msgstr "Ignora la guida iniziale"
 
@@ -2984,8 +2984,8 @@ msgstr "Inserisci codice"
 msgid "Enter fullscreen"
 msgstr "Passa a schermo intero"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:142
-msgid "Enter the code we sent to ben@theartdepartment.studio"
+#: src/screens/Login/ResetpasswordDialog.tsx:159
+msgid "Enter the code we sent to {0}"
 msgstr ""
 
 #: src/view/com/modals/ChangePassword.tsx:165
@@ -2996,7 +2996,7 @@ msgstr "Inserisci il codice che hai ricevuto per modificare la tua password."
 msgid "Enter the domain you want to use"
 msgstr "Inserisci il dominio che vuoi usare"
 
-#: src/screens/Login/LoginForm.tsx:282
+#: src/screens/Login/LoginForm.tsx:290
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
 
@@ -3004,16 +3004,16 @@ msgstr ""
 msgid "Enter your birth date"
 msgstr "Inserisci la tua data di nascita"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:117
+#: src/screens/Login/ForgotPasswordForm.tsx:122
 #: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "Inserisci il tuo indirizzo email"
 
-#: src/screens/Login/LoginForm.tsx:308
+#: src/screens/Login/LoginForm.tsx:316
 msgid "Enter your password"
 msgstr "Inserisci la tua password"
 
-#: src/screens/Login/index.tsx:131
+#: src/screens/Login/index.tsx:141
 msgid "Enter your username and password"
 msgstr "Inserisci il tuo nome utente e la tua password"
 
@@ -3665,17 +3665,17 @@ msgstr "Per te"
 msgid "Forever"
 msgstr "Per sempre"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:95
-#: src/screens/Login/index.tsx:163
-#: src/screens/Login/index.tsx:178
+#: src/screens/Login/ForgotPasswordForm.tsx:100
+#: src/screens/Login/index.tsx:173
+#: src/screens/Login/index.tsx:188
 msgid "Forgot Password"
 msgstr "Password dimenticata"
 
-#: src/screens/Login/LoginForm.tsx:313
+#: src/screens/Login/LoginForm.tsx:321
 msgid "Forgot password?"
 msgstr "Password dimenticata?"
 
-#: src/screens/Login/LoginForm.tsx:318
+#: src/screens/Login/LoginForm.tsx:326
 msgid "Forgot?"
 msgstr "Password dimenticata?"
 
@@ -3767,11 +3767,11 @@ msgstr ""
 
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:76
 #: src/components/dialogs/EmailDialog/screens/VerificationReminder.tsx:86
-#: src/screens/Login/Welcome.tsx:89
+#: src/screens/Welcome/index.tsx:108
 msgid "Get started"
 msgstr "Per cominciare"
 
-#: src/screens/Login/Welcome.tsx:83
+#: src/screens/Welcome/index.tsx:102
 msgid "GetStarted"
 msgstr ""
 
@@ -3802,7 +3802,7 @@ msgstr "Evidenti violazioni della legge o dei termini di servizio"
 #: src/screens/VideoFeed/components/Header.tsx:163
 #: src/screens/VideoFeed/index.tsx:1141
 #: src/screens/VideoFeed/index.tsx:1145
-#: src/view/com/auth/LoggedOut.tsx:72
+#: src/view/com/auth/LoggedOut.tsx:78
 #: src/view/screens/NotFound.tsx:57
 #: src/view/screens/ProfileList.tsx:1038
 msgid "Go back"
@@ -3860,7 +3860,7 @@ msgstr "Vai al profilo di {firstAuthorName}"
 msgid "Go to conversation with {0}"
 msgstr "Vai alla conversazione con {0}"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:136
+#: src/screens/Login/ForgotPasswordForm.tsx:142
 #: src/view/com/modals/ChangePassword.tsx:179
 msgid "Go to next"
 msgstr "Prosegui"
@@ -3968,7 +3968,7 @@ msgstr "Lista nascosta"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
-#: src/screens/Login/ResetpasswordDialog.tsx:191
+#: src/screens/Login/ResetpasswordDialog.tsx:209
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "Nascondi"
@@ -4098,7 +4098,7 @@ msgstr "Prima le risposte più popolari"
 msgid "How should we open this link?"
 msgstr "Come dovremmo aprire questo link?"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/ForgotPasswordForm.tsx:149
 msgid "I already have a reset code?"
 msgstr ""
 
@@ -4239,7 +4239,7 @@ msgstr "Nessuna richiesta!"
 msgid "Incorrect username or password"
 msgstr "Nome utente o password errati"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:161
+#: src/screens/Login/ResetpasswordDialog.tsx:179
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "Inserisci il codice inviato alla tua email per reimpostare la password"
@@ -4248,7 +4248,7 @@ msgstr "Inserisci il codice inviato alla tua email per reimpostare la password"
 msgid "Input confirmation code for account deletion"
 msgstr "Inserisci il codice di conferma per l'eliminazione dell'account"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:181
+#: src/screens/Login/ResetpasswordDialog.tsx:199
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "Inserisci la nuova password"
@@ -4257,7 +4257,7 @@ msgstr "Inserisci la nuova password"
 msgid "Input password for account deletion"
 msgstr "Inserisci la password per l'eliminazione dell'account"
 
-#: src/screens/Login/LoginForm.tsx:347
+#: src/screens/Login/LoginForm.tsx:356
 msgid "Input the code which has been emailed to you"
 msgstr "Inserisci il codice che ti è stato inviato via email"
 
@@ -4423,10 +4423,10 @@ msgstr "ulteriori informazioni"
 
 #: src/components/verification/VerificationsDialog.tsx:165
 #: src/components/verification/VerifierDialog.tsx:132
-#: src/screens/Login/Welcome.tsx:77
 #: src/screens/Moderation/VerificationSettings.tsx:47
 #: src/screens/Profile/Header/EditProfileDialog.tsx:359
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:212
+#: src/screens/Welcome/index.tsx:96
 msgid "Learn more"
 msgstr "Ulteriori informazioni"
 
@@ -4470,7 +4470,7 @@ msgstr "Scopri cosa è pubblico su Bluesky."
 msgid "Learn more."
 msgstr "Saperne di più."
 
-#: src/screens/Login/Welcome.tsx:70
+#: src/screens/Welcome/index.tsx:89
 msgid "Learnmore"
 msgstr ""
 
@@ -4508,8 +4508,8 @@ msgstr "mancanti."
 msgid "Let me choose"
 msgstr "Lascia scegliere a me"
 
-#: src/screens/Login/index.tsx:164
-#: src/screens/Login/index.tsx:179
+#: src/screens/Login/index.tsx:174
+#: src/screens/Login/index.tsx:189
 msgid "Let's get your password reset!"
 msgstr "Reimpostiamo la tua password!"
 
@@ -4742,7 +4742,7 @@ msgstr "Logo di <0>@sawaratsuki.bsky.social</0>"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "Tieni premuto per aprire il menu dei tag per #{tag}"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:149
+#: src/screens/Login/ResetpasswordDialog.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "Ha un formato simile a XXXX-XXXXX"
@@ -5127,8 +5127,8 @@ msgstr "Vai a {0}"
 msgid "Navigate to starter pack"
 msgstr "Vai allo starter pack"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:137
-#: src/screens/Login/LoginForm.tsx:413
+#: src/screens/Login/ForgotPasswordForm.tsx:143
+#: src/screens/Login/LoginForm.tsx:422
 #: src/view/com/modals/ChangePassword.tsx:180
 msgid "Navigates to the next screen"
 msgstr "Vai alla schermata successiva"
@@ -5217,7 +5217,7 @@ msgstr "Nuova lista di moderazione"
 msgid "New password"
 msgstr "Nuova password"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:170
+#: src/screens/Login/ResetpasswordDialog.tsx:188
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "Nuova password"
@@ -5274,8 +5274,8 @@ msgstr "Prima le risposte più recenti"
 msgid "News"
 msgstr "Notizie"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:180
-#: src/screens/Login/LoginForm.tsx:412
+#: src/screens/Login/ForgotPasswordForm.tsx:186
+#: src/screens/Login/LoginForm.tsx:421
 #: src/screens/Login/SetNewPasswordForm.tsx:182
 #: src/screens/Login/SetNewPasswordForm.tsx:188
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:157
@@ -5294,7 +5294,7 @@ msgstr "Avanti"
 msgid "Next image"
 msgstr "Immagine successiva"
 
-#: src/screens/Login/Welcome.tsx:45
+#: src/screens/Welcome/index.tsx:64
 msgid "Nicely done.Welcome to Gander."
 msgstr ""
 
@@ -5780,7 +5780,7 @@ msgstr "Apre la lista dei codici di invito"
 msgid "Opens live status dialog"
 msgstr "Apre la finestra di dialogo dello stato in diretta"
 
-#: src/screens/Login/LoginForm.tsx:314
+#: src/screens/Login/LoginForm.tsx:322
 msgid "Opens password reset form"
 msgstr "Apre il modulo di reimpostazione della password"
 
@@ -5836,7 +5836,7 @@ msgstr "Stato OTA: non disponibile"
 msgid "Other"
 msgstr "Altro"
 
-#: src/components/AccountList.tsx:83
+#: src/components/AccountList.tsx:92
 msgid "Other Account"
 msgstr ""
 
@@ -5861,7 +5861,7 @@ msgstr "Pagina non trovata"
 msgid "Page Not Found"
 msgstr "Pagina non trovata"
 
-#: src/screens/Login/LoginForm.tsx:293
+#: src/screens/Login/LoginForm.tsx:301
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
 #: src/screens/Signup/StepInfo/index.tsx:228
@@ -5878,7 +5878,7 @@ msgstr "Password cambiata"
 msgid "Password must be at least 8 characters long."
 msgstr "La password deve essere lunga almeno 8 caratteri."
 
-#: src/screens/Login/index.tsx:191
+#: src/screens/Login/index.tsx:201
 msgid "Password updated"
 msgstr "Password aggiornata"
 
@@ -6035,7 +6035,7 @@ msgstr "Si prega di completare il captcha di verifica."
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "Verifica di aver inserito correttamente il tuo indirizzo email."
 
-#: src/screens/Login/ResetpasswordDialog.tsx:65
+#: src/screens/Login/ResetpasswordDialog.tsx:71
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "Inserisci una password."
@@ -6319,7 +6319,7 @@ msgid "Processing video..."
 msgstr "Elaborazione video in corso..."
 
 #: src/lib/api/index.ts:60
-#: src/screens/Login/ForgotPasswordForm.tsx:192
+#: src/screens/Login/ForgotPasswordForm.tsx:198
 msgid "Processing..."
 msgstr "Elaborazione in corso…"
 
@@ -6998,11 +6998,11 @@ msgstr "Reimposta il codice"
 msgid "Reset onboarding state"
 msgstr "Ripristina lo stato di registrazione"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:122
+#: src/screens/Login/ResetpasswordDialog.tsx:137
 msgid "Reset password"
 msgstr "Reimposta la password"
 
-#: src/screens/Login/LoginForm.tsx:393
+#: src/screens/Login/LoginForm.tsx:402
 msgid "Retries signing in"
 msgstr "Ritenta l'accesso"
 
@@ -7018,8 +7018,8 @@ msgstr "Ritenta l'ultima azione che ha generato un errore"
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:55
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoFallback.tsx:57
 #: src/components/StarterPack/ProfileStarterPacks.tsx:346
-#: src/screens/Login/LoginForm.tsx:392
-#: src/screens/Login/LoginForm.tsx:399
+#: src/screens/Login/LoginForm.tsx:401
+#: src/screens/Login/LoginForm.tsx:408
 #: src/screens/Messages/ChatList.tsx:254
 #: src/screens/Messages/components/MessageListError.tsx:25
 #: src/screens/Messages/Inbox.tsx:197
@@ -7293,7 +7293,7 @@ msgstr "Seleziona le lingue dei contenuti"
 msgid "Select duration"
 msgstr "Imposta durata"
 
-#: src/screens/Login/index.tsx:154
+#: src/screens/Login/index.tsx:164
 msgid "Select from an existing account"
 msgstr "Seleziona da un account esistente"
 
@@ -7362,7 +7362,7 @@ msgstr "Seleziona le lingue che desideri includere nei feed a cui sei iscritto. 
 msgid "Select your date of birth"
 msgstr "Seleziona la tua data di nascita"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:100
+#: src/screens/Login/ForgotPasswordForm.tsx:105
 msgid "Select your hosting provider and enter the email you used to create your account. We’ll send you a “reset code” so you can set a new password."
 msgstr ""
 
@@ -7387,11 +7387,11 @@ msgstr "Seleziona l'opzione {0} di {numItems}"
 msgid "Send a neat website!"
 msgstr "Consiglia un sito!"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:205
+#: src/screens/Login/ResetpasswordDialog.tsx:224
 msgid "Send a new code"
 msgstr ""
 
-#: src/screens/Login/ForgotPasswordForm.tsx:186
+#: src/screens/Login/ForgotPasswordForm.tsx:192
 msgid "Send Code"
 msgstr ""
 
@@ -7476,7 +7476,7 @@ msgstr "Imposta una nuova password"
 msgid "Set up your account"
 msgstr "Configura il tuo account"
 
-#: src/screens/Login/ForgotPasswordForm.tsx:125
+#: src/screens/Login/ForgotPasswordForm.tsx:130
 msgid "Sets email for password reset"
 msgstr "Imposta l'email per la reimpostazione della password"
 
@@ -7627,7 +7627,7 @@ msgstr "Test preferenze condivise"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
-#: src/screens/Login/ResetpasswordDialog.tsx:191
+#: src/screens/Login/ResetpasswordDialog.tsx:209
 msgid "Show"
 msgstr "Mostra"
 
@@ -7686,8 +7686,8 @@ msgstr "Mostra altre risposte"
 msgid "Show muted replies"
 msgstr "Mostra risposte silenziate"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:186
-#: src/screens/Login/ResetpasswordDialog.tsx:187
+#: src/screens/Login/ResetpasswordDialog.tsx:204
+#: src/screens/Login/ResetpasswordDialog.tsx:205
 msgid "Show password"
 msgstr ""
 
@@ -7758,8 +7758,8 @@ msgstr "Mostra il contenuto"
 
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
-#: src/screens/Login/index.tsx:130
-#: src/screens/Login/index.tsx:153
+#: src/screens/Login/index.tsx:140
+#: src/screens/Login/index.tsx:163
 #: src/view/com/auth/SplashScreen.tsx:59
 #: src/view/com/auth/SplashScreen.tsx:67
 #: src/view/com/auth/SplashScreen.web.tsx:123
@@ -7773,7 +7773,7 @@ msgstr "Mostra il contenuto"
 msgid "Sign in"
 msgstr "Accedi"
 
-#: src/components/AccountList.tsx:127
+#: src/components/AccountList.tsx:136
 msgid "Sign in as {0}"
 msgstr "Accedi come... {0}"
 
@@ -7786,8 +7786,8 @@ msgstr "Accedi o crea un account"
 msgid "Sign in or create your account to join the conversation!"
 msgstr "Accedi o crea il tuo account per partecipare alla conversazione!"
 
-#: src/components/AccountList.tsx:64
-#: src/screens/Login/ResetpasswordDialog.tsx:202
+#: src/components/AccountList.tsx:71
+#: src/screens/Login/ResetpasswordDialog.tsx:221
 msgid "Sign in to account that is not listed"
 msgstr "Accedi a un account non in elenco"
 
@@ -8035,8 +8035,8 @@ msgstr "Cronologia"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
-#: src/screens/Login/ResetpasswordDialog.tsx:227
-#: src/screens/Login/ResetpasswordDialog.tsx:233
+#: src/screens/Login/ResetpasswordDialog.tsx:248
+#: src/screens/Login/ResetpasswordDialog.tsx:254
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8584,7 +8584,7 @@ msgstr "Queste informazioni non vengono condivise con altri utenti."
 msgid "This is not a valid link"
 msgstr "Non è un link valido"
 
-#: src/screens/Login/Welcome.tsx:48
+#: src/screens/Welcome/index.tsx:67
 msgid "This is where social media gets sane again."
 msgstr ""
 
@@ -8854,10 +8854,11 @@ msgstr "Tipo:"
 msgid "Unable to connect. Please check your internet connection and try again."
 msgstr "Impossibile connettersi. Verifica la tua connessione a internet e riprova."
 
-#: src/screens/Login/ForgotPasswordForm.tsx:72
-#: src/screens/Login/index.tsx:87
+#: src/screens/Login/ForgotPasswordForm.tsx:75
+#: src/screens/Login/index.tsx:93
 #: src/screens/Login/LoginForm.tsx:186
-#: src/screens/Login/ResetpasswordDialog.tsx:89
+#: src/screens/Login/ResetpasswordDialog.tsx:96
+#: src/screens/Login/ResetpasswordDialog.tsx:121
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9092,7 +9093,7 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "Impossibile aggiornare visibilità risposte"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:239
+#: src/screens/Login/ResetpasswordDialog.tsx:260
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "Aggiornamento..."
@@ -9220,7 +9221,7 @@ msgctxt "toast"
 msgid "User list updated"
 msgstr "Lista aggiornata"
 
-#: src/screens/Login/LoginForm.tsx:265
+#: src/screens/Login/LoginForm.tsx:273
 msgid "Username or Email Address"
 msgstr ""
 
@@ -9852,7 +9853,7 @@ msgstr "Puoi proseguire le conversazioni in corso indipendentemente dall'imposta
 msgid "You can now choose to be notified when specific people post. If there’s someone you want timely updates from, go to their profile and find the new bell icon near the follow button."
 msgstr ""
 
-#: src/screens/Login/index.tsx:192
+#: src/screens/Login/index.tsx:202
 #: src/screens/Login/PasswordUpdatedForm.tsx:26
 msgid "You can now sign in with your new password."
 msgstr "Adesso puoi accedere con la tua nuova password."
@@ -9913,8 +9914,7 @@ msgstr "Hai bloccato questo utente. Non è possibile visualizzare il contenuto."
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "Hai disattivato completamente le notifiche di risposte, citazioni e menzioni, quindi questa scheda non verrà aggiornata. Per modificare questa impostazione, vai alle <0>impostazioni di notifica</0>."
 
-#: src/screens/Login/ResetpasswordDialog.tsx:56
-#: src/screens/Login/ResetpasswordDialog.tsx:103
+#: src/screens/Login/ResetpasswordDialog.tsx:62
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10193,7 +10193,7 @@ msgstr "La tua scelta sarà ricordata per i link futuri. Puoi cambiarla in quals
 msgid "Your current handle <0>{0}</0> will automatically remain reserved for you. You can switch back to it at any time from this account."
 msgstr "Il tuo attuale nome utente <0>{0}</0> rimarrà automaticamente riservato per te. Puoi tornare a usarlo in qualsiasi momento da questo account."
 
-#: src/screens/Login/ForgotPasswordForm.tsx:54
+#: src/screens/Login/ForgotPasswordForm.tsx:56
 #: src/screens/Signup/state.ts:270
 #: src/screens/Signup/StepInfo/index.tsx:98
 #: src/view/com/modals/ChangePassword.tsx:55

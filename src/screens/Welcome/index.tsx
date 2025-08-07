@@ -35,7 +35,7 @@ const videoSource: VideoSource = {
   },
 }
 
-export function Welcome() {
+export function Welcome({onGetStartedPress}: {onGetStartedPress: () => void}) {
   const t = useTheme()
   const {_} = useLingui()
   const player = useVideoPlayer(videoSource, _player => {
@@ -103,7 +103,7 @@ export function Welcome() {
         color="cta_red"
         variant="solid"
         size="small"
-        onPress={() => {}}>
+        onPress={onGetStartedPress}>
         <ButtonText>
           <Trans>Get started</Trans>
         </ButtonText>

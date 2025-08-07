@@ -6,6 +6,7 @@ import {useLingui} from '@lingui/react'
 
 import {useActorStatus} from '#/lib/actor-status'
 import {sanitizeDisplayName} from '#/lib/strings/display-names'
+import {sanitizeHandle} from '#/lib/strings/handles'
 // import {sanitizeHandle} from '#/lib/strings/handles'
 import {useProfilesQuery} from '#/state/queries/profile'
 import {type SessionAccount, useSession} from '#/state/session'
@@ -43,7 +44,13 @@ export function AccountList({
   return (
     <View
       pointerEvents={pendingDid ? 'none' : 'auto'}
-      style={[a.overflow_hidden, t.atoms.border_contrast_low, a.mt_md]}>
+      style={[
+        a.overflow_hidden,
+        t.atoms.border_contrast_low,
+        a.mt_md,
+
+        {borderRadius: 8},
+      ]}>
       {accounts.map(account => (
         <React.Fragment key={account.did}>
           <AccountItem
@@ -68,7 +75,9 @@ export function AccountList({
               a.flex_1,
               a.flex_row,
               a.align_center,
-              a.py_2xl,
+              a.py_lg,
+              a.px_sm,
+              {borderBottomStartRadius: 8, borderBottomEndRadius: 8},
               (hovered || pressed) && t.atoms.bg_contrast_25,
             ]}>
             <Text
@@ -133,7 +142,8 @@ export function AccountItem({
             a.flex_row,
             a.align_center,
             a.gap_sm,
-            a.py_2xl,
+            a.py_lg,
+            a.px_sm,
             (hovered || pressed || isPendingAccount) && t.atoms.bg_contrast_25,
           ]}>
           <UserAvatar
@@ -144,7 +154,7 @@ export function AccountItem({
             hideLiveBadge
           />
 
-          <View style={[a.flex_1, a.pr_2xl]}>
+          <View style={[a.flex_1, a.pr_2xl, a.gap_2xs]}>
             <View style={[a.flex_row, a.align_center, a.gap_xs]}>
               <Text
                 emoji
@@ -163,6 +173,9 @@ export function AccountItem({
                 </View>
               )}
             </View>
+            <Text style={[a.leading_tight, t.atoms.text_contrast_medium]}>
+              {sanitizeHandle(account.handle, '@')}
+            </Text>
           </View>
 
           {hideEndIcon ? null : isCurrentAccount ? (

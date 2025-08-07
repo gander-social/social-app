@@ -39,6 +39,7 @@ export const ForgotPasswordForm = ({
   onPressBack: () => void
   onPasswordSet: () => void
 }) => {
+  const [isAlreadyHaveCode, setAlreadyHaveCode] = useState(false)
   const t = useTheme()
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
   const [email, setEmail] = useState<string>('')
@@ -50,6 +51,7 @@ export const ForgotPasswordForm = ({
   }, [])
 
   const onPressNext = async () => {
+    setAlreadyHaveCode(false)
     if (!EmailValidator.validate(email)) {
       return setError(_(msg`Your email appears to be invalid.`))
     }
@@ -60,6 +62,7 @@ export const ForgotPasswordForm = ({
     try {
       const agent = new BskyAgent({service: serviceUrl})
       await agent.com.atproto.server.requestPasswordReset({email})
+      setIsProcessing(false)
       Keyboard.dismiss()
       resetPasswordDialogControl.open()
     } catch (e: any) {
@@ -81,6 +84,7 @@ export const ForgotPasswordForm = ({
   return (
     <FormContainer testID="forgotPasswordForm" style={a.gap_2xl}>
       <ResetPasswordDialog
+        isAlreadyHaveCode={isAlreadyHaveCode}
         email={email}
         control={resetPasswordDialogControl}
         onSelect={() => {
@@ -131,6 +135,7 @@ export const ForgotPasswordForm = ({
         <Button
           testID="skipSendEmailButton"
           onPress={() => {
+            setAlreadyHaveCode(true)
             Keyboard.dismiss()
             resetPasswordDialogControl.open()
           }}

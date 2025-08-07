@@ -1,6 +1,5 @@
 import {useCallback, useState} from 'react'
 import {ActivityIndicator, Keyboard, View} from 'react-native'
-import {useWindowDimensions} from 'react-native'
 import {BskyAgent} from '@atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
@@ -25,6 +24,7 @@ export function ResetPasswordDialog({
   error,
   setError,
   email,
+  isAlreadyHaveCode = false,
 }: {
   onPasswordSet: () => void
   control: Dialog.DialogOuterProps['control']
@@ -33,19 +33,21 @@ export function ResetPasswordDialog({
   serviceUrl: string
   setError: (v: string) => void
   email: string
+  isAlreadyHaveCode?: boolean
 }) {
+  const [_isResending, setResending] = useState(false)
   const [isProcessing, setIsProcessing] = useState<boolean>(false)
   const [resetCode, setResetCode] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [passwordVisible, setPasswordVisible] = useState(false)
 
-  const {height} = useWindowDimensions()
   const {_} = useLingui()
   const t = useTheme()
 
   const onClose = useCallback(() => {
     setError('')
   }, [setError])
+
   const onPressBack = () => {
     control.close()
   }
@@ -79,8 +81,9 @@ export function ResetPasswordDialog({
         token: formattedCode,
         password,
       })
-      control.close()
+      setIsProcessing(false)
       onPasswordSet()
+      control.close()
       logEvent('signin:passwordResetSuccess', {})
     } catch (e: any) {
       const errMsg = e.toString()
@@ -99,30 +102,19 @@ export function ResetPasswordDialog({
     }
   }, [_, control, onPasswordSet, password, resetCode, serviceUrl, setError])
 
-  const onBlur = () => {
-    const formattedCode = checkAndFormatResetCode(resetCode)
-    if (!formattedCode) {
-      setError(
-        _(
-          msg`You have entered an invalid code. It should look like XXXXX-XXXXX.`,
-        ),
-      )
-      return
-    }
-    setResetCode(formattedCode)
-  }
   const onResenPress = async () => {
     setError('')
-    setIsProcessing(true)
+    setResending(true)
 
     try {
       const agent = new BskyAgent({service: serviceUrl})
       await agent.com.atproto.server.requestPasswordReset({email})
+      setResending(false)
       Keyboard.dismiss()
     } catch (e: any) {
       const errMsg = e.toString()
       logger.warn('Failed to request password reset', {error: e})
-      setIsProcessing(false)
+      setResending(false)
       if (isNetworkError(e)) {
         setError(
           _(
@@ -138,25 +130,24 @@ export function ResetPasswordDialog({
     setPasswordVisible(v => !v)
   }
   return (
-    <Dialog.Outer
-      control={control}
-      onClose={onClose}
-      nativeOptions={{minHeight: height / 2}}>
+    <Dialog.Outer control={control} onClose={onClose}>
       <View style={[a.flex_row, a.align_center, a.mt_2xl, a.px_2xl]}>
         <Text
           style={[a.flex_1, a.text_center, a.text_lg, a.font_bold, a.pl_lg]}>
           <Trans>Reset password</Trans>
         </Text>
         <Button
+          hitSlop={5}
           variant="ghost"
           size="tiny"
           color="secondary"
           shape="round"
           label={_(msg`Dismiss getting started guide`)}
           onPress={() => {
+            setError('')
             control.close()
           }}>
-          <ButtonIcon icon={Times} size="sm" />
+          <ButtonIcon icon={Times} size="md" />
         </Button>
       </View>
 
@@ -165,7 +156,9 @@ export function ResetPasswordDialog({
         accessibilityLabelledBy="dialog-title">
         <View style={[a.relative, a.gap_2xl, a.w_full]}>
           <Text style={[a.text_md, a.font_extra_bold]}>
-            <Trans>Enter the code we sent to ben@theartdepartment.studio</Trans>
+            <Trans>
+              Enter the code we sent to {isAlreadyHaveCode ? 'email' : email}
+            </Trans>
           </Text>
 
           <View>
@@ -180,7 +173,6 @@ export function ResetPasswordDialog({
                 value={resetCode}
                 onChangeText={setResetCode}
                 onFocus={() => setError('')}
-                onBlur={onBlur}
                 isFirst={true}
                 editable={!isProcessing}
                 accessibilityHint={_(
@@ -220,19 +212,22 @@ export function ResetPasswordDialog({
             </TextField.Root>
           </View>
           <FormError error={error} />
-          <Button
-            hitSlop={24}
-            testID="chooseAddAccountBtn"
-            style={[a.flex_1, a.py_sm]}
-            onPress={onResenPress}
-            label={_(msg`Sign in to account that is not listed`)}>
-            <View style={[a.flex_row, a.align_center]}>
-              <Text style={[a.flex_1, a.flex_row, a.font_medium, a.text_md]}>
-                <Trans>Send a new code</Trans>
-              </Text>
-              <Chevron size="sm" style={[t.atoms.text]} />
-            </View>
-          </Button>
+          {isAlreadyHaveCode ? null : (
+            <Button
+              hitSlop={24}
+              testID="chooseAddAccountBtn"
+              style={[a.flex_1, a.py_sm]}
+              onPress={onResenPress}
+              label={_(msg`Sign in to account that is not listed`)}>
+              <View style={[a.flex_row, a.align_center]}>
+                <Text style={[a.flex_1, a.flex_row, a.font_medium, a.text_md]}>
+                  <Trans>Send a new code</Trans>
+                </Text>
+                <Chevron size="sm" style={[t.atoms.text]} />
+              </View>
+            </Button>
+          )}
+
           <View style={a.flex_1} />
           <View style={[a.flex_row, a.align_center, a.pt_lg]}>
             <Button

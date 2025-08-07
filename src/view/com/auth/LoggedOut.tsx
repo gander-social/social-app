@@ -114,6 +114,9 @@ export function LoggedOut({onDismiss}: {onDismiss?: () => void}) {
               setScreenState(ScreenState.S_LoginOrCreateAccount)
               clearRequestedAccount()
             }}
+            showWelcomeScreen={function (): void {
+              setScreenState(ScreenState.S_Welcome)
+            }}
           />
         ) : undefined}
         {screenState === ScreenState.S_CreateAccount ? (
@@ -123,7 +126,13 @@ export function LoggedOut({onDismiss}: {onDismiss?: () => void}) {
             }
           />
         ) : undefined}
-        {isWelcomeScreen ? <Welcome /> : undefined}
+        {isWelcomeScreen ? (
+          <Welcome
+            onGetStartedPress={() => {
+              setScreenState(ScreenState.S_Login)
+            }}
+          />
+        ) : undefined}
       </ErrorBoundary>
     </View>
   )
