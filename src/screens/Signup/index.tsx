@@ -1,15 +1,15 @@
-import {useEffect, useReducer, useState} from 'react'
-import {AppState, type AppStateStatus, View} from 'react-native'
-import Animated, {FadeIn, LayoutAnimationConfig} from 'react-native-reanimated'
-import Svg, {Path} from 'react-native-svg'
-import {AppBskyGraphStarterpack} from '@atproto/api'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { useEffect, useReducer, useState } from 'react'
+import { AppState, type AppStateStatus, View } from 'react-native'
+import Animated, { FadeIn, LayoutAnimationConfig } from 'react-native-reanimated'
+import Svg, { Path } from 'react-native-svg'
+import { AppBskyGraphStarterpack } from '@atproto/api'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {useServiceQuery} from '#/state/queries/service'
-import {useStarterPackQuery} from '#/state/queries/starter-packs'
-import {useActiveStarterPack} from '#/state/shell/starter-pack'
-import {LoggedOutLayout} from '#/view/com/util/layouts/LoggedOutLayout'
+import { useServiceQuery } from '#/state/queries/service'
+import { useStarterPackQuery } from '#/state/queries/starter-packs'
+import { useActiveStarterPack } from '#/state/shell/starter-pack'
+import { LoggedOutLayout } from '#/view/com/util/layouts/LoggedOutLayout'
 import {
   initialState,
   reducer,
@@ -17,21 +17,22 @@ import {
   SignupStep,
   useSubmitSignup,
 } from '#/screens/Signup/state'
-import {StepCaptcha} from '#/screens/Signup/StepCaptcha'
-import {StepGandle} from '#/screens/Signup/StepGandle'
-import {StepInfo} from '#/screens/Signup/StepInfo'
-import {StepVerification} from '#/screens/Signup/StepVerification'
-import {atoms as a, useBreakpoints} from '#/alf'
-import {Button, ButtonText} from '#/components/Button'
-import {LinearGradientBackground} from '#/components/LinearGradientBackground'
-import {Text} from '#/components/Typography'
+import { StepCaptcha } from '#/screens/Signup/StepCaptcha'
+import { StepGandle } from '#/screens/Signup/StepGandle'
+import { StepInfo } from '#/screens/Signup/StepInfo'
+import { StepVerification } from '#/screens/Signup/StepVerification'
+import { atoms as a, useBreakpoints } from '#/alf'
+import { Button, ButtonText } from '#/components/Button'
+import { AppLanguageDropdown } from '#/components/AppLanguageDropdown'
+import { LinearGradientBackground } from '#/components/LinearGradientBackground'
+import { Text } from '#/components/Typography'
 import * as bsky from '#/types/bsky'
 
-export function Signup({onPressBack}: {onPressBack: () => void}) {
-  const {_} = useLingui()
+export function Signup({ onPressBack }: { onPressBack: () => void }) {
+  const { _ } = useLingui()
   // const t = useTheme()
   const [state, dispatch] = useReducer(reducer, initialState)
-  const {gtMobile} = useBreakpoints()
+  const { gtMobile } = useBreakpoints()
   const submit = useSubmitSignup()
 
   const activeStarterPack = useActiveStarterPack()
@@ -56,15 +57,15 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
 
   useEffect(() => {
     if (isFetching) {
-      dispatch({type: 'setIsLoading', value: true})
+      dispatch({ type: 'setIsLoading', value: true })
     } else if (!isFetching) {
-      dispatch({type: 'setIsLoading', value: false})
+      dispatch({ type: 'setIsLoading', value: false })
     }
   }, [isFetching])
 
   useEffect(() => {
     if (isError) {
-      dispatch({type: 'setServiceDescription', value: undefined})
+      dispatch({ type: 'setServiceDescription', value: undefined })
       dispatch({
         type: 'setError',
         value: _(
@@ -72,8 +73,8 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
         ),
       })
     } else if (serviceInfo) {
-      dispatch({type: 'setServiceDescription', value: serviceInfo})
-      dispatch({type: 'setError', value: ''})
+      dispatch({ type: 'setServiceDescription', value: serviceInfo })
+      dispatch({ type: 'setError', value: '' })
     }
   }, [_, serviceInfo, isError])
 
@@ -92,7 +93,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
       'change',
       (nextAppState: AppStateStatus) => {
         if (nextAppState === 'background') {
-          dispatch({type: 'incrementBackgroundCount'})
+          dispatch({ type: 'incrementBackgroundCount' })
         }
       },
     )
@@ -101,7 +102,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
   }, [])
 
   return (
-    <SignupContext.Provider value={{state, dispatch}}>
+    <SignupContext.Provider value={{ state, dispatch }}>
       <LoggedOutLayout
         leadin=""
         title={_(msg`Create Account`)}
@@ -109,17 +110,17 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
         scrollable>
         <View testID="createAccount" style={a.flex_1}>
           {showStarterPackCard &&
-          bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
-            starterPack.record,
-            AppBskyGraphStarterpack.isRecord,
-          ) ? (
+            bsky.dangerousIsType<AppBskyGraphStarterpack.Record>(
+              starterPack.record,
+              AppBskyGraphStarterpack.isRecord,
+            ) ? (
             <Animated.View entering={!isFetchedAtMount ? FadeIn : undefined}>
               <LinearGradientBackground
                 style={[a.mx_lg, a.p_lg, a.gap_sm, a.rounded_sm]}>
-                <Text style={[a.font_bold, a.text_xl, {color: 'white'}]}>
+                <Text style={[a.font_bold, a.text_xl, { color: 'white' }]}>
                   {starterPack.record.name}
                 </Text>
-                <Text style={[{color: 'white'}]}>
+                <Text style={[{ color: 'white' }]}>
                   {starterPack.feeds?.length ? (
                     <Trans>
                       You'll follow the suggested users and feeds once you
@@ -140,16 +141,16 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
               a.flex_1,
               a.px_xl,
               a.pt_2xl,
-              !gtMobile && {paddingBottom: 100},
+              !gtMobile && { paddingBottom: 100 },
             ]}>
             <View style={[a.gap_sm, a.pb_3xl]}>
               <View style={[a.flex_row, a.justify_between, a.align_center]}>
                 <Text
-                  style={[{fontWeight: '700', color: '#000000', fontSize: 16}]}>
+                  style={[{ fontWeight: '700', color: '#000000', fontSize: 16 }]}>
                   <Trans>
                     Step {state.activeStep + 1} of{' '}
                     {state.serviceDescription &&
-                    !state.serviceDescription.phoneVerificationRequired
+                      !state.serviceDescription.phoneVerificationRequired
                       ? '3'
                       : '4'}
                   </Trans>
@@ -161,7 +162,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
                   color="soft_neutral"
                   size="small"
                   onPress={onPressBack}>
-                  <ButtonText style={[{color: '#000000', fontSize: 16}]}>
+                  <ButtonText style={[{ color: '#000000', fontSize: 16 }]}>
                     <Trans>Cancel</Trans>
                   </ButtonText>
                 </Button>
@@ -232,7 +233,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
                   </Svg>
                 </View>
               )}
-              <Text style={[{fontSize: 32, fontWeight: '600'}]}>
+              <Text style={[{ fontSize: 32, fontWeight: '600' }]}>
                 {state.activeStep === SignupStep.INFO ? (
                   <>
                     <Trans>Sign up for a {'\n'}Gander Social account.</Trans>
@@ -267,26 +268,24 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
               </LayoutAnimationConfig>
             </View>
 
-            {/* <Divider /> */}
-
-            {/* <View
+            <View
               style={[a.w_full, a.py_lg, a.flex_row, a.gap_md, a.align_center]}>
               <AppLanguageDropdown />
               <Text
                 style={[
                   a.flex_1,
-                  t.atoms.text_contrast_medium,
+                  // t.atoms.text_contrast_medium,
                   !gtMobile && a.text_md,
                 ]}>
-                <Trans>Having trouble?</Trans>{' '}
+                {/*<Trans>Having trouble?</Trans>{' '}
                 <InlineLinkText
                   label={_(msg`Contact support`)}
-                  to={FEEDBACK_FORM_URL({email: state.email})}
+                  to={FEEDBACK_FORM_URL({ email: state.email })}
                   style={[!gtMobile && a.text_md]}>
                   <Trans>Contact support</Trans>
-                </InlineLinkText>
+                </InlineLinkText>*/}
               </Text>
-            </View> */}
+            </View>
           </View>
         </View>
       </LoggedOutLayout>
