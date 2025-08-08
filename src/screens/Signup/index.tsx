@@ -26,6 +26,7 @@ import { Button, ButtonText } from '#/components/Button'
 import { AppLanguageDropdown } from '#/components/AppLanguageDropdown'
 import { LinearGradientBackground } from '#/components/LinearGradientBackground'
 import { Text } from '#/components/Typography'
+import { InlineLinkText } from '#/components/Link'
 import * as bsky from '#/types/bsky'
 
 export function Signup({ onPressBack }: { onPressBack: () => void }) {
@@ -277,13 +278,16 @@ export function Signup({ onPressBack }: { onPressBack: () => void }) {
                   // t.atoms.text_contrast_medium,
                   !gtMobile && a.text_md,
                 ]}>
-                {/*<Trans>Having trouble?</Trans>{' '}
+                <Trans>Having trouble?</Trans>{' '}
                 <InlineLinkText
                   label={_(msg`Contact support`)}
-                  to={FEEDBACK_FORM_URL({ email: state.email })}
-                  style={[!gtMobile && a.text_md]}>
+                  to="https://gandersocial.ca/"
+                  style={[!gtMobile && a.text_md, {
+                    color: '#C30B0D',
+                    textDecorationLine: 'underline',
+                  }]}>
                   <Trans>Contact support</Trans>
-                </InlineLinkText>*/}
+                </InlineLinkText>
               </Text>
             </View>
           </View>
