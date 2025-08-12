@@ -169,6 +169,20 @@ export function StepInfo({
   }
 
   const onNextPress = () => {
+    // Save form data to state before moving to next step
+    const inviteCode = inviteCodeValueRef.current
+    const email = emailValueRef.current
+    const password = passwordValueRef.current
+
+    // Save invite code if required
+    if (state.serviceDescription?.inviteCodeRequired && inviteCode) {
+      dispatch({type: 'setInviteCode', value: inviteCode})
+    }
+
+    // Save email and password to state
+    dispatch({type: 'setEmail', value: email})
+    dispatch({type: 'setPassword', value: password})
+
     dispatch({type: 'next'})
   }
 
