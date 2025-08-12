@@ -1,24 +1,24 @@
-import React, {useRef} from 'react'
-import {View} from 'react-native'
-import Svg, {Path} from 'react-native-svg'
-import {msg, Plural, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import React, { useRef } from 'react'
+import { View } from 'react-native'
+import Svg, { Path } from 'react-native-svg'
+import { msg, Plural, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
 import {
   createFullHandle,
   MAX_SERVICE_HANDLE_LENGTH,
   validateServiceHandle,
 } from '#/lib/strings/handles'
-import {logger} from '#/logger'
-import {useAgent} from '#/state/session'
-import {ScreenTransition} from '#/screens/Login/ScreenTransition'
-import {useSignupContext} from '#/screens/Signup/state'
-import {atoms as a} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
+import { logger } from '#/logger'
+import { useAgent } from '#/state/session'
+import { ScreenTransition } from '#/screens/Login/ScreenTransition'
+import { useSignupContext } from '#/screens/Signup/state'
+import { atoms as a } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
 import * as TextField from '#/components/forms/TextField'
-import {useThrottledValue} from '#/components/hooks/useThrottledValue'
-import {Loader} from '#/components/Loader'
-import {Text} from '#/components/Typography'
+import { useThrottledValue } from '#/components/hooks/useThrottledValue'
+import { Loader } from '#/components/Loader'
+import { Text } from '#/components/Typography'
 
 // RedWrong icon component
 function RedWrongIcon() {
@@ -58,8 +58,8 @@ function CheckCorrectIcon() {
 }
 
 export function StepGandle() {
-  const {_} = useLingui()
-  const {state, dispatch} = useSignupContext()
+  const { _ } = useLingui()
+  const { state, dispatch } = useSignupContext()
   const agent = useAgent()
   const handleValueRef = useRef<string>(state.handle)
   const [draftValue, setDraftValue] = React.useState('@' + state.handle)
@@ -78,7 +78,7 @@ export function StepGandle() {
     }
 
     try {
-      dispatch({type: 'setIsLoading', value: true})
+      dispatch({ type: 'setIsLoading', value: true })
 
       // TODO: Temporary fix - hardcoded domain should be replaced with proper domain configuration
       const res = await agent.resolveHandle({
@@ -91,13 +91,13 @@ export function StepGandle() {
           value: _(msg`That handle is already taken.`),
           field: 'handle',
         })
-        logger.metric('signup:handleTaken', {}, {statsig: true})
+        logger.metric('signup:handleTaken', {}, { statsig: true })
         return
       }
     } catch (e) {
       // Don't have to handle
     } finally {
-      dispatch({type: 'setIsLoading', value: false})
+      dispatch({ type: 'setIsLoading', value: false })
     }
 
     logger.metric(
@@ -107,17 +107,17 @@ export function StepGandle() {
         phoneVerificationRequired:
           state.serviceDescription?.phoneVerificationRequired,
       },
-      {statsig: true},
+      { statsig: true },
     )
     // phoneVerificationRequired is actually whether a captcha is required
     if (!state.serviceDescription?.phoneVerificationRequired) {
       dispatch({
         type: 'submit',
-        task: {verificationCode: undefined, mutableProcessed: false},
+        task: { verificationCode: undefined, mutableProcessed: false },
       })
       return
     }
-    dispatch({type: 'next'})
+    dispatch({ type: 'next' })
   }, [
     _,
     dispatch,
@@ -133,11 +133,11 @@ export function StepGandle() {
       type: 'setHandle',
       value: handle,
     })
-    dispatch({type: 'prev'})
+    dispatch({ type: 'prev' })
     logger.metric(
       'signup:backPressed',
-      {activeStep: state.activeStep},
-      {statsig: true},
+      { activeStep: state.activeStep },
+      { statsig: true },
     )
   }, [dispatch, state.activeStep])
 
@@ -155,7 +155,7 @@ export function StepGandle() {
               testID="handleInput"
               onChangeText={val => {
                 if (state.error) {
-                  dispatch({type: 'setError', value: ''})
+                  dispatch({ type: 'setError', value: '' })
                 }
 
                 // Ensure @ is always at the beginning and cannot be removed
@@ -182,7 +182,7 @@ export function StepGandle() {
             {state.error && (
               <View style={[a.flex_row, a.align_center, a.gap_xs]}>
                 <RedWrongIcon />
-                <Text style={[a.text_sm, {color: '#C30B0D'}]}>
+                <Text style={[a.text_sm, { color: '#C30B0D' }]}>
                   {state.error}
                 </Text>
               </View>
@@ -224,7 +224,7 @@ export function StepGandle() {
                   },
                 ]}>
                 {!validCheck.totalLength ||
-                draftValue.substring(1).length > MAX_SERVICE_HANDLE_LENGTH ? (
+                  draftValue.substring(1).length > MAX_SERVICE_HANDLE_LENGTH ? (
                   <Trans>
                     No longer than{' '}
                     <Plural
@@ -241,28 +241,28 @@ export function StepGandle() {
         )}
         {draftValue !== '@' && (
           <View>
-            <Text style={[{fontSize: 17, fontWeight: 400, lineHeight: 21}]}>
+            <Text style={[{ fontSize: 17, fontWeight: 400, lineHeight: 21 }]}>
               <Trans>Your full username will be:</Trans>
             </Text>
             {/* TODO: Temporary fix - hardcoded domain should be replaced with proper domain configuration */}
-            <Text style={[{fontSize: 17, fontWeight: 700, lineHeight: 21}]}>
+            <Text style={[{ fontSize: 17, fontWeight: 700, lineHeight: 21 }]}>
               @{createFullHandle(draftValue.substring(1), 'gander.social')}
             </Text>
           </View>
         )}
       </View>
       <View
-        style={[a.border_t, a.mt_lg, {borderColor: '#D8D8D8', borderWidth: 1}]}
+        style={[a.border_t, a.mt_lg, { borderColor: '#D8D8D8', borderWidth: 1 }]}
       />
       <View style={[a.flex_row, a.align_center, a.pt_lg]}>
         <Button
-          label={_(msg`Cancel`)}
+          label={_(msg`Back`)}
           variant="solid"
           color="secondary"
           size="large"
           onPress={onBackPress}>
           <ButtonText>
-            <Trans>Cancel</Trans>
+            <Trans>Back</Trans>
           </ButtonText>
         </Button>
         <View style={a.flex_1} />

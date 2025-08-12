@@ -1,19 +1,19 @@
 import React from 'react'
-import {View} from 'react-native'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { View } from 'react-native'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {logger} from '#/logger'
-import {ScreenTransition} from '#/screens/Login/ScreenTransition'
-import {useSignupContext} from '#/screens/Signup/state'
-import {atoms as a} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
-import {Loader} from '#/components/Loader'
-import {Text} from '#/components/Typography'
+import { logger } from '#/logger'
+import { ScreenTransition } from '#/screens/Login/ScreenTransition'
+import { useSignupContext } from '#/screens/Signup/state'
+import { atoms as a } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
+import { Loader } from '#/components/Loader'
+import { Text } from '#/components/Typography'
 
 export function StepVerification() {
-  const {_} = useLingui()
-  const {state, dispatch} = useSignupContext()
+  const { _ } = useLingui()
+  const { state, dispatch } = useSignupContext()
 
   const onNextPress = React.useCallback(() => {
     logger.metric(
@@ -21,20 +21,20 @@ export function StepVerification() {
       {
         activeStep: state.activeStep,
       },
-      {statsig: true},
+      { statsig: true },
     )
-    dispatch({type: 'next'})
+    dispatch({ type: 'next' })
   }, [dispatch, state.activeStep])
 
   const onBackPress = React.useCallback(() => {
-    dispatch({type: 'prev'})
+    dispatch({ type: 'prev' })
   }, [dispatch])
 
   return (
     <ScreenTransition>
       <View style={[a.gap_md]}>
         <View style={[a.align_center]}>
-          <Text style={[{fontSize: 17, fontWeight: 400, lineHeight: 21}]}>
+          <Text style={[{ fontSize: 17, fontWeight: 400, lineHeight: 21 }]}>
             <Trans>
               At Gander, we’re working hard to create a safer, more positive
               space by reducing bots, disinformation, and bad actors.
@@ -44,7 +44,7 @@ export function StepVerification() {
           </Text>
         </View>
         <View style={[a.align_center, a.mt_sm]}>
-          <Text style={[{fontSize: 17, fontWeight: 700, lineHeight: 21}]}>
+          <Text style={[{ fontSize: 17, fontWeight: 700, lineHeight: 21 }]}>
             <Trans>
               Gander never sees your personal info, and you can choose to have
               it destroyed right after verification.
@@ -53,17 +53,17 @@ export function StepVerification() {
         </View>
       </View>
       <View
-        style={[a.border_t, a.mt_lg, {borderColor: '#D8D8D8', borderWidth: 1}]}
+        style={[a.border_t, a.mt_lg, { borderColor: '#D8D8D8', borderWidth: 1 }]}
       />
       <View style={[a.flex_row, a.align_center, a.pt_lg]}>
         <Button
-          label={_(msg`Cancel`)}
+          label={_(msg`Back`)}
           variant="solid"
           color="secondary"
           size="large"
           onPress={onBackPress}>
           <ButtonText>
-            <Trans>Cancel</Trans>
+            <Trans>Back</Trans>
           </ButtonText>
         </Button>
         <View style={a.flex_1} />
