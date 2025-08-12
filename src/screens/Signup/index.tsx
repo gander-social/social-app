@@ -276,16 +276,17 @@ export function Signup({ onPressBack }: { onPressBack: () => void }) {
                 style={[
                   a.flex_1,
                   // t.atoms.text_contrast_medium,
-                  !gtMobile && a.text_md,
+                  !gtMobile && a.text_md, { color: '#000000', fontSize: 16 }
                 ]}>
                 <Trans>Having trouble?</Trans>{' '}
                 <InlineLinkText
                   label={_(msg`Contact support`)}
                   to="https://gandersocial.ca/"
-                  style={[!gtMobile && a.text_md, {
-                    color: '#C30B0D',
-                    textDecorationLine: 'underline',
-                  }]}>
+                  style={[a.font_bold, { color: '#000000', fontSize: 16, textDecorationLine: 'underline' }]}>
+                  {/* style={[!gtMobile && a.text_md, { */}
+                  {/*   color: '#C30B0D', */}
+                  {/*   textDecorationLine: 'underline', */}
+                  {/* }]}> */}
                   <Trans>Contact support</Trans>
                 </InlineLinkText>
               </Text>

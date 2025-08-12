@@ -6,18 +6,18 @@ import {
   useMemo,
   useState,
 } from 'react'
-import {View} from 'react-native'
-import {msg, Trans} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { View } from 'react-native'
+import { msg, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
-import {useTheme} from '#/alf'
-import {atoms as a} from '#/alf'
-import {Button, ButtonIcon, ButtonText} from '#/components/Button'
+import { useTheme } from '#/alf'
+import { atoms as a } from '#/alf'
+import { Button, ButtonIcon, ButtonText } from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
-import {useInteractionState} from '#/components/hooks/useInteractionState'
-import {Check_Stroke2_Corner0_Rounded as CheckIcon} from '#/components/icons/Check'
-import {ChevronTopBottom_Stroke2_Corner0_Rounded as ChevronUpDownIcon} from '#/components/icons/Chevron'
-import {Text} from '#/components/Typography'
+import { useInteractionState } from '#/components/hooks/useInteractionState'
+import { Check_Stroke2_Corner0_Rounded as CheckIcon } from '#/components/icons/Check'
+import { ChevronTopBottom_Stroke2_Corner0_Rounded as ChevronUpDownIcon } from '#/components/icons/Chevron'
+import { Text } from '#/components/Typography'
 import {
   type ContentProps,
   type IconProps,
@@ -37,7 +37,7 @@ const Context = createContext<ContextType | null>(null)
 
 const ValueTextContext = createContext<
   [any, React.Dispatch<React.SetStateAction<any>>]
->([undefined, () => {}])
+>([undefined, () => { }])
 
 function useSelectContext() {
   const ctx = useContext(Context)
@@ -47,7 +47,7 @@ function useSelectContext() {
   return ctx
 }
 
-export function Root({children, value, onValueChange, disabled}: RootProps) {
+export function Root({ children, value, onValueChange, disabled }: RootProps) {
   const control = Dialog.useDialogControl()
   const valueTextCtx = useState<any>()
 
@@ -69,9 +69,9 @@ export function Root({children, value, onValueChange, disabled}: RootProps) {
   )
 }
 
-export function Trigger({children, label}: TriggerProps) {
-  const {control} = useSelectContext()
-  const {state: focused, onIn: onFocus, onOut: onBlur} = useInteractionState()
+export function Trigger({ children, label }: TriggerProps) {
+  const { control } = useSelectContext()
+  const { state: focused, onIn: onFocus, onOut: onBlur } = useInteractionState()
   const {
     state: pressed,
     onIn: onPressIn,
@@ -127,7 +127,7 @@ export function ValueText({
   )
 }
 
-export function Icon({}: IconProps) {
+export function Icon({ }: IconProps) {
   return <ButtonIcon icon={ChevronUpDownIcon} />
 }
 
@@ -136,7 +136,7 @@ export function Content<T>({
   valueExtractor = defaultItemValueExtractor,
   ...props
 }: ContentProps<T>) {
-  const {control, ...context} = useSelectContext()
+  const { control, ...context } = useSelectContext()
   const [, setValue] = useContext(ValueTextContext)
 
   useLayoutEffect(() => {
@@ -167,11 +167,11 @@ function ContentInner<T>({
 }: ContentProps<T> & ContextType) {
   const control = Dialog.useDialogContext()
 
-  const {_} = useLingui()
+  const { _ } = useLingui()
   const [headerHeight, setHeaderHeight] = useState(50)
 
   const render = useCallback(
-    ({item, index}: {item: T; index: number}) => {
+    ({ item, index }: { item: T; index: number }) => {
       return renderItem(item, index, context.value)
     },
     [renderItem, context.value],
@@ -234,10 +234,10 @@ export function useItemContext() {
   return useContext(ItemContext)
 }
 
-export function Item({children, value, label, style}: ItemProps) {
+export function Item({ children, value, label, style }: ItemProps) {
   const t = useTheme()
   const control = Dialog.useDialogContext()
-  const {value: selected, onValueChange} = useSelectContext()
+  const { value: selected, onValueChange } = useSelectContext()
 
   return (
     <Button
@@ -249,9 +249,9 @@ export function Item({children, value, label, style}: ItemProps) {
           onValueChange?.(value)
         })
       }}>
-      {({hovered, focused, pressed}) => (
+      {({ hovered, focused, pressed }) => (
         <ItemContext.Provider
-          value={{selected: value === selected, hovered, focused, pressed}}>
+          value={{ selected: value === selected, hovered, focused, pressed }}>
           <View
             style={[
               a.flex_1,
@@ -270,8 +270,8 @@ export function Item({children, value, label, style}: ItemProps) {
   )
 }
 
-export function ItemText({children}: ItemTextProps) {
-  const {selected} = useItemContext()
+export function ItemText({ children }: ItemTextProps) {
+  const { selected } = useItemContext()
   const t = useTheme()
 
   // eslint-disable-next-line bsky-internal/avoid-unwrapped-text
@@ -282,8 +282,8 @@ export function ItemText({children}: ItemTextProps) {
   )
 }
 
-export function ItemIndicator({icon: Icon = CheckIcon}: ItemIndicatorProps) {
-  const {selected} = useItemContext()
+export function ItemIndicator({ icon: Icon = CheckIcon }: ItemIndicatorProps) {
+  const { selected } = useItemContext()
 
-  return <View style={{width: 24}}>{selected && <Icon size="md" />}</View>
+  return <View style={{ width: 24 }}>{selected && <Icon size="md" />}</View>
 }
