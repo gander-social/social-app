@@ -1,20 +1,20 @@
-import React, {useCallback} from 'react'
-import {LayoutAnimation} from 'react-native'
+import React, { useCallback } from 'react'
+import { LayoutAnimation } from 'react-native'
 import {
   ComAtprotoServerCreateAccount,
   type ComAtprotoServerDescribeServer,
 } from '@atproto/api'
-import {msg} from '@lingui/macro'
-import {useLingui} from '@lingui/react'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import * as EmailValidator from 'email-validator'
 
-import {DEFAULT_SERVICE} from '#/lib/constants'
-import {cleanError} from '#/lib/strings/errors'
-import {createFullHandle} from '#/lib/strings/handles'
-import {getAge} from '#/lib/strings/time'
-import {logger} from '#/logger'
-import {useSessionApi} from '#/state/session'
-import {useOnboardingDispatch} from '#/state/shell'
+import { DEFAULT_SERVICE } from '#/lib/constants'
+import { cleanError } from '#/lib/strings/errors'
+import { createFullHandle } from '#/lib/strings/handles'
+import { getAge } from '#/lib/strings/time'
+import { logger } from '#/logger'
+import { useSessionApi } from '#/state/session'
+import { useOnboardingDispatch } from '#/state/shell'
 
 export type ServiceDescription = ComAtprotoServerDescribeServer.OutputSchema
 
@@ -24,6 +24,7 @@ export enum SignupStep {
   INFO,
   VERIFICATION,
   GANDLE,
+  INTERESTS,
   CAPTCHA,
 }
 
@@ -65,22 +66,22 @@ export type SignupState = {
 }
 
 export type SignupAction =
-  | {type: 'prev'}
-  | {type: 'next'}
-  | {type: 'finish'}
-  | {type: 'setStep'; value: SignupStep}
-  | {type: 'setServiceUrl'; value: string}
-  | {type: 'setServiceDescription'; value: ServiceDescription | undefined}
-  | {type: 'setEmail'; value: string}
-  | {type: 'setPassword'; value: string}
-  | {type: 'setDateOfBirth'; value: Date}
-  | {type: 'setInviteCode'; value: string}
-  | {type: 'setHandle'; value: string}
-  | {type: 'setError'; value: string; field?: ErrorField}
-  | {type: 'clearError'}
-  | {type: 'setIsLoading'; value: boolean}
-  | {type: 'submit'; task: SubmitTask}
-  | {type: 'incrementBackgroundCount'}
+  | { type: 'prev' }
+  | { type: 'next' }
+  | { type: 'finish' }
+  | { type: 'setStep'; value: SignupStep }
+  | { type: 'setServiceUrl'; value: string }
+  | { type: 'setServiceDescription'; value: ServiceDescription | undefined }
+  | { type: 'setEmail'; value: string }
+  | { type: 'setPassword'; value: string }
+  | { type: 'setDateOfBirth'; value: Date }
+  | { type: 'setInviteCode'; value: string }
+  | { type: 'setHandle'; value: string }
+  | { type: 'setError'; value: string; field?: ErrorField }
+  | { type: 'clearError' }
+  | { type: 'setIsLoading'; value: boolean }
+  | { type: 'submit'; task: SubmitTask }
+  | { type: 'incrementBackgroundCount' }
 
 export const initialState: SignupState = {
   hasPrev: false,
@@ -122,7 +123,7 @@ export function is18(date: Date) {
 }
 
 export function reducer(s: SignupState, a: SignupAction): SignupState {
-  let next = {...s}
+  let next = { ...s }
 
   switch (a.type) {
     case 'prev': {
@@ -201,7 +202,7 @@ export function reducer(s: SignupState, a: SignupAction): SignupState {
             errorMessage: a.value,
             activeStep: next.activeStep,
           },
-          {statsig: true},
+          { statsig: true },
         )
       }
       break
@@ -225,7 +226,7 @@ export function reducer(s: SignupState, a: SignupAction): SignupState {
           activeStep: next.activeStep,
           backgroundCount: next.backgroundCount,
         },
-        {statsig: true},
+        { statsig: true },
       )
       break
     }
@@ -236,7 +237,7 @@ export function reducer(s: SignupState, a: SignupAction): SignupState {
   logger.debug('signup', next)
 
   if (s.activeStep !== next.activeStep) {
-    logger.debug('signup: step changed', {activeStep: next.activeStep})
+    logger.debug('signup: step changed', { activeStep: next.activeStep })
   }
 
   return next
@@ -250,14 +251,14 @@ export const SignupContext = React.createContext<IContext>({} as IContext)
 export const useSignupContext = () => React.useContext(SignupContext)
 
 export function useSubmitSignup() {
-  const {_} = useLingui()
-  const {createAccount} = useSessionApi()
+  const { _ } = useLingui()
+  const { createAccount } = useSessionApi()
   const onboardingDispatch = useOnboardingDispatch()
 
   return useCallback(
     async (state: SignupState, dispatch: (action: SignupAction) => void) => {
       if (!state.email) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
+        dispatch({ type: 'setStep', value: SignupStep.INFO })
         return dispatch({
           type: 'setError',
           value: _(msg`Please enter your email.`),
@@ -265,7 +266,7 @@ export function useSubmitSignup() {
         })
       }
       if (!EmailValidator.validate(state.email)) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
+        dispatch({ type: 'setStep', value: SignupStep.INFO })
         return dispatch({
           type: 'setError',
           value: _(msg`Your email appears to be invalid.`),
@@ -273,7 +274,7 @@ export function useSubmitSignup() {
         })
       }
       if (!state.password) {
-        dispatch({type: 'setStep', value: SignupStep.INFO})
+        dispatch({ type: 'setStep', value: SignupStep.INFO })
         return dispatch({
           type: 'setError',
           value: _(msg`Please choose your password.`),
@@ -281,7 +282,7 @@ export function useSubmitSignup() {
         })
       }
       if (!state.handle) {
-        dispatch({type: 'setStep', value: SignupStep.GANDLE})
+        dispatch({ type: 'setStep', value: SignupStep.GANDLE })
         return dispatch({
           type: 'setError',
           value: _(msg`Please choose your handle.`),
@@ -292,7 +293,7 @@ export function useSubmitSignup() {
         state.serviceDescription?.phoneVerificationRequired &&
         !state.pendingSubmit?.verificationCode
       ) {
-        dispatch({type: 'setStep', value: SignupStep.CAPTCHA})
+        dispatch({ type: 'setStep', value: SignupStep.CAPTCHA })
         logger.error('Signup Flow Error', {
           errorMessage: 'Verification captcha code was not set.',
           registrationHandle: state.handle,
@@ -302,8 +303,8 @@ export function useSubmitSignup() {
           value: _(msg`Please complete the verification captcha.`),
         })
       }
-      dispatch({type: 'setError', value: ''})
-      dispatch({type: 'setIsLoading', value: true})
+      dispatch({ type: 'setError', value: '' })
+      dispatch({ type: 'setIsLoading', value: true })
 
       try {
         await createAccount(
@@ -330,7 +331,7 @@ export function useSubmitSignup() {
          * Must happen last so that if the user has multiple tabs open and
          * createAccount fails, one tab is not stuck in onboarding — Eric
          */
-        onboardingDispatch({type: 'start'})
+        onboardingDispatch({ type: 'start' })
       } catch (e: any) {
         let errMsg = e.toString()
         if (e instanceof ComAtprotoServerCreateAccount.InvalidInviteCodeError) {
@@ -341,14 +342,14 @@ export function useSubmitSignup() {
             ),
             field: 'invite-code',
           })
-          dispatch({type: 'setStep', value: SignupStep.INFO})
+          dispatch({ type: 'setStep', value: SignupStep.INFO })
           return
         }
 
         const error = cleanError(errMsg)
         const isHandleError = error.toLowerCase().includes('handle')
 
-        dispatch({type: 'setIsLoading', value: false})
+        dispatch({ type: 'setIsLoading', value: false })
         dispatch({
           type: 'setError',
           value: error,
@@ -364,7 +365,7 @@ export function useSubmitSignup() {
           registrationHandle: state.handle,
         })
       } finally {
-        dispatch({type: 'setIsLoading', value: false})
+        dispatch({ type: 'setIsLoading', value: false })
       }
     },
     [_, onboardingDispatch, createAccount],
