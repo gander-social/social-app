@@ -23,8 +23,6 @@ import {
 } from '#/screens/Onboarding/Layout'
 import {Context} from '#/screens/Onboarding/state'
 import {AvatarCircle} from '#/screens/Onboarding/StepProfile/AvatarCircle'
-import {AvatarCreatorCircle} from '#/screens/Onboarding/StepProfile/AvatarCreatorCircle'
-import {AvatarCreatorItems} from '#/screens/Onboarding/StepProfile/AvatarCreatorItems'
 import {
   PlaceholderCanvas,
   type PlaceholderCanvasRef,
@@ -33,6 +31,7 @@ import {atoms as a, useBreakpoints, useTheme} from '#/alf'
 import {Button, ButtonIcon, ButtonText} from '#/components/Button'
 import * as Dialog from '#/components/Dialog'
 import {useSheetWrapper} from '#/components/Dialog/sheet-wrapper'
+import {AvatarSelectDialog} from '#/components/dialogs/AvatarSelect'
 import {IconCircle} from '#/components/IconCircle'
 import {ChevronRight_Stroke2_Corner0_Rounded as ChevronRight} from '#/components/icons/Chevron'
 import {CircleInfo_Stroke2_Corner0_Rounded} from '#/components/icons/CircleInfo'
@@ -85,6 +84,7 @@ export function StepProfile() {
   })
 
   const canvasRef = React.useRef<PlaceholderCanvasRef>(null)
+  const avatarSelectRef = React.useRef<{open: () => void}>(null)
 
   React.useEffect(() => {
     requestNotificationsPermission('StartOnboarding')
@@ -156,15 +156,6 @@ export function StepProfile() {
     logEvent('onboarding:profile:nextPressed', {})
   }, [avatar, dispatch])
 
-  const onDoneCreating = React.useCallback(() => {
-    setAvatar(prev => ({
-      ...prev,
-      image: undefined,
-      useCreatedAvatar: true,
-    }))
-    creatorControl.close()
-  }, [creatorControl])
-
   const openLibrary = React.useCallback(async () => {
     if (!(await requestPhotoAccessIfNeeded())) {
       return
@@ -212,9 +203,9 @@ export function StepProfile() {
     if (avatar.useCreatedAvatar) {
       openLibrary()
     } else {
-      creatorControl.open()
+      avatarSelectRef.current?.open()
     }
-  }, [avatar.useCreatedAvatar, creatorControl, openLibrary])
+  }, [avatar.useCreatedAvatar, openLibrary])
 
   const value = React.useMemo(
     () => ({
@@ -294,46 +285,21 @@ export function StepProfile() {
           </View>
         </OnboardingControls.Portal>
       </View>
-
-      <Dialog.Outer control={creatorControl}>
-        <Dialog.Inner
-          label="Avatar creator"
-          style={[
-            {
-              width: 'auto',
-              maxWidth: 410,
+      <AvatarSelectDialog
+        controlRef={avatarSelectRef}
+        onSelectAvatar={url => {
+          setAvatar(prev => ({
+            ...prev,
+            image: {
+              path: url,
+              height: 0,
+              width: 0,
+              mime: '',
+              size: 0,
             },
-          ]}>
-          <View style={[a.align_center, {paddingTop: 20}]}>
-            <AvatarCreatorCircle avatar={avatar} />
-          </View>
-
-          <View style={[a.pt_3xl, a.gap_lg]}>
-            <AvatarCreatorItems
-              type="emojis"
-              avatar={avatar}
-              setAvatar={setAvatar}
-            />
-            <AvatarCreatorItems
-              type="colors"
-              avatar={avatar}
-              setAvatar={setAvatar}
-            />
-          </View>
-          <View style={[a.pt_4xl]}>
-            <Button
-              variant="solid"
-              color="primary"
-              size="large"
-              label={_(msg`Done`)}
-              onPress={onDoneCreating}>
-              <ButtonText>
-                <Trans>Done</Trans>
-              </ButtonText>
-            </Button>
-          </View>
-        </Dialog.Inner>
-      </Dialog.Outer>
+          }))
+        }}
+      />
 
       <PlaceholderCanvas ref={canvasRef} />
     </AvatarContext.Provider>
