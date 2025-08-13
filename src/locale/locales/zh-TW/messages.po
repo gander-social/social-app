@@ -128,6 +128,7 @@ msgstr "{0, plural, other {{1} 則貼文}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "總共有 {0, plural, other {# 個人}}使用過這個新手包！"
 
+#: src/screens/Signup/StepInfo/index.tsx:312
 #: src/screens/Welcome/index.tsx:74
 #: src/screens/Welcome/index.tsx:83
 msgid "{0}"
@@ -800,6 +801,7 @@ msgid "Advanced"
 msgstr "進階設定"
 
 #: src/screens/Login/LoginForm.tsx:428
+#: src/screens/Signup/StepInfo/index.tsx:395
 msgid "Agree and continue"
 msgstr ""
 
@@ -893,6 +895,7 @@ msgstr "替代文字超出字數上限，將被截斷。{MAX_ALT_TEXT, plural, o
 msgid "An email has been sent to {0}. It includes a confirmation code which you can enter below."
 msgstr "一封電子郵件已傳送至 {0}。請查看郵件並在下方輸入驗證碼。"
 
+#: src/components/dialogs/AvatarSelect.tsx:244
 #: src/components/dialogs/GifSelect.tsx:266
 msgid "An error has occurred"
 msgstr "發生錯誤"
@@ -1183,14 +1186,15 @@ msgstr "極光"
 msgid "Autoplay videos and GIFs"
 msgstr "自動播放影片和 GIF"
 
+#: src/components/dialogs/AvatarSelect.tsx:207
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
 #: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/ForgotPasswordForm.tsx:178
 #: src/screens/Login/LoginForm.tsx:388
-#: src/screens/Login/ResetpasswordDialog.tsx:234
-#: src/screens/Login/ResetpasswordDialog.tsx:240
+#: src/screens/Login/ResetpasswordDialog.tsx:236
+#: src/screens/Login/ResetpasswordDialog.tsx:242
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1481,7 +1485,12 @@ msgstr "由您建立"
 msgid "Camera"
 msgstr "相機"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:128
+msgid "Can't include your email address"
+msgstr ""
+
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:206
+#: src/components/dialogs/AvatarSelect.tsx:213
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:125
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:131
 #: src/components/dialogs/InAppBrowserConsent.tsx:98
@@ -1506,6 +1515,8 @@ msgstr "相機"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:78
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:85
 #: src/screens/Settings/Settings.tsx:280
+#: src/screens/Signup/StepInfo/index.tsx:354
+#: src/screens/Signup/StepInfo/index.tsx:360
 #: src/screens/Takendown.tsx:99
 #: src/screens/Takendown.tsx:102
 #: src/view/com/composer/Composer.tsx:960
@@ -1685,6 +1696,10 @@ msgstr "在這裡輸入傳送至您電子信箱的登入驗證碼。"
 msgid "Check your inbox for an email with the confirmation code to enter below:"
 msgstr "在下方輸入傳送至您電子信箱的驗證碼："
 
+#: src/components/dialogs/AvatarSelect.tsx:155
+msgid "Choose an avatar"
+msgstr ""
+
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:389
 msgid "Choose domain verification method"
 msgstr "選擇網域驗證方式"
@@ -1716,10 +1731,6 @@ msgstr "選擇您的服務提供者"
 #: src/view/screens/Feeds.tsx:731
 msgid "Choose your own timeline! Feeds built by the community help you find content you love."
 msgstr "自訂屬於您自己的河道！由社群打造的動態源能協助您找到喜愛的內容。"
-
-#: src/screens/Signup/StepInfo/index.tsx:241
-msgid "Choose your password"
-msgstr "設定您的密碼"
 
 #: src/screens/Signup/index.tsx:160
 msgid "Choose your username"
@@ -1778,6 +1789,7 @@ msgstr "氣象"
 msgid "Clip 🐴 clop 🐴"
 msgstr "達達的馬蹄 🐴 是美麗的錯誤 🐴"
 
+#: src/components/dialogs/AvatarSelect.tsx:260
 #: src/components/dialogs/GifSelect.tsx:282
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:158
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:167
@@ -1817,6 +1829,7 @@ msgstr "關閉警告"
 msgid "Close bottom drawer"
 msgstr "關閉底部導航列"
 
+#: src/components/dialogs/AvatarSelect.tsx:254
 #: src/components/dialogs/GifSelect.tsx:276
 #: src/components/verification/VerificationsDialog.tsx:136
 #: src/components/verification/VerifierDialog.tsx:136
@@ -2027,7 +2040,7 @@ msgid "Context menu backdrop, click to close the menu."
 msgstr "內容選單背景，點一下以關閉選單。"
 
 #: src/screens/Onboarding/StepInterests/index.tsx:244
-#: src/screens/Onboarding/StepProfile/index.tsx:276
+#: src/screens/Onboarding/StepProfile/index.tsx:267
 msgid "Continue"
 msgstr "繼續"
 
@@ -2045,8 +2058,9 @@ msgid "Continue thread..."
 msgstr "繼續載入討論串……"
 
 #: src/screens/Onboarding/StepInterests/index.tsx:241
-#: src/screens/Onboarding/StepProfile/index.tsx:273
+#: src/screens/Onboarding/StepProfile/index.tsx:264
 #: src/screens/Signup/BackNextButtons.tsx:60
+#: src/screens/Signup/StepInfo/index.tsx:380
 msgid "Continue to next step"
 msgstr "繼續下一步"
 
@@ -2253,7 +2267,7 @@ msgstr "建立帳號"
 msgid "Create an account without using this starter pack"
 msgstr "不使用此新手包建立帳號"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:290
+#: src/screens/Onboarding/StepProfile/index.tsx:281
 msgid "Create an avatar instead"
 msgstr "或是建立一個大頭貼照"
 
@@ -2321,7 +2335,7 @@ msgstr "深色模式"
 msgid "Dark theme"
 msgstr "深色主題"
 
-#: src/screens/Signup/StepInfo/index.tsx:269
+#: src/screens/Signup/StepInfo/index.tsx:334
 msgid "Date of birth"
 msgstr "出生日期"
 
@@ -2577,8 +2591,9 @@ msgstr "跳過"
 msgid "Dismiss error"
 msgstr "跳過錯誤"
 
+#: src/components/dialogs/AvatarSelect.tsx:163
 #: src/components/ProgressGuide/List.tsx:42
-#: src/screens/Login/ResetpasswordDialog.tsx:145
+#: src/screens/Login/ResetpasswordDialog.tsx:146
 msgid "Dismiss getting started guide"
 msgstr "跳過入門指南"
 
@@ -2645,8 +2660,6 @@ msgstr "沒有看到電子郵件嗎？<0>點一下這裡來重新傳送。</0>"
 #: src/components/forms/DateField/index.tsx:109
 #: src/components/Select/index.tsx:183
 #: src/components/Select/index.tsx:190
-#: src/screens/Onboarding/StepProfile/index.tsx:328
-#: src/screens/Onboarding/StepProfile/index.tsx:331
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:215
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:222
 #: src/view/com/auth/server-input/index.tsx:232
@@ -2847,7 +2860,6 @@ msgid "Either the creator of this list has blocked you or you have blocked the c
 msgstr "此列表的建立者已封鎖您，或您已封鎖了對方。"
 
 #: src/screens/Settings/AccountSettings.tsx:63
-#: src/screens/Signup/StepInfo/index.tsx:193
 msgid "Email"
 msgstr "電子信箱"
 
@@ -2859,6 +2871,10 @@ msgstr "成功停用電子郵件雙重驗證"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:63
 msgid "Email 2FA enabled"
 msgstr "已啟用電子郵件雙重驗證"
+
+#: src/screens/Signup/StepInfo/index.tsx:230
+msgid "Email address"
+msgstr ""
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
@@ -2984,7 +3000,7 @@ msgstr "輸入代碼"
 msgid "Enter fullscreen"
 msgstr "進入全螢幕"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:159
+#: src/screens/Login/ResetpasswordDialog.tsx:160
 msgid "Enter the code we sent to {0}"
 msgstr ""
 
@@ -2996,6 +3012,10 @@ msgstr "輸入您收到的代碼以變更密碼。"
 msgid "Enter the domain you want to use"
 msgstr "輸入您想使用的網域"
 
+#: src/screens/Signup/StepInfo/index.tsx:257
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/LoginForm.tsx:290
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
@@ -3005,11 +3025,11 @@ msgid "Enter your birth date"
 msgstr "輸入您的出生日期"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:122
-#: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "輸入您的電子郵件地址"
 
 #: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Signup/StepInfo/index.tsx:296
 msgid "Enter your password"
 msgstr "輸入您的密碼"
 
@@ -3783,7 +3803,7 @@ msgstr "開始吧"
 msgid "GIF"
 msgstr "GIF"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:232
+#: src/screens/Onboarding/StepProfile/index.tsx:223
 msgid "Give your profile a face"
 msgstr "為您的個人檔案選擇大頭貼照"
 
@@ -3937,7 +3957,7 @@ msgstr "遇到問題？"
 msgid "Help"
 msgstr "幫助"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:235
+#: src/screens/Onboarding/StepProfile/index.tsx:226
 msgid "Help people know you're not a bot by uploading a picture or creating an avatar."
 msgstr "透過上傳圖片或建立大頭貼照，讓大家知道您不是機器人。"
 
@@ -3968,7 +3988,7 @@ msgstr "隱藏列表"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "隱藏"
@@ -3981,6 +4001,10 @@ msgstr "隱藏"
 #: src/components/dialogs/Embed.tsx:128
 msgid "Hide customization options"
 msgstr "隱藏自訂選項"
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Hide password?"
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:543
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:549
@@ -4037,6 +4061,10 @@ msgstr "隱藏驗證標記"
 #: src/components/moderation/PostHider.tsx:89
 msgid "Hides the content"
 msgstr "隱藏內容"
+
+#: src/screens/Signup/StepInfo/index.tsx:306
+msgid "Hides the password"
+msgstr ""
 
 #: src/view/com/posts/PostFeedErrorMessage.tsx:121
 msgid "Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue."
@@ -4239,7 +4267,7 @@ msgstr "收件匣清零！"
 msgid "Incorrect username or password"
 msgstr "用戶名稱或密碼錯誤"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:179
+#: src/screens/Login/ResetpasswordDialog.tsx:180
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "輸入傳送到您電子信箱的代碼以重設密碼"
@@ -4248,7 +4276,7 @@ msgstr "輸入傳送到您電子信箱的代碼以重設密碼"
 msgid "Input confirmation code for account deletion"
 msgstr "輸入刪除帳號的驗證碼"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:199
+#: src/screens/Login/ResetpasswordDialog.tsx:200
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "輸入新密碼"
@@ -4298,7 +4326,7 @@ msgstr "無效的驗證碼"
 msgid "Invite a Friend"
 msgstr "邀請朋友"
 
-#: src/screens/Signup/StepInfo/index.tsx:163
+#: src/screens/Signup/StepInfo/index.tsx:211
 msgid "Invite code"
 msgstr "邀請碼"
 
@@ -4326,7 +4354,7 @@ msgstr "邀請朋友跟隨您喜歡的動態源和人物"
 msgid "Invites, but personal"
 msgstr "邀請，但更具個人風格"
 
-#: src/screens/Signup/StepInfo/index.tsx:289
+#: src/screens/Signup/StepInfo/index.tsx:393
 msgid "It's correct"
 msgstr "這是正確的電子郵件地址"
 
@@ -4742,7 +4770,7 @@ msgstr "網站標誌由 <0>@sawaratsuki.bsky.social</0> 繪製"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "長按以開啟 #{tag} 的標籤選單"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:168
+#: src/screens/Login/ResetpasswordDialog.tsx:169
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "看起來像是 XXXXX-XXXXX"
@@ -4987,6 +5015,14 @@ msgstr "電影"
 msgid "Music"
 msgstr "音樂"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:119
+msgid "Must be at least 8 characters"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:138
+msgid "Must have at least one symbol or number"
+msgstr ""
+
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoEmbedInnerNative.tsx:156
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/web-controls/VolumeControl.tsx:96
 msgctxt "video"
@@ -5217,7 +5253,7 @@ msgstr "建立內容管理列表"
 msgid "New password"
 msgstr "新密碼"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:188
+#: src/screens/Login/ResetpasswordDialog.tsx:189
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "新密碼"
@@ -5532,6 +5568,7 @@ msgstr "未貼上這類標記的裸露或色情內容"
 msgid "Off"
 msgstr "顯示"
 
+#: src/components/dialogs/AvatarSelect.tsx:247
 #: src/components/dialogs/GifSelect.tsx:269
 #: src/view/com/util/ErrorBoundary.tsx:57
 msgid "Oh no!"
@@ -5629,7 +5666,7 @@ msgstr "糟糕！"
 msgid "Open"
 msgstr "開放"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:284
+#: src/screens/Onboarding/StepProfile/index.tsx:275
 msgid "Open avatar creator"
 msgstr "開啟大頭貼照建立工具"
 
@@ -5741,6 +5778,10 @@ msgstr "開啟變更帳號代碼對話框"
 #: src/view/com/post-thread/PostThreadComposePrompt.tsx:63
 msgid "Opens composer"
 msgstr "開啟編輯器"
+
+#: src/screens/Signup/StepInfo/index.tsx:381
+msgid "Opens confirmation dialog"
+msgstr ""
 
 #: src/view/com/composer/photos/SelectPhotoBtn.tsx:51
 msgid "Opens device photo gallery"
@@ -5864,7 +5905,7 @@ msgstr "頁面不存在"
 #: src/screens/Login/LoginForm.tsx:301
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
-#: src/screens/Signup/StepInfo/index.tsx:228
+#: src/screens/Signup/StepInfo/index.tsx:266
 #: src/view/com/modals/DeleteAccount.tsx:239
 #: src/view/com/modals/DeleteAccount.tsx:246
 msgid "Password"
@@ -5877,6 +5918,10 @@ msgstr "已變更密碼"
 #: src/view/com/modals/ChangePassword.tsx:99
 msgid "Password must be at least 8 characters long."
 msgstr "密碼必須至少包含 8 個字元。"
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:107
+msgid "Password strength: weak"
+msgstr ""
 
 #: src/screens/Login/index.tsx:201
 msgid "Password updated"
@@ -6019,7 +6064,7 @@ msgid "Please choose your handle."
 msgstr "請選擇您的帳號代碼。"
 
 #: src/screens/Signup/state.ts:278
-#: src/screens/Signup/StepInfo/index.tsx:120
+#: src/screens/Signup/StepInfo/index.tsx:130
 msgid "Please choose your password."
 msgstr "請設定您的密碼。"
 
@@ -6031,11 +6076,11 @@ msgstr "請查看我們先前傳送至您新電子信箱的郵件，並打開其
 msgid "Please complete the verification captcha."
 msgstr "請完成人機驗證 (Captcha)。"
 
-#: src/screens/Signup/StepInfo/index.tsx:109
+#: src/screens/Signup/StepInfo/index.tsx:118
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "請再次確認您是否輸入了正確的電子郵件地址。"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:71
+#: src/screens/Login/ResetpasswordDialog.tsx:72
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "請輸入密碼。"
@@ -6075,11 +6120,11 @@ msgid "Please enter your email address"
 msgstr ""
 
 #: src/screens/Signup/state.ts:262
-#: src/screens/Signup/StepInfo/index.tsx:91
+#: src/screens/Signup/StepInfo/index.tsx:98
 msgid "Please enter your email."
 msgstr "請輸入您的電子郵件地址。"
 
-#: src/screens/Signup/StepInfo/index.tsx:84
+#: src/screens/Signup/StepInfo/index.tsx:90
 msgid "Please enter your invite code."
 msgstr "請輸入您的邀請碼。"
 
@@ -6954,10 +6999,6 @@ msgstr "要求發布前提供替代文字"
 msgid "Require an email code to sign in to your account."
 msgstr "登入時要求電子郵件驗證碼。"
 
-#: src/screens/Signup/StepInfo/index.tsx:177
-msgid "Required for this provider"
-msgstr "此服務提供者要求必填"
-
 #: src/components/LabelingServiceCard/index.tsx:80
 msgid "Required in your region"
 msgstr "您所在的區域要求必填"
@@ -6998,9 +7039,13 @@ msgstr "重設碼"
 msgid "Reset onboarding state"
 msgstr "重設入門引導進度"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:137
+#: src/screens/Login/ResetpasswordDialog.tsx:138
 msgid "Reset password"
 msgstr "重設密碼"
+
+#: src/screens/Signup/StepInfo/index.tsx:368
+msgid "Retries connection"
+msgstr ""
 
 #: src/screens/Login/LoginForm.tsx:402
 msgid "Retries signing in"
@@ -7028,6 +7073,8 @@ msgstr "重新執行上一個出現錯誤的動作"
 #: src/screens/PostThread/components/ThreadError.tsx:75
 #: src/screens/PostThread/components/ThreadError.tsx:81
 #: src/screens/Signup/BackNextButtons.tsx:53
+#: src/screens/Signup/StepInfo/index.tsx:367
+#: src/screens/Signup/StepInfo/index.tsx:374
 #: src/view/com/util/error/ErrorMessage.tsx:60
 #: src/view/com/util/error/ErrorScreen.tsx:97
 msgid "Retry"
@@ -7261,6 +7308,11 @@ msgstr "查詢指南"
 msgid "Seek slider. Use the arrow keys to seek forwards and backwards, and space to play/pause"
 msgstr "播放進度列。使用方向鍵來快轉或倒轉，空白鍵控制播放或暫停"
 
+#: src/components/dialogs/AvatarSelect.tsx:220
+#: src/components/dialogs/AvatarSelect.tsx:229
+msgid "Select"
+msgstr ""
+
 #: src/screens/Onboarding/StepProfile/AvatarCreatorItems.tsx:67
 msgid "Select a color"
 msgstr "選擇一個顏色"
@@ -7284,6 +7336,14 @@ msgstr "選擇一個選項"
 #: src/screens/Settings/LanguageSettings.tsx:98
 msgid "Select app language"
 msgstr "選擇應用程式語言"
+
+#: src/components/dialogs/AvatarSelect.tsx:221
+msgid "Select avatar"
+msgstr ""
+
+#: src/components/dialogs/AvatarSelect.tsx:282
+msgid "Select Avatar \"{uri}\""
+msgstr ""
 
 #: src/screens/Settings/LanguageSettings.tsx:164
 msgid "Select content languages"
@@ -7358,7 +7418,7 @@ msgstr "選擇應用程式介面所使用的語言。"
 msgid "Select which languages you want your subscribed feeds to include. If none are selected, all languages will be shown."
 msgstr "選擇您希望在訂閱的動態源中所看到的語言。如果留空，將視為選擇所有語言。"
 
-#: src/screens/Signup/StepInfo/index.tsx:270
+#: src/screens/Signup/StepInfo/index.tsx:335
 msgid "Select your date of birth"
 msgstr "選擇您的出生日期"
 
@@ -7387,7 +7447,7 @@ msgstr "選擇第 {0} 個選項（共 {numItems} 個）"
 msgid "Send a neat website!"
 msgstr "傳送一個有趣的網站吧！"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:224
+#: src/screens/Login/ResetpasswordDialog.tsx:226
 msgid "Send a new code"
 msgstr ""
 
@@ -7627,7 +7687,7 @@ msgstr "共用偏好測試器"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 msgid "Show"
 msgstr "顯示"
 
@@ -7686,9 +7746,13 @@ msgstr "顯示更多回覆"
 msgid "Show muted replies"
 msgstr "顯示靜音回覆"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:204
 #: src/screens/Login/ResetpasswordDialog.tsx:205
+#: src/screens/Login/ResetpasswordDialog.tsx:206
 msgid "Show password"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Show password?"
 msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
@@ -7756,6 +7820,10 @@ msgstr "顯示其他您可以切換的帳號"
 msgid "Shows the content"
 msgstr "顯示內容"
 
+#: src/screens/Signup/StepInfo/index.tsx:307
+msgid "Shows the password"
+msgstr ""
+
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
 #: src/screens/Login/index.tsx:140
@@ -7787,7 +7855,7 @@ msgid "Sign in or create your account to join the conversation!"
 msgstr "登入或建立您的帳號即可加入對話！"
 
 #: src/components/AccountList.tsx:71
-#: src/screens/Login/ResetpasswordDialog.tsx:221
+#: src/screens/Login/ResetpasswordDialog.tsx:223
 msgid "Sign in to account that is not listed"
 msgstr "登入未列出的帳號"
 
@@ -8035,8 +8103,8 @@ msgstr "故事書"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
-#: src/screens/Login/ResetpasswordDialog.tsx:248
-#: src/screens/Login/ResetpasswordDialog.tsx:254
+#: src/screens/Login/ResetpasswordDialog.tsx:250
+#: src/screens/Login/ResetpasswordDialog.tsx:256
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8459,6 +8527,7 @@ msgstr "發生問題！{0}"
 msgid "There was an issue. Please check your internet connection and try again."
 msgstr "發生問題了。請檢查您的網路連線，然後再試一次。"
 
+#: src/components/dialogs/AvatarSelect.tsx:249
 #: src/components/dialogs/GifSelect.tsx:271
 #: src/view/com/util/ErrorBoundary.tsx:59
 msgid "There was an unexpected issue in the application. Please let us know if this happened to you!"
@@ -8857,8 +8926,8 @@ msgstr "無法連線到伺服器。請檢查您的網路連線，然後再試一
 #: src/screens/Login/ForgotPasswordForm.tsx:75
 #: src/screens/Login/index.tsx:93
 #: src/screens/Login/LoginForm.tsx:186
-#: src/screens/Login/ResetpasswordDialog.tsx:96
-#: src/screens/Login/ResetpasswordDialog.tsx:121
+#: src/screens/Login/ResetpasswordDialog.tsx:97
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9093,12 +9162,12 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "無法更新回覆可見度"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:260
+#: src/screens/Login/ResetpasswordDialog.tsx:262
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "更新中……"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:288
+#: src/screens/Onboarding/StepProfile/index.tsx:279
 msgid "Upload a photo instead"
 msgstr "或是上傳圖片"
 
@@ -9914,7 +9983,7 @@ msgstr "您封鎖了此用戶，因此無法檢視他們發布的內容。"
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "您已完全停用回覆、引用以及提及的通知，因此這個頁面將不再更新。要調整此功能，請前往您的<0>通知設定</0>。"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:62
+#: src/screens/Login/ResetpasswordDialog.tsx:63
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10173,7 +10242,7 @@ msgstr "您的帳號被判定違反了 <0>Bluesky Social 服務條款</0>。您�
 msgid "Your appeal has been submitted. If your appeal succeeds, you will receive an email."
 msgstr "已提交您的申訴。如果上訴成功，我們會透過電子郵件通知您。"
 
-#: src/screens/Signup/StepInfo/index.tsx:257
+#: src/screens/Signup/StepInfo/index.tsx:322
 msgid "Your birth date"
 msgstr "您的出生日期"
 
@@ -10195,7 +10264,7 @@ msgstr "您現在使用的帳號代碼 <0>{0}</0> 將自動為您保留。您可
 
 #: src/screens/Login/ForgotPasswordForm.tsx:56
 #: src/screens/Signup/state.ts:270
-#: src/screens/Signup/StepInfo/index.tsx:98
+#: src/screens/Signup/StepInfo/index.tsx:106
 #: src/view/com/modals/ChangePassword.tsx:55
 msgid "Your email appears to be invalid."
 msgstr "您的電子郵件地址似乎無效。"
@@ -10245,14 +10314,22 @@ msgstr "選擇興趣主題可以協助我們推薦更多您喜歡的內容！"
 msgid "Your muted words"
 msgstr "您的靜音字詞"
 
+#: src/screens/Signup/StepInfo/index.tsx:161
+msgid "Your password cannot include your email address."
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:169
 msgid "Your password has been changed successfully!"
 msgstr "成功變更您的密碼！"
 
 #: src/screens/Login/LoginForm.tsx:117
-#: src/screens/Signup/StepInfo/index.tsx:127
+#: src/screens/Signup/StepInfo/index.tsx:138
 msgid "Your password must be at least 8 characters long."
 msgstr "您輸入的密碼必須至少包含 8 個字元。"
+
+#: src/screens/Signup/StepInfo/index.tsx:152
+msgid "Your password must contain at least one symbol or number."
+msgstr ""
 
 #: src/view/com/composer/Composer.tsx:522
 msgid "Your post has been published"

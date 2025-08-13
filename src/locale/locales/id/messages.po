@@ -128,6 +128,7 @@ msgstr "{0, plural, other {{1} postingan}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, other {# orang}} telah menggunakan paket pemula ini!"
 
+#: src/screens/Signup/StepInfo/index.tsx:312
 #: src/screens/Welcome/index.tsx:74
 #: src/screens/Welcome/index.tsx:83
 msgid "{0}"
@@ -800,6 +801,7 @@ msgid "Advanced"
 msgstr "Lanjutan"
 
 #: src/screens/Login/LoginForm.tsx:428
+#: src/screens/Signup/StepInfo/index.tsx:395
 msgid "Agree and continue"
 msgstr ""
 
@@ -893,6 +895,7 @@ msgstr "Teks alt akan disingkat. {MAX_ALT_TEXT, plural, other {Batas: {0} karakt
 msgid "An email has been sent to {0}. It includes a confirmation code which you can enter below."
 msgstr "Email telah dikirim ke {0}. Email tersebut berisi kode konfirmasi yang dapat Anda masukkan di bawah ini."
 
+#: src/components/dialogs/AvatarSelect.tsx:244
 #: src/components/dialogs/GifSelect.tsx:266
 msgid "An error has occurred"
 msgstr "Telah terjadi kesalahan"
@@ -1183,14 +1186,15 @@ msgstr "Aurora"
 msgid "Autoplay videos and GIFs"
 msgstr "Putar otomatis video dan GIF"
 
+#: src/components/dialogs/AvatarSelect.tsx:207
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
 #: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/ForgotPasswordForm.tsx:178
 #: src/screens/Login/LoginForm.tsx:388
-#: src/screens/Login/ResetpasswordDialog.tsx:234
-#: src/screens/Login/ResetpasswordDialog.tsx:240
+#: src/screens/Login/ResetpasswordDialog.tsx:236
+#: src/screens/Login/ResetpasswordDialog.tsx:242
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1481,7 +1485,12 @@ msgstr "Oleh anda"
 msgid "Camera"
 msgstr "Kamera"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:128
+msgid "Can't include your email address"
+msgstr ""
+
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:206
+#: src/components/dialogs/AvatarSelect.tsx:213
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:125
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:131
 #: src/components/dialogs/InAppBrowserConsent.tsx:98
@@ -1506,6 +1515,8 @@ msgstr "Kamera"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:78
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:85
 #: src/screens/Settings/Settings.tsx:280
+#: src/screens/Signup/StepInfo/index.tsx:354
+#: src/screens/Signup/StepInfo/index.tsx:360
 #: src/screens/Takendown.tsx:99
 #: src/screens/Takendown.tsx:102
 #: src/view/com/composer/Composer.tsx:960
@@ -1685,6 +1696,10 @@ msgstr "Periksa email Anda untuk mendapatkan kode login dan masukkan di sini."
 msgid "Check your inbox for an email with the confirmation code to enter below:"
 msgstr "Periksa kotak masuk email Anda untuk kode konfirmasi dan masukkan di bawah ini:"
 
+#: src/components/dialogs/AvatarSelect.tsx:155
+msgid "Choose an avatar"
+msgstr ""
+
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:389
 msgid "Choose domain verification method"
 msgstr "Pilih metode verifikasi domain"
@@ -1716,10 +1731,6 @@ msgstr "Pilih penyedia akun Anda"
 #: src/view/screens/Feeds.tsx:731
 msgid "Choose your own timeline! Feeds built by the community help you find content you love."
 msgstr "Pilih sendiri linimasa Anda! Feed buatan komunitas dapat membantu menemukan konten yang Anda sukai."
-
-#: src/screens/Signup/StepInfo/index.tsx:241
-msgid "Choose your password"
-msgstr "Pilih kata sandi Anda"
 
 #: src/screens/Signup/index.tsx:160
 msgid "Choose your username"
@@ -1778,6 +1789,7 @@ msgstr "Iklim"
 msgid "Clip 🐴 clop 🐴"
 msgstr "Keletak 🐴 keletuk 🐴"
 
+#: src/components/dialogs/AvatarSelect.tsx:260
 #: src/components/dialogs/GifSelect.tsx:282
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:158
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:167
@@ -1817,6 +1829,7 @@ msgstr "Tutup peringatan"
 msgid "Close bottom drawer"
 msgstr "Tutup kotak bawah"
 
+#: src/components/dialogs/AvatarSelect.tsx:254
 #: src/components/dialogs/GifSelect.tsx:276
 #: src/components/verification/VerificationsDialog.tsx:136
 #: src/components/verification/VerifierDialog.tsx:136
@@ -2027,7 +2040,7 @@ msgid "Context menu backdrop, click to close the menu."
 msgstr "Latar menu konteks, klik untuk menutup menu."
 
 #: src/screens/Onboarding/StepInterests/index.tsx:244
-#: src/screens/Onboarding/StepProfile/index.tsx:276
+#: src/screens/Onboarding/StepProfile/index.tsx:267
 msgid "Continue"
 msgstr "Lanjutkan"
 
@@ -2045,8 +2058,9 @@ msgid "Continue thread..."
 msgstr "Lanjutkan utas..."
 
 #: src/screens/Onboarding/StepInterests/index.tsx:241
-#: src/screens/Onboarding/StepProfile/index.tsx:273
+#: src/screens/Onboarding/StepProfile/index.tsx:264
 #: src/screens/Signup/BackNextButtons.tsx:60
+#: src/screens/Signup/StepInfo/index.tsx:380
 msgid "Continue to next step"
 msgstr "Lanjutkan ke langkah berikutnya"
 
@@ -2253,7 +2267,7 @@ msgstr "Buat akun"
 msgid "Create an account without using this starter pack"
 msgstr "Buat akun tanpa menggunakan paket pemula ini"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:290
+#: src/screens/Onboarding/StepProfile/index.tsx:281
 msgid "Create an avatar instead"
 msgstr "Buat avatar saja"
 
@@ -2321,7 +2335,7 @@ msgstr "Mode gelap"
 msgid "Dark theme"
 msgstr "Tema gelap"
 
-#: src/screens/Signup/StepInfo/index.tsx:269
+#: src/screens/Signup/StepInfo/index.tsx:334
 msgid "Date of birth"
 msgstr "Tanggal lahir"
 
@@ -2577,8 +2591,9 @@ msgstr "Tutup"
 msgid "Dismiss error"
 msgstr "Abaikan kesalahan"
 
+#: src/components/dialogs/AvatarSelect.tsx:163
 #: src/components/ProgressGuide/List.tsx:42
-#: src/screens/Login/ResetpasswordDialog.tsx:145
+#: src/screens/Login/ResetpasswordDialog.tsx:146
 msgid "Dismiss getting started guide"
 msgstr "Tutup panduan memulai"
 
@@ -2645,8 +2660,6 @@ msgstr "Tidak dapat melihat email? <0>Klik di sini untuk kirim ulang.</0>"
 #: src/components/forms/DateField/index.tsx:109
 #: src/components/Select/index.tsx:183
 #: src/components/Select/index.tsx:190
-#: src/screens/Onboarding/StepProfile/index.tsx:328
-#: src/screens/Onboarding/StepProfile/index.tsx:331
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:215
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:222
 #: src/view/com/auth/server-input/index.tsx:232
@@ -2847,7 +2860,6 @@ msgid "Either the creator of this list has blocked you or you have blocked the c
 msgstr "Pembuat daftar ini mungkin telah memblokir Anda atau Anda telah memblokirnya."
 
 #: src/screens/Settings/AccountSettings.tsx:63
-#: src/screens/Signup/StepInfo/index.tsx:193
 msgid "Email"
 msgstr "Email"
 
@@ -2859,6 +2871,10 @@ msgstr "Email 2FA dinonaktifkan"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:63
 msgid "Email 2FA enabled"
 msgstr "Email 2FA diaktifkan"
+
+#: src/screens/Signup/StepInfo/index.tsx:230
+msgid "Email address"
+msgstr ""
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
@@ -2984,7 +3000,7 @@ msgstr "Masukkan kode"
 msgid "Enter fullscreen"
 msgstr "Masuk ke layar penuh"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:159
+#: src/screens/Login/ResetpasswordDialog.tsx:160
 msgid "Enter the code we sent to {0}"
 msgstr ""
 
@@ -2996,6 +3012,10 @@ msgstr "Masukkan kode yang Anda terima untuk mengubah kata sandi Anda."
 msgid "Enter the domain you want to use"
 msgstr "Masukkan domain yang ingin Anda gunakan"
 
+#: src/screens/Signup/StepInfo/index.tsx:257
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/LoginForm.tsx:290
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
@@ -3005,11 +3025,11 @@ msgid "Enter your birth date"
 msgstr "Masukkan tanggal lahir Anda"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:122
-#: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "Masukkan alamat email Anda"
 
 #: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Signup/StepInfo/index.tsx:296
 msgid "Enter your password"
 msgstr "Masukkan kata sandi"
 
@@ -3783,7 +3803,7 @@ msgstr "Memulai"
 msgid "GIF"
 msgstr "GIF"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:232
+#: src/screens/Onboarding/StepProfile/index.tsx:223
 msgid "Give your profile a face"
 msgstr "Beri wajah pada profil Anda"
 
@@ -3937,7 +3957,7 @@ msgstr "Mengalami masalah?"
 msgid "Help"
 msgstr "Bantuan"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:235
+#: src/screens/Onboarding/StepProfile/index.tsx:226
 msgid "Help people know you're not a bot by uploading a picture or creating an avatar."
 msgstr "Beri tahu orang-orang bahwa Anda bukan bot dengan mengunggah gambar atau membuat avatar."
 
@@ -3968,7 +3988,7 @@ msgstr "Daftar yang disembunyikan"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "Sembunyikan"
@@ -3981,6 +4001,10 @@ msgstr "Sembunyikan"
 #: src/components/dialogs/Embed.tsx:128
 msgid "Hide customization options"
 msgstr "Sembunyikan opsi penyesuaian"
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Hide password?"
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:543
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:549
@@ -4037,6 +4061,10 @@ msgstr "Sembunyikan lencana verifikasi"
 #: src/components/moderation/PostHider.tsx:89
 msgid "Hides the content"
 msgstr "Menyembunyikan konten"
+
+#: src/screens/Signup/StepInfo/index.tsx:306
+msgid "Hides the password"
+msgstr ""
 
 #: src/view/com/posts/PostFeedErrorMessage.tsx:121
 msgid "Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue."
@@ -4239,7 +4267,7 @@ msgstr "Kotak masuk kosong!"
 msgid "Incorrect username or password"
 msgstr "Nama pengguna atau kata sandi salah"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:179
+#: src/screens/Login/ResetpasswordDialog.tsx:180
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "Masukkan kode yang dikirim ke email Anda untuk pengaturan ulang kata sandi"
@@ -4248,7 +4276,7 @@ msgstr "Masukkan kode yang dikirim ke email Anda untuk pengaturan ulang kata san
 msgid "Input confirmation code for account deletion"
 msgstr "Masukkan kode konfirmasi untuk penghapusan akun"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:199
+#: src/screens/Login/ResetpasswordDialog.tsx:200
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "Masukkan kata sandi baru"
@@ -4298,7 +4326,7 @@ msgstr "Kode Verifikasi Tidak Valid"
 msgid "Invite a Friend"
 msgstr "Undang Teman"
 
-#: src/screens/Signup/StepInfo/index.tsx:163
+#: src/screens/Signup/StepInfo/index.tsx:211
 msgid "Invite code"
 msgstr "Kode Undangan"
 
@@ -4326,7 +4354,7 @@ msgstr "Undang teman untuk mengikuti feed dan akun favorit Anda"
 msgid "Invites, but personal"
 msgstr "Undangan, tetapi personal"
 
-#: src/screens/Signup/StepInfo/index.tsx:289
+#: src/screens/Signup/StepInfo/index.tsx:393
 msgid "It's correct"
 msgstr "Sudah benar"
 
@@ -4742,7 +4770,7 @@ msgstr "Logo oleh <0>@sawaratsuki.bsky.social</0>"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "Tekan lama untuk membuka menu tagar #{tag}"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:168
+#: src/screens/Login/ResetpasswordDialog.tsx:169
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "Seperti XXXXX-XXXXX"
@@ -4987,6 +5015,14 @@ msgstr "Film"
 msgid "Music"
 msgstr "Musik"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:119
+msgid "Must be at least 8 characters"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:138
+msgid "Must have at least one symbol or number"
+msgstr ""
+
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoEmbedInnerNative.tsx:156
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/web-controls/VolumeControl.tsx:96
 msgctxt "video"
@@ -5217,7 +5253,7 @@ msgstr "Daftar Moderasi Baru"
 msgid "New password"
 msgstr "Kata sandi baru"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:188
+#: src/screens/Login/ResetpasswordDialog.tsx:189
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "Kata Sandi Baru"
@@ -5532,6 +5568,7 @@ msgstr "Ketelanjangan atau konten dewasa yang tidak dilabeli sedemikian rupa"
 msgid "Off"
 msgstr "Matikan"
 
+#: src/components/dialogs/AvatarSelect.tsx:247
 #: src/components/dialogs/GifSelect.tsx:269
 #: src/view/com/util/ErrorBoundary.tsx:57
 msgid "Oh no!"
@@ -5629,7 +5666,7 @@ msgstr "Ups!"
 msgid "Open"
 msgstr "Terbuka"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:284
+#: src/screens/Onboarding/StepProfile/index.tsx:275
 msgid "Open avatar creator"
 msgstr "Buka pembuat avatar"
 
@@ -5741,6 +5778,10 @@ msgstr "Membuka dialog ubah panggilan"
 #: src/view/com/post-thread/PostThreadComposePrompt.tsx:63
 msgid "Opens composer"
 msgstr "Membuka penyusun postingan"
+
+#: src/screens/Signup/StepInfo/index.tsx:381
+msgid "Opens confirmation dialog"
+msgstr ""
 
 #: src/view/com/composer/photos/SelectPhotoBtn.tsx:51
 msgid "Opens device photo gallery"
@@ -5864,7 +5905,7 @@ msgstr "Halaman Tidak Ditemukan"
 #: src/screens/Login/LoginForm.tsx:301
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
-#: src/screens/Signup/StepInfo/index.tsx:228
+#: src/screens/Signup/StepInfo/index.tsx:266
 #: src/view/com/modals/DeleteAccount.tsx:239
 #: src/view/com/modals/DeleteAccount.tsx:246
 msgid "Password"
@@ -5877,6 +5918,10 @@ msgstr "Kata Sandi Diubah"
 #: src/view/com/modals/ChangePassword.tsx:99
 msgid "Password must be at least 8 characters long."
 msgstr "Kata sandi harus terdiri dari setidaknya 8 karakter."
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:107
+msgid "Password strength: weak"
+msgstr ""
 
 #: src/screens/Login/index.tsx:201
 msgid "Password updated"
@@ -6019,7 +6064,7 @@ msgid "Please choose your handle."
 msgstr "Silakan tentukan panggilan Anda."
 
 #: src/screens/Signup/state.ts:278
-#: src/screens/Signup/StepInfo/index.tsx:120
+#: src/screens/Signup/StepInfo/index.tsx:130
 msgid "Please choose your password."
 msgstr "Masukkan kata sandi Anda."
 
@@ -6031,11 +6076,11 @@ msgstr "Silakan klik pada tautan dalam email yang telah kami kirimkan untuk memv
 msgid "Please complete the verification captcha."
 msgstr "Mohon selesaikan verifikasi captcha."
 
-#: src/screens/Signup/StepInfo/index.tsx:109
+#: src/screens/Signup/StepInfo/index.tsx:118
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "Mohon periksa kembali apakah Anda telah memasukkan alamat email dengan benar."
 
-#: src/screens/Login/ResetpasswordDialog.tsx:71
+#: src/screens/Login/ResetpasswordDialog.tsx:72
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "Silakan masukkan kata sandi."
@@ -6075,11 +6120,11 @@ msgid "Please enter your email address"
 msgstr ""
 
 #: src/screens/Signup/state.ts:262
-#: src/screens/Signup/StepInfo/index.tsx:91
+#: src/screens/Signup/StepInfo/index.tsx:98
 msgid "Please enter your email."
 msgstr "Masukkan email Anda."
 
-#: src/screens/Signup/StepInfo/index.tsx:84
+#: src/screens/Signup/StepInfo/index.tsx:90
 msgid "Please enter your invite code."
 msgstr "Silakan masukkan kode undangan Anda."
 
@@ -6954,10 +6999,6 @@ msgstr "Wajibkan teks alt sebelum memposting"
 msgid "Require an email code to sign in to your account."
 msgstr "Gunakan kode email untuk masuk ke akun Anda."
 
-#: src/screens/Signup/StepInfo/index.tsx:177
-msgid "Required for this provider"
-msgstr "Diwajibkan untuk provider ini"
-
 #: src/components/LabelingServiceCard/index.tsx:80
 msgid "Required in your region"
 msgstr "Diperlukan di wilayah Anda"
@@ -6998,9 +7039,13 @@ msgstr "Kode Reset"
 msgid "Reset onboarding state"
 msgstr "Reset status orientasi"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:137
+#: src/screens/Login/ResetpasswordDialog.tsx:138
 msgid "Reset password"
 msgstr "Reset kata sandi"
+
+#: src/screens/Signup/StepInfo/index.tsx:368
+msgid "Retries connection"
+msgstr ""
 
 #: src/screens/Login/LoginForm.tsx:402
 msgid "Retries signing in"
@@ -7028,6 +7073,8 @@ msgstr "Mencoba kembali tindakan terakhir yang gagal"
 #: src/screens/PostThread/components/ThreadError.tsx:75
 #: src/screens/PostThread/components/ThreadError.tsx:81
 #: src/screens/Signup/BackNextButtons.tsx:53
+#: src/screens/Signup/StepInfo/index.tsx:367
+#: src/screens/Signup/StepInfo/index.tsx:374
 #: src/view/com/util/error/ErrorMessage.tsx:60
 #: src/view/com/util/error/ErrorScreen.tsx:97
 msgid "Retry"
@@ -7261,6 +7308,11 @@ msgstr "Lihat panduan ini"
 msgid "Seek slider. Use the arrow keys to seek forwards and backwards, and space to play/pause"
 msgstr "Tombol geser. Gunakan tombol panah untuk maju dan mundur, dan spasi untuk memutar/menjeda"
 
+#: src/components/dialogs/AvatarSelect.tsx:220
+#: src/components/dialogs/AvatarSelect.tsx:229
+msgid "Select"
+msgstr ""
+
 #: src/screens/Onboarding/StepProfile/AvatarCreatorItems.tsx:67
 msgid "Select a color"
 msgstr "Pilih warna"
@@ -7284,6 +7336,14 @@ msgstr "Pilih suatu opsi"
 #: src/screens/Settings/LanguageSettings.tsx:98
 msgid "Select app language"
 msgstr "Pilih bahasa aplikasi"
+
+#: src/components/dialogs/AvatarSelect.tsx:221
+msgid "Select avatar"
+msgstr ""
+
+#: src/components/dialogs/AvatarSelect.tsx:282
+msgid "Select Avatar \"{uri}\""
+msgstr ""
 
 #: src/screens/Settings/LanguageSettings.tsx:164
 msgid "Select content languages"
@@ -7358,7 +7418,7 @@ msgstr "Pilih bahasa apa yang digunakan untuk antarmuka pengguna."
 msgid "Select which languages you want your subscribed feeds to include. If none are selected, all languages will be shown."
 msgstr "Pilih bahasa yang ingin Anda sertakan dalam feed langganan Anda. Jika tidak memilih, maka semua bahasa akan ditampilkan."
 
-#: src/screens/Signup/StepInfo/index.tsx:270
+#: src/screens/Signup/StepInfo/index.tsx:335
 msgid "Select your date of birth"
 msgstr "Pilih tanggal lahir Anda"
 
@@ -7387,7 +7447,7 @@ msgstr "Memilih opsi {0} dari {numItems}"
 msgid "Send a neat website!"
 msgstr "Kirimkan situs web yang bagus!"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:224
+#: src/screens/Login/ResetpasswordDialog.tsx:226
 msgid "Send a new code"
 msgstr ""
 
@@ -7627,7 +7687,7 @@ msgstr "Penguji Preferensi Bersama"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 msgid "Show"
 msgstr "Tampilkan"
 
@@ -7686,9 +7746,13 @@ msgstr ""
 msgid "Show muted replies"
 msgstr "Tampilkan balasan yang dibisukan"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:204
 #: src/screens/Login/ResetpasswordDialog.tsx:205
+#: src/screens/Login/ResetpasswordDialog.tsx:206
 msgid "Show password"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Show password?"
 msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
@@ -7756,6 +7820,10 @@ msgstr "Menampilkan akun lain yang dapat Anda alihkan"
 msgid "Shows the content"
 msgstr "Menampilkan konten"
 
+#: src/screens/Signup/StepInfo/index.tsx:307
+msgid "Shows the password"
+msgstr ""
+
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
 #: src/screens/Login/index.tsx:140
@@ -7787,7 +7855,7 @@ msgid "Sign in or create your account to join the conversation!"
 msgstr "Masuk atau buat akun Anda untuk bergabung dalam percakapan!"
 
 #: src/components/AccountList.tsx:71
-#: src/screens/Login/ResetpasswordDialog.tsx:221
+#: src/screens/Login/ResetpasswordDialog.tsx:223
 msgid "Sign in to account that is not listed"
 msgstr "Masuk ke akun yang tidak tercantum dalam daftar"
 
@@ -8035,8 +8103,8 @@ msgstr "Storybook"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
-#: src/screens/Login/ResetpasswordDialog.tsx:248
-#: src/screens/Login/ResetpasswordDialog.tsx:254
+#: src/screens/Login/ResetpasswordDialog.tsx:250
+#: src/screens/Login/ResetpasswordDialog.tsx:256
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8459,6 +8527,7 @@ msgstr "Ada masalah! {0}"
 msgid "There was an issue. Please check your internet connection and try again."
 msgstr "Ada masalah. Periksa koneksi internet Anda dan coba lagi."
 
+#: src/components/dialogs/AvatarSelect.tsx:249
 #: src/components/dialogs/GifSelect.tsx:271
 #: src/view/com/util/ErrorBoundary.tsx:59
 msgid "There was an unexpected issue in the application. Please let us know if this happened to you!"
@@ -8857,8 +8926,8 @@ msgstr "Tidak dapat tersambung. Silakan periksa koneksi internet Anda dan coba l
 #: src/screens/Login/ForgotPasswordForm.tsx:75
 #: src/screens/Login/index.tsx:93
 #: src/screens/Login/LoginForm.tsx:186
-#: src/screens/Login/ResetpasswordDialog.tsx:96
-#: src/screens/Login/ResetpasswordDialog.tsx:121
+#: src/screens/Login/ResetpasswordDialog.tsx:97
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9093,12 +9162,12 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "Gagal memperbarui visibilitas balasan"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:260
+#: src/screens/Login/ResetpasswordDialog.tsx:262
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "Memperbarui..."
 
-#: src/screens/Onboarding/StepProfile/index.tsx:288
+#: src/screens/Onboarding/StepProfile/index.tsx:279
 msgid "Upload a photo instead"
 msgstr "Unggah foto saja"
 
@@ -9914,7 +9983,7 @@ msgstr "Anda telah memblokir pengguna ini. Anda tidak dapat melihat konten merek
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr ""
 
-#: src/screens/Login/ResetpasswordDialog.tsx:62
+#: src/screens/Login/ResetpasswordDialog.tsx:63
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10173,7 +10242,7 @@ msgstr "Akun Anda dinyatakan telah melanggar <0>Ketentuan Layanan Bluesky Social
 msgid "Your appeal has been submitted. If your appeal succeeds, you will receive an email."
 msgstr "Banding Anda telah diajukan. Jika banding Anda berhasil, Anda akan menerima email."
 
-#: src/screens/Signup/StepInfo/index.tsx:257
+#: src/screens/Signup/StepInfo/index.tsx:322
 msgid "Your birth date"
 msgstr "Tanggal lahir Anda"
 
@@ -10195,7 +10264,7 @@ msgstr "Nama panggilan Anda <0>{0}</0> akan otomatis dicadangkan untuk Anda. And
 
 #: src/screens/Login/ForgotPasswordForm.tsx:56
 #: src/screens/Signup/state.ts:270
-#: src/screens/Signup/StepInfo/index.tsx:98
+#: src/screens/Signup/StepInfo/index.tsx:106
 #: src/view/com/modals/ChangePassword.tsx:55
 msgid "Your email appears to be invalid."
 msgstr "Email Anda tidak valid."
@@ -10245,14 +10314,22 @@ msgstr "Minat Anda membantu kami mencari apa yang Anda sukai!"
 msgid "Your muted words"
 msgstr "Kata yang Anda bisukan"
 
+#: src/screens/Signup/StepInfo/index.tsx:161
+msgid "Your password cannot include your email address."
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:169
 msgid "Your password has been changed successfully!"
 msgstr "Kata sandi Anda telah berhasil diubah!"
 
 #: src/screens/Login/LoginForm.tsx:117
-#: src/screens/Signup/StepInfo/index.tsx:127
+#: src/screens/Signup/StepInfo/index.tsx:138
 msgid "Your password must be at least 8 characters long."
 msgstr "Kata sandi Anda harus terdiri dari setidaknya 8 karakter."
+
+#: src/screens/Signup/StepInfo/index.tsx:152
+msgid "Your password must contain at least one symbol or number."
+msgstr ""
 
 #: src/view/com/composer/Composer.tsx:522
 msgid "Your post has been published"

@@ -128,6 +128,7 @@ msgstr "{0, plural, one {}other {{1} berjocht}}"
 msgid "{0, plural, other {# people have}} used this starter pack!"
 msgstr "{0, plural, one {}other {# minsken hawwe}} dit startpakket brûkt!"
 
+#: src/screens/Signup/StepInfo/index.tsx:312
 #: src/screens/Welcome/index.tsx:74
 #: src/screens/Welcome/index.tsx:83
 msgid "{0}"
@@ -800,6 +801,7 @@ msgid "Advanced"
 msgstr "Avansearre"
 
 #: src/screens/Login/LoginForm.tsx:428
+#: src/screens/Signup/StepInfo/index.tsx:395
 msgid "Agree and continue"
 msgstr ""
 
@@ -893,6 +895,7 @@ msgstr "Alt-tekst sil ôfkoart wurde. {MAX_ALT_TEXT, plural, one {}other {Limyt:
 msgid "An email has been sent to {0}. It includes a confirmation code which you can enter below."
 msgstr "Der is in e-mailberjocht ferstjoerd nei {0}. Dizze befettet in befêstigingskoade dy’tsto hjirûnder ynfiere kinst."
 
+#: src/components/dialogs/AvatarSelect.tsx:244
 #: src/components/dialogs/GifSelect.tsx:266
 msgid "An error has occurred"
 msgstr "Der is in flater bard"
@@ -1183,14 +1186,15 @@ msgstr "Aurora"
 msgid "Autoplay videos and GIFs"
 msgstr "Fideo’s en GIF’s automatysk ôfspylje"
 
+#: src/components/dialogs/AvatarSelect.tsx:207
 #: src/components/dms/MessagesListHeader.tsx:84
 #: src/components/moderation/LabelsOnMeDialog.tsx:315
 #: src/components/moderation/LabelsOnMeDialog.tsx:316
 #: src/screens/Login/ForgotPasswordForm.tsx:172
 #: src/screens/Login/ForgotPasswordForm.tsx:178
 #: src/screens/Login/LoginForm.tsx:388
-#: src/screens/Login/ResetpasswordDialog.tsx:234
-#: src/screens/Login/ResetpasswordDialog.tsx:240
+#: src/screens/Login/ResetpasswordDialog.tsx:236
+#: src/screens/Login/ResetpasswordDialog.tsx:242
 #: src/screens/Login/SetNewPasswordForm.tsx:168
 #: src/screens/Login/SetNewPasswordForm.tsx:174
 #: src/screens/Messages/components/ChatDisabled.tsx:133
@@ -1481,7 +1485,12 @@ msgstr "Troch dy"
 msgid "Camera"
 msgstr "Kamera"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:128
+msgid "Can't include your email address"
+msgstr ""
+
 #: src/components/activity-notifications/SubscribeProfileDialog.tsx:206
+#: src/components/dialogs/AvatarSelect.tsx:213
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:125
 #: src/components/dialogs/EmailDialog/screens/Manage2FA/Enable.tsx:131
 #: src/components/dialogs/InAppBrowserConsent.tsx:98
@@ -1506,6 +1515,8 @@ msgstr "Kamera"
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:78
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:85
 #: src/screens/Settings/Settings.tsx:280
+#: src/screens/Signup/StepInfo/index.tsx:354
+#: src/screens/Signup/StepInfo/index.tsx:360
 #: src/screens/Takendown.tsx:99
 #: src/screens/Takendown.tsx:102
 #: src/view/com/composer/Composer.tsx:960
@@ -1685,6 +1696,10 @@ msgstr "Kontrolearje dyn e-mail foar in oanmeldkoade en fier dy hjir yn."
 msgid "Check your inbox for an email with the confirmation code to enter below:"
 msgstr "Kontrolearje dyn Postfek YN foar in e-mailberjocht mei de befêstigingskoade om hjirûnder yn te foljen:"
 
+#: src/components/dialogs/AvatarSelect.tsx:155
+msgid "Choose an avatar"
+msgstr ""
+
 #: src/screens/Settings/components/ChangeHandleDialog.tsx:389
 msgid "Choose domain verification method"
 msgstr "Domeinferifikaasjemetoade kieze"
@@ -1716,10 +1731,6 @@ msgstr "Dyn accountprovider kieze"
 #: src/view/screens/Feeds.tsx:731
 msgid "Choose your own timeline! Feeds built by the community help you find content you love."
 msgstr "Kies dyn eigen tiidline! Feeds makke troch de mienskip helpe dy om ynhâld te finen dêr’tsto wol oer meist."
-
-#: src/screens/Signup/StepInfo/index.tsx:241
-msgid "Choose your password"
-msgstr "Dyn wachtwurd kieze"
 
 #: src/screens/Signup/index.tsx:160
 msgid "Choose your username"
@@ -1778,6 +1789,7 @@ msgstr "Klimaat"
 msgid "Clip 🐴 clop 🐴"
 msgstr "Klik 🐴 klak 🐴"
 
+#: src/components/dialogs/AvatarSelect.tsx:260
 #: src/components/dialogs/GifSelect.tsx:282
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:158
 #: src/components/dialogs/nuxs/ActivitySubscriptions.tsx:167
@@ -1817,6 +1829,7 @@ msgstr "Warskôging slute"
 msgid "Close bottom drawer"
 msgstr "Paniel ûnderoan slute"
 
+#: src/components/dialogs/AvatarSelect.tsx:254
 #: src/components/dialogs/GifSelect.tsx:276
 #: src/components/verification/VerificationsDialog.tsx:136
 #: src/components/verification/VerifierDialog.tsx:136
@@ -2027,7 +2040,7 @@ msgid "Context menu backdrop, click to close the menu."
 msgstr "Kontekstmenu-eftergrûn, klik om it menu te sluten."
 
 #: src/screens/Onboarding/StepInterests/index.tsx:244
-#: src/screens/Onboarding/StepProfile/index.tsx:276
+#: src/screens/Onboarding/StepProfile/index.tsx:267
 msgid "Continue"
 msgstr "Trochgean"
 
@@ -2045,8 +2058,9 @@ msgid "Continue thread..."
 msgstr "Fierder lêze…"
 
 #: src/screens/Onboarding/StepInterests/index.tsx:241
-#: src/screens/Onboarding/StepProfile/index.tsx:273
+#: src/screens/Onboarding/StepProfile/index.tsx:264
 #: src/screens/Signup/BackNextButtons.tsx:60
+#: src/screens/Signup/StepInfo/index.tsx:380
 msgid "Continue to next step"
 msgstr "Trochgean nei folgjende stap"
 
@@ -2253,7 +2267,7 @@ msgstr "In account oanmeitsje"
 msgid "Create an account without using this starter pack"
 msgstr "In account oanmeitsje sûnder gebrûk fan dit startpakket"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:290
+#: src/screens/Onboarding/StepProfile/index.tsx:281
 msgid "Create an avatar instead"
 msgstr "Yn stee dêrfan in avatar meitsje"
 
@@ -2321,7 +2335,7 @@ msgstr "Donkere modus"
 msgid "Dark theme"
 msgstr "Donker tema"
 
-#: src/screens/Signup/StepInfo/index.tsx:269
+#: src/screens/Signup/StepInfo/index.tsx:334
 msgid "Date of birth"
 msgstr "Bertedatum"
 
@@ -2577,8 +2591,9 @@ msgstr "Slute"
 msgid "Dismiss error"
 msgstr "Flater negearje"
 
+#: src/components/dialogs/AvatarSelect.tsx:163
 #: src/components/ProgressGuide/List.tsx:42
-#: src/screens/Login/ResetpasswordDialog.tsx:145
+#: src/screens/Login/ResetpasswordDialog.tsx:146
 msgid "Dismiss getting started guide"
 msgstr "Starthantlieding ôfslute"
 
@@ -2645,8 +2660,6 @@ msgstr "Gjin e-mailberjocht ûntfongen? <0>Klik hjir om opnij te ferstjoeren.</0
 #: src/components/forms/DateField/index.tsx:109
 #: src/components/Select/index.tsx:183
 #: src/components/Select/index.tsx:190
-#: src/screens/Onboarding/StepProfile/index.tsx:328
-#: src/screens/Onboarding/StepProfile/index.tsx:331
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:215
 #: src/screens/Settings/components/AddAppPasswordDialog.tsx:222
 #: src/view/com/auth/server-input/index.tsx:232
@@ -2847,7 +2860,6 @@ msgid "Either the creator of this list has blocked you or you have blocked the c
 msgstr "De makker fan dizze list hat dy blokkearre, of do hast de makker blokkearre."
 
 #: src/screens/Settings/AccountSettings.tsx:63
-#: src/screens/Signup/StepInfo/index.tsx:193
 msgid "Email"
 msgstr "E-mailadres"
 
@@ -2859,6 +2871,10 @@ msgstr "E-mail-2FA útskeakele"
 #: src/screens/Settings/PrivacyAndSecuritySettings.tsx:63
 msgid "Email 2FA enabled"
 msgstr "E-mail-2FA ynskeakele"
+
+#: src/screens/Signup/StepInfo/index.tsx:230
+msgid "Email address"
+msgstr ""
 
 #: src/components/intents/VerifyEmailIntentDialog.tsx:104
 msgid "Email Resent"
@@ -2984,7 +3000,7 @@ msgstr "Koade ynfiere"
 msgid "Enter fullscreen"
 msgstr "Folslein skerm iepenje"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:159
+#: src/screens/Login/ResetpasswordDialog.tsx:160
 msgid "Enter the code we sent to {0}"
 msgstr ""
 
@@ -2996,6 +3012,10 @@ msgstr "Fier de koade yn dy’tsto ûntfongen hast foar it wizigjen fan dyn wach
 msgid "Enter the domain you want to use"
 msgstr "Fier it domein yn datsto brûke wolst"
 
+#: src/screens/Signup/StepInfo/index.tsx:257
+msgid "Enter the email address you used when you created your account"
+msgstr ""
+
 #: src/screens/Login/LoginForm.tsx:290
 msgid "Enter the username or email address you used when you created your account"
 msgstr ""
@@ -3005,11 +3025,11 @@ msgid "Enter your birth date"
 msgstr "Fier dyn bertedatum yn"
 
 #: src/screens/Login/ForgotPasswordForm.tsx:122
-#: src/screens/Signup/StepInfo/index.tsx:213
 msgid "Enter your email address"
 msgstr "Fier dyn e-mailadres yn"
 
 #: src/screens/Login/LoginForm.tsx:316
+#: src/screens/Signup/StepInfo/index.tsx:296
 msgid "Enter your password"
 msgstr "Fier fyn wachtwurd yn"
 
@@ -3783,7 +3803,7 @@ msgstr "Oan de slach"
 msgid "GIF"
 msgstr "GIF"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:232
+#: src/screens/Onboarding/StepProfile/index.tsx:223
 msgid "Give your profile a face"
 msgstr "Jou dyn profyl in gesicht"
 
@@ -3937,7 +3957,7 @@ msgstr "Hasto problemen?"
 msgid "Help"
 msgstr "Help"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:235
+#: src/screens/Onboarding/StepProfile/index.tsx:226
 msgid "Help people know you're not a bot by uploading a picture or creating an avatar."
 msgstr "Lit minsken witte datsto gjin bot bist troch in foto op te laden of in avatar te meitsjen."
 
@@ -3968,7 +3988,7 @@ msgstr "Ferburgen list"
 #: src/lib/moderation/useLabelBehaviorDescription.ts:20
 #: src/lib/moderation/useLabelBehaviorDescription.ts:25
 #: src/lib/moderation/useLabelBehaviorDescription.ts:30
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 #: src/view/shell/desktop/SidebarTrendingTopics.tsx:110
 msgid "Hide"
 msgstr "Ferstopje"
@@ -3981,6 +4001,10 @@ msgstr "Ferstopje"
 #: src/components/dialogs/Embed.tsx:128
 msgid "Hide customization options"
 msgstr "Oanpassingsopsjes ferstoppe"
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Hide password?"
+msgstr ""
 
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:543
 #: src/components/PostControls/PostMenu/PostMenuItems.tsx:549
@@ -4037,6 +4061,10 @@ msgstr "Ferifikaasjebadges ferstopje"
 #: src/components/moderation/PostHider.tsx:89
 msgid "Hides the content"
 msgstr "Ferstoppet de ynhâld"
+
+#: src/screens/Signup/StepInfo/index.tsx:306
+msgid "Hides the password"
+msgstr ""
 
 #: src/view/com/posts/PostFeedErrorMessage.tsx:121
 msgid "Hmm, some kind of issue occurred when contacting the feed server. Please let the feed owner know about this issue."
@@ -4239,7 +4267,7 @@ msgstr "Postfek YN nul!"
 msgid "Incorrect username or password"
 msgstr "Unjildige brûkersnamme of wachtwurd"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:179
+#: src/screens/Login/ResetpasswordDialog.tsx:180
 #: src/screens/Login/SetNewPasswordForm.tsx:133
 msgid "Input code sent to your email for password reset"
 msgstr "Ynfierkoade ferstjoerd nei dyn e-mailadres foar it opnij ynstellen fan dyn wachtwurd"
@@ -4248,7 +4276,7 @@ msgstr "Ynfierkoade ferstjoerd nei dyn e-mailadres foar it opnij ynstellen fan d
 msgid "Input confirmation code for account deletion"
 msgstr "Fier de befêstigingskoade yn foar it fuortsmiten fan de account"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:199
+#: src/screens/Login/ResetpasswordDialog.tsx:200
 #: src/screens/Login/SetNewPasswordForm.tsx:159
 msgid "Input new password"
 msgstr "Fier nij wachtwurd yn"
@@ -4298,7 +4326,7 @@ msgstr "Unjildige ferifikaasjekoade"
 msgid "Invite a Friend"
 msgstr "In freon útnûgje"
 
-#: src/screens/Signup/StepInfo/index.tsx:163
+#: src/screens/Signup/StepInfo/index.tsx:211
 msgid "Invite code"
 msgstr "Utnûgingskoade"
 
@@ -4326,7 +4354,7 @@ msgstr "Nûgje freonen út om dyn favorite feeds en persoanen te folgjen"
 msgid "Invites, but personal"
 msgstr "Utnûgingen, mar dan persoanlik"
 
-#: src/screens/Signup/StepInfo/index.tsx:289
+#: src/screens/Signup/StepInfo/index.tsx:393
 msgid "It's correct"
 msgstr "Dat is korrekt"
 
@@ -4742,7 +4770,7 @@ msgstr "Logo troch <0>@sawaratsuki.bsky.social</0>"
 msgid "Long press to open tag menu for #{tag}"
 msgstr "Yndrukt hâlde om tagmenu te iepenjen foar #{tag}"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:168
+#: src/screens/Login/ResetpasswordDialog.tsx:169
 #: src/screens/Login/SetNewPasswordForm.tsx:122
 msgid "Looks like XXXXX-XXXXX"
 msgstr "Liket op XXXXX-XXXXX"
@@ -4987,6 +5015,14 @@ msgstr "Films"
 msgid "Music"
 msgstr "Muzyk"
 
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:119
+msgid "Must be at least 8 characters"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:138
+msgid "Must have at least one symbol or number"
+msgstr ""
+
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/VideoEmbedInnerNative.tsx:156
 #: src/components/Post/Embed/VideoEmbed/VideoEmbedInner/web-controls/VolumeControl.tsx:96
 msgctxt "video"
@@ -5217,7 +5253,7 @@ msgstr "Nije moderaasjelist"
 msgid "New password"
 msgstr "Nij wachtwurd"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:188
+#: src/screens/Login/ResetpasswordDialog.tsx:189
 #: src/view/com/modals/ChangePassword.tsx:229
 msgid "New Password"
 msgstr "Nij wachtwurd"
@@ -5532,6 +5568,7 @@ msgstr "Neakens of ynhâld foar folwoeksenen dy’t net as sadanich labele is"
 msgid "Off"
 msgstr "Ut"
 
+#: src/components/dialogs/AvatarSelect.tsx:247
 #: src/components/dialogs/GifSelect.tsx:269
 #: src/view/com/util/ErrorBoundary.tsx:57
 msgid "Oh no!"
@@ -5629,7 +5666,7 @@ msgstr "Wûpsty!"
 msgid "Open"
 msgstr "Iepenje"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:284
+#: src/screens/Onboarding/StepProfile/index.tsx:275
 msgid "Open avatar creator"
 msgstr "Avatar-makker iepenje"
 
@@ -5741,6 +5778,10 @@ msgstr "Iepenet it dialoochfinster ‘Handle wizigje’"
 #: src/view/com/post-thread/PostThreadComposePrompt.tsx:63
 msgid "Opens composer"
 msgstr "Iepenet composer"
+
+#: src/screens/Signup/StepInfo/index.tsx:381
+msgid "Opens confirmation dialog"
+msgstr ""
 
 #: src/view/com/composer/photos/SelectPhotoBtn.tsx:51
 msgid "Opens device photo gallery"
@@ -5864,7 +5905,7 @@ msgstr "Side net fûn"
 #: src/screens/Login/LoginForm.tsx:301
 #: src/screens/Settings/AccountSettings.tsx:128
 #: src/screens/Settings/AccountSettings.tsx:132
-#: src/screens/Signup/StepInfo/index.tsx:228
+#: src/screens/Signup/StepInfo/index.tsx:266
 #: src/view/com/modals/DeleteAccount.tsx:239
 #: src/view/com/modals/DeleteAccount.tsx:246
 msgid "Password"
@@ -5877,6 +5918,10 @@ msgstr "Wachtwurd wizige"
 #: src/view/com/modals/ChangePassword.tsx:99
 msgid "Password must be at least 8 characters long."
 msgstr "Wachtwurd moat op syn minst 8 tekens lang wêze."
+
+#: src/screens/Signup/StepInfo/PasswordValidation.tsx:107
+msgid "Password strength: weak"
+msgstr ""
 
 #: src/screens/Login/index.tsx:201
 msgid "Password updated"
@@ -6019,7 +6064,7 @@ msgid "Please choose your handle."
 msgstr "Dyn handle kieze."
 
 #: src/screens/Signup/state.ts:278
-#: src/screens/Signup/StepInfo/index.tsx:120
+#: src/screens/Signup/StepInfo/index.tsx:130
 msgid "Please choose your password."
 msgstr "Kies dyn wachtwurd."
 
@@ -6031,11 +6076,11 @@ msgstr "Klik op de keppeling yn it e-mailberjocht dat wy sakrekt ferstjoerd haww
 msgid "Please complete the verification captcha."
 msgstr "Fier de ferifikaasje-captcha yn."
 
-#: src/screens/Signup/StepInfo/index.tsx:109
+#: src/screens/Signup/StepInfo/index.tsx:118
 msgid "Please double-check that you have entered your email address correctly."
 msgstr "Kontrolearje nochris oft jo jo e-mailadres korrekt ynfierd hawwe."
 
-#: src/screens/Login/ResetpasswordDialog.tsx:71
+#: src/screens/Login/ResetpasswordDialog.tsx:72
 #: src/screens/Login/SetNewPasswordForm.tsx:58
 msgid "Please enter a password."
 msgstr "Fier in wachtwurd yn."
@@ -6075,11 +6120,11 @@ msgid "Please enter your email address"
 msgstr ""
 
 #: src/screens/Signup/state.ts:262
-#: src/screens/Signup/StepInfo/index.tsx:91
+#: src/screens/Signup/StepInfo/index.tsx:98
 msgid "Please enter your email."
 msgstr "Fier dyn e-mailadres yn."
 
-#: src/screens/Signup/StepInfo/index.tsx:84
+#: src/screens/Signup/StepInfo/index.tsx:90
 msgid "Please enter your invite code."
 msgstr "Fier dyn útnûgingskoade yn."
 
@@ -6954,10 +6999,6 @@ msgstr "Alt-tekst fereaskje foar it pleatsen"
 msgid "Require an email code to sign in to your account."
 msgstr "In e-mailkoade is nedig om dy oan te melden by dyn account."
 
-#: src/screens/Signup/StepInfo/index.tsx:177
-msgid "Required for this provider"
-msgstr "Fereaske foar dizze provider"
-
 #: src/components/LabelingServiceCard/index.tsx:80
 msgid "Required in your region"
 msgstr "Fereaske yn dyn regio"
@@ -6998,9 +7039,13 @@ msgstr "Koade opnij ynstelle"
 msgid "Reset onboarding state"
 msgstr "Yntroduksje-status opnij ynstelle"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:137
+#: src/screens/Login/ResetpasswordDialog.tsx:138
 msgid "Reset password"
 msgstr "Wachtwurd opnij ynstelle"
+
+#: src/screens/Signup/StepInfo/index.tsx:368
+msgid "Retries connection"
+msgstr ""
 
 #: src/screens/Login/LoginForm.tsx:402
 msgid "Retries signing in"
@@ -7028,6 +7073,8 @@ msgstr "Werhellet de lêste aksje, dêr’t in flater by barde"
 #: src/screens/PostThread/components/ThreadError.tsx:75
 #: src/screens/PostThread/components/ThreadError.tsx:81
 #: src/screens/Signup/BackNextButtons.tsx:53
+#: src/screens/Signup/StepInfo/index.tsx:367
+#: src/screens/Signup/StepInfo/index.tsx:374
 #: src/view/com/util/error/ErrorMessage.tsx:60
 #: src/view/com/util/error/ErrorScreen.tsx:97
 msgid "Retry"
@@ -7261,6 +7308,11 @@ msgstr "Besjoch dizze gids"
 msgid "Seek slider. Use the arrow keys to seek forwards and backwards, and space to play/pause"
 msgstr "Sykslider. Brûk de pylktoetsen om foarút en efterút te sykjen en spaasje om ôf te spyljen/pauzearjen"
 
+#: src/components/dialogs/AvatarSelect.tsx:220
+#: src/components/dialogs/AvatarSelect.tsx:229
+msgid "Select"
+msgstr ""
+
 #: src/screens/Onboarding/StepProfile/AvatarCreatorItems.tsx:67
 msgid "Select a color"
 msgstr "In kleur selektearje"
@@ -7284,6 +7336,14 @@ msgstr "Selektearje in opsje"
 #: src/screens/Settings/LanguageSettings.tsx:98
 msgid "Select app language"
 msgstr "Selektearje app-taal"
+
+#: src/components/dialogs/AvatarSelect.tsx:221
+msgid "Select avatar"
+msgstr ""
+
+#: src/components/dialogs/AvatarSelect.tsx:282
+msgid "Select Avatar \"{uri}\""
+msgstr ""
 
 #: src/screens/Settings/LanguageSettings.tsx:164
 msgid "Select content languages"
@@ -7358,7 +7418,7 @@ msgstr "Selektearje de taal dy’t brûkt wurde moat foar de brûkersinterface f
 msgid "Select which languages you want your subscribed feeds to include. If none are selected, all languages will be shown."
 msgstr "Selektearje hokker talen asto opnimme wolst yn dyn abonnearre feeds. Alle talen wurde werjûn as der gjin talen selektearre binne."
 
-#: src/screens/Signup/StepInfo/index.tsx:270
+#: src/screens/Signup/StepInfo/index.tsx:335
 msgid "Select your date of birth"
 msgstr "Dyn bertedatum selektearje"
 
@@ -7387,7 +7447,7 @@ msgstr "Selektearret opsje {0} fan {numItems}"
 msgid "Send a neat website!"
 msgstr "Stjoer in kreaze website!"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:224
+#: src/screens/Login/ResetpasswordDialog.tsx:226
 msgid "Send a new code"
 msgstr ""
 
@@ -7627,7 +7687,7 @@ msgstr "Dielde foarkarren-tester"
 #: src/components/moderation/ContentHider.tsx:200
 #: src/components/moderation/LabelPreference.tsx:137
 #: src/components/moderation/PostHider.tsx:134
-#: src/screens/Login/ResetpasswordDialog.tsx:209
+#: src/screens/Login/ResetpasswordDialog.tsx:210
 msgid "Show"
 msgstr "Toane"
 
@@ -7686,9 +7746,13 @@ msgstr "Mear reaksjes toane"
 msgid "Show muted replies"
 msgstr "Negearre reaksjes toane"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:204
 #: src/screens/Login/ResetpasswordDialog.tsx:205
+#: src/screens/Login/ResetpasswordDialog.tsx:206
 msgid "Show password"
+msgstr ""
+
+#: src/screens/Signup/StepInfo/index.tsx:302
+msgid "Show password?"
 msgstr ""
 
 #: src/screens/Settings/ThreadPreferences.tsx:143
@@ -7756,6 +7820,10 @@ msgstr "Toant oare accounts wêrneisto wikselje kinst"
 msgid "Shows the content"
 msgstr "Toant de ynhâld"
 
+#: src/screens/Signup/StepInfo/index.tsx:307
+msgid "Shows the password"
+msgstr ""
+
 #: src/components/dialogs/Signin.tsx:97
 #: src/components/dialogs/Signin.tsx:99
 #: src/screens/Login/index.tsx:140
@@ -7787,7 +7855,7 @@ msgid "Sign in or create your account to join the conversation!"
 msgstr "Meld dy oan of registrearje in account om diel te nimmen oan it petear!"
 
 #: src/components/AccountList.tsx:71
-#: src/screens/Login/ResetpasswordDialog.tsx:221
+#: src/screens/Login/ResetpasswordDialog.tsx:223
 msgid "Sign in to account that is not listed"
 msgstr "Oanmelde by in account dat net yn de list stiet"
 
@@ -8035,8 +8103,8 @@ msgstr "Ferhaleboek"
 
 #: src/components/moderation/LabelsOnMeDialog.tsx:324
 #: src/components/moderation/LabelsOnMeDialog.tsx:325
-#: src/screens/Login/ResetpasswordDialog.tsx:248
-#: src/screens/Login/ResetpasswordDialog.tsx:254
+#: src/screens/Login/ResetpasswordDialog.tsx:250
+#: src/screens/Login/ResetpasswordDialog.tsx:256
 #: src/screens/Messages/components/ChatDisabled.tsx:142
 #: src/screens/Messages/components/ChatDisabled.tsx:143
 msgid "Submit"
@@ -8459,6 +8527,7 @@ msgstr "Der is in probleem bard! {0}"
 msgid "There was an issue. Please check your internet connection and try again."
 msgstr "Der is in probleem bard. Kontrolearje dyn ynternetferbining en probearje it opnij."
 
+#: src/components/dialogs/AvatarSelect.tsx:249
 #: src/components/dialogs/GifSelect.tsx:271
 #: src/view/com/util/ErrorBoundary.tsx:59
 msgid "There was an unexpected issue in the application. Please let us know if this happened to you!"
@@ -8857,8 +8926,8 @@ msgstr "Kin gjin ferbinding meitsje. Kontrolearje dyn ynternetferbining en probe
 #: src/screens/Login/ForgotPasswordForm.tsx:75
 #: src/screens/Login/index.tsx:93
 #: src/screens/Login/LoginForm.tsx:186
-#: src/screens/Login/ResetpasswordDialog.tsx:96
-#: src/screens/Login/ResetpasswordDialog.tsx:121
+#: src/screens/Login/ResetpasswordDialog.tsx:97
+#: src/screens/Login/ResetpasswordDialog.tsx:122
 #: src/screens/Login/SetNewPasswordForm.tsx:81
 #: src/screens/Signup/index.tsx:72
 #: src/view/com/modals/ChangePassword.tsx:71
@@ -9093,12 +9162,12 @@ msgctxt "toast"
 msgid "Updating reply visibility failed"
 msgstr "Bywurkjen fan sichtberheid fan reaksje is mislearre"
 
-#: src/screens/Login/ResetpasswordDialog.tsx:260
+#: src/screens/Login/ResetpasswordDialog.tsx:262
 #: src/screens/Login/SetNewPasswordForm.tsx:194
 msgid "Updating..."
 msgstr "Bywurkje…"
 
-#: src/screens/Onboarding/StepProfile/index.tsx:288
+#: src/screens/Onboarding/StepProfile/index.tsx:279
 msgid "Upload a photo instead"
 msgstr "Laad yn stee dêrfan in foto op"
 
@@ -9914,7 +9983,7 @@ msgstr "Do hast dizze brûker blokkeerre. Do kinst de ynhâld net besjen."
 msgid "You have completely disabled reply, quote, and mention notifications, so this tab will no longer update. To adjust this, visit your <0>notification settings</0>."
 msgstr "Do hast beäntwurdzje, sitearje en fermeldingsmeldingen folslein útskeakele, dus dit ljepblêd wurdt net langer bywurke. Besykje dyn <0>meldingsynstellingen</0> om dit oan te passen."
 
-#: src/screens/Login/ResetpasswordDialog.tsx:62
+#: src/screens/Login/ResetpasswordDialog.tsx:63
 #: src/screens/Login/SetNewPasswordForm.tsx:49
 #: src/screens/Login/SetNewPasswordForm.tsx:95
 #: src/view/com/modals/ChangePassword.tsx:87
@@ -10173,7 +10242,7 @@ msgstr "Dyn account is yn striid mei de <0>Tsjinstbetingsten fan Bluesky Social<
 msgid "Your appeal has been submitted. If your appeal succeeds, you will receive an email."
 msgstr "Dyn beswier is yntsjinne. Asto yn it gelyk stelst wurdst, ûntfangsto in e-mailberjocht."
 
-#: src/screens/Signup/StepInfo/index.tsx:257
+#: src/screens/Signup/StepInfo/index.tsx:322
 msgid "Your birth date"
 msgstr "Dyn bertedatum"
 
@@ -10195,7 +10264,7 @@ msgstr "Dyn aktuele handle <0>{0}</0> bliuwt automatysk foar dy reservearre. Do 
 
 #: src/screens/Login/ForgotPasswordForm.tsx:56
 #: src/screens/Signup/state.ts:270
-#: src/screens/Signup/StepInfo/index.tsx:98
+#: src/screens/Signup/StepInfo/index.tsx:106
 #: src/view/com/modals/ChangePassword.tsx:55
 msgid "Your email appears to be invalid."
 msgstr "Dyn e-mailadres liket ûnjildich te wêzen."
@@ -10245,14 +10314,22 @@ msgstr "Dyn ynteressen helpe ús dat te finen, dêr’tsto oer meist!"
 msgid "Your muted words"
 msgstr "Dyn negearre wurden"
 
+#: src/screens/Signup/StepInfo/index.tsx:161
+msgid "Your password cannot include your email address."
+msgstr ""
+
 #: src/view/com/modals/ChangePassword.tsx:169
 msgid "Your password has been changed successfully!"
 msgstr "Dyn wachtwurd is mei sukses wizige!"
 
 #: src/screens/Login/LoginForm.tsx:117
-#: src/screens/Signup/StepInfo/index.tsx:127
+#: src/screens/Signup/StepInfo/index.tsx:138
 msgid "Your password must be at least 8 characters long."
 msgstr "Dyn wachtwurd moat op syn minst 8 tekens lang wêze."
+
+#: src/screens/Signup/StepInfo/index.tsx:152
+msgid "Your password must contain at least one symbol or number."
+msgstr ""
 
 #: src/view/com/composer/Composer.tsx:522
 msgid "Your post has been published"
