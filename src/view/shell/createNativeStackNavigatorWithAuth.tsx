@@ -128,7 +128,7 @@ function NativeStackNavigator({
     return <Deactivated />
   }
   if (onboardingState.isActive) {
-    return <Onboarding2 />
+    return <Onboarding2 handle={onboardingState.handle} />
   }
   const newDescriptors: typeof descriptors = {}
   for (let key in descriptors) {

@@ -122,7 +122,11 @@ export function AvatarCircle({
       </View>
       <View style={[a.mt_xl, a.align_center]}>
         <Text style={[{fontSize: 18, fontWeight: '600', color: '#000000'}]}>
-          {handle ? `@${handle}` : '@maggie.gander.social'}
+          {handle
+            ? // TODO: Remove this hardcoded domain replacement when we have proper domain handling
+              // This is a temporary fix to ensure handles show .gander.social instead of .bsky.social
+              `@${handle.replace('.bsky.social', '.gander.social')}`
+            : '@maggie.gander.social'}
         </Text>
       </View>
     </View>
