@@ -36,7 +36,7 @@ import {
 } from '#/state/shell/logged-out'
 import {LoggedOut} from '#/view/com/auth/LoggedOut'
 import {Deactivated} from '#/screens/Deactivated'
-import {Onboarding} from '#/screens/Onboarding'
+import {Onboarding2} from '#/screens/Onboarding2'
 import {SignupQueued} from '#/screens/SignupQueued'
 import {Takendown} from '#/screens/Takendown'
 import {atoms as a, useLayoutBreakpoints} from '#/alf'
@@ -128,7 +128,7 @@ function NativeStackNavigator({
     return <Deactivated />
   }
   if (onboardingState.isActive) {
-    return <Onboarding />
+    return <Onboarding2 />
   }
   const newDescriptors: typeof descriptors = {}
   for (let key in descriptors) {

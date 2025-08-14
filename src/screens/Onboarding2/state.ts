@@ -6,7 +6,7 @@ import {logger} from '#/logger'
 import {
   type AvatarColor,
   type Emoji,
-} from '#/screens/Onboarding/StepProfile/types'
+} from '#/screens/Onboarding2/StepProfile/types'
 
 export type Onboarding2State = {
   hasPrev: boolean
