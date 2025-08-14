@@ -79,7 +79,7 @@ export function Onboarding2Layout({
                     style={[
                       {fontWeight: '700', color: '#000000', fontSize: 16},
                     ]}>
-                    <Trans>Step {state.activeStepIndex + 4} of 6</Trans>
+                    <Trans>Step {state.activeStepIndex + 4} of 7</Trans>
                   </Text>
                   <Button
                     style={[a.self_start]}

@@ -146,13 +146,7 @@ export function Signup({onPressBack}: {onPressBack: () => void}) {
               <View style={[a.flex_row, a.justify_between, a.align_center]}>
                 <Text
                   style={[{fontWeight: '700', color: '#000000', fontSize: 16}]}>
-                  <Trans>
-                    Step {state.activeStep + 1} of{' '}
-                    {state.serviceDescription &&
-                    !state.serviceDescription.phoneVerificationRequired
-                      ? '3'
-                      : '4'}
-                  </Trans>
+                  <Trans>Step {state.activeStep + 1} of 7</Trans>
                 </Text>
                 <Button
                   style={[a.self_start]}
