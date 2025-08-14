@@ -153,8 +153,8 @@ export function Signup({ onPressBack }: { onPressBack: () => void }) {
                     Step {state.activeStep + 1} of{' '}
                     {state.serviceDescription &&
                       !state.serviceDescription.phoneVerificationRequired
-                      ? '3'
-                      : '4'}
+                      ? '4'
+                      : '5'}
                   </Trans>
                 </Text>
                 <Button
