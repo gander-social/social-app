@@ -1,0 +1,22 @@
+# Environment dependent URLs
+ATPROTO_PDS_URL=http://localhost:2583
+ATPROTO_APPVIEW_URL=http://localhost:2584
+API_URL=https://api.gndr.modcanada.ca
+APP_URL=https://gndr.modcanada.ca
+APPVIEW_URL=https://api.gndr.modcanada.ca
+EMBED_SERVICE_URL=https://embed.gndr.modcanada.ca
+OGCARD_SERVICE_URL=https://ogcard.cdn.gndr.modcanada.ca
+GO_SERVICE_URL=https://go.gndr.modcanada.ca
+PROFILE_URL=https://gndr.modcanada.ca/profile
+DEEP_LINK_PREFIX=https://gndr.modcanada.ca
+SOCIAL_URL=https://gndr.modcanada.ca
+VIDEO_SERVICE_URL=https://video.gndr.modcanada.ca
+GIF_SERVICE_URL=https://gifs.gndr.modcanada.ca
+PUBLIC_APPVIEW_URL=https://api.gndr.modcanada.ca
+PUBLIC_APPVIEW_DID=did:web:api.gndr.modcanada.ca
+PUBLIC_STAGING_APPVIEW_DID=did:web:api.gndr.modcanada.ca
+DEV_ENV_APPVIEW_URL=http://localhost:2584
+WEBLINK_TOS_URL=https://gndr.modcanada.ca/about/support/tos
+WEBLINK_PRIVACY_URL=https://gndr.modcanada.ca/about/support/privacy-policy
+WEBLINK_COMMUNITY_URL=https://gndr.modcanada.ca/about/support/community-guidelines
+WEBLINK_COMMUNITY_DEPRECATED_URL=https://gndr.modcanada.ca/about/support/community-guidelines-deprecated

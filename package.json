@@ -19,9 +19,10 @@
     }
   },
   "scripts": {
-    "prepare": "is-ci || husky install",
+    "preinstall": "node scripts/update-upstream-imports.js",
+    "prepare": "node scripts/update-upstream-imports.js && (is-ci || husky install)",
     "postinstall": "patch-package && yarn intl:compile",
-    "prebuild": "expo prebuild --clean",
+    "prebuild": "node scripts/update-upstream-imports.js && expo prebuild --clean",
     "android": "expo run:android",
     "android:prod": "expo run:android --variant release",
     "android:profile": "GNDR_PROFILE=1 expo run:android --variant release",
