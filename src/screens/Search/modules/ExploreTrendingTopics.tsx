@@ -1,9 +1,9 @@
 import {useMemo} from 'react'
 import {Pressable, View} from 'react-native'
 import {
-  type AppBskyUnspeccedDefs as AppGndrUnspeccedDefs,
+  type AppGndrUnspeccedDefs,
   moderateProfile,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import {type TextStyle} from 'react-native'
 import {
-  AppBskyRichtextFacet as AppGndrRichtextFacet,
+  AppGndrRichtextFacet,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {toShortUrl} from '#/lib/strings/url-helpers'
 import {atoms as a, flatten, type TextStyleProp} from '#/alf'

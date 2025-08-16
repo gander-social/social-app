@@ -1,11 +1,11 @@
 import {useCallback, useEffect, useImperativeHandle, useMemo} from 'react'
 import {findNodeHandle, type ListRenderItemInfo, View} from 'react-native'
 import {
-  type AppBskyLabelerDefs as AppGndrLabelerDefs,
+  type AppGndrLabelerDefs,
   type InterpretedLabelValueDefinition,
   interpretLabelValueDefinitions,
   type ModerationOpts,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

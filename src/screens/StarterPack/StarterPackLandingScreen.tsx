@@ -1,13 +1,13 @@
 import React from 'react'
 import {Pressable, View} from 'react-native'
 import Animated, {FadeIn, FadeOut} from 'react-native-reanimated'
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
 import {
-  AppBskyGraphDefs as AppGndrGraphDefs,
-  AppBskyGraphStarterpack as AppGndrGraphStarterpack,
+  AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
   AtUri,
   type ModerationOpts,
-} from '@atproto/api'
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

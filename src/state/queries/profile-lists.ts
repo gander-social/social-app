@@ -1,7 +1,7 @@
 import {
-  type AppBskyGraphGetLists as AppGndrGraphGetLists,
+  type AppGndrGraphGetLists,
   moderateUserList,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryKey,
@@ -30,7 +30,7 @@ export function useProfileListsQuery(did: string, opts?: {enabled?: boolean}) {
   >({
     queryKey: RQKEY(did),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getLists({
+      const res = await agent.app.gndr.graph.getLists({
         actor: did,
         limit: PAGE_SIZE,
         cursor: pageParam,

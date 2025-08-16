@@ -1,8 +1,8 @@
 /* eslint-disable gndr-internal/avoid-unwrapped-text */
 import {
-  type AppBskyGraphDefs as AppGndrGraphDefs,
-  AppBskyGraphStarterpack as AppGndrGraphStarterpack,
-} from '@atproto/api'
+  type AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
+} from '@gander-social-atproto/api'
 
 import {Butterfly} from './Butterfly.js'
 import {Img} from './Img.js'

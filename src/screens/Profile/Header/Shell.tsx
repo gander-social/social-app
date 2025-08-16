@@ -9,9 +9,9 @@ import Animated, {
 } from 'react-native-reanimated'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   type ModerationDecision,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'

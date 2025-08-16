@@ -1,9 +1,9 @@
 import {
   type AtpSessionData,
   type AtpSessionEvent,
-  BskyAgent as GndrAgent,
-} from '@atproto/api'
-import {TID} from '@atproto/common-web'
+  GndrAgent,
+} from '@gander-social-atproto/api'
+import {TID} from '@gander-social-atproto/common-web'
 
 import {networkRetry} from '#/lib/async/retry'
 import {

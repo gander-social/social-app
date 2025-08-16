@@ -4,12 +4,12 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-controller'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {Image} from 'expo-image'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyGraphDefs as AppGndrGraphDefs,
+  type AppGndrActorDefs,
+  type AppGndrGraphDefs,
   AtUri,
   type ModerationOpts,
-} from '@atproto/api'
-import {type GeneratorView} from '@atproto/api/dist/client/types/app/bsky/feed/defs'
+} from '@gander-social-atproto/api'
+import {type GeneratorView} from '@gander-social-atproto/api/dist/client/types/app.gndr.feed/defs'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useFocusEffect, useNavigation} from '@react-navigation/native'

@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react'
 import {type ListRenderItemInfo, View} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyGraphGetList as AppGndrGraphGetList,
+  type AppGndrActorDefs,
+  type AppGndrGraphGetList,
   AtUri,
   type ModerationOpts,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type UseInfiniteQueryResult,

@@ -3,7 +3,7 @@ import {View} from 'react-native'
 import {
   GNDR_LABELER_DID,
   type ModerationCause,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {Trans} from '@lingui/macro'
 
 import {useModerationCauseDescription} from '#/lib/moderation/useModerationCauseDescription'

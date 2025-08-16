@@ -2,12 +2,12 @@ import React from 'react'
 import {View} from 'react-native'
 import {
   type $Typed,
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
   AtUri,
   moderatePost,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {Trans} from '@lingui/macro'
 import {useQueryClient} from '@tanstack/react-query'
 
@@ -229,7 +229,7 @@ export function QuoteEmbed({
   const quote = React.useMemo<$Typed<AppGndrFeedDefs.PostView>>(
     () => ({
       ...embed.view,
-      $type: 'app.bsky.feed.defs#postView',
+      $type: 'app.gndr.feed.defs#postView',
       record: embed.view.value,
       embed: embed.view.embeds?.[0],
     }),

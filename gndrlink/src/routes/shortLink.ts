@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 
-import {DAY, SECOND} from '@atproto/common'
+import {DAY, SECOND} from '@gander-social-atproto/common'
 import {type Express} from 'express'
 
 import {type AppContext} from '../context.js'

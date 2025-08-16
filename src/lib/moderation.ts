@@ -1,14 +1,14 @@
 import React from 'react'
 import {
-  type AppBskyLabelerDefs as AppGndrLabelerDefs,
-  BskyAgent as GndrAgent,
+  type AppGndrLabelerDefs,
   type ComAtprotoLabelDefs,
+  GndrAgent,
   type InterpretedLabelValueDefinition,
   LABELS,
   type ModerationCause,
   type ModerationOpts,
   type ModerationUI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {sanitizeDisplayName} from '#/lib/strings/display-names'
 import {sanitizeHandle} from '#/lib/strings/handles'

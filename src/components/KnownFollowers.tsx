@@ -1,10 +1,10 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   moderateProfile,
   type ModerationOpts,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

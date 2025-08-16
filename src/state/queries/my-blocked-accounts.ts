@@ -1,7 +1,7 @@
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyGraphGetBlocks as AppGndrGraphGetBlocks,
-} from '@atproto/api'
+  type AppGndrActorDefs,
+  type AppGndrGraphGetBlocks,
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryClient,
@@ -26,7 +26,7 @@ export function useMyBlockedAccountsQuery() {
   >({
     queryKey: RQKEY(),
     async queryFn({pageParam}: {pageParam: RQPageParam}) {
-      const res = await agent.app.bsky.graph.getBlocks({
+      const res = await agent.app.gndr.graph.getBlocks({
         limit: 30,
         cursor: pageParam,
       })

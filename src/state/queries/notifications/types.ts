@@ -1,8 +1,8 @@
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyGraphDefs as AppGndrGraphDefs,
-  type AppBskyNotificationListNotifications as AppGndrNotificationListNotifications,
-} from '@atproto/api'
+  type AppGndrFeedDefs,
+  type AppGndrGraphDefs,
+  type AppGndrNotificationListNotifications,
+} from '@gander-social-atproto/api'
 
 export type NotificationType =
   | StarterPackNotificationType

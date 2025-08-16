@@ -5,7 +5,7 @@ import {getBadgeCountAsync, setBadgeCountAsync} from 'expo-notifications'
 import {
   type AppBskyNotificationRegisterPush as AppGndrNotificationRegisterPush,
   type AtpAgent,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import debounce from 'lodash.debounce'
 
 import {PUBLIC_APPVIEW_DID, PUBLIC_STAGING_APPVIEW_DID} from '#/lib/constants'
@@ -45,7 +45,7 @@ async function _registerPushToken({
 
     notyLogger.debug(`registerPushToken: registering`, {...payload})
 
-    await agent.app.bsky.notification.registerPush(payload)
+    await agent.app.gndr.notification.registerPush(payload)
 
     notyLogger.debug(`registerPushToken: success`)
   } catch (error) {

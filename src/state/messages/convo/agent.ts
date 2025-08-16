@@ -4,8 +4,8 @@ import {
   ChatBskyConvoDefs as ChatGndrConvoDefs,
   type ChatBskyConvoGetLog as ChatGndrConvoGetLog,
   type ChatBskyConvoSendMessage as ChatGndrConvoSendMessage,
-} from '@atproto/api'
-import {XRPCError} from '@atproto/xrpc'
+} from '@gander-social-atproto/api'
+import {XRPCError} from '@gander-social-atproto/xrpc'
 import EventEmitter from 'eventemitter3'
 import {nanoid} from 'nanoid/non-secure'
 

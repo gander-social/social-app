@@ -3,7 +3,7 @@ import {View} from 'react-native'
 import {
   type ChatBskyConvoDefs as ChatGndrConvoDefs,
   type ChatBskyConvoListConvos as ChatGndrConvoListConvos,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useFocusEffect, useNavigation} from '@react-navigation/native'

@@ -1,12 +1,12 @@
 import {
   type $Typed,
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyUnspeccedDefs as AppGndrUnspeccedDefs,
-  type AppBskyUnspeccedGetPostThreadOtherV2 as AppGndrUnspeccedGetPostThreadOtherV2,
-  type AppBskyUnspeccedGetPostThreadV2 as AppGndrUnspeccedGetPostThreadV2,
+  type AppGndrActorDefs,
+  type AppGndrFeedDefs,
+  AppGndrUnspeccedDefs,
+  type AppGndrUnspeccedGetPostThreadOtherV2,
+  type AppGndrUnspeccedGetPostThreadV2,
   AtUri,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {type QueryClient} from '@tanstack/react-query'
 
 import {findAllPostsInQueryData as findAllPostsInExploreFeedPreviewsQueryData} from '#/state/queries/explore-feed-previews'

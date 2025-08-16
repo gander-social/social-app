@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  BskyAgent as GndrAgent,
   DEFAULT_LABEL_SETTINGS,
+  GndrAgent,
   interpretLabelValueDefinitions,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {isNonConfigurableModerationAuthority} from '#/state/session/additional-moderation-authorities'
 import {useLabelersDetailedInfoQuery} from '../labeler'

@@ -2,11 +2,11 @@ import {memo, useMemo, useState} from 'react'
 import {View} from 'react-native'
 import {
   type $Typed,
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   type ChatBskyConvoDefs as ChatGndrConvoDefs,
   type ComAtprotoModerationCreateReport,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {StackActions, useNavigation} from '@react-navigation/native'

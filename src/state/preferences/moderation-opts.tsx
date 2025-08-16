@@ -1,5 +1,5 @@
 import {createContext, useContext, useMemo} from 'react'
-import {BskyAgent as GndrAgent, type ModerationOpts} from '@atproto/api'
+import {GndrAgent, type ModerationOpts} from '@gander-social-atproto/api'
 import type React from 'react'
 
 import {useHiddenPosts, useLabelDefinitions} from '#/state/preferences'

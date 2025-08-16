@@ -7,12 +7,12 @@ import {
 } from 'react-native'
 import * as Clipboard from 'expo-clipboard'
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
-  type AppBskyFeedThreadgate as AppGndrFeedThreadgate,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
+  type AppGndrFeedThreadgate,
   AtUri,
   type RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'
@@ -265,7 +265,7 @@ let PostMenuItems = ({
 
   const onPressShowMore = () => {
     feedFeedback.sendInteraction({
-      event: 'app.bsky.feed.defs#requestMore',
+      event: 'app.gndr.feed.defs#requestMore',
       item: postUri,
       feedContext: postFeedContext,
       reqId: postReqId,
@@ -275,7 +275,7 @@ let PostMenuItems = ({
 
   const onPressShowLess = () => {
     feedFeedback.sendInteraction({
-      event: 'app.bsky.feed.defs#requestLess',
+      event: 'app.gndr.feed.defs#requestLess',
       item: postUri,
       feedContext: postFeedContext,
       reqId: postReqId,
@@ -716,7 +716,7 @@ let PostMenuItems = ({
         control={reportDialogControl}
         subject={{
           ...post,
-          $type: 'app.bsky.feed.defs#postView',
+          $type: 'app.gndr.feed.defs#postView',
         }}
       />
 

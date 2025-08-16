@@ -1,11 +1,11 @@
 import React, {memo, useMemo} from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   moderateProfile,
   type ModerationOpts,
   type RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

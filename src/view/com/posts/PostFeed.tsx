@@ -11,10 +11,10 @@ import {
   type ViewStyle,
 } from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  AppBskyEmbedVideo as AppGndrEmbedVideo,
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-} from '@atproto/api'
+  type AppGndrActorDefs,
+  AppGndrEmbedVideo,
+  type AppGndrFeedDefs,
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

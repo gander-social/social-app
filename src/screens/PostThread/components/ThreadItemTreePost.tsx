@@ -1,11 +1,11 @@
 import {memo, useCallback, useMemo, useState} from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyFeedThreadgate as AppGndrFeedThreadgate,
+  type AppGndrFeedDefs,
+  type AppGndrFeedThreadgate,
   AtUri,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {Trans} from '@lingui/macro'
 
 import {MAX_POST_LINES} from '#/lib/constants'

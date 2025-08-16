@@ -1,5 +1,5 @@
 import {type Insets, Platform} from 'react-native'
-import {type AppBskyActorDefs as AppGndrActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@gander-social-atproto/api'
 
 export const NON_BREAKING_SPACE = '\u00A0'
 
@@ -120,10 +120,10 @@ export function IS_PROD_SERVICE(url?: string) {
 }
 
 export const PROD_DEFAULT_FEED = (rkey: string) =>
-  `at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/${rkey}`
+  `at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/${rkey}`
 
 export const STAGING_DEFAULT_FEED = (rkey: string) =>
-  `at://did:plc:yofh3kx63drvfljkibw5zuxo/app.bsky.feed.generator/${rkey}`
+  `at://did:plc:yofh3kx63drvfljkibw5zuxo/app.gndr.feed.generator/${rkey}`
 
 export const PROD_FEEDS = [
   `feedgen|${PROD_DEFAULT_FEED('whats-hot')}`,
@@ -184,11 +184,11 @@ export const GNDR_FEED_OWNER_DIDS = [
 ]
 
 export const DISCOVER_FEED_URI =
-  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot'
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/whats-hot'
 export const VIDEO_FEED_URI =
-  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/thevids'
+  'at://did:plc:z72i7hdynmk6r22z27h6tvur/app.gndr.feed.generator/thevids'
 export const STAGING_VIDEO_FEED_URI =
-  'at://did:plc:yofh3kx63drvfljkibw5zuxo/app.bsky.feed.generator/thevids'
+  'at://did:plc:yofh3kx63drvfljkibw5zuxo/app.gndr.feed.generator/thevids'
 export const VIDEO_FEED_URIS = [VIDEO_FEED_URI, STAGING_VIDEO_FEED_URI]
 export const DISCOVER_SAVED_FEED = {
   type: 'feed',
@@ -212,7 +212,7 @@ export const RECOMMENDED_SAVED_FEEDS: Pick<
 >[] = [DISCOVER_SAVED_FEED, TIMELINE_SAVED_FEED]
 
 export const KNOWN_SHUTDOWN_FEEDS = [
-  'at://did:plc:wqowuobffl66jv3kpsvo7ak4/app.bsky.feed.generator/the-algorithm', // for you by skygaze
+  'at://did:plc:wqowuobffl66jv3kpsvo7ak4/app.gndr.feed.generator/the-algorithm', // for you by skygaze
 ]
 
 export const GIF_SERVICE = process.env.GIF_SERVICE || 'https://gifs.gndr.app'

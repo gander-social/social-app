@@ -1,7 +1,7 @@
 import {
-  type BskyAgent as GndrAgent,
   type ChatBskyConvoGetLog as ChatGndrConvoGetLog,
-} from '@atproto/api'
+  type GndrAgent,
+} from '@gander-social-atproto/api'
 import EventEmitter from 'eventemitter3'
 import {nanoid} from 'nanoid/non-secure'
 

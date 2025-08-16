@@ -11,10 +11,10 @@ import Animated, {
 import {type ReanimatedScrollEvent} from 'react-native-reanimated/lib/typescript/hook/commonTypes'
 import {
   type $Typed,
-  type AppBskyEmbedRecord as AppGndrEmbedRecord,
-  AppBskyRichtextFacet as AppGndrRichtextFacet,
+  type AppGndrEmbedRecord,
+  AppGndrRichtextFacet,
   RichText,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {useHideBottomBarBorderForScreen} from '#/lib/hooks/useHideBottomBarBorder'
 import {ScrollProvider} from '#/lib/ScrollContext'
@@ -322,7 +322,7 @@ export function MessagesList({
           const post = await getPost({uri: embedUri})
           if (post) {
             embed = {
-              $type: 'app.bsky.embed.record',
+              $type: 'app.gndr.embed.record',
               record: {
                 uri: post.uri,
                 cid: post.cid,

@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  BSKY_LABELER_DID as GNDR_LABELER_DID,
+  GNDR_LABELER_DID,
   type ModerationCause,
   type ModerationCauseSource,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

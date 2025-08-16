@@ -1,8 +1,8 @@
 import {View} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   type ModerationDecision,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {sanitizeDisplayName} from '#/lib/strings/display-names'
 import {sanitizeHandle} from '#/lib/strings/handles'

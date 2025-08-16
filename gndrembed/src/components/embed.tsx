@@ -1,15 +1,15 @@
 import {
-  AppBskyEmbedExternal as AppGndrEmbedExternal,
-  AppBskyEmbedImages as AppGndrEmbedImages,
-  AppBskyEmbedRecord as AppGndrEmbedRecord,
-  AppBskyEmbedRecordWithMedia as AppGndrEmbedRecordWithMedia,
-  AppBskyEmbedVideo as AppGndrEmbedVideo,
-  AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
-  AppBskyGraphDefs as AppGndrGraphDefs,
-  AppBskyGraphStarterpack as AppGndrGraphStarterpack,
-  AppBskyLabelerDefs as AppGndrLabelerDefs,
-} from '@atproto/api'
+  AppGndrEmbedExternal,
+  AppGndrEmbedImages,
+  AppGndrEmbedRecord,
+  AppGndrEmbedRecordWithMedia,
+  AppGndrEmbedVideo,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
+  AppGndrGraphDefs,
+  AppGndrGraphStarterpack,
+  AppGndrLabelerDefs,
+} from '@gander-social-atproto/api'
 import {ComponentChildren, h} from 'preact'
 import {useMemo} from 'preact/hooks'
 
@@ -186,7 +186,7 @@ export function Embed({
           />
           <Embed
             content={{
-              $type: 'app.bsky.embed.record#view',
+              $type: 'app.gndr.embed.record#view',
               record: content.record.record,
             }}
             labels={content.record.record.labels}

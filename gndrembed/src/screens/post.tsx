@@ -1,6 +1,6 @@
 import '../index.css'
 
-import {AppBskyFeedDefs as AppGndrFeedDefs, AtpAgent} from '@atproto/api'
+import {AppGndrFeedDefs, AtpAgent} from '@gander-social-atproto/api'
 import {h, render} from 'preact'
 
 import logo from '../../assets/logo.svg'

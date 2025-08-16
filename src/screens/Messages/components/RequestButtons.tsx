@@ -2,7 +2,7 @@ import {useCallback} from 'react'
 import {
   type ChatBskyActorDefs as ChatGndrActorDefs,
   ChatBskyConvoDefs as ChatGndrConvoDefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {StackActions, useNavigation} from '@react-navigation/native'

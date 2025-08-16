@@ -1,9 +1,9 @@
 import {useCallback} from 'react'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   type GndrFeedViewPreference,
   type LabelPreference,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {useMutation, useQuery, useQueryClient} from '@tanstack/react-query'
 
 import {PROD_DEFAULT_FEED} from '#/lib/constants'
@@ -97,7 +97,7 @@ export function useClearPreferencesMutation() {
 
   return useMutation({
     mutationFn: async () => {
-      await agent.app.bsky.actor.putPreferences({preferences: []})
+      await agent.app.gndr.actor.putPreferences({preferences: []})
       // triggers a refetch
       await queryClient.invalidateQueries({
         queryKey: preferencesQueryKey,

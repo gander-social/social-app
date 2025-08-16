@@ -2,7 +2,7 @@ import {useMemo} from 'react'
 import {
   type ChatBskyConvoLeaveConvo as ChatGndrConvoLeaveConvo,
   type ChatBskyConvoListConvos as ChatGndrConvoListConvos,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   useMutation,
   useMutationState,

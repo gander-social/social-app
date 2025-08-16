@@ -1,5 +1,5 @@
 import {View} from 'react-native'
-import {type AppBskyActorDefs as AppGndrActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@gander-social-atproto/api'
 import {msg, plural} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

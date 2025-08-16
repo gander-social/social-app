@@ -1,6 +1,6 @@
 import {useCallback, useState} from 'react'
 import {ActivityIndicator, Keyboard, View} from 'react-native'
-import {BskyAgent} from '@atproto/api'
+import {GndrAgent} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

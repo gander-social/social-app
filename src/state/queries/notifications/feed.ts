@@ -18,12 +18,12 @@
 
 import {useCallback, useEffect, useMemo, useRef} from 'react'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
+  type AppGndrActorDefs,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
   AtUri,
   moderatePost,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryClient,

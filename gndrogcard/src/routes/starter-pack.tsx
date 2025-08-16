@@ -1,7 +1,7 @@
 import assert from 'node:assert'
 
 import React from 'react'
-import {type AppBskyGraphDefs as AppGndrGraphDefs, AtUri} from '@atproto/api'
+import {type AppGndrGraphDefs, AtUri} from '@gander-social-atproto/api'
 import resvg from '@resvg/resvg-js'
 import {type Express} from 'express'
 import satori from 'satori'

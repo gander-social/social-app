@@ -4,7 +4,7 @@ import {
   moderateProfile,
   type ModerationOpts,
   RichText as RichTextApi,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

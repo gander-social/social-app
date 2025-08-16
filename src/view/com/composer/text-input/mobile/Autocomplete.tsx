@@ -1,6 +1,6 @@
 import {View} from 'react-native'
 import Animated, {FadeInDown, FadeOut} from 'react-native-reanimated'
-import {type AppBskyActorDefs as AppGndrActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@gander-social-atproto/api'
 import {Trans} from '@lingui/macro'
 
 import {PressableScale} from '#/lib/custom-animations/PressableScale'

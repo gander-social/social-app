@@ -1,4 +1,4 @@
-import {BskyAgent as GndrAgent} from '@atproto/api'
+import {GndrAgent} from '@gander-social-atproto/api'
 
 import {logger} from '#/logger'
 import {device} from '#/storage'

@@ -4,7 +4,7 @@ import {
   type ChatBskyConvoListConvos as ChatGndrConvoListConvos,
   moderateProfile,
   type ModerationOpts,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryClient,

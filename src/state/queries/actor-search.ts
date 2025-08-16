@@ -1,7 +1,7 @@
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   type AppBskyActorSearchActors as AppGndrActorSearchActors,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   keepPreviousData,

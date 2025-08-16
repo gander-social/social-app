@@ -1,11 +1,11 @@
 import React, {useCallback} from 'react'
 import {View} from 'react-native'
+import {flip, offset, shift, size, useFloating} from '@floating-ui/react-dom'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   moderateProfile,
   type ModerationOpts,
-} from '@atproto/api'
-import {flip, offset, shift, size, useFloating} from '@floating-ui/react-dom'
+} from '@gander-social-atproto/api'
 import {msg, plural} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 

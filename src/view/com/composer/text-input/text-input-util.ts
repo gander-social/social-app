@@ -1,7 +1,7 @@
 import {
-  type AppBskyRichtextFacet as AppGndrRichtextFacet,
+  type AppGndrRichtextFacet,
   type RichText,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 export type LinkFacetMatch = {
   rt: RichText

@@ -1,7 +1,7 @@
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type ChatBskyActorDefs as ChatGndrActorDefs,
-} from '@atproto/api'
+  type AppGndrActorDefs,
+  type ChatGndrActorDefs,
+} from '@gander-social-atproto/api'
 
 /**
  * Matches any profile view exported by our SDK

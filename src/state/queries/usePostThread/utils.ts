@@ -1,11 +1,11 @@
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
-  AppBskyFeedThreadgate as AppGndrFeedThreadgate,
-  AppBskyUnspeccedDefs as AppGndrUnspeccedDefs,
-  type AppBskyUnspeccedGetPostThreadV2 as AppGndrUnspeccedGetPostThreadV2,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
+  AppGndrFeedThreadgate,
+  AppGndrUnspeccedDefs,
+  type AppGndrUnspeccedGetPostThreadV2,
   AtUri,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {
   type ApiThreadItem,

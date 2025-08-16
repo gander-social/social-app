@@ -1,11 +1,11 @@
 import {
   type $Typed,
   type AppBskyGraphFollow as AppGndrGraphFollow,
-  type AppBskyGraphGetFollows as AppGndrGraphGetFollows,
-  type BskyAgent as GndrAgent,
+  type AppGndrGraphGetFollows,
   type ComAtprotoRepoApplyWrites,
-} from '@atproto/api'
-import {TID} from '@atproto/common-web'
+  type GndrAgent,
+} from '@gander-social-atproto/api'
+import {TID} from '@gander-social-atproto/common-web'
 import chunk from 'lodash.chunk'
 
 import {until} from '#/lib/async/until'
@@ -19,7 +19,7 @@ export async function bulkWriteFollows(agent: GndrAgent, dids: string[]) {
 
   const followRecords: $Typed<AppGndrGraphFollow.Record>[] = dids.map(did => {
     return {
-      $type: 'app.bsky.graph.follow',
+      $type: 'app.gndr.graph.follow',
       subject: did,
       createdAt: new Date().toISOString(),
     }
@@ -28,7 +28,7 @@ export async function bulkWriteFollows(agent: GndrAgent, dids: string[]) {
   const followWrites: $Typed<ComAtprotoRepoApplyWrites.Create>[] =
     followRecords.map(r => ({
       $type: 'com.atproto.repo.applyWrites#create',
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       rkey: TID.nextStr(),
       value: r,
     }))
@@ -46,7 +46,7 @@ export async function bulkWriteFollows(agent: GndrAgent, dids: string[]) {
   for (const r of followWrites) {
     followUris.set(
       r.value.subject,
-      `at://${session.did}/app.bsky.graph.follow/${r.rkey}`,
+      `at://${session.did}/app.gndr.graph.follow/${r.rkey}`,
     )
   }
   return followUris
@@ -62,7 +62,7 @@ async function whenFollowsIndexed(
     1e3, // 1s delay between tries
     fn,
     () =>
-      agent.app.bsky.graph.getFollows({
+      agent.app.gndr.graph.getFollows({
         actor,
         limit: 1,
       }),

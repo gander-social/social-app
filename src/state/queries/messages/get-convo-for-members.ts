@@ -1,4 +1,4 @@
-import {type ChatBskyConvoGetConvoForMembers as ChatGndrConvoGetConvoForMembers} from '@atproto/api'
+import {type ChatBskyConvoGetConvoForMembers as ChatGndrConvoGetConvoForMembers} from '@gander-social-atproto/api'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
 
 import {logger} from '#/logger'

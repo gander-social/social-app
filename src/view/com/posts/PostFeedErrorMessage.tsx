@@ -1,10 +1,10 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
+  type AppGndrActorDefs,
   AppGndrFeedGetAuthorFeed,
   AtUri,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg as msgLingui, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'

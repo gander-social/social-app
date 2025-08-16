@@ -1,5 +1,5 @@
 import React, {useContext, useState, useSyncExternalStore} from 'react'
-import {type ChatBskyConvoDefs as ChatGndrConvoDefs} from '@atproto/api'
+import {type ChatBskyConvoDefs as ChatGndrConvoDefs} from '@gander-social-atproto/api'
 import {useFocusEffect} from '@react-navigation/native'
 import {useQueryClient} from '@tanstack/react-query'
 

@@ -12,10 +12,10 @@ import Animated, {
   ZoomOut,
 } from 'react-native-reanimated'
 import {
-  AppBskyEmbedRecord as AppGndrEmbedRecord,
+  AppGndrEmbedRecord,
   ChatBskyConvoDefs as ChatGndrConvoDefs,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {type I18n} from '@lingui/core'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'

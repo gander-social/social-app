@@ -32,8 +32,13 @@ lint: ## Run style checks and verify syntax
 
 .PHONY: deps
 deps: ## Installs dependent libs using 'yarn install'
-	yarn install --frozen-lockfile
-	cd gndrembed && yarn install --frozen-lockfile
+	yarn install --frozen-lockfile --recursive
+	cd gndrembed && yarn install --frozen-lockfile --recursive
+
+.PHONY: deps-switch-upstream
+deps-switch-upstream: ## Switch upstream for all dependencies to the latest version
+    yarn install --no-frozen-lockfile --recursive
+    cd gndrembed && yarn install --no-frozen-lockfile --recursive
 
 .PHONY: nvm-setup
 nvm-setup: ## Use NVM to install and activate node+yarn

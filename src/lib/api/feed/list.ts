@@ -1,8 +1,8 @@
 import {
   type Agent,
-  type AppBskyFeedDefs as AppGndrFeedDefs,
+  type AppGndrFeedDefs,
   type AppBskyFeedGetListFeed as GetListFeed,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 
 import {type FeedAPI, type FeedAPIResponse} from './types'
 
@@ -22,7 +22,7 @@ export class ListFeedAPI implements FeedAPI {
   }
 
   async peekLatest(): Promise<AppGndrFeedDefs.FeedViewPost> {
-    const res = await this.agent.app.bsky.feed.getListFeed({
+    const res = await this.agent.app.gndr.feed.getListFeed({
       ...this.params,
       limit: 1,
     })
@@ -36,7 +36,7 @@ export class ListFeedAPI implements FeedAPI {
     cursor: string | undefined
     limit: number
   }): Promise<FeedAPIResponse> {
-    const res = await this.agent.app.bsky.feed.getListFeed({
+    const res = await this.agent.app.gndr.feed.getListFeed({
       ...this.params,
       cursor,
       limit,

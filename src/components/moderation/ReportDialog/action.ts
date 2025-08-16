@@ -2,7 +2,7 @@ import {
   type $Typed,
   type ChatBskyConvoDefs as ChatGndrConvoDefs,
   type ComAtprotoModerationCreateReport,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useMutation} from '@tanstack/react-query'

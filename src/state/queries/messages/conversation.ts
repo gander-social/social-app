@@ -1,4 +1,4 @@
-import {type ChatBskyConvoDefs as ChatGndrConvoDefs} from '@atproto/api'
+import {type ChatBskyConvoDefs as ChatGndrConvoDefs} from '@gander-social-atproto/api'
 import {
   type QueryClient,
   useMutation,

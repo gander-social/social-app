@@ -1,11 +1,11 @@
 import '../index.css'
 
 import {
-  AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
   AtpAgent,
   AtUri,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {h, render} from 'preact'
 import {useEffect, useMemo, useRef, useState} from 'preact/hooks'
 

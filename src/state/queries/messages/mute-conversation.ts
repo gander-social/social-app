@@ -2,7 +2,7 @@ import {
   type ChatBskyConvoDefs as ChatGndrConvoDefs,
   type ChatBskyConvoListConvos as ChatGndrConvoListConvos,
   type ChatConvoMuteConvo as ChatGndrConvoMuteConvo,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   useMutation,

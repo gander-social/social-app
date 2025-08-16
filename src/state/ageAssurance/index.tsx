@@ -1,5 +1,5 @@
 import {createContext, useContext, useMemo, useState} from 'react'
-import {type AppBskyUnspeccedDefs as AppGndrUnspeccedDefs} from '@atproto/api'
+import {type AppGndrUnspeccedDefs} from '@gander-social-atproto/api'
 import {useQuery} from '@tanstack/react-query'
 
 import {networkRetry} from '#/lib/async/retry'
@@ -62,7 +62,7 @@ export function Provider({children}: {children: React.ReactNode}) {
 
       try {
         const {data} = await networkRetry(3, () =>
-          agent.app.bsky.unspecced.getAgeAssuranceState(),
+          agent.app.gndr.unspecced.getAgeAssuranceState(),
         )
         // const {data} = {
         //   data: {

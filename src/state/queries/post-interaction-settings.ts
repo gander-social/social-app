@@ -1,4 +1,4 @@
-import {type AppBskyActorDefs as AppGndrActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@gander-social-atproto/api'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
 
 import {preferencesQueryKey} from '#/state/queries/preferences'

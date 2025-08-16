@@ -1,5 +1,5 @@
 import {View} from 'react-native'
-import {type AppBskyLabelerDefs as AppGndrLabelerDefs} from '@atproto/api'
+import {type AppGndrLabelerDefs} from '@gander-social-atproto/api'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import type React from 'react'

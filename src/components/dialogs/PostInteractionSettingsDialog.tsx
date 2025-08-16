@@ -1,10 +1,10 @@
 import React from 'react'
 import {type StyleProp, View, type ViewStyle} from 'react-native'
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyFeedPostgate as AppGndrFeedPostgate,
+  type AppGndrFeedDefs,
+  type AppGndrFeedPostgate,
   AtUri,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'

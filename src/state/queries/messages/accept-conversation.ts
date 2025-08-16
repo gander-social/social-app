@@ -1,7 +1,7 @@
 import {
   type ChatBskyConvoAcceptConvo as ChatGndrConvoAcceptConvo,
   type ChatBskyConvoListConvos as ChatGndrConvoListConvos,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {useMutation, useQueryClient} from '@tanstack/react-query'
 
 import {logger} from '#/logger'

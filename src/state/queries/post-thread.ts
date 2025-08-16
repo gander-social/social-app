@@ -1,14 +1,14 @@
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyEmbedRecord as AppGndrEmbedRecord,
-  AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyFeedGetPostThread as AppGndrFeedGetPostThread,
-  AppBskyFeedPost as AppGndrFeedPost,
+  type AppGndrActorDefs,
+  type AppGndrEmbedRecord,
+  AppGndrFeedDefs,
+  type AppGndrFeedGetPostThread,
+  AppGndrFeedPost,
   AtUri,
   moderatePost,
   type ModerationDecision,
   type ModerationOpts,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {type QueryClient, useQuery, useQueryClient} from '@tanstack/react-query'
 
 import {

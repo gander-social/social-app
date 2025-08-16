@@ -1,15 +1,15 @@
 import React, {useCallback, useEffect, useRef} from 'react'
 import {AppState} from 'react-native'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyFeedPost as AppGndrFeedPost,
+  type AppGndrActorDefs,
+  AppGndrFeedDefs,
+  type AppGndrFeedPost,
   AtUri,
-  type BskyAgent as GndrAgent,
+  type GndrAgent,
   moderatePost,
   type ModerationDecision,
   type ModerationPrefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryClient,

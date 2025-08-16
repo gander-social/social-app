@@ -4,7 +4,7 @@ import {useAnimatedRef} from 'react-native-reanimated'
 import {
   type ChatBskyActorDefs as ChatGndrActorDefs,
   type ChatBskyConvoDefs as ChatGndrConvoDefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useFocusEffect, useIsFocused} from '@react-navigation/native'

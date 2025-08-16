@@ -1,6 +1,6 @@
 import {useImperativeHandle, useRef, useState} from 'react'
 import {Pressable, type StyleProp, View, type ViewStyle} from 'react-native'
-import {type AppBskyEmbedVideo as AppGndrEmbedVideo} from '@atproto/api'
+import {type AppGndrEmbedVideo} from '@gander-social-atproto/api'
 import {BlueskyVideoView} from '@haileyok/bluesky-video'
 import {msg} from '@lingui/macro'
 import {useLingui} from '@lingui/react'

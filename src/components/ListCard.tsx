@@ -1,11 +1,11 @@
 import React from 'react'
 import {View} from 'react-native'
 import {
-  type AppBskyGraphDefs as AppGndrGraphDefs,
+  type AppGndrGraphDefs,
   AtUri,
   moderateUserList,
   type ModerationUI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'
@@ -42,8 +42,8 @@ export {
   TitleAndBylinePlaceholder,
 } from '#/components/FeedCard'
 
-const CURATELIST = 'app.bsky.graph.defs#curatelist'
-const MODLIST = 'app.bsky.graph.defs#modlist'
+const CURATELIST = 'app.gndr.graph.defs#curatelist'
+const MODLIST = 'app.gndr.graph.defs#modlist'
 
 type Props = {
   view: AppGndrGraphDefs.ListView

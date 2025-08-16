@@ -28,13 +28,13 @@ import {Image, type ImageStyle} from 'expo-image'
 import {LinearGradient} from 'expo-linear-gradient'
 import {createVideoPlayer, type VideoPlayer, VideoView} from 'expo-video'
 import {
-  AppBskyEmbedVideo as AppGndrEmbedVideo,
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyFeedPost as AppGndrFeedPost,
+  AppGndrEmbedVideo,
+  type AppGndrFeedDefs,
+  AppGndrFeedPost,
   AtUri,
   type ModerationDecision,
   RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {
@@ -494,7 +494,7 @@ let VideoItem = ({
     if (active) {
       sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#interactionSeen',
+        event: 'app.gndr.feed.defs#interactionSeen',
         feedContext,
         reqId,
       })
@@ -1056,7 +1056,7 @@ function PlayPauseTapArea({
       queueLike()
       sendInteraction({
         item: post.uri,
-        event: 'app.bsky.feed.defs#interactionLike',
+        event: 'app.gndr.feed.defs#interactionLike',
         feedContext,
         reqId,
       })

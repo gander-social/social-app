@@ -1,5 +1,5 @@
 import React from 'react'
-import {type AtpSessionEvent, type BskyAgent as GndrAgent} from '@atproto/api'
+import {type AtpSessionEvent, type GndrAgent} from '@gander-social-atproto/api'
 
 import {isWeb} from '#/platform/detection'
 import * as persisted from '#/state/persisted'

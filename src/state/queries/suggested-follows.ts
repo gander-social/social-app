@@ -1,9 +1,9 @@
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyActorGetSuggestions as AppGndrActorGetSuggestions,
+  type AppGndrActorDefs,
+  type AppGndrActorGetSuggestions,
   type AppGndrGraphGetSuggestedFollowsByActor,
   moderateProfile,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   type InfiniteData,
   type QueryClient,
@@ -59,7 +59,7 @@ export function useSuggestedFollowsQuery(options?: SuggestedFollowsOptions) {
         options?.subsequentPageLimit && pageParam
           ? options.subsequentPageLimit
           : limit
-      const res = await agent.app.bsky.actor.getSuggestions(
+      const res = await agent.app.gndr.actor.getSuggestions(
         {
           limit: maybeDifferentLimit,
           cursor: pageParam,
@@ -114,7 +114,7 @@ export function useSuggestedFollowsByActorQuery({
   return useQuery({
     queryKey: suggestedFollowsByActorQueryKey(did),
     queryFn: async () => {
-      const res = await agent.app.bsky.graph.getSuggestedFollowsByActor({
+      const res = await agent.app.gndr.graph.getSuggestedFollowsByActor({
         actor: did,
       })
       const suggestions = res.data.isFallback

@@ -1,5 +1,5 @@
 import React, {memo} from 'react'
-import {type AppBskyActorDefs as AppGndrActorDefs} from '@atproto/api'
+import {type AppGndrActorDefs} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useNavigation} from '@react-navigation/native'
@@ -444,7 +444,7 @@ let ProfileMenu = ({
         control={reportDialogControl}
         subject={{
           ...profile,
-          $type: 'app.bsky.actor.defs#profileViewDetailed',
+          $type: 'app.gndr.actor.defs#profileViewDetailed',
         }}
       />
 

@@ -1,4 +1,4 @@
-import {AtUri} from '@atproto/api'
+import {AtUri} from '@gander-social-atproto/api'
 import psl from 'psl'
 import TLDs from 'tlds'
 

@@ -8,11 +8,11 @@ import Animated, {
 } from 'react-native-reanimated'
 import {useSafeAreaInsets} from 'react-native-safe-area-context'
 import {
-  type AppBskyActorDefs as AppGndrActorDefs,
-  type AppBskyLabelerDefs as AppGndrLabelerDefs,
+  type AppGndrActorDefs,
+  type AppGndrLabelerDefs,
   type ModerationOpts,
   type RichText as RichTextAPI,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {useIsFocused} from '@react-navigation/native'
 
 import {isNative} from '#/platform/detection'

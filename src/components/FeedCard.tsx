@@ -1,11 +1,11 @@
 import React from 'react'
 import {type GestureResponderEvent, View} from 'react-native'
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  type AppBskyGraphDefs as AppGndrGraphDefs,
+  type AppGndrFeedDefs,
+  type AppGndrGraphDefs,
   AtUri,
   RichText as RichTextApi,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Plural, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useQueryClient} from '@tanstack/react-query'
@@ -254,7 +254,7 @@ function SaveButtonInner({
     useRemoveFeedMutation()
 
   const uri = view.uri
-  const type = view.uri.includes('app.bsky.feed.generator') ? 'feed' : 'list'
+  const type = view.uri.includes('app.gndr.feed.generator') ? 'feed' : 'list'
 
   const savedFeedConfig = React.useMemo(() => {
     return preferences?.savedFeeds?.find(

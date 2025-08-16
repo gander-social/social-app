@@ -1,14 +1,14 @@
 import {
-  type AppBskyFeedDefs as AppGndrFeedDefs,
-  AppBskyGraphDefs as AppGndrGraphDefs,
+  type AppGndrFeedDefs,
+  AppGndrGraphDefs,
   type AppBskyGraphGetStarterPack as AppGndrGraphGetStarterPack,
-  AppBskyGraphStarterpack as AppGndrGraphStarterpack,
-  type AppBskyRichtextFacet as AppGndrRichtextFacet,
+  AppGndrGraphStarterpack,
+  type AppGndrRichtextFacet,
   AtUri,
-  type BskyAgent as GndrAgent,
+  type GndrAgent,
   RichText,
-} from '@atproto/api'
-import {type StarterPackView} from '@atproto/api/dist/client/types/app/bsky/graph/defs'
+} from '@gander-social-atproto/api'
+import {type StarterPackView} from '@gander-social-atproto/api/dist/client/types/app.gndr.graph/defs'
 import {
   type QueryClient,
   useMutation,
@@ -63,12 +63,12 @@ export function useStarterPackQuery({
     queryKey: RQKEY(uri ? {uri} : {did, rkey}),
     queryFn: async () => {
       if (!uri) {
-        uri = `at://${did}/app.bsky.graph.starterpack/${rkey}`
+        uri = `at://${did}/app.gndr.graph.starterpack/${rkey}`
       } else if (uri && !uri.startsWith('at://')) {
         uri = httpStarterPackUriToAtUri(uri) as string
       }
 
-      const res = await agent.app.bsky.graph.getStarterPack({
+      const res = await agent.app.gndr.graph.getStarterPack({
         starterPack: uri,
       })
       return res.data.starterPack
@@ -129,7 +129,7 @@ export function useCreateStarterPackMutation({
         agent,
       })
 
-      return await agent.app.bsky.graph.starterpack.create(
+      return await agent.app.gndr.graph.starterpack.create(
         {
           repo: agent.assertDid,
         },
@@ -208,7 +208,7 @@ export function useEditStarterPackMutation({
             repo: agent.session!.did,
             writes: chunk.map(i => ({
               $type: 'com.atproto.repo.applyWrites#delete',
-              collection: 'app.bsky.graph.listitem',
+              collection: 'app.gndr.graph.listitem',
               rkey: new AtUri(i.uri).rkey,
             })),
           })
@@ -225,9 +225,9 @@ export function useEditStarterPackMutation({
             repo: agent.session!.did,
             writes: chunk.map(p => ({
               $type: 'com.atproto.repo.applyWrites#create',
-              collection: 'app.bsky.graph.listitem',
+              collection: 'app.gndr.graph.listitem',
               value: {
-                $type: 'app.bsky.graph.listitem',
+                $type: 'app.gndr.graph.listitem',
                 subject: p.did,
                 list: currentStarterPack.list?.uri,
                 createdAt: new Date().toISOString(),
@@ -240,7 +240,7 @@ export function useEditStarterPackMutation({
       const rkey = parseStarterPackUri(currentStarterPack.uri)!.rkey
       await agent.com.atproto.repo.putRecord({
         repo: agent.session!.did,
-        collection: 'app.bsky.graph.starterpack',
+        collection: 'app.gndr.graph.starterpack',
         rkey,
         record: {
           name,
@@ -298,12 +298,12 @@ export function useDeleteStarterPackMutation({
       }
 
       if (listUri) {
-        await agent.app.bsky.graph.list.delete({
+        await agent.app.gndr.graph.list.delete({
           repo: agent.session.did,
           rkey: new AtUri(listUri).rkey,
         })
       }
-      await agent.app.bsky.graph.starterpack.delete({
+      await agent.app.gndr.graph.starterpack.delete({
         repo: agent.session.did,
         rkey,
       })
@@ -349,7 +349,7 @@ async function whenAppViewReady(
     5, // 5 tries
     1e3, // 1s delay between tries
     fn,
-    () => agent.app.bsky.graph.getStarterPack({starterPack: uri}),
+    () => agent.app.gndr.graph.getStarterPack({starterPack: uri}),
   )
 }
 
@@ -375,11 +375,11 @@ export async function precacheStarterPack(
       // This will be populated once the data from server is fetched
       cid: '',
       name: starterPack.record.name,
-      purpose: 'app.bsky.graph.defs#referencelist',
+      purpose: 'app.gndr.graph.defs#referencelist',
     }
     starterPackView = {
       ...starterPack,
-      $type: 'app.bsky.graph.defs#starterPackView',
+      $type: 'app.gndr.graph.defs#starterPackView',
       list: listView,
     }
   }

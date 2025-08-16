@@ -3,7 +3,7 @@ import {View} from 'react-native'
 import {
   type ComAtprotoLabelDefs,
   ComAtprotoModerationDefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {msg, Trans} from '@lingui/macro'
 import {useLingui} from '@lingui/react'
 import {useMutation} from '@tanstack/react-query'
